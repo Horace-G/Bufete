@@ -10,7 +10,7 @@ myApp.config(function ($routeProvider) {
     })
     
     .when('/medicamentos', {
-        templateUrl: 'views/medicamentos.html',
+        templateUrl: 'views/modalidadDeVentas.html',
         controller: 'secondController'
     })
     
