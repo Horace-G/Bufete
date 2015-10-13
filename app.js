@@ -10,13 +10,28 @@ myApp.config(function ($routeProvider) {
     })
     
     .when('/medicamentos', {
-        templateUrl: 'views/modalidadDeVentas.html',
+        templateUrl: 'views/configuracion.html',
         controller: 'secondController'
     })
     
-    .when('/configuracion', {
+     .when('/configuracion', {
         templateUrl: 'views/configuracion.html',
         controller: 'mainController'
+    })
+    
+     .when('/crearExpediente', {
+        templateUrl: 'views/crearExpediente.html',
+        controller: 'mainController'
+    })
+    
+     .when('/reportes', {
+        templateUrl: 'views/reportes.html',
+        controller: 'secondController'
+    })
+    
+    .when('/usuarios', {
+        templateUrl: 'views/usuarios.html',
+        controller: 'secondController'
     })
     
     .when('/second/:num', {

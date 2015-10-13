@@ -5,7 +5,15 @@
             accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
         });
     });
-      
+    
+    $('#medicamentos').addClass('active');
+    $('#medicamentos').addClass('z-depth-5');
+    $('#reportes').removeClass('active');
+    $('#reportes').removeClass('z-depth-5');
+    $('#usuarios').removeClass('active');
+    $('#usuarios').removeClass('z-depth-5');
+    $('#logout').removeClass('active');
+       
 </script>
 
 <div class="row">
@@ -18,17 +26,36 @@
 </div>
 
  <ul class="collapsible popout collection with-header" data-collapsible="accordion">
-     <li class="collection-header"><h4>Configuración</h4><h6>Ingrese los campos necesarios para crear el nuevo valor</h6></li>
+     <li class="collection-header teal-text lighten-2"><h4 class="flow-text header">Medicamentos: Configuración</h4><h6 class="flow-text teal-text lighten-2"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
     <li collection-item>
       <div class="collapsible-header"><i class="material-icons">info_outline</i>Presentación Comercial</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      <div class="collapsible-body popup-element">
+      
+         <h3 class="flow-text teal-text lighten-3">Ingrese los atributos necesarios para crear una nueva presentación comercial</h3>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+             <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="nombrePresentacionComercial" type="text" class="validate">
+                  <label for="nombrePresentacionComercial">Nombre de la Nueva Presentación Comercial</label>
+                </div>
+                 <div class="input-field col s9">
+                  <i class="material-icons description">account_circle</i>
+                  <textarea id="descripcionPresentacionComercial" class="materialize-textarea"></textarea>
+                  <label for="descripcionPresentacionComercial">Breve descripción de ésta nueva presentación comercial</label>
+                 </div>
+               </div>
+          </form>
+        </div>
+          
+      </div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">input</i>Modalidad de Ventas</div>
       <div class="collapsible-body popup-element">
       
-        <h1 class="flow-text header teal-text lighten-2">Configuración: Modalidad de Ventas</h1>
-        <h3 class="flow-text subHeader teal-text lighten-3">Ingrese los atributos necesarios para crear una nueva modalidad de ventas</h3>
+        <h3 class="flow-text teal-text lighten-3">Ingrese los atributos necesarios para crear una nueva modalidad de ventas</h3>
           <div class="row">
             <form class="col s12">
               <div class="row">
@@ -60,15 +87,108 @@
       </div>
     </li>
     <li>
-      <div class="collapsible-header"><i class="material-icons">invert_colors</i>Categorias</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      <div class="collapsible-header"><i class="material-icons">invert_colors</i>Categorias de Medicamentos</div>
+      <div class="collapsible-body popup-element">
+      
+           <h3 class="flow-text teal-text lighten-3">Ingrese los atributos necesarios para crear una nueva categoria de medicamento</h3>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+             <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="first_name" type="text" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+                 <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Last Name</label>
+                 </div>
+               </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+          </form>
+        </div>
+          
+      </div>
     </li>
     <li>
       <div class="collapsible-header"><i class="material-icons">labels</i>Estados de Ciclo de Vida</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      <div class="collapsible-body popup-element">
+      
+           <h3 class="flow-text teal-text lighten-3">Ingrese los atributos necesarios para crear un nuevo estado de ciclo de vida en el proceso de legalización</h3>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+             <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="first_name" type="text" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+                 <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Last Name</label>
+                 </div>
+               </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+          </form>
+        </div>
+          
+      </div>
     </li>
      <li>
       <div class="collapsible-header"><i class="material-icons">polymer</i>Vía de Administración</div>
-      <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>
+      <div class="collapsible-body popup-element">
+      
+           <h3 class="flow-text teal-text lighten-3">Ingrese los atributos necesarios para crear una nueva vía de administración del medicamento</h3>
+          <div class="row">
+            <form class="col s12">
+              <div class="row">
+             <div class="input-field col s6">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="first_name" type="text" class="validate">
+                  <label for="first_name">First Name</label>
+                </div>
+                 <div class="input-field col s6">
+                  <input id="last_name" type="text" class="validate">
+                  <label for="last_name">Last Name</label>
+                 </div>
+               </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="password" type="password" class="validate">
+                <label for="password">Password</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
+                <input id="email" type="email" class="validate">
+                <label for="email">Email</label>
+              </div>
+            </div>
+          </form>
+        </div>
+          
+      </div>
     </li>
   </ul>
