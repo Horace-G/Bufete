@@ -48,8 +48,15 @@ myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
 }]);
 
 
-myApp.controller('secondController', ['$scope', '$log', '$routeParams', function($scope, $log, $routeParams) {
+myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', function($scope, $log, $routeParams,$http) {
     
+	var request = {
+			method: 'POST',
+			url: "fia.unitec.edu:8082/Bufete/public/index.php/TestPOST"
+	};
+	$http(request).then(function(){
+		alert('OH');
+	});
     $scope.num = $routeParams.num || 1;
     
 }]);
