@@ -56,7 +56,8 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
 	};
 	$http(request).then(function(response){
 		alert('OH');
-		alert(response);
+		console.log(response);
+		alert(response.data);
 	});
     $scope.num = $routeParams.num || 1;
     
