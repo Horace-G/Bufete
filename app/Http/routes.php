@@ -19,6 +19,6 @@ Route::get('/TestL',function(){
 	return view('welcome');
 });
 
-Route::get('/TestPOST',function(){
+Route::post('/TestPOST',function(){
 	return Response::json(array('TestKey' => 'TestValue'));
 });
