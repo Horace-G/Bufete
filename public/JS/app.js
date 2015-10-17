@@ -54,8 +54,9 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/public/index.php/TestPOST"
 	};
-	$http(request).then(function(){
+	$http(request).then(function(response){
 		alert('OH');
+		alert(response);
 	});
     $scope.num = $routeParams.num || 1;
     
