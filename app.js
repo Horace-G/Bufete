@@ -5,7 +5,7 @@ myApp.config(function ($routeProvider) {
     $routeProvider
     
     .when('/', {
-        templateUrl: 'views/medicamentos.html',
+        templateUrl: 'views/home.html',
         controller: 'mainController'
     })
     
@@ -47,8 +47,21 @@ myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
     
 }]);
 
+
 myApp.controller('secondController', ['$scope', '$log', '$routeParams', function($scope, $log, $routeParams) {
     
     $scope.num = $routeParams.num || 1;
     
+}]);
+
+myApp.directive('buffetNav', [function() {
+  return {
+      templateUrl : 'buffetnavbar.html'
+  }
+}]);
+
+myApp.directive('medicamentosMenu', [function() {
+  return {
+      templateUrl : 'views/medicamentos.html'
+  }
 }]);

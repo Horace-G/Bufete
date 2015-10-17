@@ -1,10 +1,12 @@
+body{
+    background-image: url("background.jpg");
+    	background-repeat: no-repeat;
+    background-size: cover;
+}
 .header{
     font-size: 70px;
 }
 
-.subHeader{
-    margin-left: 40px; 
-}
 
 textarea:focus {
   border-bottom: 1px solid #03a9f4;
@@ -13,6 +15,43 @@ textarea:focus {
   box-shadow: 0 1px 0 0 #03a9f4;
 }
 
-.popup-element{
-    padding: 25px;
+
+#navhome{
+    background-color:burlywood;
+    position: absolute;
+    text-align:center;
+    width: 60%;
+    
+    top:10%;
+    left: 20%;
+    right: 20%;
+    
+}
+
+#nav-mobile{
+  display:inline-block;
+    list-style:none; 
+   
+}
+#div-medicamentos{
+    position: absolute;
+    
+    width: 59.8%;
+    left: 21%;
+    right: 20%;
+    top: 20%;
+    
+    
+}
+#Config{
+    position: absolute;
+    top: 26%;
+    width: 63.5%;
+    left: 18.2%;
+    
+    
+}
+
+#Config-li{
+    background-color:aliceblue;
 }
