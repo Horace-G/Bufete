@@ -9,7 +9,7 @@
         <!--Materialize CSS via CDN --->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="./CSS/styles.css" rel="stylesheet">
+        <link href="./public/CSS/styles.css" rel="stylesheet">
         
         <style>
             html, body, input, select, textarea
@@ -19,11 +19,11 @@
         </style>
         
         <!-- load JQuery, angular and materialize JS via CDN -->
-        <script src="./JS/jquery-1.9.1.min.js"></script>
-        <script src="./JS/materialize/js/materialize.min.js"></script>
-        <script src="./JS/angular.min.js"></script>
-        <script src="./JS/angular-route.min.js"></script>
-        <script src="./JS/app.js"></script>
+        <script src="./public/JS/jquery-1.9.1.min.js"></script>
+        <script src="./public/JS/materialize/js/materialize.min.js"></script>
+        <script src="./public/JS/angular.min.js"></script>
+        <script src="./public/JS/angular-route.min.js"></script>
+        <script src="./public/JS/app.js"></script>
         
     </head>
     <body>
