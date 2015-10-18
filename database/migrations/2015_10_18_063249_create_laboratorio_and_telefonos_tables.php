@@ -36,6 +36,7 @@ class CreateLaboratorioAndTelefonosTables extends Migration
      */
     public function down()
     {
+	Schema::drop('telefonos');
         Schema::drop('laboratorio');
     }
 }
