@@ -5,37 +5,37 @@ myApp.config(function ($routeProvider) {
     $routeProvider
     
     .when('/', {
-        templateUrl: 'views/home.html',
+        templateUrl: 'public/views/home.html',
         controller: 'mainController'
     })
     
     .when('/medicamentos', {
-        templateUrl: 'views/configuracion.html',
+        templateUrl: 'public/views/configuracion.html',
         controller: 'secondController'
     })
     
      .when('/configuracion', {
-        templateUrl: 'views/configuracion.html',
+        templateUrl: 'public/views/configuracion.html',
         controller: 'mainController'
     })
     
      .when('/crearExpediente', {
-        templateUrl: 'views/crearExpediente.html',
+        templateUrl: 'public/views/crearExpediente.html',
         controller: 'mainController'
     })
     
      .when('/reportes', {
-        templateUrl: 'views/reportes.html',
+        templateUrl: 'public/views/reportes.html',
         controller: 'secondController'
     })
     
     .when('/usuarios', {
-        templateUrl: 'views/usuarios.html',
+        templateUrl: 'public/views/usuarios.html',
         controller: 'secondController'
     })
     
     .when('/second/:num', {
-        templateUrl: 'views/second.html',
+        templateUrl: 'public/views/second.html',
         controller: 'secondController'
     })
     
@@ -65,12 +65,12 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
 
 myApp.directive('buffetNav', [function() {
   return {
-      templateUrl : 'buffetnavbar.html'
+      templateUrl : 'public/buffetnavbar.html'
   }
 }]);
 
 myApp.directive('medicamentosMenu', [function() {
   return {
-      templateUrl : 'views/medicamentos.html'
+      templateUrl : 'public/views/medicamentos.html'
   }
 }]);
