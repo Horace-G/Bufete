@@ -8,6 +8,6 @@
 		
 		public function savePresentacionComercial(Request $request){
 			$name = $request->input('namePresentacionComercial');
-			return Response::json(array('Success' => 'true'));
+			return Response::json(array('Success' => 'true','Name' => $name));
 		}
 	}

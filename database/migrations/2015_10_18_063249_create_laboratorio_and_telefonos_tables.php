@@ -18,6 +18,10 @@ class CreateLaboratorioAndTelefonosTables extends Migration
 	    $table->string('nombre', 64);
 	    $table->string('direccion', 64);
 	    $table->string('correo', 64);
+	    $table->integer('user_created')->unsigned();
+            $table->foreign('user_created')->references('id')->on('usuario')->onDelete('cascade');
+            $table->integer('user_updated')->unsigned();
+            $table->foreign('user_updated')->references('id')->on('usuario')->onDelete('cascade');
 	    $table->integer('estado')->unsigned()->default(0);
             $table->timestamps();
         });
