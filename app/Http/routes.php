@@ -22,3 +22,5 @@ Route::get('/TestL',function(){
 Route::post('/TestPOST',function(){
 	return Response::json(array('TestKey' => 'TestValue'));
 });
+
+Route::post('/savePresentacionComercial','PresentacionComercialController@savePresentacionComercial');

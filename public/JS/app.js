@@ -52,12 +52,12 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
     
 	var request = {
 			method: 'POST',
-			url: "http://fia.unitec.edu:8082/Bufete/public/index.php/TestPOST"
+			url: "http://fia.unitec.edu:8082/Bufete/savePresentacionComercial",
+			data: {namePresentacionComercial: 'Hola'}
 	};
 	$http(request).then(function(response){
 		alert('OH');
 		console.log(response);
-		alert(response.data);
 	});
     $scope.num = $routeParams.num || 1;
     
