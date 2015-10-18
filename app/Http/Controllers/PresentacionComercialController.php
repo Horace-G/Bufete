@@ -2,6 +2,7 @@
 	
 	use Illuminate\Http\Request;
 	use Illuminate\Routing\Controller;
+	use Response;
 	
 	class PresentacionComercialController extends Controller {
 		
