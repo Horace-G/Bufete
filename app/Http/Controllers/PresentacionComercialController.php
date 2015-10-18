@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 	
 	use App\Http\Controllers\Controller;
-	use App\Http\Requests
+	use App\Http\Requests;
 	
 	class PresentacionComercialController extends Controller {
 		
