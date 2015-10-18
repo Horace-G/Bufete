@@ -52,7 +52,7 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
     
 	var request = {
 			method: 'POST',
-			url: "http://fia.unitec.edu:8082/Bufete/savePresentacionComercial",
+			url: "http://fia.unitec.edu:8082/Bufete/index.php/savePresentacionComercial",
 			data: {namePresentacionComercial: 'Hola'}
 	};
 	$http(request).then(function(response){
