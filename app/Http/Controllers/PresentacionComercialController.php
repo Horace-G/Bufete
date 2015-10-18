@@ -1,7 +1,7 @@
 <?php namespace App\Http\Controllers;
 	
-	use App\Http\Controllers\Controller;
-	use App\Http\Requests;
+	use Illuminate\Http\Request;
+	use Illuminate\Routing\Controller;
 	
 	class PresentacionComercialController extends Controller {
 		
