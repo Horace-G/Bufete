@@ -24,3 +24,7 @@ Route::post('/TestPOST',function(){
 });
 
 Route::post('/savePresentacionComercial','PresentacionComercialController@savePresentacionComercial');
+
+Route::post('/saveModalidadVenta','ModalidadVentaController@saveModalidadVenta');
+
+Route::post('/saveCategoriaMedicamento','CategoriaMedicamentoController@saveCategoriaMedicamento');
