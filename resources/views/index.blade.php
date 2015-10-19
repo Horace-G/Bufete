@@ -29,11 +29,12 @@
     <body>
 
         <header>
+                        
             
 			<buffet-nav></buffet-nav><!--codigo del navbar-->
             
 		</header>
-
+             
         <div class="container">
 
             <div ng-view id="ngview"></div>

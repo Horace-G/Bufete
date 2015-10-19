@@ -21,14 +21,14 @@
 <medicamentos-menu></medicamentos-menu>
 
  <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
-     <li class="collection-header teal-text lighten-2"><h4 class="flow-text header">Medicamentos: Configuración</h4><h6 class="flow-text teal-text lighten-2"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
+     <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Medicamentos: Configuración</h4><h6 class="flow-text brown-text lighten-3"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
     <li collection-item id="Config-li">
       <div class="collapsible-header"><i class="material-icons">info_outline</i>Presentación Comercial</div>
       <div class="collapsible-body popup-element">
       
-         <h3 class="flow-text teal-text lighten-3">Ingrese los atributos necesarios para crear una nueva presentación comercial</h3>
-          <div class="row">
-            <form class="col s12">
+         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva presentación comercial</h3>
+          <div class="row" ng-controller="presentacion_comercial">
+            <form class="col s12 simple-form">
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -40,6 +40,10 @@
                   <textarea id="descripcionPresentacionComercial" class="materialize-textarea"></textarea>
                   <label for="descripcionPresentacionComercial">Breve descripción de ésta nueva presentación comercial</label>
                  </div>
+                  <div class="col s9 right-align">
+                  <button ng-click="click_presentacioncomercial()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                </div>
+                  
                </div>
           </form>
         </div>
@@ -50,7 +54,7 @@
       <div class="collapsible-header"><i class="material-icons">input</i>Modalidad de Ventas</div>
       <div class="collapsible-body popup-element">
       
-        <h3 class="flow-text teal-text lighten-3">Ingrese los atributos necesarios para crear una nueva modalidad de ventas</h3>
+        <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva modalidad de ventas</h3>
           <div class="row">
             <form class="col s12">
               <div class="row">
@@ -64,6 +68,9 @@
                   <textarea id="descripcionModalidadDeVenta" class="materialize-textarea"></textarea>
                   <label for="descripcionModalidadDeVenta">Breve descripción de ésta nueva modalidad de venta</label>
                  </div>
+                  <div class="col s9 right-align">
+                  <button ng-click="click_ModalidadVenta()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  </div>
                </div>
           </form>
         </div>
@@ -74,7 +81,7 @@
       <div class="collapsible-header"><i class="material-icons">invert_colors</i>Categorias de Medicamentos</div>
       <div class="collapsible-body popup-element">
       
-           <h3 class="flow-text teal-text lighten-3">Ingrese los atributos necesarios para crear una nueva categoria de medicamento</h3>
+           <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva categoria de medicamento</h3>
           <div class="row">
             <form class="col s12">
               <div class="row">
@@ -88,6 +95,9 @@
                    <textarea id="descripcionCategoria" class="materialize-textarea"></textarea>
                   <label for="descripcionCategoria">Ingrese una breve descripción sobre la nueva categoría</label>
                  </div>
+                  <div class="col s9 right-align">
+                  <button ng-click="click_Categoria()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  </div>
                </div>
           </form>
         </div>
@@ -98,7 +108,7 @@
       <div class="collapsible-header"><i class="material-icons">labels</i>Estados de Ciclo de Vida</div>
       <div class="collapsible-body popup-element">
       
-           <h3 class="flow-text teal-text lighten-3">Ingrese los atributos necesarios para crear un nuevo estado de ciclo de vida en el proceso de legalización</h3>
+           <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo estado de ciclo de vida en el proceso de legalización</h3>
           <div class="row">
             <form class="col s12">
               <div class="row">
@@ -112,6 +122,9 @@
                   <textarea id="descripcionCicloDeVida" class="materialize-textarea"></textarea>
                   <label for="descripcionCicloDeVida">Ingrese una breve descripción del nuevo paso en el ciclo de vida </label>
                  </div>
+                  <div class="col s9 right-align">
+                  <button ng-click="click_CicloVida()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  </div>
                </div>
           </form>
         </div>
@@ -122,7 +135,7 @@
       <div class="collapsible-header"><i class="material-icons">polymer</i>Vía de Administración</div>
       <div class="collapsible-body popup-element">
       
-           <h3 class="flow-text teal-text lighten-3">Ingrese los atributos necesarios para crear una nueva vía de administración del medicamento</h3>
+           <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva vía de administración del medicamento</h3>
           <div class="row">
             <form class="col s12">
               <div class="row">
@@ -136,6 +149,9 @@
                   <textarea id="descripcionModalidadDeVenta" class="materialize-textarea"></textarea>
                   <label for="descripcionViaAdministracion">Ingrese una breve descripción sobre la nueva vía de administración</label>
                  </div>
+                 <div class="col s9 right-align">
+                  <button ng-click="click_ModalidadVenta()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  </div> 
                </div>
           </form>
         </div>

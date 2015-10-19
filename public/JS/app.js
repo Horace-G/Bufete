@@ -63,6 +63,24 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
     
 }]);
 
+myApp.controller('presentacion_comercial', function ($scope, $http) {
+
+$scope.click_presentacioncomenrcial = function () {
+
+
+var request = $http({
+    method: "POST",
+    url: "127.0.0.1/Bufete/index.php/savePresentacionComercial",
+    data: {
+        email: $scope.email,
+        pass: $scope.password
+    }
+});
+
+
+}
+});
+
 myApp.directive('buffetNav', [function() {
   return {
       templateUrl : 'public/buffetnavbar.html'

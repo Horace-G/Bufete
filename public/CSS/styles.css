@@ -2,6 +2,7 @@ body{
     background-image: url("../IMG/background.jpg");
     	background-repeat: no-repeat;
     background-size: cover;
+    	background-attachment: fixed;
 }
 .header{
     font-size: 70px;
@@ -22,7 +23,7 @@ textarea:focus {
     text-align:center;
     width: 60%;
     
-    top:10%;
+    top:2%;
     left: 20%;
     right: 20%;
     
@@ -36,17 +37,17 @@ textarea:focus {
 #div-medicamentos{
     position: absolute;
     
-    width: 59.8%;
-    left: 21%;
+    width: 60.05%;
+    left: 20.9%;
     right: 20%;
-    top: 20%;
+    top: 12%;
     
     
 }
 #Config{
     position: absolute;
-    top: 26%;
-    width: 63.5%;
+    top: 18%;
+    width: 63.55%;
     left: 18.2%;
     
     
