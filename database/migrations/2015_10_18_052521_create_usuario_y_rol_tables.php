@@ -25,6 +25,7 @@ class CreateUsuarioYRolTables extends Migration
 	    $table->string('username', 64);
 	    $table->string('password', 64);
 	    $table->string('nombre', 64);
+	    $table->integer('estado')->unsigned()->default(0);
 	    $table->integer('rol_id')->unsigned()->default(0);
 	    $table->foreign('rol_id')->references('id')->on('rol')->onDelete('cascade');
             $table->timestamps();
