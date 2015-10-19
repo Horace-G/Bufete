@@ -52,7 +52,7 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
     
 	var request = {
 			method: 'POST',
-			url: "http://fia.unitec.edu:8082/Bufete/index.php/savePresentacionComercial",
+			url: "http://127.0.0.1/Bufete/index.php/savePresentacionComercial",
 			data: {namePresentacionComercial: 'Hola'}
 	};
 	$http(request).then(function(response){
@@ -63,24 +63,57 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
     
 }]);
 
-myApp.controller('presentacion_comercial', function ($scope, $http) {
 
-$scope.click_presentacioncomenrcial = function () {
+myApp.controller('presentacion_comercial', ['$scope', function ($scope) {
 
-
-var request = $http({
-    method: "POST",
-    url: "127.0.0.1/Bufete/index.php/savePresentacionComercial",
-    data: {
-        email: $scope.email,
-        pass: $scope.password
-    }
-});
+$scope.submit = function () {
 
 
-}
-});
+alert('Presentacion Comercial');
 
+
+};
+}]);
+myApp.controller('modalidad_venta', ['$scope', function ($scope) {
+
+$scope.submit = function () {
+
+
+alert('Modalidad Venta');
+
+
+};
+}]);
+myApp.controller('categoria', ['$scope', function ($scope) {
+
+$scope.submit = function () {
+
+
+alert('Categoria');
+
+
+};
+}]);
+myApp.controller('ciclo_vida', ['$scope', function ($scope) {
+
+$scope.submit = function () {
+
+
+alert('Ciclo de Vida');
+
+
+};
+}]);
+myApp.controller('via_administracion', ['$scope', function ($scope) {
+
+$scope.submit = function () {
+
+
+alert('via administracion');
+
+
+};
+}]);
 myApp.directive('buffetNav', [function() {
   return {
       templateUrl : 'public/buffetnavbar.html'

@@ -27,8 +27,8 @@
       <div class="collapsible-body popup-element">
       
          <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva presentación comercial</h3>
-          <div class="row" ng-controller="presentacion_comercial">
-            <form class="col s12 simple-form">
+          <div class="row">
+            <form class="col s12" ng-submit="submit()"ng-controller="presentacion_comercial">
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -41,11 +41,12 @@
                   <label for="descripcionPresentacionComercial">Breve descripción de ésta nueva presentación comercial</label>
                  </div>
                   <div class="col s9 right-align">
-                  <button ng-click="click_presentacioncomercial()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
                 </div>
                   
                </div>
           </form>
+              
         </div>
           
       </div>
@@ -56,7 +57,7 @@
       
         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva modalidad de ventas</h3>
           <div class="row">
-            <form class="col s12">
+            <form class="col s12" ng-submit="submit()" ng-controller="modalidad_venta">
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -69,7 +70,7 @@
                   <label for="descripcionModalidadDeVenta">Breve descripción de ésta nueva modalidad de venta</label>
                  </div>
                   <div class="col s9 right-align">
-                  <button ng-click="click_ModalidadVenta()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
                   </div>
                </div>
           </form>
@@ -83,7 +84,7 @@
       
            <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva categoria de medicamento</h3>
           <div class="row">
-            <form class="col s12">
+            <form class="col s12" ng-submit="submit()" ng-controller="categoria">
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -96,7 +97,7 @@
                   <label for="descripcionCategoria">Ingrese una breve descripción sobre la nueva categoría</label>
                  </div>
                   <div class="col s9 right-align">
-                  <button ng-click="click_Categoria()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
                   </div>
                </div>
           </form>
@@ -110,7 +111,7 @@
       
            <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo estado de ciclo de vida en el proceso de legalización</h3>
           <div class="row">
-            <form class="col s12">
+            <form class="col s12" ng-submit="submit()" ng-controller="ciclo_vida">
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -123,7 +124,7 @@
                   <label for="descripcionCicloDeVida">Ingrese una breve descripción del nuevo paso en el ciclo de vida </label>
                  </div>
                   <div class="col s9 right-align">
-                  <button ng-click="click_CicloVida()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
                   </div>
                </div>
           </form>
@@ -137,7 +138,7 @@
       
            <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva vía de administración del medicamento</h3>
           <div class="row">
-            <form class="col s12">
+            <form class="col s12" ng-submit="submit()" ng-controller="via_administracion">
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -150,7 +151,7 @@
                   <label for="descripcionViaAdministracion">Ingrese una breve descripción sobre la nueva vía de administración</label>
                  </div>
                  <div class="col s9 right-align">
-                  <button ng-click="click_ModalidadVenta()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
                   </div> 
                </div>
           </form>
