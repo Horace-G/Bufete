@@ -91,7 +91,7 @@ var request = {
 
 };
 }]);
-myApp.controller('categoria', ['$scope','$http' function ($scope,$http) {
+myApp.controller('categoria', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
 var request = {
@@ -108,7 +108,7 @@ var request = {
 
 };
 }]);
-myApp.controller('ciclo_vida', ['$scope','$http' function ($scope,$http) {
+myApp.controller('ciclo_vida', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
 var request = {
@@ -126,7 +126,7 @@ $http(request).then(function(response){
         
 };
 }]);
-myApp.controller('via_administracion', ['$scope','$http' function ($scope,$http) {
+myApp.controller('via_administracion', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
 var request = {
