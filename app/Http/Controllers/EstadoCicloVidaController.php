@@ -18,7 +18,7 @@
 			DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 			DB::table('ciclo_vida')->insert(
 				array('nombre'=>$namePC, 'descripcion'=>$descPC, 'estado'=>$estadoPC,
-						'created_at'=>$date,'updated_at'=>$date,'user_created'=>$userCreate,'user_updated'=>$userCreate);
+						'created_at'=>$date,'updated_at'=>$date,'user_created'=>$userCreate,'user_updated'=>$userCreate)
 			);
 			
 			return Response::json(array('Success' => 'true'));
