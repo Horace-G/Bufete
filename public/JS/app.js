@@ -52,7 +52,7 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
     
 	var request = {
 			method: 'POST',
-			url: "http://127.0.0.1/Bufete/index.php/savePresentacionComercial",
+			url: "http://fia.unitec.edu:8082/Bufete/index.php/savePresentacionComercial",
 			data: {namePresentacionComercial: 'Hola'}
 	};
 	$http(request).then(function(response){
@@ -67,9 +67,14 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
 myApp.controller('presentacion_comercial', ['$scope', function ($scope) {
 
 $scope.submit = function () {
+var request = {
+			method: 'POST',
+			url: "http://fia.unitec.edu:8082/Bufete/index.php/savePresentacionComercial",
+			data: {namePresentacionComercial: $scope.nombre, descriptionPresentacionComercial: $scope.descripcion, userPresentacionComercial: '1234', estadoPresentacionComercial: '1'}
+	};
+          $scope.nombre = '';
+          $scope.descripcion='';
 
-
-alert('Presentacion Comercial');
 
 
 };
@@ -77,41 +82,54 @@ alert('Presentacion Comercial');
 myApp.controller('modalidad_venta', ['$scope', function ($scope) {
 
 $scope.submit = function () {
-
-
-alert('Modalidad Venta');
-
+var request = {
+			method: 'POST',
+			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveModalidadVenta",
+			data: {nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, userModalidadVente: '1234', estadoModalidadVenta: '1'}
+	};
+          $scope.nombre = '';
+          $scope.descripcion='';
 
 };
 }]);
 myApp.controller('categoria', ['$scope', function ($scope) {
 
 $scope.submit = function () {
-
-
-alert('Categoria');
-
+var request = {
+			method: 'POST',
+			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveCategoriaMedicamento",
+			data: {nameCategoriaMedicamento: $scope.nombre, descriptionCategoriaMedicamento: $scope.descripcion, userCategoriaMedicamento: '1234', estadoCategoriaMedicamento: '1'}
+	};
+          $scope.nombre = '';
+          $scope.descripcion='';
 
 };
 }]);
 myApp.controller('ciclo_vida', ['$scope', function ($scope) {
 
 $scope.submit = function () {
+var request = {
+			method: 'POST',
+			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveCicloVida",
+			data: {nameCicloVida: $scope.nombre, descriptionCicloVida: $scope.descripcion, userCicloVida: '1234', estadoCicloVida: '1'}
+	};
 
 
-alert('Ciclo de Vida');
-
-
+          $scope.nombre = '';
+          $scope.descripcion='';
+        
 };
 }]);
 myApp.controller('via_administracion', ['$scope', function ($scope) {
 
 $scope.submit = function () {
-
-
-alert('via administracion');
-
-
+var request = {
+			method: 'POST',
+			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveViaAdministracion",
+			data: {nameViaAdministracion: $scope.nombre, descriptionViaAdministracion: $scope.descripcion, userViaAdministracion: '1234', estadoViaAdministracion: '1'}
+	};
+          $scope.nombre = '';
+          $scope.descripcion='';
 };
 }]);
 myApp.directive('buffetNav', [function() {
