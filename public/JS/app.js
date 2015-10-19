@@ -67,7 +67,7 @@ myApp.controller('presentacion_comercial', ['$scope','$http', function ($scope,$
 
 $scope.submit = function () {
     if($scope.nombre.length>64||$scope.descripcion.length>128){
-        alert('Error');   
+        alert('Datos ingresados no coinciden con la longitud');   
     }else{
 	var request = {
 			method: 'POST',
@@ -79,6 +79,7 @@ $scope.submit = function () {
 		alert('Guardado exitosamente')
 	});
     }
+
           $scope.nombre = '';
           $scope.descripcion='';
 
@@ -89,8 +90,8 @@ $scope.submit = function () {
 myApp.controller('modalidad_venta', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
-    if($scope.nombre.length>5||$scope.descripcion.length>5){
-        alert('Error');   
+    if($scope.nombre.length>64||$scope.descripcion.length>128){
+        alert('Datos ingresados no coinciden con la longitud');   
     }else{
 var request = {
 			method: 'POST',
@@ -110,6 +111,9 @@ var request = {
 myApp.controller('categoria', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
+    if($scope.nombre.length>64||$scope.descripcion.length>128){
+        alert('Datos ingresados no coinciden con la longitud');   
+    }else{
 var request = {
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveCategoriaMedicamento",
@@ -119,6 +123,7 @@ var request = {
 		console.log(response.data.success);
 		alert('Guardado exitosamente')
 	});
+    }
           $scope.nombre = '';
           $scope.descripcion='';
 
@@ -127,6 +132,9 @@ var request = {
 myApp.controller('ciclo_vida', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
+    if($scope.nombre.length>64||$scope.descripcion.length>128){
+        alert('Datos ingresados no coinciden con la longitud');   
+    }else{
 var request = {
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveEstadoCicloVida",
@@ -136,7 +144,7 @@ $http(request).then(function(response){
 		console.log(response.data.success);
 		alert('Guardado exitosamente')
 	});
-
+    }
           $scope.nombre = '';
           $scope.descripcion='';
         
@@ -145,6 +153,9 @@ $http(request).then(function(response){
 myApp.controller('via_administracion', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
+    if($scope.nombre.length>64||$scope.descripcion.length>128){
+        alert('Datos ingresados no coinciden con la longitud');   
+    }else{
 var request = {
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveViaAdministracion",
@@ -154,6 +165,7 @@ var request = {
 		console.log(response.data.success);
 		alert('Guardado exitosamente')
 	});
+    }
           $scope.nombre = '';
           $scope.descripcion='';
 };
@@ -161,6 +173,9 @@ var request = {
 myApp.controller('Creacion_Rol', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
+    if($scope.nombre.length>64||$scope.descripcion.length>128){
+        alert('Datos ingresados no coinciden con la longitud');   
+    }else{
 var request = {
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveRol",
@@ -170,6 +185,7 @@ var request = {
 		console.log(response.data.success);
 		alert('Guardado exitosamente')
 	});
+    }
           $scope.nombre = '';
           $scope.descripcion='';
 };
