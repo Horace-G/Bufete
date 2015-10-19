@@ -1,0 +1,26 @@
+<menu-usuarios></menu-usuarios>
+      <div id="agregarRol">
+      
+         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo Rol</h3>
+          <div class="row">
+            <form class="col s12" ng-submit="submit()"ng-controller="Creacion_Rol">
+              <div class="row">
+             <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="nombrePresentacionComercial" type="text" class="validate"ng-model="nombre" name="nombre" ng-maxlength="64" required ng-pattern="/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/" >
+                  <label for="nombrePresentacionComercial">Nombre del Rol</label>
+                </div>
+                 <div class="input-field col s9">
+                  <i class="material-icons prefix">description</i>
+                  <textarea id="descripcionPresentacionComercial" class="materialize-textarea"ng-model="descripcion" name="descripcion" ng-maxlength="128" required ng-pattern="/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/"></textarea>
+                  <label for="descripcionPresentacionComercial">Breve descripción del Rol</label>
+                 </div>
+                  <div class="col s9 right-align">
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                </div>
+                  
+               </div>
+          </form>
+              
+        </div>
+      </div>

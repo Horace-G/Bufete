@@ -18,6 +18,10 @@ myApp.config(function ($routeProvider) {
         templateUrl: 'public/views/configuracion.html',
         controller: 'mainController'
     })
+    .when('/crearRol', {
+        templateUrl: 'public/views/crearRol.html',
+        controller: 'mainController'
+    })
     
      .when('/crearExpediente', {
         templateUrl: 'public/views/crearExpediente.html',
@@ -142,6 +146,22 @@ var request = {
           $scope.descripcion='';
 };
 }]);
+myApp.controller('Creacion_Rol', ['$scope','$http', function ($scope,$http) {
+
+$scope.submit = function () {
+var request = {
+			method: 'POST',
+			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveRolController",
+			data: {nombreRol: $scope.nombre, descriptionRol: $scope.descripcion, estadoRol: '1'}
+	};
+	$http(request).then(function(response){
+		console.log(response.data.success);
+		alert('Guardado exitosamente')
+	});
+          $scope.nombre = '';
+          $scope.descripcion='';
+};
+}]);
 myApp.directive('buffetNav', [function() {
   return {
       templateUrl : 'public/buffetnavbar.html'
@@ -151,5 +171,10 @@ myApp.directive('buffetNav', [function() {
 myApp.directive('medicamentosMenu', [function() {
   return {
       templateUrl : 'public/views/medicamentos.html'
+  }
+}]);
+myApp.directive('menuUsuarios', [function() {
+  return {
+      templateUrl : 'public/views/menuusuarios.html'
   }
 }]);
