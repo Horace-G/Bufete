@@ -66,6 +66,9 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
 myApp.controller('presentacion_comercial', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
+    if($scope.nombre.length>64||$scope.descripcion.length>128){
+        alert('Error');   
+    }else{
 	var request = {
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/index.php/savePresentacionComercial",
@@ -75,6 +78,7 @@ $scope.submit = function () {
 		console.log(response.data.success);
 		alert('Guardado exitosamente')
 	});
+    }
           $scope.nombre = '';
           $scope.descripcion='';
 
@@ -85,6 +89,9 @@ $scope.submit = function () {
 myApp.controller('modalidad_venta', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
+    if($scope.nombre.length>5||$scope.descripcion.length>5){
+        alert('Error');   
+    }else{
 var request = {
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveModalidadVenta",
@@ -94,6 +101,7 @@ var request = {
 		console.log(response.data.success);
 		alert('Guardado exitosamente')
 	});
+    }
           $scope.nombre = '';
           $scope.descripcion='';
 
