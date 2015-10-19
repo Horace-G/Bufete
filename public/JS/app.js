@@ -66,9 +66,14 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
 myApp.controller('presentacion_comercial', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
-    if($scope.nombre.length>64||$scope.descripcion.length>128){
+    
+    $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
+    
+    if($scope.nombre.length>10||$scope.descripcion.length>10){
         alert('Datos ingresados no coinciden con la longitud');   
-    }else{
+    }else if($scope.symbols.test($scope.nombre)){
+        alert("Datos ingresados contienen caracteres no validos");
+    }{
 	var request = {
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/index.php/savePresentacionComercial",
