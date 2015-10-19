@@ -16,6 +16,7 @@ class RolController extends Controller
                         $estadoR = $request->input('estadoRol');
                         $date = Carbon::now();
 
+						DB::statement('SET FOREIGN_KEY_CHECKS=0;');
                         DB::table('rol')->insert(
                                 array('nombre'=>$nombreR, 'descripcion'=>$descR, 'estado'=>$estadoR,
                                                 'created_at'=>$date,'updated_at'=>$date)

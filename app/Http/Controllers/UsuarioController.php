@@ -18,6 +18,7 @@ class UsuarioController extends Controller
 			$estadoU = $request->input('estadoUsuario');
 			$rol_idU = $request->input('rol_idUsuario');
                         $date = Carbon::now();
+						DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
                         DB::table('usuario')->insert(
                                 array('username'=>$usernameU, 'password'=>$passwordU, 'nombre'=>$nombreU, 'estado'=>$estadoU, 'rol_id'=>$rol_idU,

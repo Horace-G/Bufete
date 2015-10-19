@@ -114,7 +114,7 @@ $scope.submit = function () {
 var request = {
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveCicloVida",
-			data: {nameCicloVida: $scope.nombre, descriptionCicloVida: $scope.descripcion, userCicloVida: '1234', estadoCicloVida: '1'}
+			data: {nameEstadoCicloVida: $scope.nombre, descriptionEstadoCicloVida: $scope.descripcion, userEstadoCicloVida: '1234', estadoEstadoCicloVida: '1'}
 	};
 $http(request).then(function(response){
 		console.log(response.data.success);
