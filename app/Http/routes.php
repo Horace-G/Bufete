@@ -28,3 +28,11 @@ Route::post('/savePresentacionComercial','PresentacionComercialController@savePr
 Route::post('/saveModalidadVenta','ModalidadVentaController@saveModalidadVenta');
 
 Route::post('/saveCategoriaMedicamento','CategoriaMedicamentoController@saveCategoriaMedicamento');
+
+Route::post('/saveUsuario', 'UsuarioController@saveUsuario');
+
+Route::post('/saveRol', 'RolController@saveRol');
+
+Route::post('/saveEstadoCicloVida','EstadoCicloVidaController@saveEstadoCicloVida');
+
+Route::post('/saveViaAdministracion','ViaAdministracionController@saveViaAdministracion');
