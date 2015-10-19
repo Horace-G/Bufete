@@ -88,7 +88,7 @@ $scope.submit = function () {
 var request = {
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveModalidadVenta",
-			data: {nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, userModalidadVente: '1234', estadoModalidadVenta: '1'}
+			data: {nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, userModalidadVenta: '1234', estadoModalidadVenta: '1'}
 	};
 	$http(request).then(function(response){
 		console.log(response.data.success);
@@ -121,7 +121,7 @@ myApp.controller('ciclo_vida', ['$scope','$http', function ($scope,$http) {
 $scope.submit = function () {
 var request = {
 			method: 'POST',
-			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveCicloVida",
+			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveEstadoCicloVida",
 			data: {nameEstadoCicloVida: $scope.nombre, descriptionEstadoCicloVida: $scope.descripcion, userEstadoCicloVida: '1234', estadoEstadoCicloVida: '1'}
 	};
 $http(request).then(function(response){

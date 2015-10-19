@@ -16,7 +16,7 @@
 			$date = Carbon::now();
 			
 			DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-			DB::table('categoria_medicamento')->insert(
+			DB::table('categoria')->insert(
 				array('nombre'=>$namePC, 'descripcion'=>$descPC, 'estado'=>$estadoPC,
 						'created_at'=>$date,'updated_at'=>$date,'user_created'=>$userCreate,'user_updated'=>$userCreate)
 			);
@@ -25,7 +25,7 @@
 		}
 		
 		public function allCategoriaMedicamento(){
-			$retVal = DB::table('categoria_medicamento')->get();
+			$retVal = DB::table('categoria')->get();
 			return Response::json($retVal);
 		}
 	}
