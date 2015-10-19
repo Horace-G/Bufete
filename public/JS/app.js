@@ -65,8 +65,7 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
 
 myApp.controller('presentacion_comercial', ['$scope','$http', function ($scope,$http) {
 
-          $scope.nombre = '';
-          $scope.descripcion='';
+ 
 
     
 $scope.submit = function () {
