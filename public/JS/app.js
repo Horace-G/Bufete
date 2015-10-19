@@ -22,6 +22,10 @@ myApp.config(function ($routeProvider) {
         templateUrl: 'public/views/crearRol.html',
         controller: 'mainController'
     })
+    .when('/crearUsuario', {
+        templateUrl: 'public/views/crearusuario.html',
+        controller: 'mainController'
+    })
     
      .when('/crearExpediente', {
         templateUrl: 'public/views/crearExpediente.html',
@@ -151,7 +155,7 @@ myApp.controller('Creacion_Rol', ['$scope','$http', function ($scope,$http) {
 $scope.submit = function () {
 var request = {
 			method: 'POST',
-			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveRolController",
+			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveRol",
 			data: {nombreRol: $scope.nombre, descriptionRol: $scope.descripcion, estadoRol: '1'}
 	};
 	$http(request).then(function(response){
