@@ -55,7 +55,7 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
 }]);
 
 
-myApp.controller('presentacion_comercial', ['$scope', function ($scope) {
+myApp.controller('presentacion_comercial', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
 	var request = {
@@ -74,7 +74,7 @@ $scope.submit = function () {
 
 };
 }]);
-myApp.controller('modalidad_venta', ['$scope', function ($scope) {
+myApp.controller('modalidad_venta', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
 var request = {
@@ -91,7 +91,7 @@ var request = {
 
 };
 }]);
-myApp.controller('categoria', ['$scope', function ($scope) {
+myApp.controller('categoria', ['$scope','$http' function ($scope,$http) {
 
 $scope.submit = function () {
 var request = {
@@ -108,7 +108,7 @@ var request = {
 
 };
 }]);
-myApp.controller('ciclo_vida', ['$scope', function ($scope) {
+myApp.controller('ciclo_vida', ['$scope','$http' function ($scope,$http) {
 
 $scope.submit = function () {
 var request = {
@@ -126,7 +126,7 @@ $http(request).then(function(response){
         
 };
 }]);
-myApp.controller('via_administracion', ['$scope', function ($scope) {
+myApp.controller('via_administracion', ['$scope','$http' function ($scope,$http) {
 
 $scope.submit = function () {
 var request = {
