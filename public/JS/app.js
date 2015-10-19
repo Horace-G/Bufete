@@ -69,11 +69,13 @@ $scope.submit = function () {
     
     $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
     
-    if($scope.nombre.length>10||$scope.descripcion.length>10){
-        alert('Datos ingresados no coinciden con la longitud');   
+    if($scope.nombre.length>64||$scope.descripcion.length>128){
+        alert('Datos ingresados no coinciden con la longitud'); 
+        return;
     }else if($scope.symbols.test($scope.nombre)){
         alert("Datos ingresados contienen caracteres no validos");
-    }{
+        return;
+    }else{
 	var request = {
 			method: 'POST',
 			url: "http://fia.unitec.edu:8082/Bufete/index.php/savePresentacionComercial",
@@ -96,7 +98,11 @@ myApp.controller('modalidad_venta', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
     if($scope.nombre.length>64||$scope.descripcion.length>128){
-        alert('Datos ingresados no coinciden con la longitud');   
+        alert('Datos ingresados no coinciden con la longitud'); 
+        return;
+    }else if($scope.symbols.test($scope.nombre)){
+        alert("Datos ingresados contienen caracteres no validos");
+        return;
     }else{
 var request = {
 			method: 'POST',
@@ -117,7 +123,11 @@ myApp.controller('categoria', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
     if($scope.nombre.length>64||$scope.descripcion.length>128){
-        alert('Datos ingresados no coinciden con la longitud');   
+        alert('Datos ingresados no coinciden con la longitud'); 
+        return;
+    }else if($scope.symbols.test($scope.nombre)){
+        alert("Datos ingresados contienen caracteres no validos");
+        return;
     }else{
 var request = {
 			method: 'POST',
@@ -138,7 +148,11 @@ myApp.controller('ciclo_vida', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
     if($scope.nombre.length>64||$scope.descripcion.length>128){
-        alert('Datos ingresados no coinciden con la longitud');   
+        alert('Datos ingresados no coinciden con la longitud'); 
+        return;
+    }else if($scope.symbols.test($scope.nombre)){
+        alert("Datos ingresados contienen caracteres no validos");
+        return;
     }else{
 var request = {
 			method: 'POST',
@@ -159,7 +173,11 @@ myApp.controller('via_administracion', ['$scope','$http', function ($scope,$http
 
 $scope.submit = function () {
     if($scope.nombre.length>64||$scope.descripcion.length>128){
-        alert('Datos ingresados no coinciden con la longitud');   
+        alert('Datos ingresados no coinciden con la longitud'); 
+        return;
+    }else if($scope.symbols.test($scope.nombre)){
+        alert("Datos ingresados contienen caracteres no validos");
+        return;
     }else{
 var request = {
 			method: 'POST',
@@ -179,7 +197,11 @@ myApp.controller('Creacion_Rol', ['$scope','$http', function ($scope,$http) {
 
 $scope.submit = function () {
     if($scope.nombre.length>64||$scope.descripcion.length>128){
-        alert('Datos ingresados no coinciden con la longitud');   
+        alert('Datos ingresados no coinciden con la longitud'); 
+        return;
+    }else if($scope.symbols.test($scope.nombre)){
+        alert("Datos ingresados contienen caracteres no validos");
+        return;
     }else{
 var request = {
 			method: 'POST',
