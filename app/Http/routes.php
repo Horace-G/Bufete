@@ -37,4 +37,4 @@ Route::post('/saveEstadoCicloVida','EstadoCicloVidaController@saveEstadoCicloVid
 
 Route::post('/saveViaAdministracion','ViaAdministracionController@saveViaAdministracion');
 
-Route::post('/saveMensaje', 'MensajeController@saveMensaje');
+Route::get('/allMensaje','MensajeController@allMensaje');

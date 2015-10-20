@@ -3,7 +3,7 @@ angular.module('myApp').controller('presentacion_comercial', ['$scope','$http','
  
 $scope.nombre = '';
 $scope.descripcion = '';
-$scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$ /");    
+$scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");    
 $scope.submit = function () {
     
     
@@ -11,7 +11,7 @@ $scope.submit = function () {
      if($scope.nombre.length>64||$scope.descripcion.length>128){
         toastr.error("Error de Longitud");
         return;
-    }else if($scope.symbols.test($scope.nombre)){
+    }else if($scope.symbols.test($scope.nombre) || $scope.symbols.test($scope.descripcion)){
         toastr.error("Error de Symbolos");
         return;
     }else{
