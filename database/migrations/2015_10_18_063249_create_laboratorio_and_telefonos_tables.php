@@ -22,7 +22,7 @@ class CreateLaboratorioAndTelefonosTables extends Migration
             $table->foreign('user_created')->references('id')->on('usuario')->onDelete('cascade');
             $table->integer('user_updated')->unsigned();
             $table->foreign('user_updated')->references('id')->on('usuario')->onDelete('cascade');
-	    $table->integer('estado')->unsigned()->default(0);
+	    $table->integer('estado')->unsigned()->default(1);
             $table->timestamps();
         });
 
