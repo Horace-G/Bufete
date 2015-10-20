@@ -6,9 +6,10 @@ angular.module('myApp').controller('Creacion_Rol', ['$scope','$http','$location'
     
 $scope.submit = function () {
      if($scope.nombre.length==0){
-        toastr.error("(1) Error","Descripcion no puede ser vacio");
-    }else if($scope.nombre.length==0){
         toastr.error("(1) Error","Nombre no puede ser vacio");
+         
+    }else if($scope.descripcion.length==0){
+        toastr.error("(1) Error","Descripcion no puede ser vacio");
     }else if($scope.nombre.length>64||$scope.descripcion.length>128){
         toastr.error("(1) ha exedido del tamaño maximo");
         return;
