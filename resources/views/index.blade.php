@@ -19,6 +19,9 @@
         </style>
         
         <!-- load JQuery, angular and materialize JS via CDN -->
+        <script src="./controllers/app.js"></script>
+        
+        <script src="./controllers/mainController.js"></script>
         <script src="./public/JS/jquery-1.9.1.min.js"></script>
         <script src="./public/JS/materialize/js/materialize.min.js"></script>
         <script src="./public/JS/angular.min.js"></script>
@@ -26,10 +29,9 @@
         <script src="./controllers/categoria.js"></script>
         <script src="./controllers/ciclo_vida.js"></script>
         <script src="./controllers/creacion_rol.js"></script>
-        <script src="./controllers/mainController.js"></script>
         <script src="./controllers/modalidad_venta.js"></script>
         <script src="./controllers/presentacion_comercial.js"></script>
-        <script src="./controllers/app.js"></script>
+        
         <script src="./controllers/secondController.js"></script>
         <script src="./controllers/via_administracion.js"></script>
         

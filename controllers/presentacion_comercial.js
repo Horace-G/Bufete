@@ -22,6 +22,7 @@ $scope.submit = function () {
 
 		//Creating the baseUrl
 		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/savePresentacionComercial';
+		console.log(baseUrl);
 	var request = {
 			method: 'POST',
 			url: baseUrl,
