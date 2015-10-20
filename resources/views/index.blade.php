@@ -29,6 +29,7 @@
         <script src="./controllers/mainController.js"></script>
         <script src="./controllers/modalidad_venta.js"></script>
         <script src="./controllers/presentacion_comercial.js"></script>
+        <script src="./controllers/app.js"></script>
         <script src="./controllers/secondController.js"></script>
         <script src="./controllers/via_administracion.js"></script>
         

@@ -22,7 +22,7 @@ var request = {
 	};
 $http(request).then(function(response){
 		console.log(response.data.success);
-		alert('Guardado exitosamente')
+		alert('Guardado exitosamente');
 		$scope.nombre = '';
 $scope.descripcion = '';
 	});
