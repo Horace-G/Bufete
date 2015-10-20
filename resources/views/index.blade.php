@@ -23,7 +23,15 @@
         <script src="./public/JS/materialize/js/materialize.min.js"></script>
         <script src="./public/JS/angular.min.js"></script>
         <script src="./public/JS/angular-route.min.js"></script>
-        <script src="./public/JS/app.js"></script>
+        <script src="./controllers/categoria.js"></script>
+        <script src="./controllers/ciclo_vida.js"></script>
+        <script src="./controllers/creacion_rol.js"></script>
+        <script src="./controllers/mainController.js"></script>
+        <script src="./controllers/modalidad_venta.js"></script>
+        <script src="./controllers/presentacion_comercial.js"></script>
+        <script src="./controllers/secondController.js"></script>
+        <script src="./controllers/via_administracion.js"></script>
+        
         
     </head>
     <body>
