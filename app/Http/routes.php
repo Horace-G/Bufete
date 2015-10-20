@@ -36,3 +36,5 @@ Route::post('/saveRol', 'RolController@saveRol');
 Route::post('/saveEstadoCicloVida','EstadoCicloVidaController@saveEstadoCicloVida');
 
 Route::post('/saveViaAdministracion','ViaAdministracionController@saveViaAdministracion');
+
+Route::post('/saveMensaje', 'MensajeController@saveMensaje');
