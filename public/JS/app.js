@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute']);
+var myApp = angular.module('myApp', ['ngRoute','ngAnimate','toaster']);
 
 myApp.config(function ($routeProvider) {
     
@@ -63,7 +63,7 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
 }]);
 
 
-myApp.controller('presentacion_comercial', ['$scope','$http', function ($scope,$http) {
+myApp.controller('presentacion_comercial', ['$scope','$http','toaster', function ($scope,$http,toaster) {
 
  
 $scope.nombre = '';
@@ -73,8 +73,17 @@ $scope.submit = function () {
     
     $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
     
+    
+    
+    toaster.pop('success', 'Hello', 'World');
+
+    
+    
+    
+    
     if ($scope.nombre == undefined || $scope.descripcion == undefined){
-		alert('Datos ingresados erroneamente'); 
+            
+		
         return;
 	}else if($scope.nombre.length>64||$scope.descripcion.length>128){
         alert('Datos ingresados no coinciden con la longitud'); 

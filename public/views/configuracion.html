@@ -20,6 +20,7 @@
 
 <medicamentos-menu></medicamentos-menu>
 
+<toaster-container></toaster-container>
  <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
      <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Medicamentos: Configuración</h4><h6 class="flow-text brown-text lighten-3"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
     <li collection-item id="Config-li">
@@ -29,6 +30,7 @@
          <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva presentación comercial</h3>
           <div class="row">
             <form class="col s12" ng-submit="submit()"ng-controller="presentacion_comercial">
+                <toaster-container toaster-options="{'time-out': 3000, 'close-button':true}"></toaster-container>
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
