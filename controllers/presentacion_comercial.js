@@ -8,7 +8,11 @@ $scope.submit = function () {
     
     
     
-     if($scope.nombre.length>64||$scope.descripcion.length>128){
+     if($scope.nombre.length==0){
+        toastr.error("(1) Error","Descripcion no puede ser vacio");
+    }else if($scope.nombre.length==0){
+        toastr.error("(1) Error","Nombre no puede ser vacio");
+    }else if($scope.nombre.length>64||$scope.descripcion.length>128){
         toastr.error("(1) ha exedido del tamaño maximo");
         return;
     }else if($scope.symbols.test($scope.nombre) || $scope.symbols.test($scope.descripcion)){
