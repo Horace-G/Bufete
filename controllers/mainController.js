@@ -1,4 +1,4 @@
-angular.module('myApp')myApp.controller('mainController', ['$scope', '$log', function($scope, $log) {
+angular.module('myApp').controller('mainController', ['$scope', '$log', function($scope, $log) {
     
     $scope.name = 'Main';
     
