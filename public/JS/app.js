@@ -66,13 +66,17 @@ myApp.controller('secondController', ['$scope', '$log', '$routeParams','$http', 
 myApp.controller('presentacion_comercial', ['$scope','$http', function ($scope,$http) {
 
  
-
+$scope.nombre = '';
+$scope.descripcion = '';
     
 $scope.submit = function () {
     
     $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
     
-    if($scope.nombre.length>64||$scope.descripcion.length>128){
+    if ($scope.nombre == undefined || $scope.descripcion == undefined){
+		alert('Datos ingresados erroneamente'); 
+        return;
+	}else if($scope.nombre.length>64||$scope.descripcion.length>128){
         alert('Datos ingresados no coinciden con la longitud'); 
         return;
     }else if($scope.symbols.test($scope.nombre)){
@@ -87,6 +91,8 @@ $scope.submit = function () {
 	$http(request).then(function(response){
 		console.log(response.data.success);
 		alert('Guardado exitosamente')
+		$scope.nombre = '';
+		$scope.descripcion = '';
 	});
     }
 
@@ -100,7 +106,10 @@ myApp.controller('modalidad_venta', ['$scope','$http', function ($scope,$http) {
           $scope.descripcion='';
 
 $scope.submit = function () {
-    if($scope.nombre.length>64||$scope.descripcion.length>128){
+    if ($scope.nombre == undefined || $scope.descripcion == undefined){
+		alert('Datos ingresados erroneamente'); 
+        return;
+	}else if($scope.nombre.length>64||$scope.descripcion.length>128){
         alert('Datos ingresados no coinciden con la longitud'); 
         return;
     }else if($scope.symbols.test($scope.nombre)){
@@ -115,6 +124,8 @@ var request = {
 	$http(request).then(function(response){
 		console.log(response.data.success);
 		alert('Guardado exitosamente')
+		$scope.nombre = '';
+$scope.descripcion = '';
 	});
     }
           
@@ -126,7 +137,10 @@ myApp.controller('categoria', ['$scope','$http', function ($scope,$http) {
           $scope.descripcion='';
     
 $scope.submit = function () {
-    if($scope.nombre.length>64||$scope.descripcion.length>128){
+    if ($scope.nombre == undefined || $scope.descripcion == undefined){
+		alert('Datos ingresados erroneamente'); 
+        return;
+	}else if($scope.nombre.length>64||$scope.descripcion.length>128){
         alert('Datos ingresados no coinciden con la longitud'); 
         return;
     }else if($scope.symbols.test($scope.nombre)){
@@ -141,6 +155,8 @@ var request = {
 	$http(request).then(function(response){
 		console.log(response.data.success);
 		alert('Guardado exitosamente')
+		$scope.nombre = '';
+$scope.descripcion = '';
 	});
     }
          
@@ -153,7 +169,10 @@ myApp.controller('ciclo_vida', ['$scope','$http', function ($scope,$http) {
           $scope.descripcion='';
     
 $scope.submit = function () {
-    if($scope.nombre.length>64||$scope.descripcion.length>128){
+    if ($scope.nombre == undefined || $scope.descripcion == undefined){
+		alert('Datos ingresados erroneamente'); 
+        return;
+	}else if($scope.nombre.length>64||$scope.descripcion.length>128){
         alert('Datos ingresados no coinciden con la longitud'); 
         return;
     }else if($scope.symbols.test($scope.nombre)){
@@ -168,6 +187,8 @@ var request = {
 $http(request).then(function(response){
 		console.log(response.data.success);
 		alert('Guardado exitosamente')
+		$scope.nombre = '';
+$scope.descripcion = '';
 	});
     }
           
@@ -180,7 +201,10 @@ myApp.controller('via_administracion', ['$scope','$http', function ($scope,$http
           $scope.descripcion='';
     
 $scope.submit = function () {
-    if($scope.nombre.length>64||$scope.descripcion.length>128){
+    if ($scope.nombre == undefined || $scope.descripcion == undefined){
+		alert('Datos ingresados erroneamente'); 
+        return;
+	}else if($scope.nombre.length>64||$scope.descripcion.length>128){
         alert('Datos ingresados no coinciden con la longitud'); 
         return;
     }else if($scope.symbols.test($scope.nombre)){
@@ -194,7 +218,9 @@ var request = {
 	};
 	$http(request).then(function(response){
 		console.log(response.data.success);
-		alert('Guardado exitosamente')
+		alert('Guardado exitosamente');
+		$scope.nombre = '';
+$scope.descripcion = '';
 	});
     }
           
@@ -206,7 +232,10 @@ myApp.controller('Creacion_Rol', ['$scope','$http', function ($scope,$http) {
           $scope.descripcion='';
     
 $scope.submit = function () {
-    if($scope.nombre.length>64||$scope.descripcion.length>128){
+    if ($scope.nombre == undefined || $scope.descripcion == undefined){
+		alert('Datos ingresados erroneamente'); 
+        return;
+	}else if($scope.nombre.length>64||$scope.descripcion.length>128){
         alert('Datos ingresados no coinciden con la longitud'); 
         return;
     }else if($scope.symbols.test($scope.nombre)){
@@ -220,7 +249,9 @@ var request = {
 	};
 	$http(request).then(function(response){
 		console.log(response.data.success);
-		alert('Guardado exitosamente')
+		alert('Guardado exitosamente');
+		$scope.nombre = '';
+$scope.descripcion = '';
 	});
     }
           
