@@ -4,14 +4,11 @@ angular.module('myApp').controller('modalidad_venta', ['$scope','$http','$locati
  $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
 		  
 $scope.submit = function () {
-    if ($scope.nombre == undefined || $scope.descripcion == undefined){
-		alert('Datos ingresados erroneamente'); 
-        return;
-	}else if($scope.nombre.length>64||$scope.descripcion.length>128){
-        alert('Datos ingresados no coinciden con la longitud'); 
+     if($scope.nombre.length>64||$scope.descripcion.length>128){
+        toastr.error("Error de Longitud");
         return;
     }else if($scope.symbols.test($scope.nombre)){
-        alert("Datos ingresados contienen caracteres no validos");
+        toastr.error("Error de Symbolos");
         return;
     }else{
         var path = $location.path($location.path());

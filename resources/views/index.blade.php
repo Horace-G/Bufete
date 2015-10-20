@@ -8,11 +8,11 @@
 
         <!--Materialize CSS via CDN --->
         <link href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet" />
-        <link href="//cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.4/toaster.css" rel="stylesheet" />
+        
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <link href="./public/CSS/styles.css" rel="stylesheet">
-        <link href="./public/CSS/toaster.css" rel="stylesheet">
+        <link href="./public/CSS/toastr.css" rel="stylesheet">
         
         <style>
             html, body, input, select, textarea
@@ -25,34 +25,17 @@
         
         <script src="./public/JS/jquery-1.9.1.min.js"></script>
         <script src="./public/JS/materialize/js/materialize.min.js"></script>
-        
-        <script src="./public/JS/angular.min.js"></script>
-        
+        <script src="./public/JS/angular.min.js"></script> 
         <script src="./public/JS/angular-route.min.js"></script>
-<<<<<<< HEAD
-        <script src="./public/JS/angular-animate.min.js" ></script>
-        <script src="./public/JS/toaster.js"></script>
-        <script src="./public/JS/app.js"></script>
-        
-        
-        
-=======
-        
+        <script src="./public/JS/toastr.js"></script>
+        <script src="./public/JS/angular-route.min.js"></script>
         <script src="./controllers/app.js"></script>
         <script src="./controllers/mainController.js"></script>
->>>>>>> 71aee05117c01b4ea3b2b819df0221f86e42dada
-        
-        
         <script src="./controllers/categoria.js"></script>
         <script src="./controllers/ciclo_vida.js"></script>
         <script src="./controllers/creacion_rol.js"></script>
         <script src="./controllers/modalidad_venta.js"></script>
         <script src="./controllers/presentacion_comercial.js"></script>
-<<<<<<< HEAD
-       
-=======
-        
->>>>>>> 71aee05117c01b4ea3b2b819df0221f86e42dada
         <script src="./controllers/secondController.js"></script>
         <script src="./controllers/via_administracion.js"></script>
         
