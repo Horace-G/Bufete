@@ -104,7 +104,8 @@ $scope.submit = function () {
 myApp.controller('modalidad_venta', ['$scope','$http', function ($scope,$http) {
     $scope.nombre = '';
           $scope.descripcion='';
-
+ $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
+		  
 $scope.submit = function () {
     if ($scope.nombre == undefined || $scope.descripcion == undefined){
 		alert('Datos ingresados erroneamente'); 
@@ -135,6 +136,7 @@ myApp.controller('categoria', ['$scope','$http', function ($scope,$http) {
  
     $scope.nombre = '';
           $scope.descripcion='';
+		   $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
     
 $scope.submit = function () {
     if ($scope.nombre == undefined || $scope.descripcion == undefined){
@@ -167,7 +169,8 @@ myApp.controller('ciclo_vida', ['$scope','$http', function ($scope,$http) {
 
     $scope.nombre = '';
           $scope.descripcion='';
-    
+     $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
+	 
 $scope.submit = function () {
     if ($scope.nombre == undefined || $scope.descripcion == undefined){
 		alert('Datos ingresados erroneamente'); 
@@ -199,7 +202,8 @@ myApp.controller('via_administracion', ['$scope','$http', function ($scope,$http
 
     $scope.nombre = '';
           $scope.descripcion='';
-    
+     $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
+	
 $scope.submit = function () {
     if ($scope.nombre == undefined || $scope.descripcion == undefined){
 		alert('Datos ingresados erroneamente'); 
@@ -230,6 +234,7 @@ myApp.controller('Creacion_Rol', ['$scope','$http', function ($scope,$http) {
     
     $scope.nombre = '';
           $scope.descripcion='';
+		   $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
     
 $scope.submit = function () {
     if ($scope.nombre == undefined || $scope.descripcion == undefined){
@@ -248,7 +253,7 @@ var request = {
 			data: {nombreRol: $scope.nombre, descriptionRol: $scope.descripcion, estadoRol: '1'}
 	};
 	$http(request).then(function(response){
-		console.log(response.data.success);
+		console.log(response.data);
 		alert('Guardado exitosamente');
 		$scope.nombre = '';
 $scope.descripcion = '';
