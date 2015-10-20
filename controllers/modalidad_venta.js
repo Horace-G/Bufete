@@ -5,10 +5,10 @@ angular.module('myApp').controller('modalidad_venta', ['$scope','$http','$locati
 		  
 $scope.submit = function () {
      if($scope.nombre.length>64||$scope.descripcion.length>128){
-        toastr.error("Error de Longitud");
+        toastr.error("(1) ha exedido del tamaño maximo");
         return;
     }else if($scope.symbols.test($scope.nombre) || $scope.symbols.test($scope.descripcion)){
-        toastr.error("Error de Symbolos");
+        toastr.error("(2) se han ingresado caracteres no validos");
         return;
     }else{
         var path = $location.path($location.path());
@@ -22,7 +22,7 @@ var request = {
 	};
 	$http(request).then(function(response){
 		console.log(response.data.success);
-		alert('Guardado exitosamente')
+		toastr.success("Se Agrego la modalidad de venta correctamente");
 		$scope.nombre = '';
 $scope.descripcion = '';
 	});
