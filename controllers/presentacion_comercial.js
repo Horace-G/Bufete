@@ -1,4 +1,4 @@
-angular.module('myApp').controller('presentacion_comercial', ['$scope','$http', function ($scope,$http) {
+angular.module('myApp').controller('presentacion_comercial', ['$scope','$http','$location', function ($scope,$http,$location) {
 
  
 $scope.nombre = '';
@@ -18,9 +18,14 @@ $scope.submit = function () {
         alert("Datos ingresados contienen caracteres no validos");
         return;
     }else{
+        var path = $location.path($location.path());
+
+		//Creating the baseUrl
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/savePresentacionComercial';
+		console.log(baseUrl);
 	var request = {
 			method: 'POST',
-			url: "http://fia.unitec.edu:8082/Bufete/index.php/savePresentacionComercial",
+			url: baseUrl,
 			data: {namePresentacionComercial: $scope.nombre, descriptionPresentacionComercial: $scope.descripcion, userPresentacionComercial: '1234', estadoPresentacionComercial: '1'}
 	};
 	$http(request).then(function(response){

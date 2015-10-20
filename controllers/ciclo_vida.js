@@ -1,4 +1,4 @@
-angular.module('myApp').controller('ciclo_vida', ['$scope','$http', function ($scope,$http) {
+angular.module('myApp').controller('ciclo_vida', ['$scope','$http','$location', function ($scope,$http,$location) {
 
     $scope.nombre = '';
           $scope.descripcion='';
@@ -15,9 +15,13 @@ $scope.submit = function () {
         alert("Datos ingresados contienen caracteres no validos");
         return;
     }else{
+        var path = $location.path($location.path());
+
+		//Creating the baseUrl
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveEstadoCicloVida';
 var request = {
 			method: 'POST',
-			url: "http://fia.unitec.edu:8082/Bufete/index.php/saveEstadoCicloVida",
+			url: baseUrl,
 			data: {nameEstadoCicloVida: $scope.nombre, descriptionEstadoCicloVida: $scope.descripcion, userEstadoCicloVida: '1234', estadoEstadoCicloVida: '1'}
 	};
 $http(request).then(function(response){

@@ -1,3 +1,4 @@
 /node_modules
+.brackets.json
 Homestead.yaml
 Homestead.json
