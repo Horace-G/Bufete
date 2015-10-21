@@ -46,6 +46,8 @@ var request = {
 			url: baseUrl,
 			data: {nameEstadoCicloVida: $scope.nombre, descriptionEstadoCicloVida: $scope.descripcion, userEstadoCicloVida: '1234', estadoEstadoCicloVida: '1'}
 	};
+	
+	
 $http(request).then(function(response){
 		console.log(response.data.success);
 		toastr.success("Se Agrego el ciclo de vida correctamente");

@@ -46,8 +46,8 @@ var request = {
 			url: baseUrl,
 			data: {nameViaAdministracion: $scope.nombre, descriptionViaAdministracion: $scope.descripcion, userViaAdministracion: '1234', estadoViaAdministracion: '1'}
 	};
-	$http(request).then(function(response){
-		console.log(response.data.success);
+	
+	    	$http(request).then(function(response){
 		toastr.success("Se Agrego la via de administracion correctamente");
 		$scope.nombre = '';
 $scope.descripcion = '';
