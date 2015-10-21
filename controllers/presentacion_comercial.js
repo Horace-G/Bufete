@@ -9,12 +9,9 @@ $scope.submit = function () {
     
     
      if($scope.nombre.length==0){
-        
-        Command: toastr["error"]("El Campo Nombre no puede ser vacio", "Error");
-        
+        toastr.error("Nombre no puede ser vacio","error1");
          
     }else if($scope.descripcion.length==0){
-        
         toastr.error("Descripcion no puede ser vacio","error1");
     }else if($scope.nombre.length>64||$scope.descripcion.length>128){
         toastr.error("(1) ha exedido del tamaño maximo");
