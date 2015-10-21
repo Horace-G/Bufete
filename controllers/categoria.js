@@ -5,11 +5,16 @@ angular.module('myApp').controller('categoria', ['$scope','$http','$location', f
 		   $scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");
     
 $scope.submit = function () {
-     if($scope.nombre.length>64||$scope.descripcion.length>128){
-        toastr.error("Error de Longitud");
+    if($scope.nombre.length==0){
+        toastr.error("(1) Error","Nombre no puede ser vacio");
+         
+    }else if($scope.descripcion.length==0){
+        toastr.error("(1) Error","Descripcion no puede ser vacio");
+    }else if($scope.nombre.length>64||$scope.descripcion.length>128){
+        toastr.error("(1) Error","ha exedido del tamaño maximo");
         return;
     }else if($scope.symbols.test($scope.nombre) || $scope.symbols.test($scope.descripcion)){
-        toastr.error("Error de Symbolos");
+        toastr.error("(2) Error","se han ingresado caracteres no validos");
         return;
     }else{
         var path = $location.path($location.path());
@@ -24,7 +29,7 @@ var request = {
 	};
 	$http(request).then(function(response){
 		console.log(response.data.success);
-		alert('Guardado exitosamente')
+		toastr.success("Se Agrego","Se Agrego la categoria correctamente");
 		$scope.nombre = '';
 $scope.descripcion = '';
 	});

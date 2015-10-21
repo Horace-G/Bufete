@@ -76,3 +76,8 @@ textarea:focus {
 #Config-li{
     background-color:aliceblue;
 }
+
+.errorFont{
+    width:1000px;
+    hegiht:1000px;
+}
