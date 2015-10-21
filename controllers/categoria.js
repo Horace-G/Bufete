@@ -6,17 +6,37 @@ angular.module('myApp').controller('categoria', ['$scope','$http','$location','$
     
 $scope.submit = function () {
     if($scope.nombre.length==0){
-        toastr.warning('Nombre ' + $stateParams.Mensaje[1].descripcion,'Warning');
-         
+         $("#nombreCategoria").css("background","red");
+        toastr.error("Nombre no puede ser vacio","Error(1)");
+         return;
     }else if($scope.descripcion.length==0){
-        toastr.error("Descripcion no puede ser vacio","(1) Error");
-    }else if($scope.nombre.length>64||$scope.descripcion.length>128){
-        toastr.error("ha exedido del tamaño maximo", "(1) Error");
+        $("#nombreCategoria").css("background","aliceblue");
+        $("#descripcionCategoria").css("background","red");
+        toastr.error("Descripcion no puede ser vacio","error(1)");
         return;
-    }else if($scope.symbols.test($scope.nombre) || $scope.symbols.test($scope.descripcion)){
-        toastr.error("se han ingresado caracteres no validos", "(2) Error");
+    }else if($scope.nombre.length>64){
+        $("#nombreCategoria").css("background","red");
+        $("#descripcionCategoria").css("background","aliceblue");
+        toastr.error("ha exedido del tamaño maximo","Error(1)");
+        return;
+    }else if($scope.descripcion.length>128){
+        $("#nombreCategoria").css("background","aliceblue");
+        $("#descripcionCategoria").css("background","red");
+        toastr.error("ha exedido del tamaño maximo","Error(1)");
+        return;    
+    }else if($scope.symbols.test($scope.nombre)){
+        $("#nombreCategoria").css("background","red");
+        $("#descripcionCategoria").css("background","aliceblue");
+        toastr.error("(2) se han ingresado caracteres no validos en el nombre");
+        return;
+    }else if($scope.symbols.test($scope.descripcion)){
+        $("#nombreCategoria").css("background","aliceblue");
+        $("#descripcionCategoria").css("background","red");
+        toastr.error("(2) se han ingresado caracteres no validos en la Descripcion");
         return;
     }else{
+        $("#nombreCategoria").css("background","aliceblue");
+        $("#descripcionCategoria").css("background","aliceblue");
         var path = $location.path($location.path());
 
 		//Creating the baseUrl

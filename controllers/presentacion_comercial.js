@@ -9,23 +9,37 @@ $scope.submit = function () {
     
     
      if($scope.nombre.length==0){
-
-        toastr.error("Nombre no puede ser vacio","error1");
-         
+         $("#nombrePresentacionComercial").css("background","red");
+        toastr.error("Nombre no puede ser vacio","Error(1)");
+         return;
     }else if($scope.descripcion.length==0){
-        toastr.error("Descripcion no puede ser vacio","error1");
-
-        
-         
-    }else if($scope.descripcion.length==0){
-        toastr.error("Descripcion no puede ser vacio","(1) Error");
-    }else if($scope.nombre.length>64||$scope.descripcion.length>128){
-        toastr.error("(1) ha exedido del tamaño maximo");
+        $("#nombrePresentacionComercial").css("background","aliceblue");
+        $("#descripcionPresentacionComercial").css("background","red");
+        toastr.error("Descripcion no puede ser vacio","error(1)");
+        return;       
+    }else if($scope.nombre.length>64){
+        $("#nombrePresentacionComercial").css("background","red");
+        $("#descripcionPresentacionComercial").css("background","aliceblue");
+        toastr.error("ha exedido del tamaño maximo","Error(1)");
         return;
-    }else if($scope.symbols.test($scope.nombre) || $scope.symbols.test($scope.descripcion)){
-        toastr.error("(2) se han ingresado caracteres no validos");
+    }else if($scope.descripcion.length>128){
+        $("#nombrePresentacionComercial").css("background","aliceblue");
+        $("#descripcionPresentacionComercial").css("background","red");
+        toastr.error("ha exedido del tamaño maximo","Error(1)");
+        return;    
+    }else if($scope.symbols.test($scope.nombre)){
+        $("#nombrePresentacionComercial").css("background","red");
+        $("#descripcionPresentacionComercial").css("background","aliceblue");
+        toastr.error("(2) se han ingresado caracteres no validos en el nombre");
+        return;
+    }else if($scope.symbols.test($scope.descripcion)){
+        $("#nombrePresentacionComercial").css("background","aliceblue");
+        $("#descripcionPresentacionComercial").css("background","red");
+        toastr.error("(2) se han ingresado caracteres no validos en la Descripcion");
         return;
     }else{
+        $("#nombrePresentacionComercial").css("background","aliceblue");
+        $("#descripcionPresentacionComercial").css("background","aliceblue");
         var path = $location.path($location.path());
 
 		//Creating the baseUrl

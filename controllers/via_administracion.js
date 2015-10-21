@@ -6,17 +6,37 @@ angular.module('myApp').controller('via_administracion', ['$scope','$http','$loc
 	
 $scope.submit = function () {
      if($scope.nombre.length==0){
-        toastr.error("Nombre no puede ser vacio","(1) Error");
-         
+         $("#nombrePresentacionComercial").css("background","red");
+        toastr.error("Nombre no puede ser vacio","Error(1)");
+         return;
     }else if($scope.descripcion.length==0){
-        toastr.error("Descripcion no puede ser vacio","(1) Error");
-    }else if($scope.nombre.length>64||$scope.descripcion.length>128){
-        toastr.error("(1) ha exedido del tamaño maximo");
+        $("#nombreViaAdministracion").css("background","aliceblue");
+        $("#descripcionViaAdministracion").css("background","red");
+        toastr.error("Descripcion no puede ser vacio","error(1)");
+        return;     
+    }else if($scope.nombre.length>64){
+        $("#nombreViaAdministracion").css("background","red");
+        $("#descripcionViaAdministracion").css("background","aliceblue");
+        toastr.error("ha exedido del tamaño maximo","Error(1)");
         return;
-    }else if($scope.symbols.test($scope.nombre) || $scope.symbols.test($scope.descripcion)){
-        toastr.error("(2) se han ingresado caracteres no validos");
+    }else if($scope.descripcion.length>128){
+        $("#nombreViaAdministracion").css("background","aliceblue");
+        $("#descripcionViaAdministracion").css("background","red");
+        toastr.error("ha exedido del tamaño maximo","Error(1)");
+        return;    
+    }else if($scope.symbols.test($scope.nombre)){
+        $("#nombreViaAdministracion").css("background","red");
+        $("#descripcionViaAdministracion").css("background","aliceblue");
+        toastr.error("(2) se han ingresado caracteres no validos en el nombre");
+        return;
+    }else if($scope.symbols.test($scope.descripcion)){
+        $("#nombreViaAdministracion").css("background","aliceblue");
+        $("#descripcionViaAdministracion").css("background","red");
+        toastr.error("(2) se han ingresado caracteres no validos en la Descripcion");
         return;
     }else{
+        $("#nombreViaAdministracion").css("background","aliceblue");
+        $("#descripcionViaAdministracion").css("background","aliceblue");
         var path = $location.path($location.path());
 
 		//Creating the baseUrl
