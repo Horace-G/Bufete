@@ -9,11 +9,16 @@ $scope.submit = function () {
     
     
      if($scope.nombre.length==0){
-     	toastr.error("Error (1) Nombre no puede ser vacio","");
-        toastr.error('Nombre no puede ser vacio','(1) Error');
-         //toastr.error("@@@@@@@@@@@@@@@@@@@@@@@@@","@@@@@@@@@@@@@@@@@@@@@@@@@@@@2");
+
+        toastr.error("Nombre no puede ser vacio","error1");
+         
     }else if($scope.descripcion.length==0){
-        toastr.error("(1) Error","Descripcion no puede ser vacio");
+        toastr.error("Descripcion no puede ser vacio","error1");
+
+        
+         
+    }else if($scope.descripcion.length==0){
+        toastr.error("Descripcion no puede ser vacio","(1) Error");
     }else if($scope.nombre.length>64||$scope.descripcion.length>128){
         toastr.error("(1) ha exedido del tamaño maximo");
         return;

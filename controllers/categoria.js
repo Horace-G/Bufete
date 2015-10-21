@@ -1,20 +1,20 @@
-angular.module('myApp').controller('categoria', ['$scope','$http','$location', function ($scope,$http,$location) {
+angular.module('myApp').controller('categoria', ['$scope','$http','$location','$stateParams', function ($scope,$http,$location,$stateParams) {
  
     $scope.nombre = '';
           $scope.descripcion='';
-		   $scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");
+		   $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
     
 $scope.submit = function () {
     if($scope.nombre.length==0){
-        toastr.error("(1) Error","Nombre no puede ser vacio");
+        toastr.warning('Nombre ' + $stateParams.Mensaje[1].descripcion,'Warning');
          
     }else if($scope.descripcion.length==0){
-        toastr.error("(1) Error","Descripcion no puede ser vacio");
+        toastr.error("Descripcion no puede ser vacio","(1) Error");
     }else if($scope.nombre.length>64||$scope.descripcion.length>128){
-        toastr.error("(1) Error","ha exedido del tamaño maximo");
+        toastr.error("ha exedido del tamaño maximo", "(1) Error");
         return;
     }else if($scope.symbols.test($scope.nombre) || $scope.symbols.test($scope.descripcion)){
-        toastr.error("(2) Error","se han ingresado caracteres no validos");
+        toastr.error("se han ingresado caracteres no validos", "(2) Error");
         return;
     }else{
         var path = $location.path($location.path());

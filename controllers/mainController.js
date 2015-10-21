@@ -1,4 +1,6 @@
-angular.module('myApp').controller('mainController', ['$scope', '$log','$http','$location', function($scope, $log,$http,$location) {
+
+angular.module('myApp').controller('mainController', ['$scope', '$log','$http','$location','$stateParams', function($scope, $log,$http,$location,$stateParams) {
+
     
     var path = $location.path($location.path());
 
@@ -9,8 +11,10 @@ angular.module('myApp').controller('mainController', ['$scope', '$log','$http','
 			url: baseUrl
 	   };
 	   $http(request).then(function(response){
+
 		  console.log(response.data);
 		  
+		  $stateParams.Mensajes = response.data;
 	   });
     
     $scope.name = 'Main';
