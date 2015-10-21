@@ -35,12 +35,12 @@
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
                   <input id="nombrePresentacionComercial" type="text" class="validate"ng-model="nombre">
-                  <label for="nombrePresentacionComercial">Nombre de la Nueva Presentación Comercial*</label>
+                  <label for="nombrePresentacionComercial">Nombre de la Nueva Presentación Comercial<span id="asterisco">*</span></label>
                 </div>
                  <div class="input-field col s9">
                   <i class="material-icons prefix">description</i>
                   <textarea id="descripcionPresentacionComercial" class="materialize-textarea" ng-model="descripcion"></textarea>
-                  <label for="descripcionPresentacionComercial">Breve descripción de ésta nueva presentación comercial*</label>
+                  <label for="descripcionPresentacionComercial">Breve descripción de ésta nueva presentación comercial<span id="asterisco">*</span></label>
                  </div>
                   <div class="col s9 right-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
@@ -64,12 +64,12 @@
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
                   <input id="nombreModalidadDeVenta" type="text" class="validate"ng-model="nombre">
-                  <label for="nombreModalidadDeVenta">Nombre de la Nueva Modalidad de Venta*</label>
+                  <label for="nombreModalidadDeVenta">Nombre de la Nueva Modalidad de Venta<span id="asterisco">*</span></label>
                 </div>
                  <div class="input-field col s9">
                   <i class="material-icons prefix">description</i>
                   <textarea id="descripcionModalidadDeVenta" class="materialize-textarea"ng-model="descripcion"></textarea>
-                  <label for="descripcionModalidadDeVenta">Breve descripción de ésta nueva modalidad de venta*</label>
+                  <label for="descripcionModalidadDeVenta">Breve descripción de ésta nueva modalidad de venta<span id="asterisco">*</span></label>
                  </div>
                   <div class="col s9 right-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
@@ -84,19 +84,19 @@
       <div class="collapsible-header"><i class="material-icons">invert_colors</i>Categorias de Medicamentos</div>
       <div class="collapsible-body popup-element">
       
-           <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva categoria de medicamento*</h3>
+           <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva categoria de medicamento</h3>
           <div class="row">
             <form class="col s12" ng-submit="submit()" ng-controller="categoria">
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
                   <input id="nombreCategoria" type="text" class="validate"ng-model="nombre">
-                  <label for="nombreCategoria">Ingrese el nombre de la nueva categoría*</label>
+                  <label for="nombreCategoria">Ingrese el nombre de la nueva categoría<span id="asterisco">*</span></label>
                 </div>
                  <div class="input-field col s9">
                   <i class="material-icons prefix">description</i>
                    <textarea id="descripcionCategoria" class="materialize-textarea"ng-model="descripcion"></textarea>
-                  <label for="descripcionCategoria">Ingrese una breve descripción sobre la nueva categoría*</label>
+                  <label for="descripcionCategoria">Ingrese una breve descripción sobre la nueva categoría<span id="asterisco">*</span></label>
                  </div>
                   <div class="col s9 right-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
@@ -118,12 +118,12 @@
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
                   <input id="nombreCicloDeVida" type="text" class="validate"ng-model="nombre">
-                  <label for="nombreCicloDeVida">Ingrese el nombre del nuevo paso en el ciclo de vida*</label>
+                  <label for="nombreCicloDeVida">Ingrese el nombre del nuevo paso en el ciclo de vida<span id="asterisco">*</span></label>
                 </div>
                  <div class="input-field col s9">
                      <i class="material-icons prefix">description</i>
                   <textarea id="descripcionCicloDeVida" class="materialize-textarea"ng-model="descripcion"></textarea>
-                  <label for="descripcionCicloDeVida">Ingrese una breve descripción del nuevo paso en el ciclo de vida* </label>
+                  <label for="descripcionCicloDeVida">Ingrese una breve descripción del nuevo paso en el ciclo de vida<span id="asterisco">*</span> </label>
                  </div>
                   <div class="col s9 right-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
@@ -145,13 +145,13 @@
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
                   <input id="nombreViaAdministracion" type="text" class="validate" ng-model="nombre">
-                  <label for="nombreViaAdministracion">Ingrese el nombre de la nueva vía de administración*</label>
+                  <label for="nombreViaAdministracion">Ingrese el nombre de la nueva vía de administración<span id="asterisco">*</span></label>
                 </div>
                  <div class="input-field col s9">
                   <i class="material-icons prefix">description</i>
 
                   <textarea id="descripcionModalidadDeVenta" class="materialize-textarea"ng-model="descripcion"></textarea>
-                  <label for="descripcionViaAdministracion">Ingrese una breve descripción sobre la nueva vía de administración*</label>
+                  <label for="descripcionViaAdministracion">Ingrese una breve descripción sobre la nueva vía de administración<span id="asterisco">*</span></label>
 
                  </div>
                  <div class="col s9 right-align">
