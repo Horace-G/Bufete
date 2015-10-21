@@ -6,7 +6,7 @@ angular.module('myApp').controller('via_administracion', ['$scope','$http','$loc
 	
 $scope.submit = function () {
      if($scope.nombre.length==0){
-         $("#nombrePresentacionComercial").css("background","red");
+         $("#nombreViaAdministracion").css("background","red");
         toastr.error("Nombre no puede ser vacio","Error(1)");
          return;
     }else if($scope.descripcion.length==0){

@@ -1,4 +1,4 @@
-angular.module('myApp').controller('categoria', ['$scope','$http','$location','$stateParams', function ($scope,$http,$location,$stateParams) {
+angular.module('myApp').controller('categoria', ['$scope','$http','$location',function ($scope,$http,$location) {
  
     $scope.nombre = '';
           $scope.descripcion='';
