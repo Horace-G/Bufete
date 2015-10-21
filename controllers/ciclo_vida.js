@@ -6,15 +6,15 @@ angular.module('myApp').controller('ciclo_vida', ['$scope','$http','$location', 
 	 
 $scope.submit = function () {
     if($scope.nombre.length==0){
-        toastr.error("(1) Error","Nombre no puede ser vacio");
+        toastr.error("Nombre no puede ser vacio","(1) Error");
          
     }else if($scope.descripcion.length==0){
-        toastr.error("(1) Error","Descripcion no puede ser vacio");
+        toastr.error("Descripcion no puede ser vacio","(1) Error");
     }else if($scope.nombre.length>64||$scope.descripcion.length>128){
-        toastr.error("(1) ha exedido del tamaño maximo");
+        toastr.error("(1) ha exedido del tamaño maximo",'Error');
         return;
     }else if($scope.symbols.test($scope.nombre) || $scope.symbols.test($scope.descripcion)){
-        toastr.error("(2) se han ingresado caracteres no validos");
+        toastr.error("(2) se han ingresado caracteres no validos",'Error');
         return;
     }else{
         var path = $location.path($location.path());
