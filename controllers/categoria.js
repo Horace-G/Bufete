@@ -2,11 +2,11 @@ angular.module('myApp').controller('categoria', ['$scope','$http','$location','$
  
     $scope.nombre = '';
           $scope.descripcion='';
-		   $scope.symbols = new RegExp("/^[a-zA-Z0-9!@#$%\^&*)(+=._-]*$/");
+		   $scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");
     
 $scope.submit = function () {
     if($scope.nombre.length==0){
-         $("#nombreCategoria").css("background","red");
+        $("#nombreCategoria").css("background","red");
         toastr.error("Nombre no puede ser vacio","Error(1)");
          return;
     }else if($scope.descripcion.length==0){
@@ -47,14 +47,13 @@ var request = {
 			url: baseUrl,
 			data: {nameCategoriaMedicamento: $scope.nombre, descriptionCategoriaMedicamento: $scope.descripcion, userCategoriaMedicamento: '1234', estadoCategoriaMedicamento: '1'}
 	};
+	
 	$http(request).then(function(response){
-		console.log(response.data.success);
 		toastr.success("Se Agrego","Se Agrego la categoria correctamente");
 		$scope.nombre = '';
 $scope.descripcion = '';
 	});
-    }
          
-
+ }
 };
 }]);
