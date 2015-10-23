@@ -1,5 +1,5 @@
 
-angular.module('myApp').controller('mainController', ['$scope', '$log','$http','$location','$stateParams', function($scope, $log,$http,$location,$stateParams) {
+angular.module('myApp').controller('mainController', ['$scope', '$log','$http','$location', function($scope, $log,$http,$location) {
 
     
     var path = $location.path($location.path());
@@ -14,7 +14,7 @@ angular.module('myApp').controller('mainController', ['$scope', '$log','$http','
 
 		  console.log(response.data);
 		  
-		  $stateParams.Mensajes = response.data;
+		  
 	   });
     
     $scope.name = 'Main';
