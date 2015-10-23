@@ -65,3 +65,29 @@ myApp.directive('menuUsuarios', [function() {
       templateUrl : 'public/views/menuusuarios.html'
   }
 }]);
+
+myApp.service('mensajeService',mensajeService);
+mensajeService.$inject = [
+    '$http'
+];
+
+function mensajeService($http){
+    var Mensaje = [];
+    var ctrl = this;
+    
+    ctrl.getMensaje = function(){
+        var path = $location.path($location.path());
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allMensaje';
+        var request = {
+			method: 'GET',
+			url: baseUrl
+        };
+        $http(request).then(function(response){
+            Mensaje = response.data;
+        });
+    }
+    
+    ctrl.Mensaje = function(){
+        return Mensaje;
+    }
+};
