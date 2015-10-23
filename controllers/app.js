@@ -68,10 +68,11 @@ myApp.directive('menuUsuarios', [function() {
 
 myApp.service('mensajeService',mensajeService);
 mensajeService.$inject = [
-    '$http'
+    '$http',
+    '$location'
 ];
 
-function mensajeService($http){
+function mensajeService($http,$location){
     var Mensaje = [];
     var ctrl = this;
     
