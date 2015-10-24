@@ -1,4 +1,4 @@
-angular.module('myApp').controller('categoria', ['$scope','$http','$location',function ($scope,$http,$location) {
+angular.module('myApp').controller('categoria', ['$scope','$http','$location','mensajeService',function ($scope,$http,$location,mensajeService) {
  
     $scope.nombre = '';
           $scope.descripcion='';
@@ -10,37 +10,38 @@ $scope.submit = function () {
     
     if($scope.nombre.length==0){
         $("#nombreCategoria").css("color","red");
-        toastr.error("Nombre no puede ser vacio","Error(1)");
+        mensajeService.showMessage('INPUT_EMPTY','Nombre Categoria');
         $scope.valid = 0;
          return;
     }if($scope.descripcion.length==0){
        // $("#nombreCategoria").css("background","aliceblue");
         $("#descripcionCategoria").css("color","red");
-        toastr.error("Descripcion no puede ser vacio","error(1)");
+         mensajeService.showMessage('INPUT_EMPTY','Descripcion Categoria');
         $scope.valid = 0;
         return;
     }if($scope.nombre.length>64){
         $("#nombreCategoria").css("color","red");
       //  $("#descripcionCategoria").css("background","aliceblue");
-        toastr.error("ha exedido del tamaño maximo","Error(1)");
+         mensajeService.showMessage('LONG_64','Nombre Categoria');
         $scope.valid = 0;
         return;
     }if($scope.descripcion.length>128){
       //  $("#nombreCategoria").css("background","aliceblue");
         $("#descripcionCategoria").css("color","red");
-        toastr.error("ha exedido del tamaño maximo","Error(1)");
+         mensajeService.showMessage('LONG_128','Nombre Categoria');
         $scope.valid = 0;
         return;    
     }if($scope.symbols.test($scope.nombre)){
         $("#nombreCategoria").css("color","red");
        // $("#descripcionCategoria").css("background","aliceblue");
-        toastr.error("(2) se han ingresado caracteres no validos en el nombre");
+        mensajeService.showMessage('INVALID_CHAR','Nombre Categoria');
+        
         $scope.valid = 0;
         return;
     }else if($scope.symbols.test($scope.descripcion)){
         //$("#nombreCategoria").css("background","aliceblue");
         $("#descripcionCategoria").css("color","red");
-        toastr.error("(2) se han ingresado caracteres no validos en la Descripcion");
+        mensajeService.showMessage('INVALID_CHAR','Descripcion Categoria');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.nombre) && $scope.symbols.test($scope.descripcion)){
@@ -61,7 +62,7 @@ var request = {
 	};
 	
 	$http(request).then(function(response){
-		toastr.success("Se Agrego","Se Agrego la categoria correctamente");
+		mensajeService.showMessage('SUCCESS_SAVE','Categoria');
 		$("#nombreCategoria").css("color","black");
         $("#descripcionCategoria").css("color","black");
 		$scope.nombre = '';

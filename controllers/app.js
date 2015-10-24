@@ -73,7 +73,19 @@ mensajeService.$inject = [
 ];
 
 function mensajeService($http,$location){
-    var Mensaje = [];
+    /*
+        GRAVEDAD
+        0 = Success
+        1 = WARNING
+        2 = FATAL
+        3 = ?????
+        
+        POS
+        0 = Longitud(64)
+        1 = Longitud(128);
+        2 = 
+    */
+    var Mensajes = [];
     var ctrl = this;
     
     ctrl.getMensaje = function(){
@@ -86,9 +98,32 @@ function mensajeService($http,$location){
         $http(request).then(function(response){
             Mensaje = response.data;
         });
-    }
+    };
     
-    ctrl.Mensaje = function(){
-        return Mensaje;
-    }
+    ctrl.Mensajes = function(){
+        return Mensajes;
+    };
+    
+    ctrl.ShowMessage(nameMessage,nameInput){
+        if (!nameInput){
+            nameInput = '';
+        }
+        angular.forEach(Mensajes,function(mensaje,id){
+            if (nameMessage == mensaje.nombre){
+                if (mensaje.gravedad == 1){
+                    toastr.warning('Warning!',nameInput+' '+mensaje.descripcion);
+                }else if (mensaje.gravedad == 2){
+                    toastr.error('Error!',nameInput + ' ' + mensaje.descripcion);
+                }else if (mesaje.gravedad == 0){
+                    toastr.success('Success!',nameInput +' '+ mensaje.descripcion);
+                }else{
+                    toastr.error('ERROR!','WUT');
+                }
+                return 
+            }
+    
+        });
+        
+        toastr.error('WUT','');
+    };
 };

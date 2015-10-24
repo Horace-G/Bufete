@@ -1,8 +1,5 @@
 {
     "jscodehints.detectedExclusions": [
-        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/controllers/via_administracion.js",
-        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Template/js/respond.min.js",
-        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Template/js/nv.d3.min.js",
-        "picker.js"
+        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/controllers/app.js"
     ]
 }
