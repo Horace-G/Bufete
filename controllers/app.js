@@ -109,8 +109,10 @@ function mensajeService($http,$location){
             nameInput = '';
         }
         angular.forEach(Mensajes,function(mensaje,id){
+            console.log(mensaje);
             if (nameMessage == mensaje.nombre){
                 if (mensaje.gravedad == 1){
+                    console.log('W');
                     toastr.warning('Warning!',nameInput+' '+mensaje.descripcion);
                 }else if (mensaje.gravedad == 2){
                     toastr.error('Error!',nameInput + ' ' + mensaje.descripcion);

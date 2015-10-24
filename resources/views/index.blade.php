@@ -23,8 +23,9 @@
         </style>
         
         <!-- load JQuery, angular and materialize JS via CDN -->
-        <script src="./public/JS/toastr.js"></script>
+        
         <script src="./public/JS/jquery-1.9.1.min.js"></script>
+        <script src="./public/JS/toastr.js"></script>
         
         <script src="./public/JS/materialize/js/materialize.min.js"></script>
         <script src="./public/JS/angular.min.js"></script> 
