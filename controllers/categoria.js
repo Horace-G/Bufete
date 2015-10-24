@@ -10,38 +10,38 @@ $scope.submit = function () {
     
     if($scope.nombre.length==0){
         $("#nombreCategoria").css("color","red");
-        mensajeService.showMessage('INPUT_EMPTY','Nombre Categoria');
+        mensajeService.ShowMessage('INPUT_EMPTY','Nombre Categoria');
         $scope.valid = 0;
          return;
     }if($scope.descripcion.length==0){
        // $("#nombreCategoria").css("background","aliceblue");
         $("#descripcionCategoria").css("color","red");
-         mensajeService.showMessage('INPUT_EMPTY','Descripcion Categoria');
+         mensajeService.ShowMessage('INPUT_EMPTY','Descripcion Categoria');
         $scope.valid = 0;
         return;
     }if($scope.nombre.length>64){
         $("#nombreCategoria").css("color","red");
       //  $("#descripcionCategoria").css("background","aliceblue");
-         mensajeService.showMessage('LONG_64','Nombre Categoria');
+         mensajeService.ShowMessage('LONG_64','Nombre Categoria');
         $scope.valid = 0;
         return;
     }if($scope.descripcion.length>128){
       //  $("#nombreCategoria").css("background","aliceblue");
         $("#descripcionCategoria").css("color","red");
-         mensajeService.showMessage('LONG_128','Nombre Categoria');
+         mensajeService.ShowMessage('LONG_128','Nombre Categoria');
         $scope.valid = 0;
         return;    
     }if($scope.symbols.test($scope.nombre)){
         $("#nombreCategoria").css("color","red");
        // $("#descripcionCategoria").css("background","aliceblue");
-        mensajeService.showMessage('INVALID_CHAR','Nombre Categoria');
+        mensajeService.ShowMessage('INVALID_CHAR','Nombre Categoria');
         
         $scope.valid = 0;
         return;
     }else if($scope.symbols.test($scope.descripcion)){
         //$("#nombreCategoria").css("background","aliceblue");
         $("#descripcionCategoria").css("color","red");
-        mensajeService.showMessage('INVALID_CHAR','Descripcion Categoria');
+        mensajeService.ShowMessage('INVALID_CHAR','Descripcion Categoria');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.nombre) && $scope.symbols.test($scope.descripcion)){
