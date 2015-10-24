@@ -24,31 +24,40 @@
 <menu-usuarios></menu-usuarios>
 <div id="agregarRol">
       
-         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo Rol</h3>
-          <div class="row">
-            <form class="col s12" ng-submit="submit()"ng-controller="Creacion_Rol">
+         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo usuario</h3>
+          <div class="row padded">
+            <form class="col s12" ng-submit="submit()">
               <div class="row">
              <div class="input-field col s5">
                   <i class="material-icons prefix">perm_identity</i>
-                  <input id="nombrePresentacionComercial" type="text" class="validate"ng-model="user" name="user" ng-maxlength="64" required ng-pattern="/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/" >
-                  <label for="nombrePresentacionComercial">User</label>
+                  <input id="nombreUsuario" type="text" class="validate"ng-model="user" name="user" ng-maxlength="16">
+                  <label for="nombreUsuario">Usuario</label>
                 </div>
                  <div class="input-field col s6">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="nombrePresentacionComercial" type="text" class="validate"ng-model="nombre" name="nombre" ng-maxlength="64" required ng-pattern="/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/" >
-                  <label for="nombrePresentacionComercial">Name</label>
+                  <input id="nombreCompleto" type="text" class="validate"ng-model="nombre" name="nombre" ng-maxlength="64">
+                  <label for="nombreCompleto">Nombre Completo</label>
                  </div>
-                  <div class="input-field col s5">
+                   <div class="input-field col s6">
+                        <select>
+                          <option value="1" selected>Option 1</option>
+                          <option value="2">Option 2</option>
+                          <option value="3">Option 3</option>
+                        </select>
+                        <label>Rol<span id="asterisco">*</span></label>
+                    </div>
+                <div class="input-field col s6">
                     <i class="material-icons prefix">https</i>
-                    <input id="nombrePresentacionComercial" type="text" class="validate"ng-model="user" name="user" ng-maxlength="64" required ng-pattern="/^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/" >
-                    <label for="nombrePresentacionComercial">Clave</label>
+                    <input id="usuarioPassword" type="text" class="validate"ng-model="user" name="user" ng-maxlength="8">
+                    <label for="usuarioPassword">Clave</label>
                 </div>
-                 <div class="input-field col s12">
-                    <select>
-                      <option value="1" >Admin</option>
-                    </select>
-                    <label>Rol</label>
-                  </div>
+                <div class="input-field col s6">
+                </div>
+                 <div class="input-field col s6">
+                    <i class="material-icons prefix">https</i>
+                    <input id="usuarioConfirmPassword" type="text" class="validate"ng-model="user" name="user" ng-maxlength="8">
+                    <label for="usuarioConfirmPassword">Confirmar Clave</label>
+                </div>
                   <div class="col s9 right-align">
                         <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
                   </div>
