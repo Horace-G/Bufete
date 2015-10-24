@@ -62,7 +62,7 @@ var request = {
 	};
 	
 	$http(request).then(function(response){
-		mensajeService.showMessage('SUCCESS_SAVE','Categoria');
+		mensajeService.ShowMessage('SUCCESS_SAVE','Categoria');
 		$("#nombreCategoria").css("color","black");
         $("#descripcionCategoria").css("color","black");
 		$scope.nombre = '';

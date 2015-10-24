@@ -1,5 +1,7 @@
 {
     "jscodehints.detectedExclusions": [
-        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/controllers/app.js"
+        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/controllers/app.js",
+        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/gulpfile.js",
+        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/controllers/ciclo_vida.js"
     ]
 }

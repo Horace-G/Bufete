@@ -10,37 +10,37 @@ $scope.submit = function () {
     
      if($scope.nombre.length==0){
          $("#nombrePresentacionComercial").css("color","red");
-        toastr.error("Nombre no puede ser vacio","Error(1)");
+        mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
         $scope.valid = 0;
          return;
     }if($scope.descripcion.length==0){
        // $("#nombrePresentacionComercial").css("background","aliceblue");
         $("#descripcionPresentacionComercial").css("color","red");
-        toastr.error("Descripcion no puede ser vacio","error(1)");
+        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion Presentacion Comercial');
         $scope.valid = 0;
         return;       
     }if($scope.nombre.length>64){
         $("#nombrePresentacionComercial").css("color","red");
         //$("#descripcionPresentacionComercial").css("background","aliceblue");
-        toastr.error("ha exedido del tamaño maximo","Error(1)");
+        mensajeService.ShowMessage('LONG_64','Nombre Presentacion Comercial');
         $scope.valid = 0;
         return;
     }if($scope.descripcion.length>128){
         //$("#nombrePresentacionComercial").css("background","aliceblue");
         $("#descripcionPresentacionComercial").css("color","red");
-        toastr.error("ha exedido del tamaño maximo","Error(1)");
+        mensajeService.ShowMessage('LONG_128','Descripcion Presentacion Comercial');
         $scope.valid = 0;
         return;    
     }if($scope.symbols.test($scope.nombre)){
         $("#nombrePresentacionComercial").css("color","red");
        // $("#descripcionPresentacionComercial").css("background","aliceblue");
-        toastr.error("(2) se han ingresado caracteres no validos en el nombre");
+        mensajeService.ShowMessage('INVALID_CHAR','Nombre Presentacion Comercial');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.descripcion)){
         //$("#nombrePresentacionComercial").css("background","aliceblue");
         $("#descripcionPresentacionComercial").css("color","red");
-        toastr.error("(2) se han ingresado caracteres no validos en la Descripcion");
+        mensajeService.ShowMessage('INVALID_CHAR','Descripcion Presentacion Comercial');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.nombre) && $scope.symbols.test($scope.descripcion)){
@@ -61,7 +61,7 @@ $scope.submit = function () {
 	};
 	$http(request).then(function(response){
 		console.log(response.data.success);
-		toastr.success("Se Agrego la presentacion comercial correctamente");
+        mensajeService.ShowMessage('SUCCESS_SAVE','Presentacion Comercial');
 		 $("#nombrePresentacionComercial").css("color","black");
         $("#descripcionPresentacionComercial").css("color","black");
 		$scope.nombre = '';
