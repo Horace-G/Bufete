@@ -163,4 +163,41 @@
           
       </div>
     </li>
+     <li id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">input</i>Laboratorio</div>
+      <div class="collapsible-body popup-element padded">
+      
+        <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo laboratorio</h3>
+          <div class="row">
+            <form class="col s12" ng-submit="submit()">
+              <div class="row">
+                  <div class="input-field col s6">
+                       <i class="material-icons prefix">account_circle</i>
+                       <input id="nombreLaboratorio" type="text" class="validate">
+                       <label for="nombreLaboratorio">Nombre del nuevo laboratorio<span id="asterisco">*</span></label>
+                  </div>
+                  <div class="input-field col s6">
+                       <i class="material-icons prefix">my_location</i>
+                       <textarea id="direccionLaboratorio" class="materialize-textarea"></textarea>
+                       <label for="direccionLaboratorio">Direccion exacta del laboratorio<span id="asterisco">*</span></label>
+                  </div>
+                   <div class="input-field col s6">
+                       <i class="material-icons prefix">email</i>
+                       <input id="correoElectronico" type="text" class="validate">
+                       <label for="correoElectronico">Correo Electronico del Laboratorio<span id="asterisco">*</span></label>
+                  </div>
+                  <div class="input-field col s6">
+                       <i class="material-icons prefix">contact_phone</i>
+                       <textarea id="telefonoLaboratorio" class="materialize-textarea"></textarea>
+                       <label for="telefonoLaboratorio">Numero telefonicos del laboratorio<span id="asterisco">*</span></label>
+                  </div>
+                  <div class="col s9 right-align">
+                       <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  </div>
+               </div>
+          </form>
+        </div>
+          
+      </div>
+    </li>
   </ul>
