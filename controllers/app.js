@@ -113,11 +113,11 @@ function mensajeService($http,$location){
             if (nameMessage == mensaje.nombre){
                 if (mensaje.gravedad == 1){
                     console.log('W');
-                    toastr.warning('Warning!',nameInput+' '+mensaje.descripcion);
+                    toastr.warning(nameInput+' '+mensaje.descripcion,'Warning!');
                 }else if (mensaje.gravedad == 2){
-                    toastr.error('Error!',nameInput + ' ' + mensaje.descripcion);
+                    toastr.error(nameInput + ' ' + mensaje.descripcion,'Error!');
                 }else if (mesaje.gravedad == 0){
-                    toastr.success('Success!',nameInput +' '+ mensaje.descripcion);
+                    toastr.success(nameInput +' '+ mensaje.descripcion,'Success!');
                 }else{
                     toastr.error('ERROR!','WUT');
                 }

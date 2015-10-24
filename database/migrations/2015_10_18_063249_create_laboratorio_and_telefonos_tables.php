@@ -14,22 +14,28 @@ class CreateLaboratorioAndTelefonosTables extends Migration
     {
         Schema::create('laboratorio', function (Blueprint $table) {
             $table->increments('id');
-	    $table->string('codigo', 64);
-	    $table->string('nombre', 64);
-	    $table->string('direccion', 64);
-	    $table->string('correo', 64);
+	    $table->string('nombre', 128);
+	    $table->string('direccion', 256);
+	    $table->string('correo', 30);
 	    $table->integer('user_created')->unsigned();
-            $table->foreign('user_created')->references('id')->on('usuario')->onDelete('cascade');
-            $table->integer('user_updated')->unsigned();
-            $table->foreign('user_updated')->references('id')->on('usuario')->onDelete('cascade');
+        $table->foreign('user_created')->references('id')->on('usuario')->onDelete('cascade');
+        $table->integer('user_updated')->unsigned();
+        $table->foreign('user_updated')->references('id')->on('usuario')->onDelete('cascade');
 	    $table->integer('estado')->unsigned()->default(1);
-            $table->timestamps();
+        $table->timestamps();
         });
 
-	Schema::create('telefonos', function (Blueprint $table){
-	    $table->integer('telefono_id')->unsigned()->default(0);
-	    $table->foreign('telefono_id')->references('id')->on('laboratorio')->onDelete('cascade');
-	    $table->string('telefono', 64);
+            
+	Schema::create('telefonoLaboratorio', function (Blueprint $table){
+	    $table->increments('id');
+        $table->integer('laboraorio_id');
+	    $table->foreign('laboratorio_id')->references('id')->on('laboratorio');
+	    $table->string('telefono', 15);
+        $table->integer('user_created')->unsigned();
+        $table->foreign('user_created')->references('id')->on('usuario')->onDelete('cascade');
+        $table->integer('user_updated')->unsigned();
+        $table->foreign('user_updated')->references('id')->on('usuario')->onDelete('cascade');
+        $table->timestamps();
 	});
     }
 
@@ -40,7 +46,7 @@ class CreateLaboratorioAndTelefonosTables extends Migration
      */
     public function down()
     {
-	Schema::drop('telefonos');
+	   Schema::drop('telefonoLaboratorio');
         Schema::drop('laboratorio');
     }
 }
