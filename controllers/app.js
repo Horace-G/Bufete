@@ -96,7 +96,7 @@ function mensajeService($http,$location){
 			url: baseUrl
         };
         $http(request).then(function(response){
-            Mensaje = response.data;
+            Mensajes = response.data;
         });
     };
     
