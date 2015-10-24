@@ -1,4 +1,4 @@
-angular.module('myApp').controller('ciclo_vida', ['$scope','$http','$location', function ($scope,$http,$location) {
+angular.module('myApp').controller('ciclo_vida', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
 
     $scope.nombre = '';
           $scope.descripcion='';
@@ -10,37 +10,37 @@ $scope.submit = function () {
     
     if($scope.nombre.length==0){
          $("#nombreCicloDeVida").css("color","red");
-        toastr.error("Nombre no puede ser vacio","Error(1)");
+        mensajeService.ShowMessage('INPUT_EMPTY','Nombre Ciclo de Vida');
         $scope.valid = 0;
          return;
     }if($scope.descripcion.length==0){
        // $("#nombreCicloDeVida").css("color","aliceblue");
         $("#descripcionCicloDeVida").css("color","red");
-        toastr.error("Descripcion no puede ser vacio","error(1)");
+        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion Ciclo de Vida');
         $scope.valid = 0;
         return;     
     }if($scope.nombre.length>64){
         $("#nombreCicloDeVida").css("color","red");
         //$("#descripcionCicloDeVida").css("color","aliceblue");
-        toastr.error("ha exedido del tamaño maximo","Error(1)");
+        mensajeService.ShowMessage('LONG_64','Nombre Ciclo de Vida');
         $scope.valid = 0;
         return;
     }if($scope.descripcion.length>128){
        // $("#nombreCicloDeVida").css("color","black");
         $("#descripcionCicloDeVida").css("color","red");
-        toastr.error("ha exedido del tamaño maximo","Error(1)");
+        mensajeService.ShowMessage('LONG_128','Descripcion Ciclo de Vida');
         $scope.valid = 0;
         return;    
     }if($scope.symbols.test($scope.nombre)){
         $("#nombreCicloDeVida").css("color","red");
        // $("#descripcionCicloDeVida").css("color","black");
-        toastr.error("(2) se han ingresado caracteres no validos en el nombre");
+        mensajeService.ShowMessage('INVALID_CHAR','Nombre Ciclo de Vida');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.descripcion)){
        // $("#nombreCicloDeVida").css("color","black");
         $("#descripcionCicloDeVida").css("color","red");
-        toastr.error("(2) se han ingresado caracteres no validos en la Descripcion");
+        mensajeService.ShowMessage('INVALID_CHAR','Descripcion Ciclo de Vida');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.nombre) && $scope.symbols.test($scope.descripcion)){
@@ -63,7 +63,7 @@ var request = {
 	
 $http(request).then(function(response){
 		console.log(response.data.success);
-		toastr.success("Se Agrego el ciclo de vida correctamente");
+        mensajeService.ShowMessage('SUCCESS_SAVE','Ciclo de Vida');
 		 $("#nombreCicloDeVida").css("color","black");
         $("#descripcionCicloDeVida").css("color","black");
 		$scope.nombre = '';

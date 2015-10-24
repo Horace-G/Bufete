@@ -65,3 +65,66 @@ myApp.directive('menuUsuarios', [function() {
       templateUrl : 'public/views/menuusuarios.html'
   }
 }]);
+
+myApp.service('mensajeService',mensajeService);
+mensajeService.$inject = [
+    '$http',
+    '$location'
+];
+
+function mensajeService($http,$location){
+    /*
+        GRAVEDAD
+        0 = Success
+        1 = WARNING
+        2 = FATAL
+        3 = ?????
+        
+        POS
+        0 = Longitud(64)
+        1 = Longitud(128);
+        2 = 
+    */
+    var Mensajes = [];
+    var ctrl = this;
+    
+    ctrl.getMensaje = function(){
+        var path = $location.path($location.path());
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allMensaje';
+        var request = {
+			method: 'GET',
+			url: baseUrl
+        };
+        $http(request).then(function(response){
+            Mensajes = response.data;
+        });
+    };
+    
+    ctrl.Mensajes = function(){
+        return Mensajes;
+    };
+    
+    ctrl.ShowMessage = function(nameMessage,nameInput){
+        if (!nameInput){
+            nameInput = '';
+        }
+        angular.forEach(Mensajes,function(mensaje,id){
+            console.log(mensaje);
+            if (nameMessage == mensaje.nombre){
+                if (mensaje.gravedad == 1){
+                    console.log('W');
+                    toastr.warning('Warning!',nameInput+' '+mensaje.descripcion);
+                }else if (mensaje.gravedad == 2){
+                    toastr.error('Error!',nameInput + ' ' + mensaje.descripcion);
+                }else if (mesaje.gravedad == 0){
+                    toastr.success('Success!',nameInput +' '+ mensaje.descripcion);
+                }else{
+                    toastr.error('ERROR!','WUT');
+                }
+                return;
+            }
+    
+        });
+        
+    };
+};

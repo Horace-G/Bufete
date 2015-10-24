@@ -1,9 +1,7 @@
 {
     "jscodehints.detectedExclusions": [
+        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/controllers/app.js",
         "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/gulpfile.js",
-        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/vendor/phpunit/php-code-coverage/src/CodeCoverage/Report/HTML/Renderer/Template/js/respond.min.js",
-        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/controllers/creacion_rol.js",
-        "/var/www/html/Bufete/controllers/presentacion_comercial.js",
-        "/var/www/html/Bufete/controllers/ciclo_vida.js"
+        "E:/Datos/UNITEC/Proyecto AnalisisDiseno/Bufete/controllers/ciclo_vida.js"
     ]
 }
