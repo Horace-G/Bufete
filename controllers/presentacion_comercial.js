@@ -60,12 +60,16 @@ $scope.submit = function () {
 			data: {namePresentacionComercial: $scope.nombre, descriptionPresentacionComercial: $scope.descripcion, userPresentacionComercial: '1234', estadoPresentacionComercial: '1'}
 	};
 	$http(request).then(function(response){
-		console.log(response.data.success);
-        mensajeService.ShowMessage('SUCCESS_SAVE','Presentacion Comercial');
-		 $("#nombrePresentacionComercial").css("color","black");
-        $("#descripcionPresentacionComercial").css("color","black");
-		$scope.nombre = '';
-		$scope.descripcion = '';
+        if(response.data.success){
+            console.log(response.data.success);
+            mensajeService.ShowMessage('SUCCESS_SAVE','Presentacion Comercial');
+             $("#nombrePresentacionComercial").css("color","black");
+            $("#descripcionPresentacionComercial").css("color","black");
+            $scope.nombre = '';
+            $scope.descripcion = '';
+        }else{
+            
+        }
 	});
     }
 

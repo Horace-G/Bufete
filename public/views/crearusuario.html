@@ -8,9 +8,10 @@
     $('select').material_select();
     
     });
-    
-    $('#medicamentos').addClass('active');
-    $('#medicamentos').addClass('z-depth-5');
+    $('#logohome').removeClass('z-depth-5');
+    $('#logohome').removeClass('active');
+    $('#medicamentos').removeClass('z-depth-5');
+    $('#medicamentos').removeClass('active');
     $('#reportes').removeClass('active');
     $('#reportes').removeClass('z-depth-5');
     $('#menuusuarios').removeClass('active');
@@ -22,13 +23,19 @@
 </script>
 
 <menu-usuarios></menu-usuarios>
-<div id="agregarRol">
+
       
-         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo usuario</h3>
-          <div class="row padded">
+         <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
+     <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Crear Nuevo Usuario</h4><h6 class="flow-text brown-text lighten-3"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
+    <li collection-item id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">info_outline</i>Crear Usuario</div>
+      <div class="collapsible-body popup-element padded">
+      
+         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo Usuario al sistema</h3>
+          <div class="row">
             <form class="col s12" ng-submit="submit()">
               <div class="row">
-             <div class="input-field col s5">
+             <div class="input-field col s6">
                   <i class="material-icons prefix">perm_identity</i>
                   <input id="nombreUsuario" type="text" class="validate"ng-model="user" name="user" ng-maxlength="16">
                   <label for="nombreUsuario">Usuario</label>
@@ -37,26 +44,24 @@
                   <i class="material-icons prefix">account_circle</i>
                   <input id="nombreCompleto" type="text" class="validate"ng-model="nombre" name="nombre" ng-maxlength="64">
                   <label for="nombreCompleto">Nombre Completo</label>
-                 </div>
-                   <div class="input-field col s6">
-                        <select>
-                          <option value="1" selected>Option 1</option>
-                          <option value="2">Option 2</option>
-                          <option value="3">Option 3</option>
-                        </select>
-                        <label>Rol<span id="asterisco">*</span></label>
-                    </div>
+                </div>                
+                <div class="input-field col s6">
+                    <i class="material-icons prefix">https</i>
+                    <input id="usuarioConfirmPassword" type="text" class="validate"ng-model="user" name="user" ng-maxlength="8">
+                    <label for="usuarioConfirmPassword">Confirmar Clave</label>
+                </div>
                 <div class="input-field col s6">
                     <i class="material-icons prefix">https</i>
                     <input id="usuarioPassword" type="text" class="validate"ng-model="user" name="user" ng-maxlength="8">
                     <label for="usuarioPassword">Clave</label>
                 </div>
-                <div class="input-field col s6">
-                </div>
-                 <div class="input-field col s6">
-                    <i class="material-icons prefix">https</i>
-                    <input id="usuarioConfirmPassword" type="text" class="validate"ng-model="user" name="user" ng-maxlength="8">
-                    <label for="usuarioConfirmPassword">Confirmar Clave</label>
+              <div class="input-field col s6">
+                    <select>
+                      <option value="1" selected>Option 1</option>
+                      <option value="2">Option 2</option>
+                      <option value="3">Option 3</option>
+                    </select>
+                    <label>Rol<span id="asterisco">*</span></label>
                 </div>
                   <div class="col s9 right-align">
                         <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
