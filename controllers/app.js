@@ -121,12 +121,10 @@ function mensajeService($http,$location){
                 }else{
                     toastr.error('ERROR!','WUT');
                 }
-                break;
-                return ;
+                return;
             }
     
         });
         
-        toastr.error('WUT','');
     };
 };
