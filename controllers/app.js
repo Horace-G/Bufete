@@ -104,7 +104,7 @@ function mensajeService($http,$location){
         return Mensajes;
     };
     
-    ctrl.ShowMessage(nameMessage,nameInput){
+    ctrl.ShowMessage = function(nameMessage,nameInput){
         if (!nameInput){
             nameInput = '';
         }
