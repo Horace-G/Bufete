@@ -1,4 +1,4 @@
-angular.module('myApp').controller('via_administracion', ['$scope','$http','$location', function ($scope,$http,$location) {
+angular.module('myApp').controller('via_administracion', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
 
     $scope.nombre = '';
           $scope.descripcion='';

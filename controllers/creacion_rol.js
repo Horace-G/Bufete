@@ -1,4 +1,4 @@
-angular.module('myApp').controller('Creacion_Rol', ['$scope','$http','$location', function ($scope,$http,$location) {
+angular.module('myApp').controller('Creacion_Rol', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
     
     
 		   $scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");
