@@ -85,3 +85,7 @@ textarea:focus {
 #asterisco{
     font-size:25px;
 }
+
+.padded{
+    padding: 30px;
+}
