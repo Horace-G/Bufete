@@ -78,6 +78,91 @@ rolService.$inject = [
     '$location'
 ];
 
+myApp.service('medicamentoService',rolService);
+medicamentoService.$inject = [
+    '$http',
+    '$location'
+];
+
+function medicamentoService($http,$location) {
+    var ctrl = this;
+    
+    ctrl.getPresentacionComercial = function(){
+        var path = $location.path($location.path());
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allPresentacionComercial';
+        var request = {
+			method: 'GET',
+			url: baseUrl
+        };
+        $http(request).then(function(response){
+            return response.data;
+        });
+    };
+
+
+    ctrl.getCategoria = function(){
+        var path = $location.path($location.path());
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allCaregoriaMedicamento';
+        var request = {
+			method: 'GET',
+			url: baseUrl
+        };
+        $http(request).then(function(response){
+            return response.data;
+        });
+    };
+    
+     ctrl.getLaboratorio = function(){
+        var path = $location.path($location.path());
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allLaboratorio';
+        var request = {
+			method: 'GET',
+			url: baseUrl
+        };
+        $http(request).then(function(response){
+            return response.data;
+        });
+    };
+    
+     ctrl.getEstadoCicloVida = function(){
+        var path = $location.path($location.path());
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allEstadoCicloVida';
+        var request = {
+			method: 'GET',
+			url: baseUrl
+        };
+        $http(request).then(function(response){
+            return response.data;
+        });
+    };
+    
+     ctrl.getModalidadVenta = function(){
+        var path = $location.path($location.path());
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allModalidadVenta';
+        var request = {
+			method: 'GET',
+			url: baseUrl
+        };
+        $http(request).then(function(response){
+            return response.data;
+        });
+    };
+    
+     ctrl.getViaAdministracion = function(){
+        var path = $location.path($location.path());
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allViaAdministracion';
+        var request = {
+			method: 'GET',
+			url: baseUrl
+        };
+        $http(request).then(function(response){
+            return response.data;
+        });
+    };
+}
+
+
+
 function rolService($http,$location) {
     var ctrl = this;
     
