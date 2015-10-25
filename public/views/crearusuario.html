@@ -1,4 +1,3 @@
-
 <script>
      $(document).ready(function(){
      $('.collapsible').collapsible({
@@ -18,7 +17,10 @@
     $('#menuusuarios').removeClass('z-depth-5');
     $('#logout').removeClass('active');
     
-   
+  
+        
+        
+    
        
 </script>
 
@@ -33,7 +35,7 @@
       
          <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo Usuario al sistema</h3>
           <div class="row">
-            <form class="col s12" ng-submit="submit()">
+            <form class="col s12" ng-submit="submit()" ng-controller="crear_usuario">
               <div class="row">
              <div class="input-field col s6">
                   <i class="material-icons prefix">perm_identity</i>
