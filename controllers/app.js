@@ -72,6 +72,28 @@ mensajeService.$inject = [
     '$location'
 ];
 
+myApp.service('rolService',rolService);
+rolService.$inject = [
+    '$http',
+    '$location'
+];
+
+function rolService($http,$location) {
+    var ctrl = this;
+    
+    ctrl.getRoles = function(){
+        var path = $location.path($location.path());
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allRol';
+        var request = {
+			method: 'GET',
+			url: baseUrl
+        };
+        $http(request).then(function(response){
+            return response.data;
+        });
+    };
+}
+
 function mensajeService($http,$location){
     /*
         GRAVEDAD

@@ -101,7 +101,12 @@ $scope.submitGuardar = function () {
         $("#descripcionLaboratorio").css("color","black");
         var path = $location.path($location.path());
         //
-        var NumerosTelefonicos = document.getElementById('dropdownid').options;
+        var NumerosTelefonicos = [];
+        angular.forEach(document.getElementById('dropdownid').options,function(telefono,key){
+            NumerosTelefonicos.push(telefono.value);
+        });
+        
+        console.log(NumerosTelefonicos);
         
 		//Creating the baseUrl
 		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveLaboratorio';
@@ -111,7 +116,6 @@ $scope.submitGuardar = function () {
 			url: baseUrl,
 			data: {nameLaboratorio: $scope.nombre, descriptionLaboratorio: $scope.descripcion,correoLaboratorio: $scope.correo, telefonoLaboratorio: NumerosTelefonicos, userLaboratorio: '1234', estadoLaboratorio: '1'}
 	};
-    toastr.error('ERROR!','Guardado');
 	$http(request).then(function(response){
         if(response.data.success.equals("true")){
             console.log(response.data.success);

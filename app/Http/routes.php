@@ -39,4 +39,8 @@ Route::post('/saveViaAdministracion','ViaAdministracionController@saveViaAdminis
 
 Route::post('/saveMedicamento', 'MedicamentoController@saveMedicamento');
 
+Route::post('/saveLaboratorio','LaboratorioController@saveLaboratorio');
+
+Route::get('/allRol','RolController@allRol');
+
 Route::get('/allMensaje','MensajeController@allMensaje');
