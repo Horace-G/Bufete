@@ -24,7 +24,7 @@ class LaboratorioController extends Controller
 	
 		DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 	    $idLab = DB::table('laboratorio')->insertGetId(
-	       	array('nombre'=>$nombre, 'direccion'=>$direccion, 'correo'=>$correo,'user_created'=>$user_created,'user_updated'=>$user_created,'estado'=>$estadoM)
+	       	array('nombre'=>$nombre, 'direccion'=>$direccion, 'correo'=>$correo,'user_created'=>$user_created,'user_updated'=>$user_created,'estado'=>$estadoM,'created_at'=>$date,'updated_at'=>$date)
 	    );
 	    
 	    
@@ -38,8 +38,8 @@ class LaboratorioController extends Controller
 		return Response::json(array('Success' => 'true'));
     }
 
-    public function allMedicamento(){
-	$retVal = DB::table('medicamento')->get();
+    public function allLaboratorio(){
+	$retVal = DB::table('laboratorio')->get();
         return Response::json($retVal);
     }
 }

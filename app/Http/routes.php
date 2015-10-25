@@ -43,6 +43,16 @@ Route::post('/saveLaboratorio','LaboratorioController@saveLaboratorio');
 
 Route::get('/allRol','RolController@allRol');
 
+Route::get('/allPresentacionComercial','PresentacionComercialController@allPresentacionComercial');
 
+Route::get('/allModalidadVenta','ModalidadVentaController@allModalidadVenta');
+
+Route::get('/allCategoriaMedicamento','CategoriaMedicamentoController@allCategoriaMedicamento');
+
+Route::get('/allEstadoCicloVida','EstadoCicloVidaController@allEstadoCicloVida');
+
+Route::get('/allViaAdministracion','ViaAdministracionController@allViaAdministracion');
+
+Route::get('allLaboratorio','LaboratorioController@allLaboratorio');
 
 Route::get('/allMensaje','MensajeController@allMensaje');
