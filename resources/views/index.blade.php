@@ -42,7 +42,7 @@
         <script src="./controllers/secondController.js"></script>
         <script src="./controllers/via_administracion.js"></script>
         <script src="./controllers/crearlaboratorio.js"></script>
-        
+        <script src="./controllers/CrearUsuario.js"></script>
     </head>
     <body>
 
