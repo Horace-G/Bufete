@@ -1,19 +1,48 @@
+
+
+<script>
+     $(document).ready(function(){
+     $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+        
+    $('select').material_select();
+    
+    });
+    $('#logohome').removeClass('z-depth-5');
+    $('#logohome').removeClass('active');
+    $('#medicamentos').removeClass('z-depth-5');
+    $('#medicamentos').removeClass('active');
+    $('#reportes').removeClass('active');
+    $('#reportes').removeClass('z-depth-5');
+    $('#menuusuarios').removeClass('active');
+    $('#menuusuarios').removeClass('z-depth-5');
+    $('#logout').removeClass('active');
+    
+   
+       
+</script>
+
 <menu-usuarios></menu-usuarios>
-      <div id="agregarRol">
+<ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
+     <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Crear Nuevo Rol</h4><h6 class="flow-text brown-text lighten-3"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
+    <li collection-item id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">info_outline</i>Crear Rol</div>
+      <div class="collapsible-body popup-element padded">
       
-         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo Rol</h3>
+         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo rol al sistema</h3>
           <div class="row">
             <form class="col s12" ng-submit="submit()"ng-controller="Creacion_Rol">
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
-                  <input id="nombreRol" type="text" class="validate"ng-model="nombre" name="nombre">
-                  <label for="nombreRol">Nombre del Rol</label>
+                  <input id="nombrePresentacionComercial" type="text" class="validate"ng-model="nombre">
+                  <label for="nombrePresentacionComercial">Nombre de la Nueva Presentación Comercial<span id="asterisco">*</span></label>
                 </div>
                  <div class="input-field col s9">
                   <i class="material-icons prefix">description</i>
-                  <textarea id="descripcionRol" class="materialize-textarea"ng-model="descripcion" name="descripcion"></textarea>
-                  <label for="descripcionRol">Breve descripción del Rol</label>
+                  <textarea id="descripcionRol" class="materialize-textarea" ng-model="descripcion"></textarea>
+                  <label for="descripcionRol">Breve descripción del nuevo rol<span id="asterisco">*</span></label>
                  </div>
                   <div class="col s9 right-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
@@ -23,4 +52,5 @@
           </form>
               
         </div>
-      </div>
+</div>
+    
