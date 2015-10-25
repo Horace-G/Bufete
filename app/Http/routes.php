@@ -43,4 +43,6 @@ Route::post('/saveLaboratorio','LaboratorioController@saveLaboratorio');
 
 Route::get('/allRol','RolController@allRol');
 
+
+
 Route::get('/allMensaje','MensajeController@allMensaje');
