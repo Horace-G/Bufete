@@ -10,7 +10,7 @@ return array(
     'CreateCicloVidaTable' => $baseDir . '/database/migrations/2015_10_18_063104_create_ciclo_vida_table.php',
     'CreateFormaFarmaceuticaTable' => $baseDir . '/database/migrations/2015_10_18_063148_create_forma_farmaceutica_table.php',
     'CreateLaboratorioAndTelefonosTables' => $baseDir . '/database/migrations/2015_10_18_063249_create_laboratorio_and_telefonos_tables.php',
-    'CreateMedicamentoTables' => $baseDir . '/database/migrations/2015_10_18_063125_create_medicamento_table.php',
+    'CreateMedicamentoTable' => $baseDir . '/database/migrations/2015_10_24_042905_create_medicamento_table.php',
     'CreateMensajeTable' => $baseDir . '/database/migrations/2015_10_20_155840_create_mensaje_table.php',
     'CreateModalidadVentaTable' => $baseDir . '/database/migrations/2015_10_18_063213_create_modalidad_venta_table.php',
     'CreatePresentacionComercialTable' => $baseDir . '/database/migrations/2015_10_18_062955_create_presentacion_comercial_table.php',

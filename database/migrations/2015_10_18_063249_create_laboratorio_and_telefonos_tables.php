@@ -28,8 +28,8 @@ class CreateLaboratorioAndTelefonosTables extends Migration
             
 	Schema::create('telefonoLaboratorio', function (Blueprint $table){
 	    $table->increments('id');
-        $table->integer('laboraorio_id');
-	    $table->foreign('laboratorio_id')->references('id')->on('laboratorio');
+        $table->integer('laboratorio_id')->unsigned();
+	    $table->foreign('laboratorio_id')->references('id')->on('laboratorio')->onDelete('cascade');
 	    $table->string('telefono', 15);
         $table->integer('user_created')->unsigned();
         $table->foreign('user_created')->references('id')->on('usuario')->onDelete('cascade');
