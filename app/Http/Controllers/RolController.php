@@ -25,7 +25,7 @@ class RolController extends Controller
 
                 public function allRol(){
                         $retVal = DB::table('rol')->get();
-                       return $retVal;
+                        return $retVal;
                 }
 
 }
