@@ -14,31 +14,31 @@ $scope.submit = function () {
          $scope.valid = 0;
          return;
     }else if($scope.descripcion.length==0){
-        $("#nombreRol").css("color","aliceblue");
+        $("#nombreRol").css("color","black");
         $("#descripcionRol").css("color","red");
         mensajeService.ShowMessage('INPUT_EMPTY','Descripcion Rol');
         $scope.valid = 0;
         return;    
     }else if($scope.nombre.length>64){
         $("#nombreRol").css("color","red");
-        $("#descripcionRol").css("color","aliceblue");
+        $("#descripcionRol").css("color","black");
         mensajeService.ShowMessage('LONG_64','Nombre Rol');
         $scope.valid = 0;
         return;
     }else if($scope.descripcion.length>128){
-        $("#nombreRol").css("color","aliceblue");
+        $("#nombreRol").css("color","black");
         $("#descripcionRol").css("color","red");
         mensajeService.ShowMessage('LONG_128','Descripcion Rol');
         $scope.valid = 0;
         return;    
     }else if($scope.symbols.test($scope.nombre)){
         $("#nombreRol").css("color","red");
-        $("#descripcionRol").css("color","aliceblue");
+        $("#descripcionRol").css("color","black");
         mensajeService.ShowMessage('INVALID_CHAR','Nombre Rol');
         $scope.valid = 0;
         return;
     }else if($scope.symbols.test($scope.descripcion)){
-        $("#nombreRol").css("color","aliceblue");
+        $("#nombreRol").css("color","black");
         $("#descripcionRol").css("color","red");
         mensajeService.ShowMessage('INVALID_CHAR','Descricion Rol');
         $scope.valid = 0;
