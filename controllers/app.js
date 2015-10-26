@@ -78,7 +78,7 @@ rolService.$inject = [
     '$location'
 ];
 
-myApp.service('medicamentoService',rolService);
+myApp.service('medicamentoService',medicamentoService);
 medicamentoService.$inject = [
     '$http',
     '$location'
@@ -98,6 +98,7 @@ function medicamentoService($http,$location) {
             return response.data;
         });
     };
+
 
 
     ctrl.getCategoria = function(){
