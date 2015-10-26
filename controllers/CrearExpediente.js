@@ -23,8 +23,8 @@ $scope.init = function () {
       var value = presentacioncomercial[i].nombre;
         $selectDropdown.append(
         $("<option selected></option>")
-        .attr("number","Juan")
-        .text("Juan")
+        .attr("number",value)
+        .text(value)
     );  
     
     
