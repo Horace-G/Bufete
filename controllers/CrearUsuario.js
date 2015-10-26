@@ -47,12 +47,17 @@ $scope.init();
 $scope.submitGuardar = function () {
     
     $scope.valid = 1;
-    
+    var id = 0;
      if($scope.valid == 1){
         
         var path = $location.path($location.path());
         //
-        
+        var count = Object.keys(roles).length;
+         for(var i=0;i<count;i++){
+            if($('#dropdownid').find(":selected").text()==roles[i].nombre){
+                alert(roles[i].id);
+            }
+        }
         
 		//Creating the baseUrl
 		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveUsuario';
