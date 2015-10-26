@@ -68,6 +68,7 @@ $scope.submit = function () {
             $scope.nombre = '';
             $scope.descripcion = '';
         }else{
+            alert("GGG");
             mensajeService.ShowMessage('INVALID_CHAR','Presentacion Comercial');
         }
 	});
