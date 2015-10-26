@@ -22,6 +22,12 @@ class LaboratorioController extends Controller
 		$estadoM = $request->input('estadoLaboratorio');
 	    $date = Carbon::now();
 	
+		$exists = DB::table('laboratorio')->select('nombre')->where('nombre', $nombre)->count();
+                        if ($exists>0){
+                                return Respone::json(array('Success' => 'false'));
+                }
+
+
 		DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 	    $idLab = DB::table('laboratorio')->insertGetId(
 	       	array('nombre'=>$nombre, 'direccion'=>$direccion, 'correo'=>$correo,'user_created'=>$user_created,'user_updated'=>$user_created,'estado'=>$estadoM,'created_at'=>$date,'updated_at'=>$date)
