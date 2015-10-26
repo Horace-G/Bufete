@@ -5,10 +5,21 @@ $scope.nombre = '';
 $scope.descripcion = '';
 $scope.correo = '';
 $scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");
-$scope.emails = new RegExp("/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i");
-$scope.numbers = new RegExp();
+$scope.emails = new RegExp("/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/1");
+$scope.numbers = new RegExp("^[0-9]*$");
     $('select').material_select();
 $scope.submitNumero = function () {
+    
+    $scope.validNumber = 1;
+    
+    if(!$scope.numbers.test($scope.telefono)){
+        
+         $("#telefonoLaboratorio").css("color","red");
+        mensajeService.ShowMessage('LONG_64','Correo Laboratorio');
+        console.log("telefono invalido");
+        $scope.validNumber = 0;
+        
+    }
    
     //if($scope.symbols.test($scope.telefonos)){
     if($('#dropdownid').find(":selected").text()=="Numeros Telefonicos"){
@@ -23,12 +34,14 @@ $scope.submitNumero = function () {
        
     }
     // add new value
-    var value = $scope.telefono;
-    $selectDropdown.append(
-      $("<option selected></option>")
+    if($scope.validNumber == 1){
+      var value = $scope.telefono;
+        $selectDropdown.append(
+        $("<option selected></option>")
         .attr("number",value)
         .text(value)
-    );
+    );   
+    }
 
     // trigger event
     $selectDropdown.trigger('contentChanged');
