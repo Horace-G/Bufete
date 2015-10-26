@@ -24,7 +24,7 @@ class MedicamentoController extends Controller
 	
 	$exists = DB::table('medicamento')->select('nombre')->where('nombre', $nombreM)->count();
                         if ($exists>0){
-                                return Respone::json(array('Success' => 'false'));
+                                return Response::json(array('Success' => 'false'));
                         }
 
 	

@@ -24,7 +24,7 @@ class LaboratorioController extends Controller
 	
 		$exists = DB::table('laboratorio')->select('nombre')->where('nombre', $nombre)->count();
                         if ($exists>0){
-                                return Respone::json(array('Success' => 'false'));
+                                return Response::json(array('Success' => 'false'));
                 }
 
 

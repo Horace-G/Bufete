@@ -16,7 +16,7 @@ class RolController extends Controller
 
 			$exists = DB::table('rol')->select('nombre')->where('nombre', $nombreR)->count();
                         if ($exists>0){
-                                return Respone::json(array('Success' => 'false'));
+                                return Response::json(array('Success' => 'false'));
                         }
 
 

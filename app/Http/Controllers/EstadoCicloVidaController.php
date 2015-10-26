@@ -17,7 +17,7 @@
 			
 			$exists = DB::table('ciclo_vida')->select('nombre')->where('nombre', $namePC)->count(); 
 			if ($exists>0){
-				return Respone::json(array('Success' => 'false'));
+				return Response::json(array('Success' => 'false'));
 			}			
 			DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 			DB::table('ciclo_vida')->insert(
