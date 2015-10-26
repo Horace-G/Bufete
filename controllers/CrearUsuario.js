@@ -117,8 +117,8 @@ $scope.submit = function () {
     
     if($scope.confirmpass.length<8){
         $("#usuarioConfirmPassword").css("color","red");
-        console.log("confirm pass muy corto");
-       // mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
+        //console.log("confirm pass muy corto");
+        mensajeService.ShowMessage('SHORT_8','Password');
         $scope.valid = 0;
          return;
     }
@@ -126,7 +126,8 @@ $scope.submit = function () {
     if($scope.pass !== $scope.confirmpass){
         $("#usuarioPassword").css("color","red");
         $("#usuarioConfirmPassword").css("color","red");
-        console.log("no coinciden");
+        mensajeService.ShowMessage('NOMATCH','Contrasenas');
+        //console.log("no coinciden");
         $scope.valid = 0;
         
     }
