@@ -141,8 +141,8 @@ $scope.submitGuardar = function () {
 			data: {nameLaboratorio: $scope.nombre, descriptionLaboratorio: $scope.descripcion,correoLaboratorio: $scope.correo, telefonoLaboratorio: NumerosTelefonicos, userLaboratorio: '1234', estadoLaboratorio: '1'}
 	};
 	$http(request).then(function(response){
-        if(response.data.success.equals("true")){
-            console.log(response.data.success);
+        if(response.data.Success.equals("true")){
+            console.log(response.data.Success);
             
              $("#nombreLaboratorio").css("color","black");
             $("#descripcionLaboratorio").css("color","black");
