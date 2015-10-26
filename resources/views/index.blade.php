@@ -44,6 +44,7 @@
         <script src="./controllers/crearlaboratorio.js"></script>
         <script src="./controllers/CrearUsuario.js"></script>
         <script src="./controllers/crearexpediente.js"></script>
+        <script src="./controllers/FormaFarmaceutica.js"></script>
     </head>
     <body>
 
