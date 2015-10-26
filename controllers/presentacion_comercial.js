@@ -60,6 +60,7 @@ $scope.submit = function () {
 			data: {namePresentacionComercial: $scope.nombre, descriptionPresentacionComercial: $scope.descripcion, userPresentacionComercial: '1234', estadoPresentacionComercial: '1'}
 	};
 	$http(request).then(function(response){
+        alert("gggg");
         if(response.data.Success=="true"){
             console.log(response.data.success);
             mensajeService.ShowMessage('SUCCESS_SAVE','Presentacion Comercial');
