@@ -17,7 +17,7 @@
 			
 			$exists = DB::table('presentacion_comercial')->select('nombre')->where('nombre', $namePC)->count();
                         if ($exists>0){
-                                return Respone::json(array('Success' => 'false'));
+                                return Response::json(array('Success' => 'false'));
                         }
 			
 			
