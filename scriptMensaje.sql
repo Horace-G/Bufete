@@ -25,6 +25,11 @@ VALUES ('SHORT_8','- longitud muy corta(8)',1);
 INSERT INTO mensaje (nombre,descripcion, gravedad) 
 VALUES ('NOMATCH','- elementos no coinciden',1);
 
+INSERT INTO mensaje (nombre,descripcion, gravedad) 
+VALUES ('LONG_256','- longitud excede lo permitido(256)',1);
+
+INSERT INTO mensaje (nombre,descripcion, gravedad) 
+VALUES ('INVALID_EMAIL','- correo electronico ingresado incorrectamente',1);
 
 INSERT INTO mensaje (nombre,descripcion, gravedad) 
 VALUES ('WUT','- WUT',4);
