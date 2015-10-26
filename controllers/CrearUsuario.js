@@ -5,7 +5,7 @@ $scope.init = function () {
        roles=data;
     
     var count = Object.keys(roles).length;
-    alert(count);
+    alert(roles[0]);
     for(var i=0;i<count;i++){
         
         var $selectDropdown = 
