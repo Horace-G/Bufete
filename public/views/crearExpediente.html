@@ -37,7 +37,7 @@
             <form class="col s12" ng-submit="submit()"ng-controller="crearexpediente">
                  <div class="row">
                      <div class="input-field col s6">
-                          <input id="nombreProducto" type="text" class="validate">
+                          <input id="nombreProducto" type="text" class="validate" ng-model="nombre">
                           <label for="nombreRepresentante">Nombre del Producto<span id="asterisco">*</span></label>
                     </div>
                     <div class="input-field col s6">
@@ -93,7 +93,7 @@
                     </div>
                      <div class="input-field col s6">
                           <input id="nombreRepresentante" type="text" class="validate">
-                          <label for="nombreRepresentante">Nombre del Representante<span id="asterisco">*</span></label>
+                          <label for="nombreRepresentante">Nombre del Representante<span id="asterisco" ng-model="responsable">*</span></label>
                     </div>
                   </div>
                   <br><br>

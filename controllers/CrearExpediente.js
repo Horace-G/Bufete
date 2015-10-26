@@ -163,18 +163,51 @@ $scope.init();
 $scope.submit = function () {
     
     $scope.valid = 1;
-    var id = 0;
+    var id_rol = 0;
+    var id_presentacioncomercial = 0;
+    var id_modalidadventa = 0;
+    var id_viaadministracion = 0;
+    var id_formafarmaceutica = 0;
+    var id_laboratorio = 0;
      if($scope.valid == 1){
         
         var path = $location.path($location.path());
         //
-        var count = Object.keys(roles).length;
+         var count = Object.keys(modalidadventa).length;
          for(var i=0;i<count;i++){
-            if($('#dropdownid').find(":selected").text()==roles[i].nombre){
-                id=roles[i].id;
+            if($('#modalidadVenta').find(":selected").text()==modalidadventa[i].nombre){
+                id_modalidadventa=modalidadventa[i].id;
+                alert(id_modalidadventa);
             }
         }
-        
+        var count = Object.keys(presentacioncomercial).length;
+         for(var i=0;i<count;i++){
+            if($('#presentacionComercial').find(":selected").text()==presentacioncomercial[i].nombre){
+                id_presentacioncomercial=presentacioncomercial[i].id;
+                alert(id_presentacioncomercial);
+            }
+        }
+         var count = Object.keys(formafarmaceutica).length;
+         for(var i=0;i<count;i++){
+            if($('#formaFarmaceutica').find(":selected").text()==formafarmaceutica[i].nombre){
+                id_formafarmaceutica=formafarmaceutica[i].id;
+                alert(id_formafarmaceutica);
+            }
+        }
+        var count = Object.keys(viaadministracion).length;
+         for(var i=0;i<count;i++){
+            if($('#viaAdministracion').find(":selected").text()==viaadministracion[i].nombre){
+                id_viaadministracion=viaadministracion[i].id;
+                alert(id_viaadministracion);
+            }
+        }
+         var count = Object.keys(laboratoriofabricante).length;
+         for(var i=0;i<count;i++){
+            if($('#laboratorioFabricante').find(":selected").text()==laboratoriofabricante[i].nombre){
+                id_laboratorio=laboratoriofabricante[i].id;
+                alert(id_laboratorio);
+            }
+        }
 		//Creating the baseUrl
 		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveExpediente';
 		console.log(baseUrl);
@@ -182,7 +215,7 @@ $scope.submit = function () {
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {}
+			data: {nombreMedicamento: $scope.nombre,modalidadVentaMedicamentos: id_modalidadventa, formaFarmaceuticaMedicamento: id_formafarmaceutica, viaAdministracionMedicamento: id_viaadministracion, presentacionComercialMedicamento: id_presentacioncomercial,laboratorioMedicamento: id_laboratorio, responsableMedicamento: $scope.responsable, userMedicamento: '1234', estadoMedicamento: '1'}
 	};
     
 	$http(request).then(function(response){
