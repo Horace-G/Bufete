@@ -5,7 +5,7 @@ $scope.nombre = '';
 $scope.descripcion = '';
 $scope.correo = '';
 $scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");
-$scope.emails = new RegExp("/^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/1");
+$scope.emails = new RegExp("^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$");
 $scope.numbers = new RegExp("^[0-9]*$");
     $('select').material_select();
 $scope.submitNumero = function () {
@@ -16,7 +16,6 @@ $scope.submitNumero = function () {
         
          $("#telefonoLaboratorio").css("color","red");
         mensajeService.ShowMessage('LONG_64','Correo Laboratorio');
-        console.log("telefono invalido");
         $scope.validNumber = 0;
         
     }
@@ -40,7 +39,8 @@ $scope.submitNumero = function () {
         $("<option selected></option>")
         .attr("number",value)
         .text(value)
-    );   
+    );  
+    $("#telefonoLaboratorio").css("color","black");
     }
 
     // trigger event
@@ -95,7 +95,7 @@ $scope.submitGuardar = function () {
         mensajeService.ShowMessage('LONG_64','Correo Laboratorio');
         $scope.valid = 0;
     
-    }if($scope.emails.test($scope.correo)){
+    }if(!$scope.emails.test($scope.correo)){
         
          $("#correoElectronico").css("color","red");
         mensajeService.ShowMessage('LONG_64','Correo Laboratorio');
@@ -120,6 +120,7 @@ $scope.submitGuardar = function () {
     }if($scope.valid == 1){
         $("#nombreLaboratorio").css("color","black");
         $("#descripcionLaboratorio").css("color","black");
+        $("#correoElectronico").css("color","black");
         
         
         var path = $location.path($location.path());
