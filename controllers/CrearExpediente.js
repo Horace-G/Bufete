@@ -1,8 +1,39 @@
 var presentacioncomercial = [];
 var modalidadventa= [];
 var formafarmaceutica=[];
+var viaadministracion=[];
 angular.module('myApp').controller('crearexpediente', ['$scope','$http','$location','mensajeService','medicamentoService', function ($scope,$http,$location,mensajeService,medicamentoService) {
 $scope.init = function () {
+    
+    
+    medicamentoService.getViaAdministracion().then(function(data){
+       viaadministracion=data;
+    
+    var count = Object.keys(viaadministracion).length;
+    for(var i=0;i<count;i++){
+        if($('#viaAdministracion').find(":selected").text()=="Via Administracion"){
+    var $selectDropdown = 
+      $("#viaAdministracion")
+       .empty()
+       .html(' ');
+    }else{
+        var $selectDropdown = 
+      $("#viaAdministracion")
+       
+    }
+    // add new value
+    console.log(viaadministracion[i]);
+      var value = viaadministracion[i].nombre;
+        $selectDropdown.append(
+        $("<option selected></option>")
+        .attr("number",value)
+        .text(value)
+    );  
+    // trigger event
+    $selectDropdown.trigger('contentChanged');
+    }
+    });
+    
     
     medicamentoService.getFormaFarmaceutica().then(function(data){
        formafarmaceutica=data;
