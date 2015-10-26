@@ -44,7 +44,7 @@ $('select').on('contentChanged', function() {
 $scope.init();
 
 
-$scope.submitGuardar = function () {
+$scope.submit = function () {
     
     $scope.valid = 1;
     var id = 0;
