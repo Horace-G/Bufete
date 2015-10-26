@@ -155,6 +155,23 @@ $scope.submitGuardar = function () {
             $("#descripcionLaboratorio").css("color","black");
             $scope.nombre = '';
             $scope.descripcion = '';
+            $scope.correo = '';
+            $scope.telefono = '';
+            
+            var $selectDropdown = 
+              $("#dropdownid")
+               .empty()
+               .html(' ');
+                value = 1;
+            
+            // add new value
+            
+              var value = "Numeros Telefonicos";
+                $selectDropdown.append(
+                $("<option selected></option>")
+                .attr("number",value)
+                .text(value)
+            );  
             mensajeService.ShowMessage('SUCCESS_SAVE','Laboratorio');
         }else{
             mensajeService.ShowMessage('FAILED_SAVE','Laboratorio');
