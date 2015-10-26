@@ -148,6 +148,7 @@ $scope.submitGuardar = function () {
             $("#descripcionLaboratorio").css("color","black");
             $scope.nombre = '';
             $scope.descripcion = '';
+            mensajeService.ShowMessage('SUCCESS_SAVE','Laboratorio');
         }else{
             mensajeService.ShowMessage('FAILED_SAVE','Laboratorio');
         }

@@ -55,7 +55,7 @@ $scope.submit = function () {
         var count = Object.keys(roles).length;
          for(var i=0;i<count;i++){
             if($('#dropdownid').find(":selected").text()==roles[i].nombre){
-                alert(roles[i].id);
+                id=roles[i].id;
             }
         }
         
@@ -66,13 +66,13 @@ $scope.submit = function () {
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {}
+			data: {userUser: $scope.user, nombreUser: $scope.nombre, passwordUser: $scope.pass, idUser: id}
 	};
-    toastr.error('ERROR!','Guardado');
+    
 	$http(request).then(function(response){
-        if(response.data.success.equals("true")){
+        if(response.data.success=="true"){
             console.log(response.data.success);
-            
+            mensajeService.ShowMessage('SUCCESS_SAVE','Usuario');
         }else{
             mensajeService.ShowMessage('FAILED_SAVE','Usuario');
         }
