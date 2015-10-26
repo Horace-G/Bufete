@@ -102,7 +102,7 @@ function medicamentoService($http,$location) {
 
     ctrl.getFormaFarmaceutica = function(){
         var path = $location.path($location.path());
-		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allPresentacionComercial';
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allFormaFarmaceutica';
         var request = {
 			method: 'GET',
 			url: baseUrl
