@@ -27,10 +27,10 @@
         <script src="./public/JS/jquery-1.9.1.min.js"></script>
         <script src="./public/JS/toastr.js"></script>
         
-        <script src="./public/JS/materialize/js/materialize.min.js"></script>
+        
         <script src="./public/JS/angular.min.js"></script> 
         <script src="./public/JS/angular-route.min.js"></script>
-        
+        <script src="./public/JS/materialize/js/materialize.min.js"></script>
         <script src="./public/JS/angular-route.min.js"></script>
         <script src="./controllers/app.js"></script>
         <script src="./controllers/mainController.js"></script>
@@ -43,6 +43,7 @@
         <script src="./controllers/via_administracion.js"></script>
         <script src="./controllers/crearlaboratorio.js"></script>
         <script src="./controllers/CrearUsuario.js"></script>
+        <script src="./controllers/crearexpediente.js"></script>
     </head>
     <body>
 

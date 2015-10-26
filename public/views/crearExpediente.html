@@ -34,43 +34,52 @@
       
          <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo expediente al sistema</h3>
           <div class="row">
-            <form class="col s12" ng-submit="submit()"ng-controller="agregar_expediente">
+            <form class="col s12" ng-submit="submit()"ng-controller="crearexpediente">
                  <div class="row">
                      <div class="input-field col s6">
                           <input id="nombreProducto" type="text" class="validate">
                           <label for="nombreRepresentante">Nombre del Producto<span id="asterisco">*</span></label>
                     </div>
                     <div class="input-field col s6">
-                        <select>
-                          <option value="1" selected>Option 1</option>
-                          <option value="2">Option 2</option>
-                          <option value="3">Option 3</option>
+                        <select id="comboModalidadVenta" ng-model="SelectedModalidad" ng-options="item.id as item.nombre for item in selectModalidad">
+                           <option value="1">opcion 1</option>
+                           <option value="2">opcion 2</option>
+                           <option value="2">opcion 3</option>
                         </select>
                         <label>Modalidad de Venta<span id="asterisco">*</span></label>
                     </div>
                     <div class="input-field col s6">
-                        <select>
-                          <option value="1" selected>Option 1</option>
-                          <option value="2">Option 2</option>
-                          <option value="3">Option 3</option>
+                        <!--ng-model="selectedTestAccount" ng-options="item.Id as item.Name for item in testAccounts"-->
+                        <select id="comboFormaFarmaceutica">
+                            <option value="1">opcion 1</option>
+                            <option value="2">opcion 2</option>
+                            <option value="2">opcion 3</option>
                         </select>
                         <label>Forma Farmaceutica<span id="asterisco">*</span></label>
                     </div>
                     <div class="input-field col s6">
-                        <select>
-                              <option value="1" selected>Option 1</option>
-                              <option value="2">Option 2</option>
-                              <option value="3">Option 3</option>
-                         </select>
+                        <select id="comboPresentacionComercial" ng-model="SelectedPresentacion" ng-options="item.id as item.nombre for item in selectpresentacionComercial">
+                            <option value="1">opcion 1</option>
+                            <option value="2">opcion 2</option>
+                            <option value="2">opcion 3</option>
+                        </select>
                          <label>Presentacion Comercial<span id="asterisco">*</span></label>
                     </div>
                      <div class="input-field col s6">
-                        <select>
-                              <option value="1" selected>Option 1</option>
-                              <option value="2">Option 2</option>
-                              <option value="3">Option 3</option>
+                        <select id="comboViaAdministracion" ng-model="SelectedVia" ng-options="item.id as item.nombre for item in selectViaAdministracion">
+                             <option value="1">opcion 1</option>
+                             <option value="2">opcion 2</option>
+                             <option value="2">opcion 3</option>
                          </select>
                          <label>Via de administracion<span id="asterisco">*</span></label>
+                    </div>
+                    <div class="input-field col s6">
+                        <select id="comboLaboratorio" ng-model="SelectedLab" ng-options="item.id as item.nombre for item in selectLaboratorio">
+                             <option value="1">opcion 1</option>
+                             <option value="2">opcion 2</option>
+                             <option value="2">opcion 3</option>
+                         </select>
+                         <label>Laboratorio Responsable<span id="asterisco">*</span></label>
                     </div>
                      <div class="input-field col s6">
                           <input id="nombreRepresentante" type="text" class="validate">

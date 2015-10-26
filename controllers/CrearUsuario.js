@@ -43,12 +43,64 @@ $('select').on('contentChanged', function() {
 
 $scope.init();
 
+    $scope.user = ''
+    $scope.nombre = ''
+    $scope.pass = ''
+    $scope.confirmpass = ''
+
 
 $scope.submit = function () {
     
     $scope.valid = 1;
     var id = 0;
+    
+    
+    if($scope.user.length>16){
+        $("#nombreUsuario").css("color","red");
+        console.log("usuario muy largo");
+       // mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
+        $scope.valid = 0;
+         return;
+    }
+    
+     if($scope.name.length>64){
+        $("#nombreCompleto").css("color","red");
+        console.log("nombre muy largo");
+       // mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
+        $scope.valid = 0;
+         return;
+    }
+    
+    if($scope.pass.length<8){
+        $("#usuarioPassword").css("color","red");
+        console.log("pass muy corto");
+       // mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
+        $scope.valid = 0;
+         return;
+    }
+    
+    if($scope.confirmpass.length<8){
+        $("#usuarioConfirmPassword").css("color","red");
+        console.log("confirm pass muy corto");
+       // mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
+        $scope.valid = 0;
+         return;
+    }
+    
+    if($scope.pass !== $scope.confirmpass){
+        $("#usuarioPassword").css("color","red");
+        $("#usuarioConfirmPassword").css("color","red");
+        console.log("no coinciden");
+        $scope.valid = 0;
+        
+    }
+    
      if($scope.valid == 1){
+         
+        $("#nombreUsuario").css("color","black");
+        $("#nombreCompleto").css("color","black");
+        $("#usuarioPassword").css("color","black");
+        $("#usuarioConfirmPassword").css("color","black");
         
         var path = $location.path($location.path());
         //
@@ -62,7 +114,6 @@ $scope.submit = function () {
 		//Creating the baseUrl
 		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveUsuario';
 		console.log(baseUrl);
-         
 	var request = {
 			method: 'POST',
 			url: baseUrl,
@@ -78,7 +129,6 @@ $scope.submit = function () {
         }
 	});
     }
-
 
 };
 }]);
