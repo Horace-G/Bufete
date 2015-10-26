@@ -8,37 +8,37 @@ $scope.submit = function () {
     
      if($scope.nombre.length==0){
          $("#nombreModalidadDeVenta").css("color","red");
-        mensajeService.ShowMessage('INPUT_EMPTY','Nombre');
+        mensajeService.ShowMessage('INPUT_EMPTY','Nombre Modalidad Venta');
         $scope.valid = 0;
          return;
     }if($scope.descripcion.length==0){
        // $("#nombreModalidadDeVenta").css("background","aliceblue");
         $("#descripcionModalidadDeVenta").css("color","red");
-        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion');
+        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion Modalidad Venta');
         $scope.valid = 0;
         return;     
     }if($scope.nombre.length>64){
         $("#nombreModalidadDeVenta").css("color","red");
       //  $("#descripcionModalidadDeVenta").css("background","aliceblue");
-        mensajeService.ShowMessage('LONG_64','Nombre');
+        mensajeService.ShowMessage('LONG_64','Nombre Modalidad Venta');
         $scope.valid = 0;
         return;
     }if($scope.descripcion.length>128){
         //$("#nombreModalidadDeVenta").css("background","aliceblue");
         $("#descripcionModalidadDeVenta").css("color","red");
-        mensajeService.ShowMessage('LONG_128','Descripcion');
+        mensajeService.ShowMessage('LONG_128','Descripcion Modalidad Venta');
         $scope.valid = 0;
         return;    
     }if($scope.symbols.test($scope.nombre)){
         $("#nombreModalidadDeVenta").css("color","red");
         //$("#descripcionModalidadDeVenta").css("background","aliceblue");
-        mensajeService.ShowMessage('INVALID_CHAR','Nombre');
+        mensajeService.ShowMessage('INVALID_CHAR','Nombre Modalidad Venta');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.descripcion)){
         //$("#nombreModalidadDeVenta").css("background","aliceblue");
         $("#descripcionModalidadDeVenta").css("color","red");
-        mensajeService.ShowMessage('INVALID_CHAR','Descripcion');
+        mensajeService.ShowMessage('INVALID_CHAR','Descripcion Modalidad Venta');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.nombre) && $scope.symbols.test($scope.descripcion)){
@@ -57,13 +57,17 @@ var request = {
 			data: {nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, userModalidadVenta: '1234', estadoModalidadVenta: '1'}
 	};
 	$http(request).then(function(response){
-		console.log(response.data.success);
-        mensajeService.ShowMessage('SUCCESS_SAVE','Modalidad Venta');
-		 $("#nombreModalidadDeVenta").css("color","black");
-        $("#descripcionModalidadDeVenta").css("color","black");
-		$scope.nombre = '';
-$scope.descripcion = '';
-	});
+        if(response.data.Success=="true"){
+            console.log(response.data.success);
+            mensajeService.ShowMessage('SUCCESS_SAVE','Modalidad Venta');
+            $("#nombreModalidadDeVenta").css("color","black");
+            $("#descripcionModalidadDeVenta").css("color","black");
+            $scope.nombre = '';
+            $scope.descripcion = '';
+        }else{
+            mensajeService.ShowMessage('FAILED_SAVE','Modalidad Venta');
+        }
+        });
     }
           
 };

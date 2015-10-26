@@ -10,37 +10,37 @@ $scope.submit = function () {
     
      if($scope.nombre.length==0){
          $("#nombreFormaFarmaceutica").css("color","red");
-        mensajeService.ShowMessage('INPUT_EMPTY','Nombre');
+        mensajeService.ShowMessage('INPUT_EMPTY','Nombre Froma Farmaceutica');
         $scope.valid = 0;
          return;
     }if($scope.descripcion.length==0){
        // $("#nombrePresentacionComercial").css("background","aliceblue");
         $("#descripcionFormaFarmaceutica").css("color","red");
-        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion');
+        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion Forma Farmaceutica');
         $scope.valid = 0;
         return;       
     }if($scope.nombre.length>64){
         $("#nombreFormaFarmaceutica").css("color","red");
         //$("#descripcionPresentacionComercial").css("background","aliceblue");
-        mensajeService.ShowMessage('LONG_64','Nombre');
+        mensajeService.ShowMessage('LONG_64','Nombre Forma Farmaceutica');
         $scope.valid = 0;
         return;
     }if($scope.descripcion.length>128){
         //$("#nombrePresentacionComercial").css("background","aliceblue");
         $("#descripcionFormaFarmaceutica").css("color","red");
-        mensajeService.ShowMessage('LONG_128','Descripcion');
+        mensajeService.ShowMessage('LONG_128','Descripcion Forma Farmaceutica');
         $scope.valid = 0;
         return;    
     }if($scope.symbols.test($scope.nombre)){
         $("#nombreFormaFarmaceutica").css("color","red");
        // $("#descripcionPresentacionComercial").css("background","aliceblue");
-        mensajeService.ShowMessage('INVALID_CHAR','Nombre');
+        mensajeService.ShowMessage('INVALID_CHAR','Nombre Forma Farmaceutica');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.descripcion)){
         //$("#nombrePresentacionComercial").css("background","aliceblue");
         $("#descripcionFormaFarmaceutica").css("color","red");
-        mensajeService.ShowMessage('INVALID_CHAR','Descripcion');
+        mensajeService.ShowMessage('INVALID_CHAR','Descripcion Forma Farmaceutica');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.nombre) && $scope.symbols.test($scope.descripcion)){
@@ -60,15 +60,15 @@ $scope.submit = function () {
 			data: {nameFormaFarmaceutica: $scope.nombre, descriptionFormaFarmaceutica: $scope.descripcion, userFormaFarmaceutica: '1234', estadoFormaFarmaceutica: '1'}
 	};
 	$http(request).then(function(response){
-        if(response.data.Success){
+        if(response.data.Success=="true"){
             console.log(response.data.Success);
-            mensajeService.ShowMessage('SUCCESS_SAVE','Presentacion Comercial');
-             $("#nombrePresentacionComercial").css("color","black");
-            $("#descripcionPresentacionComercial").css("color","black");
+            mensajeService.ShowMessage('SUCCESS_SAVE','Forma Farmaceutica');
+            $("#nombreFormaFarmaceutica").css("color","black");
+            $("#descripcionFormaFarmaceutica").css("color","black");
             $scope.nombre = '';
             $scope.descripcion = '';
         }else{
-            
+            mensajeService.ShowMessage('FAILED_SAVE','Forma Farmaceutica');
         }
 	});
     }

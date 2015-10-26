@@ -14,7 +14,12 @@
 			$estadoPC = $request->input('estadoFormaFarmaceutica');
 			$userCreate = $request->input('userFormaFarmaceutica');
 			$date = Carbon::now();
-			
+            
+			$exists = DB::table('forma_farmaceutica')->select('nombre')->where('nombre', $namePC)->count(); 
+			if ($exists>0){
+				return Response::json(array('Success' => 'false'));
+			}		
+            
 			DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 			DB::table('forma_farmaceutica')->insert(
 				array('nombre'=>$namePC, 'descripcion'=>$descPC, 'estado'=>$estadoPC,
