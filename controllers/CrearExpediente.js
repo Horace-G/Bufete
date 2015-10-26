@@ -1,6 +1,37 @@
 var presentacioncomercial = [];
+var modalidadventa= [];
 angular.module('myApp').controller('crearexpediente', ['$scope','$http','$location','mensajeService','medicamentoService', function ($scope,$http,$location,mensajeService,medicamentoService) {
 $scope.init = function () {
+    
+    
+    medicamentoService.getModalidadVenta().then(function(data){
+       modalidadventa=data;
+    
+    var count = Object.keys(modalidadventa).length;
+    for(var i=0;i<count;i++){
+        if($('#modalidadVenta').find(":selected").text()=="Modalidad Venta"){
+    var $selectDropdown = 
+      $("#modalidadVenta")
+       .empty()
+       .html(' ');
+    }else{
+        var $selectDropdown = 
+      $("#modalidadVenta")
+       
+    }
+    // add new value
+    console.log(modalidadventa[i]);
+      var value = modalidadventa[i].nombre;
+        $selectDropdown.append(
+        $("<option selected></option>")
+        .attr("number",value)
+        .text(value)
+    );  
+    // trigger event
+    $selectDropdown.trigger('contentChanged');
+    }
+    });
+    
     
     medicamentoService.getPresentacionComercial().then(function(data){
        presentacioncomercial=data;
@@ -12,7 +43,6 @@ $scope.init = function () {
       $("#presentacionComercial")
        .empty()
        .html(' ');
-       
     }else{
         var $selectDropdown = 
       $("#presentacionComercial")
@@ -26,9 +56,6 @@ $scope.init = function () {
         .attr("number",value)
         .text(value)
     );  
-    
-    
-
     // trigger event
     $selectDropdown.trigger('contentChanged');
     }
