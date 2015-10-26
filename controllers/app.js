@@ -51,6 +51,7 @@ myApp.config(function ($routeProvider) {
 
 myApp.directive('buffetNav', [function() {
   return {
+      controller: 'mainController',
       templateUrl : 'public/buffetnavbar.html'
   }
 }]);
@@ -224,7 +225,7 @@ function mensajeService($http,$location){
                     toastr.warning(nameInput+' '+mensaje.descripcion,'Warning!');
                 }else if (mensaje.gravedad == 2){
                     toastr.error(nameInput + ' ' + mensaje.descripcion,'Error!');
-                }else if (mesaje.gravedad == 0){
+                }else if (mensaje.gravedad == 0){
                     toastr.success(nameInput +' '+ mensaje.descripcion,'Success!');
                 }else{
                     toastr.error('ERROR!','WUT');
