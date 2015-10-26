@@ -12,14 +12,20 @@ $scope.submitNumero = function () {
     
     $scope.validNumber = 1;
     
-    if(!$scope.numbers.test($scope.telefono)){
+    //if(!$scope.numbers.test($scope.telefono)){
         
+<<<<<<< HEAD
          $("#telefonoLaboratorio").css("color","red");
         //mensajeService.ShowMessage('LONG_64','Correo Laboratorio');\
         mensajeService.ShowMessage('INVALID_CHAR','Telefono');
         $scope.validNumber = 0;
+=======
+      //   $("#telefonoLaboratorio").css("color","red");
+        //mensajeService.ShowMessage('LONG_64','Numero Laboratorio');
+        //$scope.validNumber = 0;
+>>>>>>> 70ea01ba4d0b43d4d62fcfc65c40eb9f32584756
         
-    }
+    //}
    
     //if($scope.symbols.test($scope.telefonos)){
     if($('#dropdownid').find(":selected").text()=="Numeros Telefonicos"){
@@ -142,8 +148,8 @@ $scope.submitGuardar = function () {
 			data: {nameLaboratorio: $scope.nombre, descriptionLaboratorio: $scope.descripcion,correoLaboratorio: $scope.correo, telefonoLaboratorio: NumerosTelefonicos, userLaboratorio: '1234', estadoLaboratorio: '1'}
 	};
 	$http(request).then(function(response){
-        if(response.data.success.equals("true")){
-            console.log(response.data.success);
+        if(response.data.Success=="true"){
+            console.log(response.data.Success);
             
              $("#nombreLaboratorio").css("color","black");
             $("#descripcionLaboratorio").css("color","black");

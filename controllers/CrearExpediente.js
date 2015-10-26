@@ -1,8 +1,69 @@
 var presentacioncomercial = [];
 var modalidadventa= [];
 var formafarmaceutica=[];
+var viaadministracion=[];
+var laboratoriofabricante=[];
 angular.module('myApp').controller('crearexpediente', ['$scope','$http','$location','mensajeService','medicamentoService', function ($scope,$http,$location,mensajeService,medicamentoService) {
 $scope.init = function () {
+    
+    
+    medicamentoService.getLaboratorio().then(function(data){
+       laboratoriofabricante=data;
+    
+    var count = Object.keys(laboratoriofabricante).length;
+    for(var i=0;i<count;i++){
+        if($('#laboratorioFabricante').find(":selected").text()=="Laboratorio Fabricante"){
+    var $selectDropdown = 
+      $("#laboratorioFabricante")
+       .empty()
+       .html(' ');
+    }else{
+        var $selectDropdown = 
+      $("#laboratorioFabricante")
+       
+    }
+    // add new value
+    console.log(laboratoriofabricante[i]);
+      var value = laboratoriofabricante[i].nombre;
+        $selectDropdown.append(
+        $("<option selected></option>")
+        .attr("number",value)
+        .text(value)
+    );  
+    // trigger event
+    $selectDropdown.trigger('contentChanged');
+    }
+    });
+    
+    
+    medicamentoService.getViaAdministracion().then(function(data){
+       viaadministracion=data;
+    
+    var count = Object.keys(viaadministracion).length;
+    for(var i=0;i<count;i++){
+        if($('#viaAdministracion').find(":selected").text()=="Via Administracion"){
+    var $selectDropdown = 
+      $("#viaAdministracion")
+       .empty()
+       .html(' ');
+    }else{
+        var $selectDropdown = 
+      $("#viaAdministracion")
+       
+    }
+    // add new value
+    console.log(viaadministracion[i]);
+      var value = viaadministracion[i].nombre;
+        $selectDropdown.append(
+        $("<option selected></option>")
+        .attr("number",value)
+        .text(value)
+    );  
+    // trigger event
+    $selectDropdown.trigger('contentChanged');
+    }
+    });
+    
     
     medicamentoService.getFormaFarmaceutica().then(function(data){
        formafarmaceutica=data;
