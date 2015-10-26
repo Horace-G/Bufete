@@ -51,6 +51,7 @@ myApp.config(function ($routeProvider) {
 
 myApp.directive('buffetNav', [function() {
   return {
+      controller: 'mainController',
       templateUrl : 'public/buffetnavbar.html'
   }
 }]);

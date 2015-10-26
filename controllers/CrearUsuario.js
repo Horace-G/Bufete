@@ -47,6 +47,7 @@ $scope.init();
     $scope.nombre = ''
     $scope.pass = ''
     $scope.confirmpass = ''
+    $scope.noSpaces = new RegExp("^\S");
 
 
 $scope.submit = function () {
@@ -91,6 +92,13 @@ $scope.submit = function () {
         $("#usuarioPassword").css("color","red");
         $("#usuarioConfirmPassword").css("color","red");
         console.log("no coinciden");
+        $scope.valid = 0;
+        
+    }
+    
+    if(!$scope.noSpaces.test($scope.pass)){
+        $("#usuarioPassword").css("color","red");
+        console.log("password no puede tener espacios en blanco");
         $scope.valid = 0;
         
     }
