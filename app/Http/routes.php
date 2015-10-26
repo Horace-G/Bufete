@@ -41,6 +41,8 @@ Route::post('/saveMedicamento', 'MedicamentoController@saveMedicamento');
 
 Route::post('/saveLaboratorio','LaboratorioController@saveLaboratorio');
 
+Route::post('/saveFormaFarmaceutica','FormaFarmaceuticaController@saveFormaFarmaceutica');
+
 Route::get('/allRol','RolController@allRol');
 
 Route::get('/allPresentacionComercial','PresentacionComercialController@allPresentacionComercial');

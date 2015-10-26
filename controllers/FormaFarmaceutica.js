@@ -60,8 +60,8 @@ $scope.submit = function () {
 			data: {nameFormaFarmaceutica: $scope.nombre, descriptionFormaFarmaceutica: $scope.descripcion, userFormaFarmaceutica: '1234', estadoFormaFarmaceutica: '1'}
 	};
 	$http(request).then(function(response){
-        if(response.data.success){
-            console.log(response.data.success);
+        if(response.data.Success){
+            console.log(response.data.Success);
             mensajeService.ShowMessage('SUCCESS_SAVE','Presentacion Comercial');
              $("#nombrePresentacionComercial").css("color","black");
             $("#descripcionPresentacionComercial").css("color","black");
