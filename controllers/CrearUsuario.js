@@ -66,7 +66,7 @@ $scope.submit = function () {
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {userUser: $scope.user, nombreUser: $scope.nombre, passwordUser: $scope.pass, idUser: id}
+			data: {usernameUsuario: $scope.user, nombreUsuario: $scope.nombre, passwordUsuario: $scope.pass, rol_idUsuario: id,estadoUsuario: '1'}
 	};
     
 	$http(request).then(function(response){
