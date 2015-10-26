@@ -6,13 +6,14 @@ $scope.descripcion = '';
 $scope.correo = '';
 $scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");
 $scope.emails = new RegExp("^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$");
-$scope.numbers = new RegExp("^[0-9]*$");
+$scope.numbers = new RegExp("^[0-9]+$");
+$scope.numValid = new RegExp("^((\\+[1-9]{1,4}[ \\-]\*)|(\\([0-9]{2,3}\\)[ \\-]\*)|([0-9]{2,4})[ \\-]\*)\*?[0-9]{3,4}?[ \\-]\*[0-9]{3,4}?$");
     $('select').material_select();
 $scope.submitNumero = function () {
     
     $scope.validNumber = 1;
     
-    if(!$scope.numbers.test($scope.telefono)){
+    if(!$scope.numValid.test($scope.telefono)){
          $("#telefonoLaboratorio").css("color","red");
         //mensajeService.ShowMessage('LONG_64','Correo Laboratorio');\
         mensajeService.ShowMessage('INVALID_CHAR','Telefono');
