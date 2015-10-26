@@ -60,10 +60,14 @@ var request = {
 			data: {nombreRol: $scope.nombre, descriptionRol: $scope.descripcion, estadoRol: '1'}
 	};
 	$http(request).then(function(response){
-		console.log(response.data);
-        mensajeService.ShowMessage('SUCCESS_SAVE','Rol');
-		$scope.nombre = '';
-$scope.descripcion = '';
+        if(response.data.Success=="true"){
+            console.log(response.data);
+            mensajeService.ShowMessage('SUCCESS_SAVE','Rol');
+            $scope.nombre = '';
+            $scope.descripcion = '';
+        }else{
+                mensajeService.ShowMessage('FAILED_SAVE','Rol');
+            }
 	});
     }
           

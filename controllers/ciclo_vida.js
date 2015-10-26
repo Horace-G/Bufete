@@ -62,12 +62,16 @@ var request = {
 	
 	
 $http(request).then(function(response){
+    if(response.data.Success=="true"){
 		console.log(response.data.success);
         mensajeService.ShowMessage('SUCCESS_SAVE','Ciclo de Vida');
-		 $("#nombreCicloDeVida").css("color","black");
+        $("#nombreCicloDeVida").css("color","black");
         $("#descripcionCicloDeVida").css("color","black");
 		$scope.nombre = '';
-$scope.descripcion = '';
+        $scope.descripcion = '';
+    }else{
+            mensajeService.ShowMessage('FAILED_SAVE','Ciclo de Vida');
+    }
 	});
     }
           
