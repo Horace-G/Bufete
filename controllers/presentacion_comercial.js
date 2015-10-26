@@ -68,7 +68,7 @@ $scope.submit = function () {
             $scope.nombre = '';
             $scope.descripcion = '';
         }else{
-            mensajeService.ShowMessage('FAILED_SAVE','Presentacion Comercial');
+            mensajeService.ShowMessage('INVALID_CHAR','Presentacion Comercial');
         }
 	});
     }
