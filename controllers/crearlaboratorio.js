@@ -12,20 +12,13 @@ $scope.submitNumero = function () {
     
     $scope.validNumber = 1;
     
-    //if(!$scope.numbers.test($scope.telefono)){
-        
-<<<<<<< HEAD
+    if(!$scope.numbers.test($scope.telefono)){
          $("#telefonoLaboratorio").css("color","red");
         //mensajeService.ShowMessage('LONG_64','Correo Laboratorio');\
         mensajeService.ShowMessage('INVALID_CHAR','Telefono');
         $scope.validNumber = 0;
-=======
-      //   $("#telefonoLaboratorio").css("color","red");
-        //mensajeService.ShowMessage('LONG_64','Numero Laboratorio');
-        //$scope.validNumber = 0;
->>>>>>> 70ea01ba4d0b43d4d62fcfc65c40eb9f32584756
         
-    //}
+    }
    
     //if($scope.symbols.test($scope.telefonos)){
     if($('#dropdownid').find(":selected").text()=="Numeros Telefonicos"){
