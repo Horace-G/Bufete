@@ -5,9 +5,20 @@ $scope.nombre = '';
 $scope.descripcion = '';
 $scope.correo = '';
 $scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");
-$scope.numbers = new RegExp();
+$scope.emails = new RegExp("^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$");
+$scope.numbers = new RegExp("^[0-9]*$");
     $('select').material_select();
 $scope.submitNumero = function () {
+    
+    $scope.validNumber = 1;
+    
+    if(!$scope.numbers.test($scope.telefono)){
+        
+         $("#telefonoLaboratorio").css("color","red");
+        mensajeService.ShowMessage('LONG_64','Correo Laboratorio');
+        $scope.validNumber = 0;
+        
+    }
    
     //if($scope.symbols.test($scope.telefonos)){
     if($('#dropdownid').find(":selected").text()=="Numeros Telefonicos"){
@@ -22,12 +33,15 @@ $scope.submitNumero = function () {
        
     }
     // add new value
-    var value = $scope.telefono;
-    $selectDropdown.append(
-      $("<option selected></option>")
+    if($scope.validNumber == 1){
+      var value = $scope.telefono;
+        $selectDropdown.append(
+        $("<option selected></option>")
         .attr("number",value)
         .text(value)
-    );
+    );  
+    $("#telefonoLaboratorio").css("color","black");
+    }
 
     // trigger event
     $selectDropdown.trigger('contentChanged');
@@ -81,6 +95,13 @@ $scope.submitGuardar = function () {
         mensajeService.ShowMessage('LONG_64','Correo Laboratorio');
         $scope.valid = 0;
     
+    }if(!$scope.emails.test($scope.correo)){
+        
+         $("#correoElectronico").css("color","red");
+        mensajeService.ShowMessage('LONG_64','Correo Laboratorio');
+        console.log("correo invalido");
+        $scope.valid = 0;
+        
     }if($scope.symbols.test($scope.nombre)){
         $("#nombreLaboratorio").css("color","red");
        // $("#descripcionPresentacionComercial").css("background","aliceblue");
@@ -99,6 +120,9 @@ $scope.submitGuardar = function () {
     }if($scope.valid == 1){
         $("#nombreLaboratorio").css("color","black");
         $("#descripcionLaboratorio").css("color","black");
+        $("#correoElectronico").css("color","black");
+        
+        
         var path = $location.path($location.path());
         //
         var NumerosTelefonicos = [];
