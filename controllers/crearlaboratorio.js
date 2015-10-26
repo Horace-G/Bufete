@@ -171,8 +171,9 @@ $scope.submitGuardar = function () {
                 $("<option selected></option>")
                 .attr("number",value)
                 .text(value)
-                $selectDropdown.trigger('contentChanged');
+                
             );  
+            $selectDropdown.trigger('contentChanged');
             mensajeService.ShowMessage('SUCCESS_SAVE','Laboratorio');
         }else{
             mensajeService.ShowMessage('FAILED_SAVE','Laboratorio');
