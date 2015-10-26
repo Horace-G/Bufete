@@ -177,35 +177,40 @@ $scope.submit = function () {
          for(var i=0;i<count;i++){
             if($('#modalidadVenta').find(":selected").text()==modalidadventa[i].nombre){
                 id_modalidadventa=modalidadventa[i].id;
-                alert(id_modalidadventa);
+                
+                break;
             }
         }
         var count = Object.keys(presentacioncomercial).length;
          for(var i=0;i<count;i++){
             if($('#presentacionComercial').find(":selected").text()==presentacioncomercial[i].nombre){
                 id_presentacioncomercial=presentacioncomercial[i].id;
-                alert(id_presentacioncomercial);
+                
+                break;
             }
         }
          var count = Object.keys(formafarmaceutica).length;
          for(var i=0;i<count;i++){
             if($('#formaFarmaceutica').find(":selected").text()==formafarmaceutica[i].nombre){
                 id_formafarmaceutica=formafarmaceutica[i].id;
-                alert(id_formafarmaceutica);
+                
+                break;
             }
         }
         var count = Object.keys(viaadministracion).length;
          for(var i=0;i<count;i++){
             if($('#viaAdministracion').find(":selected").text()==viaadministracion[i].nombre){
                 id_viaadministracion=viaadministracion[i].id;
-                alert(id_viaadministracion);
+                
+                break;
             }
         }
          var count = Object.keys(laboratoriofabricante).length;
          for(var i=0;i<count;i++){
             if($('#laboratorioFabricante').find(":selected").text()==laboratoriofabricante[i].nombre){
                 id_laboratorio=laboratoriofabricante[i].id;
-                alert(id_laboratorio);
+                
+                break;
             }
         }
 		//Creating the baseUrl
@@ -219,7 +224,7 @@ $scope.submit = function () {
 	};
     
 	$http(request).then(function(response){
-        if(response.data.success=="true"){
+        if(response.data.Success=="true"){
             console.log(response.data.success);
             mensajeService.ShowMessage('SUCCESS_SAVE','Expediente');
         }else{
