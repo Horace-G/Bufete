@@ -59,7 +59,7 @@ $scope.submit = function () {
 			url: baseUrl,
 			data: {namePresentacionComercial: $scope.nombre, descriptionPresentacionComercial: $scope.descripcion, userPresentacionComercial: '1234', estadoPresentacionComercial: '1'}
 	};
-        alert("gggg");
+       
 	$http(request).then(function(response){
         
         if(response.data.Success=="true"){
