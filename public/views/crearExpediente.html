@@ -73,11 +73,22 @@
                          <label>Via de administracion<span id="asterisco">*</span></label>
                     </div>
                      <div class="input-field col s6">
+                        <select>
+                              <option value="1" selected>Option 1</option>
+                              <option value="2">Option 2</option>
+                              <option value="3">Option 3</option>
+                         </select>
+                         <label>Laboratorio Fabricante<span id="asterisco">*</span></label>
+                    </div>
+                     <div class="input-field col s6">
                           <input id="nombreRepresentante" type="text" class="validate">
                           <label for="nombreRepresentante">Nombre del Representante<span id="asterisco">*</span></label>
                     </div>
                   </div>
                   <br><br>
+                <div class="col s9 right-align">
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  </div>
             </form>
               
         </div>
