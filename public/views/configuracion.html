@@ -168,6 +168,35 @@
       </div>
     </li>
      <li id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">assessment</i>Forma Farmaceutica</div>
+      <div class="collapsible-body popup-element">
+      
+           <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva Forma Farmaceutica del medicamento</h3>
+          <div class="row">
+            <form class="col s12" ng-submit="submit()" ng-controller="forma_farmaceutica">
+              <div class="row">
+             <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="nombreFormaFarmaceutica" type="text" class="validate" ng-model="nombre">
+                  <label for="nombreFormaFarmaceutica">Ingrese el nombre de la nueva Forma Farmaceutica<span id="asterisco">*</span></label>
+                </div>
+                 <div class="input-field col s9">
+                  <i class="material-icons prefix">description</i>
+
+                  <textarea id="descripcionFormaFarmaceutica" class="materialize-textarea"ng-model="descripcion"></textarea>
+                  <label for="descripcionFormaFarmaceutica">Ingrese una breve descripción sobre la nueva Forma Farmaceutica<span id="asterisco">*</span></label>
+
+                 </div>
+                 <div class="col s9 right-align">
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  </div> 
+               </div>
+          </form>
+        </div>
+          
+      </div>
+    </li>
+     <li id="Config-li">
       <div class="collapsible-header"><i class="material-icons">input</i>Laboratorio</div>
       <div class="collapsible-body popup-element padded">
       

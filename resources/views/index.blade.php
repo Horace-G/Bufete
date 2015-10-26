@@ -43,6 +43,7 @@
         <script src="./controllers/via_administracion.js"></script>
         <script src="./controllers/crearlaboratorio.js"></script>
         <script src="./controllers/CrearUsuario.js"></script>
+        <script src="./controllers/FormaFarmaceutica.js"></script>
     </head>
     <body>
 
