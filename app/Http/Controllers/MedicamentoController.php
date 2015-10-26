@@ -21,7 +21,13 @@ class MedicamentoController extends Controller
 	$user_created = $request->input('userMedicamento');
 	$estadoM = $request->input('estadoMedicamento');
         $date = Carbon::now();
+	
+	$exists = DB::table('medicamento')->select('nombre')->where('nombre', $nombreM)->count();
+                        if ($exists>0){
+                                return Respone::json(array('Success' => 'false'));
+                        }
 
+	
 	DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('medicamento')->insert(
 		array('nombre'=>$nombreM, 'modalidadVentaId'=>$modalidadVentaM, 'formaFarmaceuticaId'=>$formaFarmaceuticaM, 'presentacionComercialId'=>$presentacionComercialM, 'viaAdministracionId'=>$viaAdministracionM, 'laboratorioId'=>$laboratorioM, 'representante'=>$representanteM, 'estado'=>$estadoM, 'user_created'=>$user_created, 'user_updated'=>$user_created, 'created_at'=>$date, 'updated_at'=>$date));
