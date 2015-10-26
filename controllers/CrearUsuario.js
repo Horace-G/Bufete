@@ -5,19 +5,28 @@ $scope.init = function () {
        roles=data;
     
     var count = Object.keys(roles).length;
-    alert(roles[0].nombre);
     for(var i=0;i<count;i++){
-        
+        if($('#dropdownid').find(":selected").text()=="Roles"){
+    var $selectDropdown = 
+      $("#dropdownid")
+       .empty()
+       .html(' ');
+       
+    }else{
         var $selectDropdown = 
       $("#dropdownid")
-    
+       
+    }
     // add new value
-    var value = "Juan";
-    $selectDropdown.append(
-      $("<option selected></option>")
+   
+      var value = roles[i].nombre;
+        $selectDropdown.append(
+        $("<option selected></option>")
         .attr("number",value)
         .text(value)
-    );
+    );  
+    
+    
 
     // trigger event
     $selectDropdown.trigger('contentChanged');
