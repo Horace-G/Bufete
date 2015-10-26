@@ -93,7 +93,7 @@ $scope.submitGuardar = function () {
     }if($scope.descripcion.length>256){
         //$("#nombreLaboratorio").css("background","aliceblue");
         $("#direccionLaboratorio").css("color","red");
-        mensajeService.ShowMessage('LONG_128','Direccion');
+        mensajeService.ShowMessage('LONG_256','Direccion');
         $scope.valid = 0;
     
     }if($scope.correo.length>64){
@@ -106,7 +106,7 @@ $scope.submitGuardar = function () {
         
          $("#correoElectronico").css("color","red");
        // console.log("correo invalido");
-       mensajeService.ShowMessage('INVALID_CHAR','Correo');
+       mensajeService.ShowMessage('INVALID_EMAIL','Correo');
         $scope.valid = 0;
         
     }if($scope.symbols.test($scope.nombre)){
