@@ -10,37 +10,37 @@ $scope.submit = function () {
     
      if($scope.nombre.length==0){
          $("#nombreFormaFarmaceutica").css("color","red");
-        mensajeService.ShowMessage('INPUT_EMPTY','Nombre Forma Farmaceutica');
+        mensajeService.ShowMessage('INPUT_EMPTY','Nombre');
         $scope.valid = 0;
          return;
     }if($scope.descripcion.length==0){
        // $("#nombrePresentacionComercial").css("background","aliceblue");
         $("#descripcionFormaFarmaceutica").css("color","red");
-        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion Forma Farmaceutica');
+        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion');
         $scope.valid = 0;
         return;       
     }if($scope.nombre.length>64){
         $("#nombreFormaFarmaceutica").css("color","red");
         //$("#descripcionPresentacionComercial").css("background","aliceblue");
-        mensajeService.ShowMessage('LONG_64','Nombre Forma Farmaceutica');
+        mensajeService.ShowMessage('LONG_64','Nombre');
         $scope.valid = 0;
         return;
     }if($scope.descripcion.length>128){
         //$("#nombrePresentacionComercial").css("background","aliceblue");
         $("#descripcionFormaFarmaceutica").css("color","red");
-        mensajeService.ShowMessage('LONG_128','Descripcion Forma Farmaceutica');
+        mensajeService.ShowMessage('LONG_128','Descripcion');
         $scope.valid = 0;
         return;    
     }if($scope.symbols.test($scope.nombre)){
         $("#nombreFormaFarmaceutica").css("color","red");
        // $("#descripcionPresentacionComercial").css("background","aliceblue");
-        mensajeService.ShowMessage('INVALID_CHAR','Nombre Forma Farmaceutica');
+        mensajeService.ShowMessage('INVALID_CHAR','Nombre');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.descripcion)){
         //$("#nombrePresentacionComercial").css("background","aliceblue");
         $("#descripcionFormaFarmaceutica").css("color","red");
-        mensajeService.ShowMessage('INVALID_CHAR','Descripcion Forma Farmaceutica');
+        mensajeService.ShowMessage('INVALID_CHAR','Descripcion');
         $scope.valid = 0;
         return;
     }if($scope.symbols.test($scope.nombre) && $scope.symbols.test($scope.descripcion)){

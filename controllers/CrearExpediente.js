@@ -184,6 +184,16 @@ $scope.submit = function () {
         $scope.valid = 0;
     }
     
+    if($scope.responsable.length>64){
+         mensajeService.ShowMessage('LONG_64','Responsable');
+        $scope.valid = 0;
+    }
+    
+    if($scope.nombre.length>64){
+         mensajeService.ShowMessage('LONG_64','Nombre');
+        $scope.valid = 0;
+    }
+    
     if($scope.symbolsExp.test($scope.nombre)){
         mensajeService.ShowMessage('INVALID_CHAR','Nombre');
         $scope.valid = 0;

@@ -6,37 +6,37 @@ angular.module('myApp').controller('via_administracion', ['$scope','$http','$loc
 	
 $scope.submit = function () {
      if($scope.nombre.length==0){
-         $("#nombreViaAdministracion").css("background","red");
-        mensajeService.ShowMessage('INPUT_EMPTY','Nombre Via Administracion');
+         $("#nombreViaAdministracion").css("color","red");
+        mensajeService.ShowMessage('INPUT_EMPTY','Nombre');
          return;
     }else if($scope.descripcion.length==0){
-        $("#nombreViaAdministracion").css("background","aliceblue");
-        $("#descripcionViaAdministracion").css("background","red");
-        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion Via Administracion');
+       // $("#nombreViaAdministracion").css("color","black");
+        $("#descripcionViaAdministracion").css("color","red");
+        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion');
         return;     
     }else if($scope.nombre.length>64){
-        $("#nombreViaAdministracion").css("background","red");
-        $("#descripcionViaAdministracion").css("background","aliceblue");
-        mensajeService.ShowMessage('LONG_64','Nombre Via Administracion');
+        $("#nombreViaAdministracion").css("colo","red");
+       // $("#descripcionViaAdministracion").css("color","black");
+        mensajeService.ShowMessage('LONG_64','Nombre');
         return;
     }else if($scope.descripcion.length>128){
-        $("#nombreViaAdministracion").css("background","aliceblue");
-        $("#descripcionViaAdministracion").css("background","red");
-        mensajeService.ShowMessage('LONG_128','Descripcion Via Administracion');
+       // $("#nombreViaAdministracion").css("color","black");
+        $("#descripcionViaAdministracion").css("color","red");
+        mensajeService.ShowMessage('LONG_128','Descripcion');
         return;    
     }else if($scope.symbols.test($scope.nombre)){
-        $("#nombreViaAdministracion").css("background","red");
-        $("#descripcionViaAdministracion").css("background","aliceblue");
-        mensajeService.ShowMessage('INVALID_CHAR','Nombre Via Administracion');
+        $("#nombreViaAdministracion").css("color","red");
+        //$("#descripcionViaAdministracion").css("color","black");
+        mensajeService.ShowMessage('INVALID_CHAR','Nombre');
         return;
     }else if($scope.symbols.test($scope.descripcion)){
-        $("#nombreViaAdministracion").css("background","aliceblue");
-        $("#descripcionViaAdministracion").css("background","red");
-        mensajeService.ShowMessage('INVALID_CHAR','Descripcion Via Administracion');
+       // $("#nombreViaAdministracion").css("color","black");
+        $("#descripcionViaAdministracion").css("color","red");
+        mensajeService.ShowMessage('INVALID_CHAR','Descripcion');
         return;
     }else{
-        $("#nombreViaAdministracion").css("background","aliceblue");
-        $("#descripcionViaAdministracion").css("background","aliceblue");
+        $("#nombreViaAdministracion").css("color","black");
+        $("#descripcionViaAdministracion").css("color","black");
         var path = $location.path($location.path());
 
 		//Creating the baseUrl

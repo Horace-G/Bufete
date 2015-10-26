@@ -19,6 +19,13 @@ $scope.submitNumero = function () {
         $scope.validNumber = 0;
         
     }
+    
+    if($scope.telefono.length>64){
+         $("#telefonoLaboratorio").css("color","red");
+        //mensajeService.ShowMessage('LONG_64','Correo Laboratorio');\
+        mensajeService.ShowMessage('LONG_64','Telefono');
+        $scope.validNumber = 0;
+    }
    
     //if($scope.symbols.test($scope.telefonos)){
     if($('#dropdownid').find(":selected").text()=="Numeros Telefonicos"){
@@ -86,7 +93,7 @@ $scope.submitGuardar = function () {
     }if($scope.descripcion.length>256){
         //$("#nombreLaboratorio").css("background","aliceblue");
         $("#direccionLaboratorio").css("color","red");
-        mensajeService.ShowMessage('LONG_256','Descripcion Laboratorio');
+        mensajeService.ShowMessage('LONG_128','Direccion');
         $scope.valid = 0;
     
     }if($scope.correo.length>64){
