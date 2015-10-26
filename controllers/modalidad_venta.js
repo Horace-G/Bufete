@@ -57,13 +57,17 @@ var request = {
 			data: {nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, userModalidadVenta: '1234', estadoModalidadVenta: '1'}
 	};
 	$http(request).then(function(response){
-		console.log(response.data.success);
-        mensajeService.ShowMessage('SUCCESS_SAVE','Modalidad Venta');
-		 $("#nombreModalidadDeVenta").css("color","black");
-        $("#descripcionModalidadDeVenta").css("color","black");
-		$scope.nombre = '';
-$scope.descripcion = '';
-	});
+        if(response.data.Success=="true"){
+            console.log(response.data.success);
+            mensajeService.ShowMessage('SUCCESS_SAVE','Modalidad Venta');
+            $("#nombreModalidadDeVenta").css("color","black");
+            $("#descripcionModalidadDeVenta").css("color","black");
+            $scope.nombre = '';
+            $scope.descripcion = '';
+        }else{
+            mensajeService.ShowMessage('FAILED_SAVE','Modalidad Venta');
+        }
+        });
     }
           
 };

@@ -46,11 +46,16 @@ var request = {
 			url: baseUrl,
 			data: {nameViaAdministracion: $scope.nombre, descriptionViaAdministracion: $scope.descripcion, userViaAdministracion: '1234', estadoViaAdministracion: '1'}
 	};
-	
-	    	$http(request).then(function(response){
-        mensajeService.ShowMessage('SUCCESS_SAVE','Via Administracion');
-		$scope.nombre = '';
-$scope.descripcion = '';
+	  
+        
+	    	      $http(request).then(function(response){
+                       if(response.data.Success=="true"){
+                            mensajeService.ShowMessage('SUCCESS_SAVE','Via Administracion');
+                            $scope.nombre = '';
+                            $scope.descripcion = '';
+                       }else{
+                           mensajeService.ShowMessage('FAILED_SAVE','Via Administracion');
+                       }
 	});
     }
           

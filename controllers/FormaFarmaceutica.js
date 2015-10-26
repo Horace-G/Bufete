@@ -60,15 +60,15 @@ $scope.submit = function () {
 			data: {nameFormaFarmaceutica: $scope.nombre, descriptionFormaFarmaceutica: $scope.descripcion, userFormaFarmaceutica: '1234', estadoFormaFarmaceutica: '1'}
 	};
 	$http(request).then(function(response){
-        if(response.data.Success){
+        if(response.data.Success=="true"){
             console.log(response.data.Success);
-            mensajeService.ShowMessage('SUCCESS_SAVE','Presentacion Comercial');
+            mensajeService.ShowMessage('SUCCESS_SAVE','Forma Farmaceutica');
              $("#nombrePresentacionComercial").css("color","black");
             $("#descripcionPresentacionComercial").css("color","black");
             $scope.nombre = '';
             $scope.descripcion = '';
         }else{
-            
+            mensajeService.ShowMessage('FAILED_SAVE','Forma Farmaceutica');
         }
 	});
     }

@@ -62,11 +62,15 @@ var request = {
 	};
 	
 	$http(request).then(function(response){
+        if(response.data.Success=="true"){
 		mensajeService.ShowMessage('SUCCESS_SAVE','Categoria');
 		$("#nombreCategoria").css("color","black");
         $("#descripcionCategoria").css("color","black");
 		$scope.nombre = '';
-$scope.descripcion = '';
+        $scope.descripcion = '';
+        }else{
+        mensajeService.ShowMessage('FAILED_SAVE','Categoria');
+        }
 	});
          
  }
