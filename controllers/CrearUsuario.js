@@ -19,7 +19,7 @@ $scope.init = function () {
        
     }
     // add new value
-   
+    console.log(roles[i]);
       var value = roles[i].nombre;
         $selectDropdown.append(
         $("<option selected></option>")
@@ -57,6 +57,7 @@ $scope.submitGuardar = function () {
 		//Creating the baseUrl
 		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveUsuario';
 		console.log(baseUrl);
+         
 	var request = {
 			method: 'POST',
 			url: baseUrl,
