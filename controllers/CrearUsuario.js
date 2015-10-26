@@ -2,13 +2,34 @@ angular.module('myApp').controller('crear_usuario', ['$scope','$http','$location
 $scope.init = function () {
     var roles = [];
     rolService.getRoles().then(function(data){
-       roles=data; 
+       roles=data;
+    
+    var count = Object.keys(roles).length;
+    alert(count);
+    for(var i=0;i<count;i++){
+        
+        var $selectDropdown = 
+      $("#dropdownid")
+    
+    // add new value
+    var value = "Juan";
+    $selectDropdown.append(
+      $("<option selected></option>")
+        .attr("number",value)
+        .text(value)
+    );
+
+    // trigger event
+    $selectDropdown.trigger('contentChanged');
+    }
     });
     
-    for(i=0;i<roles.length;i++){
-        console.log(roles.nombre);
-    }
 }
+$('select').on('contentChanged', function() {
+    // re-initialize (update)
+    $(this).material_select();
+  });
+
 
 $scope.init();
 
