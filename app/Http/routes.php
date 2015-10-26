@@ -45,6 +45,8 @@ Route::post('/saveFormaFarmaceutica','FormaFarmaceuticaController@saveFormaFarma
 
 Route::get('/allRol','RolController@allRol');
 
+Route::get('/allFormaFarmaceutica','FormaFarmaceuticaController@allFormaFarmaceutica');
+
 Route::get('/allPresentacionComercial','PresentacionComercialController@allPresentacionComercial');
 
 Route::get('/allModalidadVenta','ModalidadVentaController@allModalidadVenta');
