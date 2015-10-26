@@ -2,9 +2,12 @@ angular.module('myApp').controller('crear_usuario', ['$scope','$http','$location
 $scope.init = function () {
     var roles = [];
     rolService.getRoles().then(function(data){
-       console.log(data); 
+       roles=data; 
     });
     
+    for(i=0;i<roles.length;i++){
+        console.log(roles.nombre);
+    }
 }
 
 $scope.init();
