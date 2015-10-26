@@ -47,7 +47,8 @@ $scope.init();
     $scope.nombre = ''
     $scope.pass = ''
     $scope.confirmpass = ''
-    $scope.noSpaces = new RegExp("^\S");
+    $scope.noSpaces = new RegExp("\\s","g");
+    $scope.symbolsUser = new RegExp("[<>%\$!@#%^&*()_+]");
 
 
 $scope.submit = function () {
@@ -96,9 +97,16 @@ $scope.submit = function () {
         
     }
     
-    if(!$scope.noSpaces.test($scope.pass)){
+    if($scope.noSpaces.test($scope.pass)){
         $("#usuarioPassword").css("color","red");
         console.log("password no puede tener espacios en blanco");
+        $scope.valid = 0;
+        
+    }
+    
+     if($scope.symbolsUser.test($scope.name)){
+        $("#nombreUsuario").css("color","red");
+        console.log("caracteres invalidos en nombre");
         $scope.valid = 0;
         
     }
