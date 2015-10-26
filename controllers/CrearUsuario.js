@@ -1,5 +1,5 @@
 var roles = [];
-angular.module('myApp').controller('crear_usuario', ['$scope','$http','$location','mensajeService','rolService', function ($scope,$http,$location,mensajeService,rolService) {
+angular.module('myApp').controller('crear_usuario', ['$scope','$http','$location','mensajeService','medicamentoService', function ($scope,$http,$location,mensajeService,rolService) {
 $scope.init = function () {
     
     rolService.getRoles().then(function(data){
