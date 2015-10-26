@@ -94,7 +94,7 @@ function medicamentoService($http,$location) {
 			method: 'GET',
 			url: baseUrl
         };
-        $http(request).then(function(response){
+        return $http(request).then(function(response){
             return response.data;
         });
     };
@@ -107,7 +107,7 @@ function medicamentoService($http,$location) {
 			method: 'GET',
 			url: baseUrl
         };
-        $http(request).then(function(response){
+        return $http(request).then(function(response){
             return response.data;
         });
     };
@@ -119,7 +119,7 @@ function medicamentoService($http,$location) {
 			method: 'GET',
 			url: baseUrl
         };
-        $http(request).then(function(response){
+        return $http(request).then(function(response){
             return response.data;
         });
     };
@@ -131,7 +131,7 @@ function medicamentoService($http,$location) {
 			method: 'GET',
 			url: baseUrl
         };
-        $http(request).then(function(response){
+        return $http(request).then(function(response){
             return response.data;
         });
     };
@@ -143,7 +143,7 @@ function medicamentoService($http,$location) {
 			method: 'GET',
 			url: baseUrl
         };
-        $http(request).then(function(response){
+       return $http(request).then(function(response){
             return response.data;
         });
     };
@@ -155,16 +155,16 @@ function medicamentoService($http,$location) {
 			method: 'GET',
 			url: baseUrl
         };
-        $http(request).then(function(response){
+        return $http(request).then(function(response){
             return response.data;
         });
     };
-}
+};
 
 
 
 function rolService($http,$location) {
-    var ctrl = this;
+    var ctrl = this;    
     
     ctrl.getRoles = function(){
         var path = $location.path($location.path());
@@ -173,11 +173,11 @@ function rolService($http,$location) {
 			method: 'GET',
 			url: baseUrl
         };
-        $http(request).then(function(response){
+        return $http(request).then(function(response){
             return response.data;
         });
     };
-}
+};
 
 function mensajeService($http,$location){
     /*

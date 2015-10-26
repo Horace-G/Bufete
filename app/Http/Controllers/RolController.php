@@ -24,9 +24,9 @@ class RolController extends Controller
                 }
 
                 public function allRol(){
-                        //$retVal = DB::table('rol')->get();
+                        $retVal = DB::table('rol')->get();
                        
-                        return Response::json(array('Juan' => 'Pagoaga'));
+                        return Response::json($retVal);
                 }
 
 }
