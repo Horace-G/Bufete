@@ -63,8 +63,8 @@ $scope.submit = function () {
         if(response.data.Success=="true"){
             console.log(response.data.Success);
             mensajeService.ShowMessage('SUCCESS_SAVE','Forma Farmaceutica');
-             $("#nombrePresentacionComercial").css("color","black");
-            $("#descripcionPresentacionComercial").css("color","black");
+            $("#nombreFormaFarmaceutica").css("color","black");
+            $("#descripcionFormaFarmaceutica").css("color","black");
             $scope.nombre = '';
             $scope.descripcion = '';
         }else{
