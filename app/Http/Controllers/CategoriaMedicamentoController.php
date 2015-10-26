@@ -15,6 +15,11 @@
 			$userCreate = $request->input('userCategoriaMedicamento');
 			$date = Carbon::now();
 			
+			$exists = DB::table('categoria')->select('nombre')->where('nombre', $namePC)->count();
+                        if ($exists>0){
+                                return Respone::json(array('Success' => 'false'));
+                        }
+
 			DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 			DB::table('categoria')->insert(
 				array('nombre'=>$namePC, 'descripcion'=>$descPC, 'estado'=>$estadoPC,

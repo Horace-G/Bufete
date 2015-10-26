@@ -14,6 +14,12 @@ class RolController extends Controller
                         $estadoR = $request->input('estadoRol');
                         $date = Carbon::now();
 
+			$exists = DB::table('rol')->select('nombre')->where('nombre', $nombreR)->count();
+                        if ($exists>0){
+                                return Respone::json(array('Success' => 'false'));
+                        }
+
+
 						DB::statement('SET FOREIGN_KEY_CHECKS=0;');
                         DB::table('rol')->insert(
                                 array('nombre'=>$nombreR, 'descripcion'=>$descR, 'estado'=>$estadoR,

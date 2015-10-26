@@ -15,6 +15,12 @@
 			$userCreate = $request->input('userPresentacionComercial');
 			$date = Carbon::now();
 			
+			$exists = DB::table('presentacion_comercial')->select('nombre')->where('nombre', $namePC)->count();
+                        if ($exists>0){
+                                return Respone::json(array('Success' => 'false'));
+                        }
+			
+			
 			DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 			DB::table('presentacion_comercial')->insert(
 				array('nombre'=>$namePC, 'descripcion'=>$descPC, 'estado'=>$estadoPC,
