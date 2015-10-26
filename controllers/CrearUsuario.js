@@ -56,19 +56,44 @@ $scope.submit = function () {
     $scope.valid = 1;
     var id = 0;
     
-    
-    if($scope.user.length>16){
+     if($scope.user.length==0){
         $("#nombreUsuario").css("color","red");
-        console.log("usuario muy largo");
-       // mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
+        //console.log("usuario es requerido!");
+        mensajeService.ShowMessage('INPUT_EMPTY','Usuario');
         $scope.valid = 0;
          return;
     }
     
-     if($scope.name.length>64){
+     if($scope.nombre.length==0){
+        $("#nombreCompleto").css("color","red");
+        //console.log("nombre es requerido!");
+         mensajeService.ShowMessage('INPUT_EMPTY','Nombre');
+        $scope.valid = 0;
+         return;
+    }
+    
+    if($scope.user.length>16){
+        $("#nombreUsuario").css("color","red");
+        //console.log("usuario muy largo");
+        //mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
+        mensajeService.ShowMessage('LONG_16','Usuario');
+        $scope.valid = 0;
+         return;
+    }
+    
+     if($scope.nombre.length>64){
         $("#nombreCompleto").css("color","red");
         console.log("nombre muy largo");
        // mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
+       mensajeService.ShowMessage('LONG_64','Nombre');
+        $scope.valid = 0;
+         return;
+    }
+    
+     if($scope.pass.length==0){
+        $("#usuarioPassword").css("color","red");
+       // console.log("password es requerida!");
+        mensajeService.ShowMessage('INPUT_EMPTY','Contrasena');
         $scope.valid = 0;
          return;
     }
@@ -77,6 +102,15 @@ $scope.submit = function () {
         $("#usuarioPassword").css("color","red");
         console.log("pass muy corto");
        // mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
+       
+        $scope.valid = 0;
+         return;
+    }
+    
+     if($scope.confirmpass.length==0){
+        $("#usuarioPassword").css("color","red");
+        //console.log("Confirm pass es requerida!");
+        mensajeService.ShowMessage('INPUT_EMPTY','ConfirmPass');
         $scope.valid = 0;
          return;
     }
@@ -99,14 +133,16 @@ $scope.submit = function () {
     
     if($scope.noSpaces.test($scope.pass)){
         $("#usuarioPassword").css("color","red");
-        console.log("password no puede tener espacios en blanco");
+        //console.log("password no puede tener espacios en blanco");
+        mensajeService.ShowMessage('INVALID_CHAR','Password');
         $scope.valid = 0;
         
     }
     
-     if($scope.symbolsUser.test($scope.name)){
+     if($scope.symbolsUser.test($scope.nombre)){
         $("#nombreUsuario").css("color","red");
-        console.log("caracteres invalidos en nombre");
+       // console.log("caracteres invalidos en nombre");
+       mensajeService.ShowMessage('INVALID_CHAR','Nombre');
         $scope.valid = 0;
         
     }
@@ -137,8 +173,8 @@ $scope.submit = function () {
 	};
     
 	$http(request).then(function(response){
-        if(response.data.success=="true"){
-            console.log(response.data.success);
+        if(response.data.Success=="true"){
+            console.log(response.data.Success);
             mensajeService.ShowMessage('SUCCESS_SAVE','Usuario');
         }else{
             mensajeService.ShowMessage('FAILED_SAVE','Usuario');

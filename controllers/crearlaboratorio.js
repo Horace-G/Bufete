@@ -12,13 +12,13 @@ $scope.submitNumero = function () {
     
     $scope.validNumber = 1;
     
-    //if(!$scope.numbers.test($scope.telefono)){
+    if(!$scope.numbers.test($scope.telefono)){
+         $("#telefonoLaboratorio").css("color","red");
+        //mensajeService.ShowMessage('LONG_64','Correo Laboratorio');\
+        mensajeService.ShowMessage('INVALID_CHAR','Telefono');
+        $scope.validNumber = 0;
         
-      //   $("#telefonoLaboratorio").css("color","red");
-        //mensajeService.ShowMessage('LONG_64','Numero Laboratorio');
-        //$scope.validNumber = 0;
-        
-    //}
+    }
    
     //if($scope.symbols.test($scope.telefonos)){
     if($('#dropdownid').find(":selected").text()=="Numeros Telefonicos"){
@@ -98,8 +98,8 @@ $scope.submitGuardar = function () {
     }if(!$scope.emails.test($scope.correo)){
         
          $("#correoElectronico").css("color","red");
-        mensajeService.ShowMessage('LONG_64','Correo Laboratorio');
-        console.log("correo invalido");
+       // console.log("correo invalido");
+       mensajeService.ShowMessage('INVALID_CHAR','Correo');
         $scope.valid = 0;
         
     }if($scope.symbols.test($scope.nombre)){

@@ -20,4 +20,11 @@ INSERT INTO mensaje (nombre,descripcion, gravedad)
 VALUES ('INVALID_CHAR','- Caracteres invalidos',1);
 
 INSERT INTO mensaje (nombre,descripcion, gravedad) 
+VALUES ('SHORT_8','- longitud muy corta(8)',1);
+
+INSERT INTO mensaje (nombre,descripcion, gravedad) 
+VALUES ('NOMATCH','- elementos no coinciden',1);
+
+
+INSERT INTO mensaje (nombre,descripcion, gravedad) 
 VALUES ('WUT','- WUT',4);
