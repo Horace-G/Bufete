@@ -159,6 +159,9 @@ $('select').on('contentChanged', function() {
 
 $scope.init();
 
+ $scope.nombre = ''
+ $scope.responsable = ''
+
 
 $scope.submit = function () {
     
@@ -169,6 +172,28 @@ $scope.submit = function () {
     var id_viaadministracion = 0;
     var id_formafarmaceutica = 0;
     var id_laboratorio = 0;
+    $scope.symbolsExp = new RegExp("[<>%\$!@#%^&*()_+]");
+    
+    if($scope.nombre.length == 0){
+         mensajeService.ShowMessage('INPUT_EMPTY','Nombre');
+        $scope.valid = 0;
+    }
+    
+    if($scope.responsable.length == 0){
+         mensajeService.ShowMessage('INPUT_EMPTY','Responsable');
+        $scope.valid = 0;
+    }
+    
+    if($scope.symbolsExp.test($scope.nombre)){
+        mensajeService.ShowMessage('INVALID_CHAR','Nombre');
+        $scope.valid = 0;
+    }
+    
+    if($scope.symbolsExp.test($scope.responsable)){
+        mensajeService.ShowMessage('INVALID_CHAR','Responsable');
+        $scope.valid = 0;
+    }
+    
      if($scope.valid == 1){
         
         var path = $location.path($location.path());

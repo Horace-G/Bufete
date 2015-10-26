@@ -83,7 +83,7 @@ $scope.submit = function () {
     
      if($scope.nombre.length>64){
         $("#nombreCompleto").css("color","red");
-        console.log("nombre muy largo");
+       // console.log("nombre muy largo");
        // mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
        mensajeService.ShowMessage('LONG_64','Nombre');
         $scope.valid = 0;
@@ -100,7 +100,7 @@ $scope.submit = function () {
     
     if($scope.pass.length<8){
         $("#usuarioPassword").css("color","red");
-        console.log("pass muy corto");
+        //console.log("pass muy corto");
        // mensajeService.ShowMessage('INPUT_EMPTY','Nombre Presentacion Comercial');
        
         $scope.valid = 0;
