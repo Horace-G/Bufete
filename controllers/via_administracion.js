@@ -7,32 +7,32 @@ angular.module('myApp').controller('via_administracion', ['$scope','$http','$loc
 $scope.submit = function () {
      if($scope.nombre.length==0){
          $("#nombreViaAdministracion").css("color","red");
-        mensajeService.ShowMessage('INPUT_EMPTY','Nombre');
+        mensajeService.ShowMessage('INPUT_EMPTY','Nombre Via Administracion');
          return;
     }else if($scope.descripcion.length==0){
        // $("#nombreViaAdministracion").css("color","black");
         $("#descripcionViaAdministracion").css("color","red");
-        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion');
+        mensajeService.ShowMessage('INPUT_EMPTY','Descripcion Via Administracion');
         return;     
     }else if($scope.nombre.length>64){
         $("#nombreViaAdministracion").css("colo","red");
        // $("#descripcionViaAdministracion").css("color","black");
-        mensajeService.ShowMessage('LONG_64','Nombre');
+        mensajeService.ShowMessage('LONG_64','Nombre Via Administracion');
         return;
     }else if($scope.descripcion.length>128){
        // $("#nombreViaAdministracion").css("color","black");
         $("#descripcionViaAdministracion").css("color","red");
-        mensajeService.ShowMessage('LONG_128','Descripcion');
+        mensajeService.ShowMessage('LONG_128','Descripcion Via Administracion');
         return;    
     }else if($scope.symbols.test($scope.nombre)){
         $("#nombreViaAdministracion").css("color","red");
         //$("#descripcionViaAdministracion").css("color","black");
-        mensajeService.ShowMessage('INVALID_CHAR','Nombre');
+        mensajeService.ShowMessage('INVALID_CHAR','Nombre Via Administracion');
         return;
     }else if($scope.symbols.test($scope.descripcion)){
        // $("#nombreViaAdministracion").css("color","black");
         $("#descripcionViaAdministracion").css("color","red");
-        mensajeService.ShowMessage('INVALID_CHAR','Descripcion');
+        mensajeService.ShowMessage('INVALID_CHAR','Descripcion Via Administracion');
         return;
     }else{
         $("#nombreViaAdministracion").css("color","black");
