@@ -255,7 +255,7 @@ $scope.submit = function () {
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {nombreMedicamento: $scope.nombre,modalidadVentaMedicamentos: id_modalidadventa, formaFarmaceuticaMedicamento: id_formafarmaceutica, viaAdministracionMedicamento: id_viaadministracion, presentacionComercialMedicamento: id_presentacioncomercial,laboratorioMedicamento: id_laboratorio, responsableMedicamento: $scope.responsable, userMedicamento: '1234', estadoMedicamento: '1'}
+			data: {nombreMedicamento: $scope.nombre,modalidadVentaMedicamento: id_modalidadventa, formaFarmaceuticaMedicamento: id_formafarmaceutica, viaAdministracionMedicamento: id_viaadministracion, presentacionComercialMedicamento: id_presentacioncomercial,laboratorioMedicamento: id_laboratorio, responsableMedicamento: $scope.responsable, userMedicamento: '1234', estadoMedicamento: '1'}
 	};
     
 	$http(request).then(function(response){

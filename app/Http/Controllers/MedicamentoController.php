@@ -17,7 +17,7 @@ class MedicamentoController extends Controller
 	$presentacionComercialM = $request->input('presentacionComercialMedicamento');
 	$viaAdministracionM = $request->input('viaAdministracionMedicamento');
 	$laboratorioM = $request->input('laboratorioMedicamento');
-        $representanteM = $request->input('representanteMedicamento');
+        $representanteM = $request->input('responsableMedicamento');
 	$user_created = $request->input('userMedicamento');
 	$estadoM = $request->input('estadoMedicamento');
         $date = Carbon::now();
