@@ -249,7 +249,7 @@ $scope.submit = function () {
             }
         }
 		//Creating the baseUrl
-		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveExpediente';
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveMedicamento';
 		console.log(baseUrl);
          
 	var request = {
