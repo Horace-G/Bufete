@@ -47,6 +47,11 @@ myApp.config(function ($routeProvider) {
         controller: 'secondController'
     })
     
+    .otherwise({
+      templateUrl: 'public/views/login.html',
+      controller: 'logincontroller'
+    });
+    
 });
 
 myApp.directive('buffetNav', [function() {

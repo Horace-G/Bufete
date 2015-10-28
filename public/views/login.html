@@ -1,0 +1,58 @@
+
+<script>
+     $(document).ready(function(){
+     $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+          
+    });
+    $('#medicamentos').addClass('active');
+    $('#medicamentos').addClass('z-depth-5');
+    $('#usuarios').removeClass('z-depth-5');
+    $('#usuarios').removeClass('active');
+    $('#logohome').removeClass('z-depth-5');
+    $('#logohome').removeClass('active');
+    $('#reportes').removeClass('active');
+    $('#reportes').removeClass('z-depth-5');
+    $('#menuusuarios').removeClass('active');
+    $('#menuusuarios').removeClass('z-depth-5');
+    $('#logout').removeClass('active');
+    
+   
+       
+</script>
+
+ <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
+     <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Login</h4><h6 class="flow-text brown-text lighten-3"> Ingrese sus credenciales</h6></li>
+    <li collection-item id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">info_outline</i>Iniciar Sesion</div>
+      <div class="collapsible-body popup-element">
+      
+         <h3 class="center-align flow-text brown-text lighten-4">Ingrese sus credenciales</h3>
+          <div class="row padded">
+            <form class="col s12" ng-submit="submit()"ng-controller="presentacion_comercial">
+                
+              <div class="row">
+             <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="usuarioLogin" type="text" class="validate"ng-model="usuario">
+                  <label for="usuarioLogin">Usuario<span id="asterisco"> *</span></label>
+                </div>
+                 <div class="input-field col s9">
+                  <i class="material-icons prefix">lock_outline</i>
+                  <input id="passwordLogin" type="password" class="validate"ng-model="password">
+                  <label for="passwordLogin">Password<span id="asterisco"> *</span></label>
+                 </div>
+                  <div class="col s9 right-align">
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                </div>
+                  
+               </div>
+          </form>
+              
+        </div>
+          
+      </div>
+    </li>
+  </ul>
+
