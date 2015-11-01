@@ -18,9 +18,9 @@
 }]);
 */
 
-Route::get('/',function () {
+Route::get('/',['middleware' => 'auth',function () {
     return view('index');
-});
+}]);
 
 Route::get('/login',function(){
     return view('login');
