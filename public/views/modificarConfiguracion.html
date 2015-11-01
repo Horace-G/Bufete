@@ -35,11 +35,9 @@
          <h3 class="center-align flow-text brown-text lighten-4">Busque la presentacion comercial que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
               
-        <div class="input-field col s9">      
-            <i class="material-icons prefix">search</i>
-            <input id="buscarPresentacionComercial" type="text" class="validate">
-            <label for="buscarPresentacionComercial">Buscar la presentacion comercial<span id="asterisco"> *</span></label>
-         </div>         
+        <select id="listaPresentacionComercial">
+            <option>Opcion 1</option>
+        </select>
               
             <form class="col s12" ng-submit="submit()"ng-controller="modificar_presentacion_comercial">
                 
@@ -72,11 +70,9 @@
         <h3 class="center-align flow-text brown-text lighten-4">Busque la modalidad de venta que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
               
-        <div class="input-field col s9">      
-            <i class="material-icons prefix">search</i>
-            <input id="buscarModalidadDeVenta" type="text" class="validate">
-            <label for="buscarModalidadDeVenta">Buscar la modalidad de venta<span id="asterisco"> *</span></label>
-         </div>      
+         <select id="listaModalidadDeVentas">
+            <option>Opcion 1</option>
+        </select>    
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_modalidad_venta">
               <div class="row">
@@ -106,11 +102,9 @@
            <h3 class="center-align flow-text brown-text lighten-4">Busque la categoria que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
               
-          <div class="input-field col s9">      
-            <i class="material-icons prefix">search</i>
-            <input id="buscarCategoria" type="text" class="validate">
-            <label for="buscarCategoria">Buscar la Categoria<span id="asterisco"> *</span></label>
-          </div>            
+         <select id="listaCategorias">
+            <option>Opcion 1</option>
+        </select>           
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_categoria">
               <div class="row">
@@ -140,11 +134,9 @@
            <h3 class="center-align flow-text brown-text lighten-4">Busque el estado que vida que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
               
-           <div class="input-field col s9">      
-            <i class="material-icons prefix">search</i>
-            <input id="buscarEstadoCicloDeVida" type="text" class="validate">
-            <label for="buscarEstadoCicloDeVida">Buscar el estado de ciclo de vida<span id="asterisco"> *</span></label>
-           </div>            
+        <select id="listaEstados">
+            <option>Opcion 1</option>
+        </select>           
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_ciclo_vida">
               <div class="row">
@@ -174,11 +166,9 @@
            <h3 class="center-align flow-text brown-text lighten-4">Busque la via de administracion que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
         
-           <div class="input-field col s9">      
-            <i class="material-icons prefix">search</i>
-            <input id="buscarViaAdministracion" type="text" class="validate">
-            <label for="buscarViaAdministracion">Buscar la via de administracion<span id="asterisco"> *</span></label>
-         </div>            
+          <select id="listaViasAdministracion">
+            <option>Opcion 1</option>
+        </select>            
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_via_administracion">
               <div class="row">
@@ -210,11 +200,9 @@
            <h3 class="center-align flow-text brown-text lighten-4">Busque la forma farmaceutica que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
         
-           <div class="input-field col s9">      
-            <i class="material-icons prefix">search</i>
-            <input id="buscarFormaFarmaceutica" type="text" class="validate">
-            <label for="buscarFormaFarmaceutica">Buscar la forma farmaceutica<span id="asterisco"> *</span></label>
-         </div>            
+          <select id="listaFormaFarmaceutica">
+            <option>Opcion 1</option>
+        </select>           
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_forma_farmaceutica">
               <div class="row">
@@ -246,11 +234,9 @@
         <h3 class="center-align flow-text brown-text lighten-4">Busque el Laboratorio que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
              
-        <div class="input-field col s9">      
-            <i class="material-icons prefix">search</i>
-            <input id="buscarLaboratorio" type="text" class="validate">
-            <label for="buscarLaboratorio">Buscar el laboratorio<span id="asterisco"> *</span></label>
-         </div>        
+         <select id="listaLaboratorios">
+            <option>Opcion 1</option>
+        </select>        
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_laboratorio">
               <div class="row">
