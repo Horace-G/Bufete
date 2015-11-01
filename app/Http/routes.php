@@ -105,6 +105,10 @@ Route::get('/allLaboratorioMod','LaboratorioController@allLaboratorioMod');
 
 //////////////////////
 
+Route::post('/updateCategoriaMedicamento','CategoriaMedicamentoController@updateCategoriaMedicamento');
+
+///////////////////////
+
 Route::post('/authenticate','AutenticacionController@authenticate');
 
 Route::post('/logout','AutenticacionController@logout');
