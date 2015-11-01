@@ -12,7 +12,9 @@ angular.module('myApp').controller('modificar_presentacion_comercial', ['$scope'
         };
         $http(request).then(function(response){
             $scope.allPresentacion = response.data;
+            $('select').material_select();
         });
+        
     };
     
     $scope.onChangeSelect = function(){
