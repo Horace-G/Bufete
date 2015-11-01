@@ -17,9 +17,9 @@ angular.module('myApp').controller('modificar_ciclo_vida', ['$scope','$http','$l
     };
     
     $scope.onChangeSelect = function(){
-        $scope.nombre = $scope.allOptions[selectedOption - 1].nombre;
-        $scope.descripcion = $scope.allOptions[selectedOption -1].descripcion
-        $scope.estado = $scope.allOptions[selectedOption - 1].estado;
+        $scope.nombre = $scope.allOptions[$scope.selectedOption - 1].nombre;
+        $scope.descripcion = $scope.allOptions[$scope.selectedOption -1].descripcion
+        $scope.estado = $scope.allOptions[$scope.selectedOption - 1].estado;
     };
  
     ctrl.init();
