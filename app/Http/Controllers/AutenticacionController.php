@@ -16,8 +16,8 @@ class AutenticacionController extends Controller
      */
     public function authenticate()
     {
-        $username = Input::('username');
-        $password = Input::('password');
+        $username = Input::get('username');
+        $password = Input::get('password');
         if (Auth::attempt(['username' => $username, 'password' => $password,'estado'=>'1'])) {
             // Authentication passed...
             return redirect()->intended('dashboard');
