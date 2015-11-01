@@ -78,7 +78,7 @@ $scope.submit = function () {
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {nameFormaFarmaceutica: $scope.nombre, descriptionFormaFarmaceutica: $scope.descripcion, estadoFormaFarmaceutica: $scope.estado}
+			data: {id: $scope.selectedOption,nameFormaFarmaceutica: $scope.nombre, descriptionFormaFarmaceutica: $scope.descripcion, estadoFormaFarmaceutica: $scope.estado}
 	};
 	$http(request).then(function(response){
         if(response.data.Success=="true"){
