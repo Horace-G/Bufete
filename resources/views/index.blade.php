@@ -22,7 +22,14 @@
             }
         </style>
         
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.5.5/css/ngDialog-theme-default.min.css"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.5.5/css/ngDialog-theme-plain.min.css"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.5.5/css/ngDialog.min.css"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ng-dialog/0.5.5/js/ngDialog.min.js"></script>
+        
+        
         <!-- load JQuery, angular and materialize JS via CDN -->
+        
         
         <script src="./public/JS/jquery-1.9.1.min.js"></script>
         <script src="./public/JS/toastr.js"></script>

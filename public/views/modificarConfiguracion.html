@@ -1,0 +1,303 @@
+<script>
+     $(document).ready(function(){
+     $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+          
+         $('select').material_select(); 
+          
+    });
+    $('#medicamentos').addClass('active');
+    $('#medicamentos').addClass('z-depth-5');
+    $('#usuarios').removeClass('z-depth-5');
+    $('#usuarios').removeClass('active');
+    $('#logohome').removeClass('z-depth-5');
+    $('#logohome').removeClass('active');
+    $('#reportes').removeClass('active');
+    $('#reportes').removeClass('z-depth-5');
+    $('#menuusuarios').removeClass('active');
+    $('#menuusuarios').removeClass('z-depth-5');
+    $('#logout').removeClass('active');
+    
+   
+       
+</script>
+
+<medicamentos-menu></medicamentos-menu>
+
+
+ <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
+     <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Medicamentos: Modificar Configuración</h4><h6 class="flow-text brown-text lighten-3"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
+    <li collection-item id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">info_outline</i>Modificar Presentación Comercial</div>
+      <div class="collapsible-body popup-element">
+      
+         <h3 class="center-align flow-text brown-text lighten-4">Busque la presentacion comercial que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
+          <div class="row padded">
+              
+        <div class="input-field col s9">      
+            <i class="material-icons prefix">search</i>
+            <input id="buscarPresentacionComercial" type="text" class="validate">
+            <label for="buscarPresentacionComercial">Buscar la presentacion comercial<span id="asterisco"> *</span></label>
+         </div>         
+              
+            <form class="col s12" ng-submit="submit()"ng-controller="modificar_presentacion_comercial">
+                
+              <div class="row">
+             <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="modificarNombrePresentacionComercial" type="text" class="validate"ng-model="nombre">
+                  <label for="modificarNombrePresentacionComercial">Nuevo nombre de la Presentación Comercial<span id="asterisco"> *</span></label>
+                </div>
+                 <div class="input-field col s9">
+                  <i class="material-icons prefix">description</i>
+                  <textarea id="modificarDescripcionPresentacionComercial" class="materialize-textarea" ng-model="descripcion"></textarea>
+                  <label for="modificarDescripcionPresentacionComercial">Nueva descripción de ésta presentación comercial<span id="asterisco"> *</span></label>
+                 </div>
+                  <div class="col s9 right-align">
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
+                </div>
+                  
+               </div>
+          </form>
+              
+        </div>
+          
+      </div>
+    </li>
+    <li id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">input</i>Modificar Modalidad de Ventas</div>
+      <div class="collapsible-body popup-element">
+      
+        <h3 class="center-align flow-text brown-text lighten-4">Busque la modalidad de venta que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
+          <div class="row padded">
+              
+        <div class="input-field col s9">      
+            <i class="material-icons prefix">search</i>
+            <input id="buscarModalidadDeVenta" type="text" class="validate">
+            <label for="buscarModalidadDeVenta">Buscar la modalidad de venta<span id="asterisco"> *</span></label>
+         </div>      
+              
+            <form class="col s12" ng-submit="submit()" ng-controller="modificar_modalidad_venta">
+              <div class="row">
+             <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="modificarNombreModalidadDeVenta" type="text" class="validate"ng-model="nombre">
+                  <label for="modificarNombreModalidadDeVenta">Nuevo nombre de la Modalidad de Venta<span id="asterisco"> *</span></label>
+                </div>
+                 <div class="input-field col s9">
+                  <i class="material-icons prefix">description</i>
+                  <textarea id="modificarDescripcionModalidadDeVenta" class="materialize-textarea"ng-model="descripcion"></textarea>
+                  <label for="modificarDescripcionModalidadDeVenta">Nueva descripción de ésta modalidad de venta<span id="asterisco"> *</span></label>
+                 </div>
+                  <div class="col s9 right-align">
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
+                  </div>
+               </div>
+          </form>
+        </div>
+          
+      </div>
+    </li>
+    <li id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">invert_colors</i>Modificar Categorias de Medicamentos</div>
+      <div class="collapsible-body popup-element">
+      
+           <h3 class="center-align flow-text brown-text lighten-4">Busque la categoria que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
+          <div class="row padded">
+              
+          <div class="input-field col s9">      
+            <i class="material-icons prefix">search</i>
+            <input id="buscarCategoria" type="text" class="validate">
+            <label for="buscarCategoria">Buscar la Categoria<span id="asterisco"> *</span></label>
+          </div>            
+              
+            <form class="col s12" ng-submit="submit()" ng-controller="modificar_categoria">
+              <div class="row">
+             <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="modificarNombreCategoria" type="text" class="validate"ng-model="nombre">
+                  <label for="modificarCategoria">Ingrese el nuevo nombre de la categoría<span id="asterisco"> *</span></label>
+                </div>
+                 <div class="input-field col s9">
+                  <i class="material-icons prefix">description</i>
+                   <textarea id="modificarDescripcionCategoria" class="materialize-textarea"ng-model="descripcion"></textarea>
+                  <label for="modificarDescripcionCategoria">Ingrese una nueva descripción sobre la categoría<span id="asterisco"> *</span></label>
+                 </div>
+                  <div class="col s9 right-align">
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
+                  </div>
+               </div>
+          </form>
+        </div>
+          
+      </div>
+    </li>
+    <li id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">labels</i>Modificar Estados de Ciclo de Vida</div>
+      <div class="collapsible-body popup-element">
+      
+           <h3 class="center-align flow-text brown-text lighten-4">Busque el estado que vida que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
+          <div class="row padded">
+              
+           <div class="input-field col s9">      
+            <i class="material-icons prefix">search</i>
+            <input id="buscarEstadoCicloDeVida" type="text" class="validate">
+            <label for="buscarEstadoCicloDeVida">Buscar el estado de ciclo de vida<span id="asterisco"> *</span></label>
+           </div>            
+              
+            <form class="col s12" ng-submit="submit()" ng-controller="modificar_ciclo_vida">
+              <div class="row">
+             <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="modificarNombreCicloDeVida" type="text" class="validate"ng-model="nombre">
+                  <label for="modificarNombreCicloDeVida">Ingrese el nuevo nombre del paso en el ciclo de vida<span id="asterisco"> *</span></label>
+                </div>
+                 <div class="input-field col s9">
+                     <i class="material-icons prefix">description</i>
+                  <textarea id="modificarDescripcionCicloDeVida" class="materialize-textarea"ng-model="descripcion"></textarea>
+                  <label for="modificarDescripcionCicloDeVida">Ingrese una nueva descripción del nuevo paso en el ciclo de vida<span id="asterisco"> *</span> </label>
+                 </div>
+                  <div class="col s9 right-align">
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
+                  </div>
+               </div>
+          </form>
+        </div>
+          
+      </div>
+    </li>
+     <li id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">polymer</i>Modificar Vía de Administración</div>
+      <div class="collapsible-body popup-element">
+      
+           <h3 class="center-align flow-text brown-text lighten-4">Busque la via de administracion que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
+          <div class="row padded">
+        
+           <div class="input-field col s9">      
+            <i class="material-icons prefix">search</i>
+            <input id="buscarViaAdministracion" type="text" class="validate">
+            <label for="buscarViaAdministracion">Buscar la via de administracion<span id="asterisco"> *</span></label>
+         </div>            
+              
+            <form class="col s12" ng-submit="submit()" ng-controller="modificar_via_administracion">
+              <div class="row">
+             <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="modificarNombreViaAdministracion" type="text" class="validate" ng-model="nombre">
+                  <label for="modificarNombreViaAdministracion">Ingrese el nuevo nombre de la vía de administración<span id="asterisco"> *</span></label>
+                </div>
+                 <div class="input-field col s9">
+                  <i class="material-icons prefix">description</i>
+
+                  <textarea id="modificarDescripcionModalidadDeVenta" class="materialize-textarea"ng-model="descripcion"></textarea>
+                  <label for="modificarDescripcionModalidadDeVenta">Ingrese una nueva descripción sobre la vía de administración<span id="asterisco"> *</span></label>
+
+                 </div>
+                 <div class="col s9 right-align">
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
+                  </div> 
+               </div>
+          </form>
+        </div>
+          
+      </div>
+    </li>
+     <li id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">assessment</i>Modificar Forma Farmaceutica</div>
+      <div class="collapsible-body popup-element">
+      
+           <h3 class="center-align flow-text brown-text lighten-4">Busque la forma farmaceutica que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
+          <div class="row padded">
+        
+           <div class="input-field col s9">      
+            <i class="material-icons prefix">search</i>
+            <input id="buscarFormaFarmaceutica" type="text" class="validate">
+            <label for="buscarFormaFarmaceutica">Buscar la forma farmaceutica<span id="asterisco"> *</span></label>
+         </div>            
+              
+            <form class="col s12" ng-submit="submit()" ng-controller="modificar_forma_farmaceutica">
+              <div class="row">
+             <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input id="modificarNombreFormaFarmaceutica" type="text" class="validate" ng-model="nombre">
+                  <label for="modificarNombreFormaFarmaceutica">Ingrese el nuevo nombre de la Forma Farmaceutica<span id="asterisco"> *</span></label>
+                </div>
+                 <div class="input-field col s9">
+                  <i class="material-icons prefix">description</i>
+
+                  <textarea id="modificarDescripcionFormaFarmaceutica" class="materialize-textarea"ng-model="descripcion"></textarea>
+                  <label for="modificarDescripcionFormaFarmaceutica">Ingrese una nueva descripción sobre la Forma Farmaceutica<span id="asterisco"> *</span></label>
+
+                 </div>
+                 <div class="col s9 right-align">
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
+                  </div> 
+               </div>
+          </form>
+        </div>
+          
+      </div>
+    </li>
+     <li id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">input</i>Modificar Laboratorio</div>
+      <div class="collapsible-body popup-element padded">
+      
+        <h3 class="center-align flow-text brown-text lighten-4">Busque el Laboratorio que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
+          <div class="row padded">
+             
+        <div class="input-field col s9">      
+            <i class="material-icons prefix">search</i>
+            <input id="buscarLaboratorio" type="text" class="validate">
+            <label for="buscarLaboratorio">Buscar el laboratorio<span id="asterisco"> *</span></label>
+         </div>        
+              
+            <form class="col s12" ng-submit="submit()" ng-controller="modificar_laboratorio">
+              <div class="row">
+                  <div class="input-field col s6">
+                       <i class="material-icons prefix">account_circle</i>
+                       <input id="modificarNombreLaboratorio" type="text" class="validate" ng-model="nombre">
+                       <label for="modificarNombreLaboratorio">Nuevo nombre del laboratorio<span id="asterisco"> *</span></label>
+                  </div>
+                  
+                  <div class="input-field col s6">
+                       <i class="material-icons prefix">my_location</i>
+                       <textarea id="modificarDireccionLaboratorio" class="materialize-textarea" ng-model="descripcion"></textarea>
+                       <label for="modificarDireccionLaboratorio">Nueva direccion exacta del laboratorio<span id="asterisco"> *</span></label>
+                  </div>
+                 
+                   <div class="input-field col s6">
+                       <i class="material-icons prefix">email</i>
+                       <input id="modificarCorreoElectronico" type="text" class="validate" ng-model="correo">
+                       <label for="modificarCorreoElectronico">Nuevo Correo del Laboratorio<span id="asterisco"> *</span></label>
+                  </div>
+                  
+                  <div class="input-field col s6">
+                       <i class="material-icons prefix">contact_phone</i>
+                       <input id="ModificarTelefonoLaboratorio" type="text" class="validate" ng-model="telefono">
+                       <label for="ModificarTelefonoLaboratorio">Nuevo numero telefonico<span id="asterisco"> *</span></label>
+                  </div>
+                   <div class="scrollable col s6" style="overflow:auto">
+                       
+                        <select id="dropdownid">
+                            <option>Numeros Telefonicos</option>
+                            
+                            
+                        </select>
+                         
+                    </div>
+                  
+                  <div class="col s5 center-align">
+                       <button ng-click="submitNumero()" class="btn-large waves-effect waves-light brown lighten-1">Agegar Numero</button>
+                  </div>
+                  
+                  <div class="col s12 center-align">
+                       <button ng-click="submitGuardar()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
+                  </div>
+               </div>
+          </form>
+        </div>
+          
+      </div>
+    </li>
+  </ul>

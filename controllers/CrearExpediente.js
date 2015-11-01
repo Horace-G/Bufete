@@ -177,6 +177,7 @@ $scope.submit = function () {
     if($scope.nombre.length == 0){
          mensajeService.ShowMessage('INPUT_EMPTY','Nombre');
         $scope.valid = 0;
+        ngDialog.open({ template: 'templateId' });
     }
     
     if($scope.responsable.length == 0){
