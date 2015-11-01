@@ -102,9 +102,7 @@ Route::get('/allLaboratorioMod','LaboratorioController@allLaboratorioMod');
 
 Route::post('/authenticate','AutenticacionController@authenticate');
 
-Route::post('/logout',function(){
-    return redirect()->action('AutenticacionController@logout');
-});
+Route::post('/logout','AutenticacionController@logout');
 
 /*
 Route::get('/auth/login', 'Auth\AuthController@getLogin');
