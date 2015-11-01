@@ -22,7 +22,7 @@ class AutenticacionController extends Controller
             // Authentication passed...
             return redirect()->intended('/');
         }else{
-            return redirect()->intended('/login')
+            return redirect()->intended('/login');
         }
     }
 }
