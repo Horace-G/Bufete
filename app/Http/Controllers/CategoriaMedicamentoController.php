@@ -5,7 +5,8 @@
 	use Response;
 	use Carbon\Carbon;
 	use DB;
-	
+	use Auth;
+
 	class CategoriaMedicamentoController extends Controller {
 		
 		public function saveCategoriaMedicamento(Request $request){
@@ -61,4 +62,16 @@
 			$retVal = DB::table('categoria')->get();
 			return Response::json($retVal);
 		}
+        
+        public function updateCategoriaMedicamento(Request $requet){
+            $id = $request->input('id');
+            $nombre = $request->input('nameCategoriaMedicamento');
+            $descripcion = $request->input('descriptionCategoriaMedicamento');
+            $date = Carbon::now();
+            $user = Auth::user();
+            
+            DB::table('categoria')->where('id',$id)->update(array('nombre' => $nombre,'descripcion'=>$descripcion,'updated_at'=>$date,'user_updated'=>$user));
+            return Response::json(array('Success' => 'true'));
+            
+        }
 	}
