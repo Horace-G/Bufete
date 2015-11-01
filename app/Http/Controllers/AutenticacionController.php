@@ -28,6 +28,6 @@ class AutenticacionController extends Controller
     
     public function logout(){
         Auth::logout();
-        Redirect::route(redirect()->intended('/login'));
+
     }
 }
