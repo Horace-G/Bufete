@@ -6,5 +6,19 @@ angular.module('myApp').controller('mainController', ['$scope', '$log','$http','
         mensajeService.getMensaje();
     };
     
+    ctrl.logout = function(){
+        var request = {
+            var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port +'/Bufete/logout';
+            var request = {
+                method: 'POST',
+                url: baseUrl,
+                data: {}
+            };
+        }
+	
+        $http(request).then(function(response){
+            
+        });
+    }
     ctrl.init();
 }]);
