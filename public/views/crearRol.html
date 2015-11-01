@@ -62,6 +62,13 @@
           <div class="row padded">
             <form class="col s12" ng-submit="submit()" ng-controller="forma_farmaceutica">
               <div class="row">
+                  
+                  <select>
+                      <option>Rol 1 </option>
+                      <option>Rol 2 </option>
+                      <option>Rol 3 </option>
+                  </select>
+                  
                  <table class="striped">
                   <tr>
                       <th>Permiso</th><th>Acceso</th>
@@ -76,6 +83,10 @@
                    <td>Permiso 3</td><td><input type="checkbox" class="filled-in" id="permiso3" /><label for="permiso3"></label></td>
                   </tr>
                  </table> 
+                 
+                 <div>
+                     <button ng-click="submitGuardar()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
+                 </div>
                  
                </div>
           </form>
