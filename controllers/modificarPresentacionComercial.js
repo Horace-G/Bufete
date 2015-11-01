@@ -18,9 +18,9 @@ angular.module('myApp').controller('modificar_presentacion_comercial', ['$scope'
     };
     
     $scope.onChangeSelect = function(){
-        $scope.nombre = allPresentacion[selectedOption - 1].nombre;
-        $scope.descripcion = allPresentacion[selectedOption -1].descripcion
-        $scope.estado = allPresentacion[selectedOption - 1].estado;
+        $scope.nombre = $scope.allPresentacion[selectedOption - 1].nombre;
+        $scope.descripcion = $scope.allPresentacion[selectedOption -1].descripcion
+        $scope.estado = $scope.allPresentacion[selectedOption - 1].estado;
     };
  
     ctrl.init();

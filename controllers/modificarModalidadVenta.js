@@ -15,9 +15,9 @@ angular.module('myApp').controller('modificar_modalidad_venta', ['$scope','$http
     };
     
     $scope.onChangeSelect = function(){
-        $scope.nombre = allOptions[selectedOption - 1].nombre;
-        $scope.descripcion = allOptions[selectedOption -1].descripcion
-        $scope.estado = allOptions[selectedOption - 1].estado;
+        $scope.nombre = $scope.allOptions[selectedOption - 1].nombre;
+        $scope.descripcion = $scope.allOptions[selectedOption -1].descripcion
+        $scope.estado = $scope.allOptions[selectedOption - 1].estado;
     };
  
     ctrl.init();
