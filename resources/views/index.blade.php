@@ -54,6 +54,11 @@
         <script src="./controllers/FormaFarmaceutica.js"></script>
         <!---------------------------->
         <script src="./controllers/modificarPresentacionComercial.js"></script>
+        <script src="./controllers/modificarModalidadVenta.js"></script>
+        <script src="./controllers/modificarCategoria.js"></script>
+        <script src="./controllers/modificarCicloVida.js"></script>
+        <script src="./controllers/modificarViaAdministracion.js"></script>
+        <script src="./controllers/modificarFormaFarmaceutica.js"></script>
     </head>
     <body>
 
