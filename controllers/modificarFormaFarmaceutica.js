@@ -1,6 +1,6 @@
 angular.module('myApp').controller('modificar_forma_farmaceutica', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
   var ctrl = this;
-    $scope.allPresentacion = [];
+    $scope.allOptions = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
          var path = $location.path($location.path());
@@ -10,12 +10,14 @@ angular.module('myApp').controller('modificar_forma_farmaceutica', ['$scope','$h
                 url: baseUrl
         };
         $http(request).then(function(response){
-            $scope.allPresentacion = response.data;
+            $scope.allOptions = response.data;
         });
     };
     
     $scope.onChangeSelect = function(){
-        console.log($scope.selectedOption);
+        $scope.nombre = allOptions[selectedOption - 1].nombre;
+        $scope.descripcion = allOptions[selectedOption -1].descripcion
+        $scope.estado = allOptions[selectedOption - 1].estado;
     };
  
     ctrl.init();
@@ -76,7 +78,7 @@ $scope.submit = function () {
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {nameFormaFarmaceutica: $scope.nombre, descriptionFormaFarmaceutica: $scope.descripcion, userFormaFarmaceutica: '1234', estadoFormaFarmaceutica: '1'}
+			data: {nameFormaFarmaceutica: $scope.nombre, descriptionFormaFarmaceutica: $scope.descripcion, estadoFormaFarmaceutica: $scope.estado}
 	};
 	$http(request).then(function(response){
         if(response.data.Success=="true"){

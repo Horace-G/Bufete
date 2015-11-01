@@ -15,7 +15,9 @@ angular.module('myApp').controller('modificar_modalidad_venta', ['$scope','$http
     };
     
     $scope.onChangeSelect = function(){
-        console.log($scope.selectedOption);
+        $scope.nombre = allOptions[selectedOption - 1].nombre;
+        $scope.descripcion = allOptions[selectedOption -1].descripcion
+        $scope.estado = allOptions[selectedOption - 1].estado;
     };
  
     ctrl.init();
@@ -75,7 +77,7 @@ $scope.submit = function () {
 var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, userModalidadVenta: '1234', estadoModalidadVenta: '1'}
+			data: {nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, estadoModalidadVenta: $scope.estado}
 	};
 	$http(request).then(function(response){
         if(response.data.Success=="true"){

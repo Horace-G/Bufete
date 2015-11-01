@@ -2,7 +2,7 @@ angular.module('myApp').controller('modificar_ciclo_vida', ['$scope','$http','$l
 
     
     var ctrl = this;
-    $scope.allPresentacion = [];
+    $scope.allOptions = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
          var path = $location.path($location.path());
@@ -12,12 +12,14 @@ angular.module('myApp').controller('modificar_ciclo_vida', ['$scope','$http','$l
                 url: baseUrl
         };
         $http(request).then(function(response){
-            $scope.allPresentacion = response.data;
+            $scope.allOptions = response.data;
         });
     };
     
     $scope.onChangeSelect = function(){
-        console.log($scope.selectedOption);
+        $scope.nombre = allOptions[selectedOption - 1].nombre;
+        $scope.descripcion = allOptions[selectedOption -1].descripcion
+        $scope.estado = allOptions[selectedOption - 1].estado;
     };
  
     ctrl.init();
@@ -79,7 +81,7 @@ $scope.submit = function () {
 var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {nameEstadoCicloVida: $scope.nombre, descriptionEstadoCicloVida: $scope.descripcion, userEstadoCicloVida: '1234', estadoEstadoCicloVida: '1'}
+			data: {nameEstadoCicloVida: $scope.nombre, descriptionEstadoCicloVida: $scope.descripcion, estadoEstadoCicloVida: $scope.estado}
 	};
 	
 	

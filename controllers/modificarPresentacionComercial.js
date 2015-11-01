@@ -18,7 +18,9 @@ angular.module('myApp').controller('modificar_presentacion_comercial', ['$scope'
     };
     
     $scope.onChangeSelect = function(){
-        console.log($scope.selectedOption);
+        $scope.nombre = allPresentacion[selectedOption - 1].nombre;
+        $scope.descripcion = allPresentacion[selectedOption -1].descripcion
+        $scope.estado = allPresentacion[selectedOption - 1].estado;
     };
  
     ctrl.init();
@@ -79,7 +81,7 @@ $scope.submit = function () {
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {namePresentacionComercial: $scope.nombre, descriptionPresentacionComercial: $scope.descripcion, userPresentacionComercial: '1234', estadoPresentacionComercial: '1'}
+			data: {namePresentacionComercial: $scope.nombre, descriptionPresentacionComercial: $scope.descripcion, estadoPresentacionComercial: $scope.estado}
 	};
        
 	$http(request).then(function(response){
