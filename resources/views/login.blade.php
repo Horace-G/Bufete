@@ -45,6 +45,8 @@
         <script src="./controllers/CrearUsuario.js"></script>
         <script src="./controllers/CrearExpediente.js"></script>
         <script src="./controllers/FormaFarmaceutica.js"></script>
+        
+        <script src="./controllers/modificarPresentacionComercial.js"></script>
     </head>
     <body>
 

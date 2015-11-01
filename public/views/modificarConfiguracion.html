@@ -35,11 +35,12 @@
          <h3 class="center-align flow-text brown-text lighten-4">Busque la presentacion comercial que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
               
-        <select id="listaPresentacionComercial">
-            <option>Opcion 1</option>
-        </select>
+        
               
-            <form class="col s12" ng-submit="submit()"ng-controller="modificar_presentacion_comercial">
+            <form class="col s12" ng-submit="submit()" ng-controller="modificar_presentacion_comercial">
+        <select id="listaPresentacionComercial" ng-model="selectedOption" ng-change='onChangeSelect()'>
+            <option ng-repeat="item in allPresentacion" value="{{item.id}}">{{item.nombre}}</option>
+        </select>
                 
               <div class="row">
              <div class="input-field col s9">
