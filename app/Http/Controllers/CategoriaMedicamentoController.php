@@ -35,7 +35,7 @@
 			$namePC = $request->input('nameCategoriaMedicamento');
                         $descPC = $request->input('descriptionCategoriaMedicamento');
                         $estadoPC = $request->input('estadoCategoriaMedicamento');
-                        $userCreate = Auth::user().username;
+                        $userCreate = Auth::user()->username;
                         $date = Carbon::now();
 
                         $exists = DB::table('categoria')->select('nombre')->where('nombre', $namePC)->count();
