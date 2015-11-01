@@ -30,6 +30,11 @@
 		}
 		
 		public function allCategoriaMedicamento(){
+			$retVal = DB::table('categoria')->where('estado','=',1)->get();
+			return Response::json($retVal);
+		}
+        
+        public function allCategoriaMedicamentoMod(){
 			$retVal = DB::table('categoria')->get();
 			return Response::json($retVal);
 		}

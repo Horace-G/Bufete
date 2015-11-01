@@ -29,6 +29,11 @@
 		}
 		
 		public function allEstadoCicloVida(){
+			$retVal = DB::table('ciclo_vida')->where('estado','=',1)->get();
+			return Response::json($retVal);
+		}
+        
+        public function allEstadoCicloVidaMod(){
 			$retVal = DB::table('ciclo_vida')->get();
 			return Response::json($retVal);
 		}

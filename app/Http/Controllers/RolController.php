@@ -30,6 +30,11 @@ class RolController extends Controller
                 }
 
                 public function allRol(){
+                        $retVal = DB::table('rol')->where('estado','=',1)->get();
+                        return $retVal;
+                }
+    
+                public function allRolMod(){
                         $retVal = DB::table('rol')->get();
                         return $retVal;
                 }

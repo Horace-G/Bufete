@@ -45,6 +45,11 @@ class LaboratorioController extends Controller
     }
 
     public function allLaboratorio(){
+	$retVal = DB::table('laboratorio')->where('estado','=',1)->get();
+        return Response::json($retVal);
+    }
+    
+    public function allLaboratorioMod(){
 	$retVal = DB::table('laboratorio')->get();
         return Response::json($retVal);
     }

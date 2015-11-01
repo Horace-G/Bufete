@@ -31,6 +31,11 @@
 		}
 		
 		public function allPresentacionComercial(){
+			$retVal = DB::table('presentacion_comercial')->where('estado','=',1)->get();
+			return Response::json($retVal);
+		}
+        
+        public function allPresentacionComercialMod(){
 			$retVal = DB::table('presentacion_comercial')->get();
 			return Response::json($retVal);
 		}

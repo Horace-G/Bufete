@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Routing\Controller;
 use Request;
 use Input;
+use Redirect;
 
 class AutenticacionController extends Controller
 {
@@ -27,6 +28,6 @@ class AutenticacionController extends Controller
     
     public function logout(){
         Auth::logout();
-        return redirect()->intended('/login');
+        Redirect::route(redirect()->intended('/login'));
     }
 }

@@ -80,6 +80,26 @@ Route::get('/allPermiso','PermisoController@allPermiso');
 
 Route::get('/allRolPermiso','RolPermisoController@allRolPermiso');
 
+//////////////////////////////
+
+Route::get('/allRolMod','RolController@allRolMod');
+
+Route::get('/allFormaFarmaceuticaMod','FormaFarmaceuticaController@allFormaFarmaceuticaMod');
+
+Route::get('/allPresentacionComercialMod','PresentacionComercialController@allPresentacionComercialMod');
+
+Route::get('/allModalidadVentaMod','ModalidadVentaController@allModalidadVentaMod');
+
+Route::get('/allCategoriaMedicamentoMod','CategoriaMedicamentoController@allCategoriaMedicamentoMod');
+
+Route::get('/allEstadoCicloVidaMod','EstadoCicloVidaController@allEstadoCicloVidaMod');
+
+Route::get('/allViaAdministracionMod','ViaAdministracionController@allViaAdministracionMod');
+
+Route::get('/allLaboratorioMod','LaboratorioController@allLaboratorioMod');
+
+//////////////////////
+
 Route::post('/authenticate','AutenticacionController@authenticate');
 
 Route::post('/logout','AutenticacionController@logout');
