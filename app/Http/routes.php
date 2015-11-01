@@ -22,7 +22,7 @@ Route::get('/', ['middleware' => 'auth', function () {
     return view('index');
 }]);
 
-Route::get('index.php/login',function(){
+Route::get('/login',function(){
     return view('login');
 });
 
@@ -80,6 +80,6 @@ Route::get('/allPermiso','PermisoController@allPermiso');
 
 Route::get('/allRolPermiso','RolPermisoController@allRolPermiso');
 
-Route::get('index.php/auth/login', 'Auth\AuthController@getLogin');
-Route::post('index.php/auth/login', 'Auth\AuthController@postLogin');
-Route::get('index.php/auth/logout', 'Auth\AuthController@getLogout');
+Route::get('/auth/login', 'Auth\AuthController@getLogin');
+Route::post('/login', 'Auth\AuthController@postLogin');
+Route::get('/auth/logout', 'Auth\AuthController@getLogout');
