@@ -38,7 +38,7 @@
         
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_presentacion_comercial">
-        <select id="listaPresentacionComercial" ng-model="selectedOption" ng-change='onChangeSelect()'>
+        <select class="browser-default" id="listaPresentacionComercial" ng-model="selectedOption" ng-change='onChangeSelect()'>
             <option ng-repeat="item in allPresentacion" value="{{item.id}}">{{item.nombre}}</option>
         </select>
                 
@@ -75,7 +75,7 @@
                   
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_modalidad_venta">
-                  <select id="listaModalidadVenta" ng-model="selectedOption" ng-change='onChangeSelect()'>
+                  <select class="browser-default" id="listaModalidadVenta" ng-model="selectedOption" ng-change='onChangeSelect()'>
             <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
         </select>
               <div class="row">
@@ -108,7 +108,7 @@
                  
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_categoria">
-                <select id="listaCategoria" ng-model="selectedOption" ng-change='onChangeSelect()'>
+                <select  class="browser-default" id="listaCategoria" ng-model="selectedOption" ng-change='onChangeSelect()'>
             <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
         </select>    
               <div class="row">
@@ -141,7 +141,7 @@
             
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_ciclo_vida">
-                <select id="listaCicloVida" ng-model="selectedOption" ng-change='onChangeSelect()'>
+                <select class="browser-default" id="listaCicloVida" ng-model="selectedOption" ng-change='onChangeSelect()'>
             <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
         </select>
               <div class="row">
@@ -173,7 +173,7 @@
            
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_via_administracion">
-                <select id="listaViaAdministracion" ng-model="selectedOption" ng-change='onChangeSelect()'>
+                <select  class="browser-default" id="listaViaAdministracion" ng-model="selectedOption" ng-change='onChangeSelect()'>
             <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
         </select>
               <div class="row">
@@ -207,7 +207,7 @@
            
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_forma_farmaceutica">
-                <select id="listaFormaFarmaceutica" ng-model="selectedOption" ng-change='onChangeSelect()'>
+                <select class="browser-default" id="listaFormaFarmaceutica" ng-model="selectedOption" ng-change='onChangeSelect()'>
             <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
         </select>
               <div class="row">
