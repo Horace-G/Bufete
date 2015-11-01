@@ -64,7 +64,7 @@
 
                     <h3 class="center-align flow-text brown-text lighten-4">Ingrese sus credenciales</h3>
                     <div class="row padded">
-                    <form class="col s12" method="POST" action="/Bufete/auth/login">
+                    <form class="col s12" method="POST" action="/Bufete/authenticate">
 			{!! csrf_field() !!}
                         <div class="row">
                         <div class="input-field col s9">
