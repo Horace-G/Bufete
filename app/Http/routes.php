@@ -17,10 +17,15 @@
     // Only authenticated users may enter...
 }]);
 */
-
+/*
 Route::get('/',['middleware' => 'auth',function () {
     return view('index');
 }]);
+*/
+
+Route::get('/',function(){
+   return view('index'); 
+});
 
 Route::get('/login',function(){
     return view('login');
