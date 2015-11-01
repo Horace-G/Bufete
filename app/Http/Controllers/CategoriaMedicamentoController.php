@@ -39,6 +39,4 @@
 			$retVal = DB::table('categoria')->get();
 			return Response::json($retVal);
 		}
-        
-        
 	}
