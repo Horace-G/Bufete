@@ -82,6 +82,8 @@ Route::get('/allRolPermiso','RolPermisoController@allRolPermiso');
 
 Route::post('/authenticate','AutenticacionController@authenticate');
 
+Route::post('/logout','AutenticacionController@logout');
+
 /*
 Route::get('/auth/login', 'Auth\AuthController@getLogin');
 Route::post('/auth/login', 'Auth\AuthController@postLogin');
