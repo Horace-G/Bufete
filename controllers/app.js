@@ -4,7 +4,7 @@ myApp.config(function ($routeProvider) {
     
     $routeProvider
     
-    .when('/home', {
+    .when('/', {
         templateUrl: 'public/views/home.html',
         controller: 'mainController'
     })
@@ -51,11 +51,6 @@ myApp.config(function ($routeProvider) {
         templateUrl: 'public/views/second.html',
         controller: 'secondController'
     })
-    
-    .otherwise({
-      templateUrl: 'public/views/login.html',
-      controller: 'logincontroller'
-    });
     
 });
 

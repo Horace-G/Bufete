@@ -69,14 +69,19 @@ textarea:focus {
     
     
 }
+#Login{
+    position: absolute;
+    top: 10.9%;
+    width: 63.55%;
+    left: 18.2%;
+}
 
-#nombrePresentacionComercial{
-    
+#Login-li{
+    background-color:white;
 }
 #Config-li{
     background-color:aliceblue;
 }
-
 .errorFont{
     width:1000px;
     hegiht:1000px;
