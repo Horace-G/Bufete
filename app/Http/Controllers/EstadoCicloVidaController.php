@@ -27,6 +27,29 @@
 			
 			return Response::json(array('Success' => 'true'));
 		}
+
+		public function updateEstadoCicloVida(Request $request){
+			$id = $request->input('idEstadoCicloVida');
+			$namePC = $request->input('nameEstadoCicloVida');
+	                $descPC = $request->input('descriptionEstadoCicloVida');
+                        $estadoPC = $request->input('estadoEstadoCicloVida');
+                        $userCreate = $request->input('userEstadoCicloVida');
+                        $date = Carbon::now();
+
+                        $exists = DB::table('ciclo_vida')->select('nombre')->where('nombre', $namePC)->count();
+                        if ($exists>0){
+                                return Response::json(array('Success' => 'false'));
+                        }
+                        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+                        DB::table('ciclo_vida')->where('id', $id)->update(
+                                array('nombre'=>$namePC, 'descripcion'=>$descPC, 'estado'=>$estadoPC,
+                                                'updated_at'=>$date,'user_updated'=>$userCreate)
+                        );
+
+                        return Response::json(array('Success' => 'true'));
+
+		
+		}
 		
 		public function allEstadoCicloVida(){
 			$retVal = DB::table('ciclo_vida')->where('estado','=',1)->get();

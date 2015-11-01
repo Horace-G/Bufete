@@ -28,6 +28,29 @@
 			
 			return Response::json(array('Success' => 'true'));
 		}
+
+		public function updateModalidadVenta(Request $request){
+			$id = $request->input('idModalidadVenta');
+			$namePC = $request->input('nameModalidadVenta');
+                        $descPC = $request->input('descriptionModalidadVenta');
+                        $estadoPC = $request->input('estadoModalidadVenta');
+                        $userCreate = $request->input('userModalidadVenta');
+                        $date = Carbon::now();
+
+                        $exists = DB::table('modalidad_venta')->select('nombre')->where('nombre', $namePC)->count();
+                        if ($exists>0){
+                                return Response::json(array('Success' => 'false'));
+                        }
+
+                        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+                        DB::table('modalidad_venta')->where('id', $id)->update(
+                                array('nombre'=>$namePC, 'descripcion'=>$descPC, 'estado'=>$estadoPC,
+                                                'updated_at'=>$date,'user_updated'=>$userCreate)
+                        );
+
+                        return Response::json(array('Success' => 'true'));
+
+		}
 		
 		public function allModalidadVenta(){
 			$retVal = DB::table('modalidad_venta')->where('estado','=',1)->get();

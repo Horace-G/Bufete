@@ -28,6 +28,29 @@
 			
 			return Response::json(array('Success' => 'true'));
 		}
+
+		public function updateFormaFarmaceutica(Request $request){
+			$id = $request->input('idFormaFarmaceutica');
+			$namePC = $request->input('nameFormaFarmaceutica');
+                        $descPC = $request->input('descriptionFormaFarmaceutica');
+                        $estadoPC = $request->input('estadoFormaFarmaceutica');
+                        $userCreate = $request->input('userFormaFarmaceutica');
+                        $date = Carbon::now();
+
+                        $exists = DB::table('forma_farmaceutica')->select('nombre')->where('nombre', $namePC)->count();
+                        if ($exists>0){
+                                return Response::json(array('Success' => 'false'));
+                        }
+
+                        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+                        DB::table('forma_farmaceutica')->where('id', $id)->update(
+                                array('nombre'=>$namePC, 'descripcion'=>$descPC, 'estado'=>$estadoPC,
+                                                'updated_at'=>$date,'user_updated'=>$userCreate)
+                        );
+
+                        return Response::json(array('Success' => 'true'));
+
+		}
 		
 		public function allFormaFarmaceutica(){
 			$retVal = DB::table('forma_farmaceutica')->where('estado','=',1)->get();

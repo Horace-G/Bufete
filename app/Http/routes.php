@@ -113,6 +113,33 @@ Route::post('/authenticate','AutenticacionController@authenticate');
 
 Route::post('/logout','AutenticacionController@logout');
 
+////////////////////////////
+
+Route::post('/updatePresentacionComercial','PresentacionComercialController@updatePresentacionComercial');
+
+Route::post('/updateModalidadVenta','ModalidadVentaController@updateModalidadVenta');
+
+Route::post('/updateCategoriaMedicamento','CategoriaMedicamentoController@updateCategoriaMedicamento');
+
+Route::post('/updateUsuario', 'UsuarioController@updateUsuario');
+
+Route::post('/updateRol', 'RolController@updateRol');
+
+Route::post('/updateEstadoCicloVida','EstadoCicloVidaController@updateEstadoCicloVida');
+
+Route::post('/updateViaAdministracion','ViaAdministracionController@updateViaAdministracion');
+
+Route::post('/updateMedicamento', 'MedicamentoController@updateMedicamento');
+
+Route::post('/updateLaboratorio','LaboratorioController@updateLaboratorio');
+
+Route::post('/updateFormaFarmaceutica','FormaFarmaceuticaController@updateFormaFarmaceutica');
+
+Route::post('/updatePermiso','PermisoController@updatePermiso');
+
+Route::post('/updateRolPermiso','RolPermisoController@updateRolPermiso');
+
+
 /*
 Route::get('/auth/login', 'Auth\AuthController@getLogin');
 Route::post('/auth/login', 'Auth\AuthController@postLogin');
