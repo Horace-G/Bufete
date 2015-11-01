@@ -9,10 +9,21 @@
 | It's a breeze. Simply tell Laravel the URIs it should respond to
 | and give it the controller to call when that URI is requested.
 |
+[
+    'middleware' => 'auth',
+    'uses' => 'ProfileController@show'
+]
+['middleware' => 'auth', function() {
+    // Only authenticated users may enter...
+}]);
 */
 
-Route::get('/', function () {
+Route::get('/', ['middleware' => 'auth', function () {
     return view('index');
+}]);
+
+Route::get('/login',function(){
+    return view('login');
 });
 
 Route::get('/TestL',function(){
@@ -68,3 +79,7 @@ Route::get('/allMensaje','MensajeController@allMensaje');
 Route::get('/allPermiso','PermisoController@allPermiso');
 
 Route::get('/allRolPermiso','RolPermisoController@allRolPermiso');
+
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');

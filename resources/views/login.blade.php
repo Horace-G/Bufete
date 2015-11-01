@@ -69,16 +69,16 @@
                         <div class="row">
                         <div class="input-field col s9">
                             <i class="material-icons prefix">account_circle</i>
-                            <input id="usuarioLogin" type="text" class="validate">
+                            <input id="usuarioLogin" name="username" type="text" class="validate">
                             <label for="usuarioLogin">Usuario<span id="asterisco"> *</span></label>
                         </div>
                         <div class="input-field col s9">
                             <i class="material-icons prefix">lock_outline</i>
-                            <input id="passwordLogin" type="password" class="validate">
+                            <input id="passwordLogin" type="password" name="password" class="validate">
                             <label for="passwordLogin">Password<span id="asterisco"> *</span></label>
                         </div>
                         <div class="col s9 right-align">
-                            <button class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                            <button type="submit" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
                         </div>
 
                         </div>
