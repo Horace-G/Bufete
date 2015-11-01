@@ -81,5 +81,5 @@ Route::get('/allPermiso','PermisoController@allPermiso');
 Route::get('/allRolPermiso','RolPermisoController@allRolPermiso');
 
 Route::get('/auth/login', 'Auth\AuthController@getLogin');
-Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::post('/auth/login', 'Auth\AuthController@postLogin');
 Route::get('/auth/logout', 'Auth\AuthController@getLogout');
