@@ -18,6 +18,8 @@ angular.module('myApp').controller('modificar_presentacion_comercial', ['$scope'
         console.log($scope.selectedOption);
     };
  
+    ctrl.init();
+    
 $scope.nombre = '';
 $scope.descripcion = '';
 $scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");    

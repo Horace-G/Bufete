@@ -71,11 +71,13 @@
         <h3 class="center-align flow-text brown-text lighten-4">Busque la modalidad de venta que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
               
-         <select id="listaModalidadDeVentas">
-            <option>Opcion 1</option>
-        </select>    
+         
+                  
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_modalidad_venta">
+                  <select id="listaModalidadVenta" ng-model="selectedOption" ng-change='onChangeSelect()'>
+            <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
+        </select>
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -103,11 +105,12 @@
            <h3 class="center-align flow-text brown-text lighten-4">Busque la categoria que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
               
-         <select id="listaCategorias">
-            <option>Opcion 1</option>
-        </select>           
+                 
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_categoria">
+                <select id="listaCategoria" ng-model="selectedOption" ng-change='onChangeSelect()'>
+            <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
+        </select>    
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -135,11 +138,12 @@
            <h3 class="center-align flow-text brown-text lighten-4">Busque el estado que vida que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
               
-        <select id="listaEstados">
-            <option>Opcion 1</option>
-        </select>           
+            
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_ciclo_vida">
+                <select id="listaCicloVida" ng-model="selectedOption" ng-change='onChangeSelect()'>
+            <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
+        </select>
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -166,12 +170,12 @@
       
            <h3 class="center-align flow-text brown-text lighten-4">Busque la via de administracion que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
-        
-          <select id="listaViasAdministracion">
-            <option>Opcion 1</option>
-        </select>            
+           
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_via_administracion">
+                <select id="listaViaAdministracion" ng-model="selectedOption" ng-change='onChangeSelect()'>
+            <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
+        </select>
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -200,12 +204,12 @@
       
            <h3 class="center-align flow-text brown-text lighten-4">Busque la forma farmaceutica que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
-        
-          <select id="listaFormaFarmaceutica">
-            <option>Opcion 1</option>
-        </select>           
+           
               
             <form class="col s12" ng-submit="submit()" ng-controller="modificar_forma_farmaceutica">
+                <select id="listaFormaFarmaceutica" ng-model="selectedOption" ng-change='onChangeSelect()'>
+            <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
+        </select>
               <div class="row">
              <div class="input-field col s9">
                   <i class="material-icons prefix">account_circle</i>
@@ -234,12 +238,12 @@
       
         <h3 class="center-align flow-text brown-text lighten-4">Busque el Laboratorio que desee modificar, y vuelva a llenar los campos que desea cambiar</h3>
           <div class="row padded">
-             
-         <select id="listaLaboratorios">
-            <option>Opcion 1</option>
-        </select>        
+                
               
-            <form class="col s12" ng-submit="submit()" ng-controller="modificar_laboratorio">
+            <form class="col s12" ng-submit="submit()">
+                <!--<select id="listaLaboratorio" ng-model="selectedOption" ng-change='onChangeSelect()'>
+            <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
+        </select>-->
               <div class="row">
                   <div class="input-field col s6">
                        <i class="material-icons prefix">account_circle</i>
