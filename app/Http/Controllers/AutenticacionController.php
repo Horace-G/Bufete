@@ -18,7 +18,7 @@ class AutenticacionController extends Controller
     {
         $username = Input::('username');
         $password = Input::('password');
-        if (Auth::attempt(['username' => $username, 'password' => $password,'estado'=>'1'])) {
+        if (Auth::attempt(['username' => $username, 'password' => $password,'estado'=>'1'],true)) {
             // Authentication passed...
             return redirect()->intended('/');
         }else{
