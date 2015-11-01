@@ -14,5 +14,5 @@ class Usuario extends Model implements AuthenticatableContract,
                                         
     use Authenticatable, Authorizable
     protected $table= "usuario";
-    protected $fillable = ['id', 'username', 'password','nombre','estado','rol_id'];
+    protected $fillable = [ 'username', 'password'];
 }
