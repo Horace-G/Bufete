@@ -20,7 +20,9 @@ class AutenticacionController extends Controller
         $password = Input::('password');
         if (Auth::attempt(['username' => $username, 'password' => $password,'estado'=>'1'])) {
             // Authentication passed...
-            return redirect()->intended('dashboard');
+            return redirect()->intended('/');
+        }else{
+            return redirect()->intended('/login')
         }
     }
 }
