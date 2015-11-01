@@ -42,6 +42,11 @@ myApp.config(function ($routeProvider) {
         controller: 'secondController'
     })
     
+     .when('/modificarConfiguracion', {
+        templateUrl: 'public/views/modificarConfiguracion.html',
+        controller: 'secondController'
+    })
+    
     .when('/second/:num', {
         templateUrl: 'public/views/second.html',
         controller: 'secondController'
