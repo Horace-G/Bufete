@@ -4,6 +4,7 @@ angular.module('myApp').controller('modificar_presentacion_comercial', ['$scope'
     $scope.allPresentacion = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
+         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allPresentacionComercialMod';
         var request = {
                 method: 'GET',

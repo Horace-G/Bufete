@@ -3,6 +3,7 @@ angular.module('myApp').controller('modificar_modalidad_venta', ['$scope','$http
     $scope.allOptions = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
+         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allModalidadVentaMod';
         var request = {
                 method: 'GET',

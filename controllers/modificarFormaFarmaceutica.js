@@ -3,6 +3,7 @@ angular.module('myApp').controller('modificar_forma_farmaceutica', ['$scope','$h
     $scope.allPresentacion = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
+         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allFormaFarmaceuticaMod';
         var request = {
                 method: 'GET',
