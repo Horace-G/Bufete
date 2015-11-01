@@ -13,7 +13,7 @@ class UsuarioController extends Controller
 
     public function saveUsuario(Request $request){
                         $usernameU = $request->input('usernameUsuario');
-                        $passwordU = $request->input('passwordUsuario');
+                        $passwordU = bcrypt($request->input('passwordUsuario'));
                         $nombreU = $request->input('nombreUsuario');
 			$estadoU = $request->input('estadoUsuario');
 			$rol_idU = $request->input('rol_idUsuario');
