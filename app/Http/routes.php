@@ -43,6 +43,10 @@ Route::post('/saveLaboratorio','LaboratorioController@saveLaboratorio');
 
 Route::post('/saveFormaFarmaceutica','FormaFarmaceuticaController@saveFormaFarmaceutica');
 
+Route::post('/savePermiso','PermisoController@savePermiso');
+
+Route::post('/saveRolPermiso','RolPermisoController@saveRolPermiso');
+
 Route::get('/allRol','RolController@allRol');
 
 Route::get('/allFormaFarmaceutica','FormaFarmaceuticaController@allFormaFarmaceutica');
@@ -60,3 +64,7 @@ Route::get('/allViaAdministracion','ViaAdministracionController@allViaAdministra
 Route::get('allLaboratorio','LaboratorioController@allLaboratorio');
 
 Route::get('/allMensaje','MensajeController@allMensaje');
+
+Route::get('/allPermiso','PermisoController@allPermiso');
+
+Route::get('/allRolPermiso','RolPermisoController@allRolPermiso');
