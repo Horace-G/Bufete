@@ -7,9 +7,8 @@ angular.module('myApp').controller('mainController', ['$scope', '$log','$http','
     };
     
     $scope.logout = function(){
+        var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port +'/Bufete/logout;
         var request = {
-            var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port +'/Bufete/logout';
-            var request = {
                 method: 'POST',
                 url: baseUrl,
                 data: {}
