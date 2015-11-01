@@ -30,6 +30,11 @@
 		}
 		
 		public function allFormaFarmaceutica(){
+			$retVal = DB::table('forma_farmaceutica')->where('estado','=',1)->get();
+			return Response::json($retVal);
+		}
+        
+        public function allFormaFarmaceuticaMod(){
 			$retVal = DB::table('forma_farmaceutica')->get();
 			return Response::json($retVal);
 		}

@@ -96,9 +96,7 @@ Route::get('/allEstadoCicloVidaMod','EstadoCicloVidaController@allEstadoCicloVid
 
 Route::get('/allViaAdministracionMod','ViaAdministracionController@allViaAdministracionMod');
 
-Route::get('allLaboratorioMod','LaboratorioController@allLaboratorioMod');
-
-Route::get('/allPermiso','PermisoController@allPermiso');
+Route::get('/allLaboratorioMod','LaboratorioController@allLaboratorioMod');
 
 //////////////////////
 

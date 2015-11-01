@@ -30,6 +30,11 @@
 		}
 		
 		public function allModalidadVenta(){
+			$retVal = DB::table('modalidad_venta')->where('estado','=',1)->get();
+			return Response::json($retVal);
+		}
+        
+        public function allModalidadVentaMod(){
 			$retVal = DB::table('modalidad_venta')->get();
 			return Response::json($retVal);
 		}

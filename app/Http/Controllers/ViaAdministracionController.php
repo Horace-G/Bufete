@@ -31,6 +31,11 @@
 		}
 		
 		public function allViaAdministracion(){
+			$retVal = DB::table('via_administracion')->where('estado','=',1)->get();
+			return Response::json($retVal);
+		}
+        
+        public function allViaAdministracionMod(){
 			$retVal = DB::table('via_administracion')->get();
 			return Response::json($retVal);
 		}
