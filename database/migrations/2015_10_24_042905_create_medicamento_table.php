@@ -22,10 +22,8 @@ class CreateMedicamentoTable extends Migration
         $table->integer('viaAdministracionId')->unsigned();
         $table->integer('laboratorioId')->unsigned();
         $table->string('representante',64);
-	$table->integer('user_created')->unsigned();
-        $table->foreign('user_created')->references('id')->on('usuario')->onDelete('cascade');
-        $table->integer('user_updated')->unsigned();
-        $table->foreign('user_updated')->references('id')->on('usuario')->onDelete('cascade');
+	    $table->string('user_created',64);
+	    $table->string('user_updated',64);
             $table->integer('estado')->unsigned()->default(1);
         $table->timestamps();
         });

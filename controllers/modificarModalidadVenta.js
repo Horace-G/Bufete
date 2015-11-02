@@ -77,7 +77,7 @@ $scope.submit = function () {
 var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, estadoModalidadVenta: $scope.estado}
+			data: {idModalidadVenta: $scope.selectedOption,nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, estadoModalidadVenta: $scope.estadoModalidadVenta}
 	};
 	$http(request).then(function(response){
         if(response.data.Success=="true"){

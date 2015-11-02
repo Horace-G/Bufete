@@ -34,7 +34,33 @@ class UsuarioController extends Controller
 
                         return Response::json(array('Success' => 'true'));
                 }
+		
 
+		public function updateUsuario(Request $request){
+			$id = $request->input('idUsuario');
+			$usernameU = $request->input('usernameUsuario');
+                        $passwordU = bcrypt($request->input('passwordUsuario'));
+                        $nombreU = $request->input('nombreUsuario');
+                        $estadoU = $request->input('estadoUsuario');
+                        $rol_idU = $request->input('rol_idUsuario');
+                        $date = Carbon::now();
+
+                        $exists = DB::table('usuario')->select('nombre')->where('nombre', $usernameU)->count();
+                        if ($exists>0){
+                                return Response::json(array('Success' => 'false'));
+                        }
+
+
+                        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+                        DB::table('usuario')->where('id', $id)->update(
+                                array('username'=>$usernameU, 'password'=>$passwordU, 'nombre'=>$nombreU, 'estado'=>$estadoU, 'rol_id'=>$rol_idU,
+                                                'updated_at'=>$date)
+                        );
+
+                        return Response::json(array('Success' => 'true'));
+
+		}
                 public function allUsuario(){
                         $retVal = DB::table('usuario')->get();
                         return Response::json($retVal);

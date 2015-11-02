@@ -81,7 +81,7 @@ $scope.submit = function () {
 var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {nameEstadoCicloVida: $scope.nombre, descriptionEstadoCicloVida: $scope.descripcion, estadoEstadoCicloVida: $scope.estado}
+			data: {idEstadoCicloVida: $scope.selectedOption,nameEstadoCicloVida: $scope.nombre, descriptionEstadoCicloVida: $scope.descripcion, estadoEstadoCicloVida: $scope.estado}
 	};
 	
 	
