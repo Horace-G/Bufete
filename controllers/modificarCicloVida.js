@@ -5,7 +5,7 @@ angular.module('myApp').controller('modificar_ciclo_vida', ['$scope','$http','$l
     $scope.allOptions = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
-         var path = $location.path($location.path());
+        var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allEstadoCicloVidaMod';
         var request = {
                 method: 'GET',
@@ -19,7 +19,11 @@ angular.module('myApp').controller('modificar_ciclo_vida', ['$scope','$http','$l
     $scope.onChangeSelect = function(){
         $scope.nombre = $scope.allOptions[$scope.selectedOption - 1].nombre;
         $scope.descripcion = $scope.allOptions[$scope.selectedOption -1].descripcion
-        $scope.estado = $scope.allOptions[$scope.selectedOption - 1].estado;
+        if($scope.allOptions[$scope.selectedOption - 1].estado==1){
+                document.getElementById("estadoCiclo").checked = true;
+        }else{
+                document.getElementById("estadoCiclo").checked = false;
+        }
     };
  
     ctrl.init();
@@ -74,14 +78,22 @@ $scope.submit = function () {
     }if($scope.valid == 1){
         $("#modificarNombreCicloDeVida").css("color","black");
         $("#modificarDescripcionCicloDeVida").css("color","black");
+        var estado;
+        if(document.getElementById("estadoCiclo").checked == true){
+            
+            estado = 1;
+        }else{
+            
+            estado = 0;
+        }
         var path = $location.path($location.path());
 
 		//Creating the baseUrl
-		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveEstadoCicloVida';
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/updateEstadoCicloVida';
 var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {idEstadoCicloVida: $scope.selectedOption,nameEstadoCicloVida: $scope.nombre, descriptionEstadoCicloVida: $scope.descripcion, estadoEstadoCicloVida: $scope.estado}
+			data: {idEstadoCicloVida: $scope.selectedOption,nameEstadoCicloVida: $scope.nombre, descriptionEstadoCicloVida: $scope.descripcion, estadoEstadoCicloVida: estado}
 	};
 	
 	
@@ -93,6 +105,15 @@ $http(request).then(function(response){
         $("#modificarDescripcionCicloDeVida").css("color","black");
 		$scope.nombre = '';
         $scope.descripcion = '';
+        var path = $location.path($location.path());
+        var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allEstadoCicloVidaMod';
+        var request = {
+                method: 'GET',
+                url: baseUrl
+        };
+        $http(request).then(function(response){
+            $scope.allOptions = response.data;
+        });
     }else{
             mensajeService.ShowMessage('FAILED_SAVE','Ciclo de Vida');
     }

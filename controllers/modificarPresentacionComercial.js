@@ -4,7 +4,7 @@ angular.module('myApp').controller('modificar_presentacion_comercial', ['$scope'
     $scope.allPresentacion = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
-         var path = $location.path($location.path());
+        var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allPresentacionComercialMod';
         var request = {
                 method: 'GET',
@@ -19,8 +19,13 @@ angular.module('myApp').controller('modificar_presentacion_comercial', ['$scope'
     
     $scope.onChangeSelect = function(){
         $scope.nombre = $scope.allPresentacion[$scope.selectedOption - 1].nombre;
-        $scope.descripcion = $scope.allPresentacion[$scope.selectedOption -1].descripcion
-        $scope.estado = $scope.allPresentacion[$scope.selectedOption - 1].estado;
+        $scope.descripcion = $scope.allPresentacion[$scope.selectedOption -1].descripcion;
+        if($scope.allPresentacion[$scope.selectedOption - 1].estado==1){
+                document.getElementById("estadoPresentacion").checked = true;
+        }else{
+                document.getElementById("estadoPresentacion").checked = false;
+        }
+        
     };
  
     ctrl.init();
@@ -71,6 +76,14 @@ $scope.submit = function () {
     
         
     }if($scope.valid == 1){
+        var estado;
+        if(document.getElementById("estadoPresentacion").checked == true){
+            alert("Verdadero");
+            estado = 1;
+        }else{
+            alert("Falso");
+            estado = 0;
+        }
         $("#modificarNombrePresentacionComercial").css("color","black");
         $("#modificarDescripcionPresentacionComercial").css("color","black");
         var path = $location.path($location.path());
@@ -81,7 +94,7 @@ $scope.submit = function () {
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {idPresentacionComercial: $scope.selectedOption, namePresentacionComercial: $scope.nombre, descriptionPresentacionComercial: $scope.descripcion, estadoPresentacionComercial: $scope.estado}
+			data: {idPresentacionComercial: $scope.selectedOption, namePresentacionComercial: $scope.nombre, descriptionPresentacionComercial: $scope.descripcion, estadoPresentacionComercial: estado}
 	};
        
 	$http(request).then(function(response){
@@ -93,6 +106,16 @@ $scope.submit = function () {
             $("#modificarDescripcionPresentacionComercial").css("color","black");
             $scope.nombre = '';
             $scope.descripcion = '';
+            var path = $location.path($location.path());
+            var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allPresentacionComercialMod';
+            var request = {
+                    method: 'GET',
+                    url: baseUrl
+            };
+            $http(request).then(function(response){
+                $scope.allPresentacion = response.data;
+                $('select').material_select();
+            });
         }else{
             mensajeService.ShowMessage('FAILED_SAVE','Presentacion Comercial');
         }

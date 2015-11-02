@@ -180,6 +180,8 @@ $scope.submitGuardar = function () {
             mensajeService.ShowMessage('FAILED_SAVE','Laboratorio');
         }
 	});
+    }else{
+        
     }
 
 

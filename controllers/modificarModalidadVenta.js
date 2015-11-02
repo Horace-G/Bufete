@@ -17,7 +17,11 @@ angular.module('myApp').controller('modificar_modalidad_venta', ['$scope','$http
     $scope.onChangeSelect = function(){
         $scope.nombre = $scope.allOptions[$scope.selectedOption - 1].nombre;
         $scope.descripcion = $scope.allOptions[$scope.selectedOption -1].descripcion
-        $scope.estado = $scope.allOptions[$scope.selectedOption - 1].estado;
+        if($scope.allOptions[$scope.selectedOption - 1].estado==1){
+                document.getElementById("estadoModalidad").checked = true;
+        }else{
+                document.getElementById("estadoModalidad").checked = false;
+        }
     };
  
     ctrl.init();
@@ -71,13 +75,21 @@ $scope.submit = function () {
         $("#modificarNombreModalidadDeVenta").css("color","black");
         $("#modificarDescripcionModalidadDeVenta").css("color","black");
         var path = $location.path($location.path());
+        var estado;
+        if(document.getElementById("estadoModalidad").checked == true){
+            alert("Verdadero");
+            estado = 1;
+        }else{
+            alert("Falso");
+            estado = 0;
+        }
 
 		//Creating the baseUrl
 		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/updateModalidadVenta';
 var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {idModalidadVenta: $scope.selectedOption,nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, estadoModalidadVenta: $scope.estadoModalidadVenta}
+			data: {idModalidadVenta: $scope.selectedOption,nameModalidadVenta: $scope.nombre, descriptionModalidadVenta: $scope.descripcion, estadoModalidadVenta: estado}
 	};
 	$http(request).then(function(response){
         if(response.data.Success=="true"){
@@ -87,6 +99,15 @@ var request = {
             $("#modificarDescripcionModalidadDeVenta").css("color","black");
             $scope.nombre = '';
             $scope.descripcion = '';
+            var path = $location.path($location.path());
+            var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allModalidadVentaMod';
+            var request = {
+                    method: 'GET',
+                    url: baseUrl
+            };
+            $http(request).then(function(response){
+                $scope.allOptions = response.data;
+            });
         }else{
             mensajeService.ShowMessage('FAILED_SAVE','Modalidad Venta');
         }
