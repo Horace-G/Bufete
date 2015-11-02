@@ -53,7 +53,11 @@
                   <textarea id="modificarDescripcionPresentacionComercial" class="materialize-textarea" ng-model="descripcion"></textarea>
                   <label for="modificarDescripcionPresentacionComercial">Nueva descripción de ésta presentación comercial<span id="asterisco"> *</span></label>
                  </div>
-                  <div class="col s9 right-align">
+                    <div class="col s6 center-align">
+                        <input type="checkbox" class="filled-in" id="estadoPresentacion"/>
+                        <label for="estadoPresentacion">Estado Presentacion Comercial</label>
+                    </div>
+                  <div class="col s6 center-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
                 </div>
                   
@@ -89,9 +93,13 @@
                   <textarea id="modificarDescripcionModalidadDeVenta" class="materialize-textarea"ng-model="descripcion"></textarea>
                   <label for="modificarDescripcionModalidadDeVenta">Nueva descripción de ésta modalidad de venta<span id="asterisco"> *</span></label>
                  </div>
-                  <div class="col s9 right-align">
+                  <div class="col s6 center-align">
+                        <input type="checkbox" class="filled-in" id="estadoModalidad"/>
+                        <label for="estadoModalidad">Estado Modalidad Venta</label>
+                    </div>
+                  <div class="col s6 center-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
-                  </div>
+                </div>
                </div>
           </form>
         </div>
@@ -122,9 +130,13 @@
                    <textarea id="modificarDescripcionCategoria" class="materialize-textarea"ng-model="descripcion"></textarea>
                   <label for="modificarDescripcionCategoria">Ingrese una nueva descripción sobre la categoría<span id="asterisco"> *</span></label>
                  </div>
-                  <div class="col s9 right-align">
+                  <div class="col s6 center-align">
+                        <input type="checkbox" class="filled-in" id="estadoCategoria"/>
+                        <label for="estadoCategoria">Estado Categoria</label>
+                    </div>
+                  <div class="col s6 center-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
-                  </div>
+                </div>
                </div>
           </form>
         </div>
@@ -155,9 +167,13 @@
                   <textarea id="modificarDescripcionCicloDeVida" class="materialize-textarea"ng-model="descripcion"></textarea>
                   <label for="modificarDescripcionCicloDeVida">Ingrese una nueva descripción del nuevo paso en el ciclo de vida<span id="asterisco"> *</span> </label>
                  </div>
-                  <div class="col s9 right-align">
+                  <div class="col s6 center-align">
+                        <input type="checkbox" class="filled-in" id="estadoCiclo"/>
+                        <label for="estadoCiclo">Estado Ciclo de Vida</label>
+                    </div>
+                  <div class="col s6 center-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
-                  </div>
+                </div>
                </div>
           </form>
         </div>
@@ -189,9 +205,13 @@
                   <label for="modificarDescripcionModalidadDeVenta">Ingrese una nueva descripción sobre la vía de administración<span id="asterisco"> *</span></label>
 
                  </div>
-                 <div class="col s9 right-align">
+                 <div class="col s6 center-align">
+                        <input type="checkbox" class="filled-in" id="estadoVia"/>
+                        <label for="estadoVia">Estado Via de Administración</label>
+                    </div>
+                  <div class="col s6 center-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
-                  </div> 
+                </div>
                </div>
           </form>
         </div>
@@ -223,9 +243,13 @@
                   <label for="modificarDescripcionFormaFarmaceutica">Ingrese una nueva descripción sobre la Forma Farmaceutica<span id="asterisco"> *</span></label>
 
                  </div>
-                 <div class="col s9 right-align">
+                 <div class="col s6 center-align">
+                        <input type="checkbox" class="filled-in" id="estadoFarmaceutico"/>
+                        <label for="estadoFarmaceutico">Estado Forma Farmaceutica</label>
+                    </div>
+                  <div class="col s6 center-align">
                   <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
-                  </div> 
+                </div> 
                </div>
           </form>
         </div>
@@ -278,13 +302,18 @@
                          
                     </div>
                   
-                  <div class="col s5 center-align">
+                  <div class="col s6 center-align">
                        <button ng-click="submitNumero()" class="btn-large waves-effect waves-light brown lighten-1">Agegar Numero</button>
                   </div>
                   
-                  <div class="col s12 center-align">
-                       <button ng-click="submitGuardar()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
-                  </div>
+                  <div class="input-field col s6 center-align">
+                        <input type="checkbox" class="filled-in" id="estadoLaboratorio"/>
+                        <label for="estadoLaboratorio">Estado Laboratorio</label>
+                    </div>
+                  <div class="col s6 center-align">
+                  <button ng-click="submitGuardar()" class="btn-floating btn-large waves-effect waves-light brown lighten-1"><i class="material-icons">done</i></button>
+                </div>
+                  
                </div>
           </form>
         </div>

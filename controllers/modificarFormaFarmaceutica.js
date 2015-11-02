@@ -3,7 +3,7 @@ angular.module('myApp').controller('modificar_forma_farmaceutica', ['$scope','$h
     $scope.allOptions = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
-         var path = $location.path($location.path());
+        var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allFormaFarmaceuticaMod';
         var request = {
                 method: 'GET',
@@ -17,7 +17,11 @@ angular.module('myApp').controller('modificar_forma_farmaceutica', ['$scope','$h
     $scope.onChangeSelect = function(){
         $scope.nombre = $scope.allOptions[$scope.selectedOption - 1].nombre;
         $scope.descripcion = $scope.allOptions[$scope.selectedOption -1].descripcion
-        $scope.estado = $scope.allOptions[$scope.selectedOption - 1].estado;
+        if($scope.allOptions[$scope.selectedOption - 1].estado==1){
+                document.getElementById("estadoFarmaceutico").checked = true;
+        }else{
+                document.getElementById("estadoFarmaceutico").checked = false;
+        }
     };
  
     ctrl.init();
@@ -70,6 +74,12 @@ $scope.submit = function () {
     }if($scope.valid == 1){
         $("#modificarNombreFormaFarmaceutica").css("color","black");
         $("#modificarDescripcionFormaFarmaceutica").css("color","black");
+        var estado;
+        if(document.getElementById("estadoFarmaceutico").checked == true){
+            estado = 1;
+        }else{
+            estado = 0;
+        }
         var path = $location.path($location.path());
 
 		//Creating the baseUrl
@@ -78,7 +88,7 @@ $scope.submit = function () {
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {idFormaFarmaceutica: $scope.selectedOption,nameFormaFarmaceutica: $scope.nombre, descriptionFormaFarmaceutica: $scope.descripcion, estadoFormaFarmaceutica: $scope.estado}
+			data: {idFormaFarmaceutica: $scope.selectedOption,nameFormaFarmaceutica: $scope.nombre, descriptionFormaFarmaceutica: $scope.descripcion, estadoFormaFarmaceutica: estado}
 	};
 	$http(request).then(function(response){
         if(response.data.Success=="true"){
@@ -88,6 +98,15 @@ $scope.submit = function () {
             $("#modificarDescripcionFormaFarmaceutica").css("color","black");
             $scope.nombre = '';
             $scope.descripcion = '';
+            var path = $location.path($location.path());
+            var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allFormaFarmaceuticaMod';
+            var request = {
+                    method: 'GET',
+                    url: baseUrl
+            };
+            $http(request).then(function(response){
+                $scope.allOptions = response.data;
+            });
         }else{
             mensajeService.ShowMessage('FAILED_SAVE','Forma Farmaceutica');
         }

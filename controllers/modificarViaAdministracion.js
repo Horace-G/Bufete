@@ -4,7 +4,7 @@ angular.module('myApp').controller('modificar_via_administracion', ['$scope','$h
     $scope.allOptions = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
-         var path = $location.path($location.path());
+        var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allViaAdministracionMod';
         var request = {
                 method: 'GET',
@@ -18,7 +18,11 @@ angular.module('myApp').controller('modificar_via_administracion', ['$scope','$h
     $scope.onChangeSelect = function(){
         $scope.nombre = $scope.allOptions[$scope.selectedOption - 1].nombre;
             $scope.descripcion = $scope.allOptions[$scope.selectedOption -1].descripcion
-            $scope.estado = $scope.allOptions[$scope.selectedOption - 1].estado;
+            if($scope.allOptions[$scope.selectedOption - 1].estado==1){
+                document.getElementById("estadoVia").checked = true;
+        }else{
+                document.getElementById("estadoVia").checked = false;
+        }
     };
  
     ctrl.init();
@@ -60,6 +64,14 @@ $scope.submit = function () {
     }else{
         $("#modificarNombreViaAdministracion").css("color","black");
         $("#modificarDescripcionViaAdministracion").css("color","black");
+        var estado;
+        if(document.getElementById("estadoVia").checked == true){
+            alert("Verdadero");
+            estado = 1;
+        }else{
+            alert("Falso");
+            estado = 0;
+        }
         var path = $location.path($location.path());
 
 		//Creating the baseUrl
@@ -67,7 +79,7 @@ $scope.submit = function () {
 var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {idViaAdministracion: $scope.selectedOption,nameViaAdministracion: $scope.nombre, descriptionViaAdministracion: $scope.descripcion, estadoViaAdministracion: $scope.estado}
+			data: {idViaAdministracion: $scope.selectedOption,nameViaAdministracion: $scope.nombre, descriptionViaAdministracion: $scope.descripcion, estadoViaAdministracion: estado}
 	};
 	  
         
@@ -76,6 +88,15 @@ var request = {
                             mensajeService.ShowMessage('SUCCESS_SAVE','Via Administracion');
                             $scope.nombre = '';
                             $scope.descripcion = '';
+                            var path = $location.path($location.path());
+                            var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allViaAdministracionMod';
+                            var request = {
+                                    method: 'GET',
+                                    url: baseUrl
+                            };
+                            $http(request).then(function(response){
+                                $scope.allOptions = response.data;
+                            });
                        }else{
                            mensajeService.ShowMessage('FAILED_SAVE','Via Administracion');
                        }
