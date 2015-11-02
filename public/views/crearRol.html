@@ -60,28 +60,25 @@
       
           <h3 class="center-align flow-text brown-text lighten-4">Asigne los permisos al rol</h3>
           <div class="row padded">
-            <form class="col s12" ng-submit="submit()" ng-controller="forma_farmaceutica">
+            <form class="col s12" ng-submit="submit()" ng-controller="AsignarPermisos">
               <div class="row">
                   
-                  <select>
-                      <option>Rol 1 </option>
-                      <option>Rol 2 </option>
-                      <option>Rol 3 </option>
+                  <select class="browser-default" id="listaRol" ng-model="selectedOption" ng-change='onChangeSelect()'>
+                        <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
                   </select>
                   
                  <table class="striped">
                   <tr>
                       <th>Permiso</th><th>Acceso</th>
                   </tr>
-                  <tr>
-                   <td>Permiso 1</td><td><input type="checkbox" class="filled-in" id="permiso1" /><label for="permiso1"></label></td>
+                  <tr ng-repeat="item in allPermisos" value="{{item.id}}">
+                               <td >
+                                    {{item.descripcion}}
+                         <!-- After seven iterations a new `<tr>` should be aded -->
+                                </td>
+                                <td><input type="checkbox" class="filled-in" id="{{item.id}}" /><label for="{{item.id}}"></label></td>
                   </tr>
-                   <tr>
-                  <td>Permiso 2</td><td><input type="checkbox" class="filled-in" id="permiso2" /><label for="permiso2"></label></td>
-                  </tr>
-                   <tr>
-                   <td>Permiso 3</td><td><input type="checkbox" class="filled-in" id="permiso3" /><label for="permiso3"></label></td>
-                  </tr>
+                   
                  </table> 
                  
                  <div>

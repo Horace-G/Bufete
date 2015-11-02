@@ -66,10 +66,8 @@ $scope.submit = function () {
         $("#modificarDescripcionViaAdministracion").css("color","black");
         var estado;
         if(document.getElementById("estadoVia").checked == true){
-            alert("Verdadero");
             estado = 1;
         }else{
-            alert("Falso");
             estado = 0;
         }
         var path = $location.path($location.path());

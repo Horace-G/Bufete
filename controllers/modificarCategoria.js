@@ -81,10 +81,8 @@ $scope.submit = function () {
         
         var estado;
         if(document.getElementById("estadoCategoria").checked == true){
-            alert("Verdadero");
             estado = 1;
         }else{
-            alert("Falso");
             estado = 0;
         }
         var path = $location.path($location.path());

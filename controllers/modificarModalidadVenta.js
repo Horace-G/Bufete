@@ -77,10 +77,8 @@ $scope.submit = function () {
         var path = $location.path($location.path());
         var estado;
         if(document.getElementById("estadoModalidad").checked == true){
-            alert("Verdadero");
             estado = 1;
         }else{
-            alert("Falso");
             estado = 0;
         }
 

@@ -78,10 +78,10 @@ $scope.submit = function () {
     }if($scope.valid == 1){
         var estado;
         if(document.getElementById("estadoPresentacion").checked == true){
-            alert("Verdadero");
+            
             estado = 1;
         }else{
-            alert("Falso");
+            
             estado = 0;
         }
         $("#modificarNombrePresentacionComercial").css("color","black");
