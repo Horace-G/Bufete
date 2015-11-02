@@ -23,9 +23,9 @@ Route::get('/',['middleware' => 'auth',function () {
 }]);
 */
 
-Route::get('/',function(){
-   return view('index'); 
-});
+Route::get('/',['middleware' => 'auth',function () {
+    return view('index');
+}]);
 
 Route::get('/login',function(){
     return view('login');
@@ -138,6 +138,8 @@ Route::post('/updateFormaFarmaceutica','FormaFarmaceuticaController@updateFormaF
 Route::post('/updatePermiso','PermisoController@updatePermiso');
 
 Route::post('/updateRolPermiso','RolPermisoController@updateRolPermiso');
+
+Route::post('/allPermisoRol','RolPermisoController@allPermisoRol');
 
 
 /*
