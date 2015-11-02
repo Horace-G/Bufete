@@ -2,12 +2,19 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
 
 	use Illuminate\Routing\Controller;
 	use Response;
 	use Carbon\Carbon;
 	use DB;
     use Auth;
+=======
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use DB;
+use Auth;
+>>>>>>> fd57c0e6805cefe19dd359920a2bfaab1e04eb94
 
 class RolPermisoController extends Controller
 {
@@ -30,6 +37,12 @@ class RolPermisoController extends Controller
                         $retVal = DB::table('rol_permiso')->get();
                         return Response::json($retVal);
                 }
+    
+        public function allPermisoRol(Request $request){
+            $rol_id = $request->input('idRol');
+            $retVal = DB::table('rol_permiso')->where('rol_id','=',$rol_id)->get();
+            return Response::json($retVal);
+        }
 
 
 }
