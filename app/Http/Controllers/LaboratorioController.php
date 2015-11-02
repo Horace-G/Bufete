@@ -8,6 +8,7 @@ use Response;
 use Carbon\Carbon;
 use DB;
 use Log;
+    use Auth;
 
 class LaboratorioController extends Controller
 {

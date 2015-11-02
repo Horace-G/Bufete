@@ -8,6 +8,7 @@ use Response;
 use Carbon\Carbon;
 use DB;
 
+    use Auth;
 class MedicamentoController extends Controller
 {
     public function saveMedicamento(Request $request){

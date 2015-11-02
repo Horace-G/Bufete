@@ -5,6 +5,7 @@
 	use Response;
 	use Carbon\Carbon;
 	use DB;
+    use Auth;
 	
 	class ModalidadVentaController extends Controller {
 		
