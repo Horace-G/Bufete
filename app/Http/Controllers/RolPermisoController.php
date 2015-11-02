@@ -1,10 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+
+	use Illuminate\Routing\Controller;
+	use Response;
+	use Carbon\Carbon;
+	use DB;
     use Auth;
 
 class RolPermisoController extends Controller

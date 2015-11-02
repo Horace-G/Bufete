@@ -21,10 +21,11 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
         };
         $http(request).then(function(response){
             $scope.allPermisos = response.data;
+            console.log($scope.allPermisos);
         });
     };
     $scope.onChangeSelect = function(){
-        alert("GG");
+        document.getElementById("1").checked = true;
     };
     ctrl.init();
 }]);
