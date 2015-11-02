@@ -55,10 +55,15 @@ class PermisoController extends Controller
 
 		}
 
-                public function allPermiso(){
+                public function allPermisoMod(){
                         $retVal = DB::table('permiso')->get();
                         return Response::json($retVal);
                 }
+                
+                public function allPermiso(){
+			$retVal = DB::table('permiso')->where('estado','=',1)->get();
+			return Response::json($retVal);
+		}
 
 
 }
