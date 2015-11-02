@@ -18,7 +18,7 @@ class MedicamentoController extends Controller
 	$viaAdministracionM = $request->input('viaAdministracionMedicamento');
 	$laboratorioM = $request->input('laboratorioMedicamento');
         $representanteM = $request->input('responsableMedicamento');
-	$user_created = $request->input('userMedicamento');
+	$user_created = Auth::user()->username;
 	$estadoM = $request->input('estadoMedicamento');
         $date = Carbon::now();
 	
@@ -43,7 +43,7 @@ class MedicamentoController extends Controller
         $viaAdministracionM = $request->input('viaAdministracionMedicamento');
         $laboratorioM = $request->input('laboratorioMedicamento');
         $representanteM = $request->input('responsableMedicamento');
-        $user_created = $request->input('userMedicamento');
+        $user_created = Auth::user()->username;
         $estadoM = $request->input('estadoMedicamento');
         $date = Carbon::now();
 

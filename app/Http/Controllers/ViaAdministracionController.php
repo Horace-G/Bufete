@@ -12,7 +12,7 @@
 			$namePC = $request->input('nameViaAdministracion');
 			$descPC = $request->input('descriptionViaAdministracion');
 			$estadoPC = $request->input('estadoViaAdministracion');
-			$userCreate = $request->input('userViaAdministracion');
+			$userCreate = Auth::user()->username;
 			$date = Carbon::now();
 			
 			$exists = DB::table('via_administracion')->select('nombre')->where('nombre', $namePC)->count();
@@ -35,7 +35,7 @@
 			$namePC = $request->input('nameViaAdministracion');
                         $descPC = $request->input('descriptionViaAdministracion');
                         $estadoPC = $request->input('estadoViaAdministracion');
-                        $userCreate = $request->input('userViaAdministracion');
+                        $userCreate = Auth::user()->username;
                         $date = Carbon::now();
 
                         $exists = DB::table('via_administracion')->select('nombre')->where('nombre', $namePC)->count();

@@ -12,7 +12,7 @@
 			$namePC = $request->input('nameEstadoCicloVida');
 			$descPC = $request->input('descriptionEstadoCicloVida');
 			$estadoPC = $request->input('estadoEstadoCicloVida');
-			$userCreate = $request->input('userEstadoCicloVida');
+			$userCreate = Auth::user()->username;
 			$date = Carbon::now();
 			
 			$exists = DB::table('ciclo_vida')->select('nombre')->where('nombre', $namePC)->count(); 
@@ -33,7 +33,7 @@
 			$namePC = $request->input('nameEstadoCicloVida');
 	                $descPC = $request->input('descriptionEstadoCicloVida');
                         $estadoPC = $request->input('estadoEstadoCicloVida');
-                        $userCreate = $request->input('userEstadoCicloVida');
+                        $userCreate = Auth::user()->username;
                         $date = Carbon::now();
 
                         $exists = DB::table('ciclo_vida')->select('nombre')->where('nombre', $namePC)->count();

@@ -18,7 +18,7 @@ class LaboratorioController extends Controller
 		$telefonos = $request->input('telefonoLaboratorio');
 	
 		
-		$user_created = $request->input('userLaboratorio');
+		$user_created = Auth::user()->username;
 		$estadoM = $request->input('estadoLaboratorio');
 	    $date = Carbon::now();
 	
@@ -52,7 +52,7 @@ class LaboratorioController extends Controller
                 $telefonos = $request->input('telefonoLaboratorio');
 
 
-                $user_created = $request->input('userLaboratorio');
+                $user_created = Auth::user()->username;
                 $estadoM = $request->input('estadoLaboratorio');
             $date = Carbon::now();
 

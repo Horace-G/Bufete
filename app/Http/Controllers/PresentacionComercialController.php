@@ -12,7 +12,7 @@
 			$namePC = $request->input('namePresentacionComercial');
 			$descPC = $request->input('descriptionPresentacionComercial');
 			$estadoPC = $request->input('estadoPresentacionComercial');
-			$userCreate = $request->input('userPresentacionComercial');
+			$userCreate = Auth::user()->username;
 			$date = Carbon::now();
 			
 			$exists = DB::table('presentacion_comercial')->select('nombre')->where('nombre', $namePC)->count();
@@ -35,7 +35,7 @@
 			$namePC = $request->input('namePresentacionComercial');
                         $descPC = $request->input('descriptionPresentacionComercial');
                         $estadoPC = $request->input('estadoPresentacionComercial');
-                        $userCreate = $request->input('userPresentacionComercial');
+                        $userCreate = Auth::user()->username;
                         $date = Carbon::now();
 
                         $exists = DB::table('presentacion_comercial')->select('nombre')->where('nombre', $namePC)->count();

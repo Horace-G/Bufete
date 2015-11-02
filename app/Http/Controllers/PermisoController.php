@@ -11,7 +11,7 @@ class PermisoController extends Controller
 	public function savePermiso(Request $request){
                         $descripcionP = $request->input('descripcionPermiso');
                         $estadoP = $request->input('estadoPermiso');
-                        $userCreate = $request->input('userPermiso');
+                        $userCreate = Auth::user()->username;
 	    	 	$date = Carbon::now();
 
                         $exists = DB::table('permiso')->select('descripcion')->where('descripcion', $descripcionP)->count();
@@ -35,7 +35,7 @@ class PermisoController extends Controller
 
 			$descripcionP = $request->input('descripcionPermiso');
                         $estadoP = $request->input('estadoPermiso');
-                        $userCreate = $request->input('userPermiso');
+                        $userCreate = Auth::user()->username;
                         $date = Carbon::now();
 
                         $exists = DB::table('permiso')->select('descripcion')->where('descripcion', $descripcionP)->count();

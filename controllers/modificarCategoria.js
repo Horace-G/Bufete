@@ -3,7 +3,8 @@ angular.module('myApp').controller('modificar_categoria', ['$scope','$http','$lo
     var ctrl = this;
     $scope.allOptions = [];
     $scope.selectedOption = {};
-    ctrl.init = function(){
+	$scope.estado = 1;
+ ctrl.init = function(){
          var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allCategoriaMedicamentoMod';
         var request = {

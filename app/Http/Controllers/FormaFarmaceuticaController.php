@@ -12,7 +12,7 @@
 			$namePC = $request->input('nameFormaFarmaceutica');
 			$descPC = $request->input('descriptionFormaFarmaceutica');
 			$estadoPC = $request->input('estadoFormaFarmaceutica');
-			$userCreate = $request->input('userFormaFarmaceutica');
+			$userCreate = Auth::user()->username;
 			$date = Carbon::now();
             
 			$exists = DB::table('forma_farmaceutica')->select('nombre')->where('nombre', $namePC)->count(); 
@@ -34,7 +34,7 @@
 			$namePC = $request->input('nameFormaFarmaceutica');
                         $descPC = $request->input('descriptionFormaFarmaceutica');
                         $estadoPC = $request->input('estadoFormaFarmaceutica');
-                        $userCreate = $request->input('userFormaFarmaceutica');
+                        $userCreate = Auth::user()->username;
                         $date = Carbon::now();
 
                         $exists = DB::table('forma_farmaceutica')->select('nombre')->where('nombre', $namePC)->count();
