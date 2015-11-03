@@ -12,7 +12,7 @@ class RolPermisoController extends Controller
 {
 	public function saveRolPermiso(Request $request){
                         $rol_id = $request->input('rol_id');
-                        $permiso_id = $request->input('permiso_idR');
+                        $permiso_id = $request->input('permiso_id');
 	    	 	$date = Carbon::now();
 
 
