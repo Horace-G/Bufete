@@ -1,5 +1,6 @@
 angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
   var ctrl = this;
+    
     $scope.allOptions = [];
     $scope.allPermisos= [];
     $scope.allRol= [];
@@ -25,21 +26,59 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
             console.log($scope.allPermisos);
         });
     };
+    ctrl.init();
     $scope.onChangeSelect = function(){
         
         var path = $location.path($location.path());
-        var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allPermisoRol';
+        var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allRolPermiso';
         var request = {
-                method: 'POST',
+                method: 'GET',
                 url: baseUrl,
-                data: {idRol: $scope.selectedOption}
+                
         };
         $http(request).then(function(response){
+            
             $scope.allRol = response.data;
+            var count = Object.keys($scope.allRol).length;
+            for(var i=0;i<count;i++){
+                if($scope.selectedOption==$scope.allRol[i].rol_id){
+                document.getElementById($scope.allRol[i].permiso_id).checked = true;
+                }
+            }
+            
         });
-        for(int i=0;i<$scope.allRol.length;i++){
-        document.getElementById(allRol[0].id).checked = true;    
-        }
+        
+        
     };
-    ctrl.init();
+    
+    $scope.submit = function () {
+        var SelectedPermisos=[];
+        var sizetable=$('#table tr').length-1;
+        for(var i=1;i<=sizetable;i++){
+            SelectedPermisos.push(i);
+            
+        }
+        alert($scope.selectedOption);
+        var path = $location.path($location.path());
+        
+		//Creating the baseUrl
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveRolPermiso';
+var request = {
+			method: 'POST',
+			url: baseUrl,
+			data: {permiso_id: SelectedPermisos, rol_id: $scope.selectedOption}
+	};
+	
+	
+$http(request).then(function(response){
+    if(response.data.Success=="true"){
+		console.log(response.data.success);
+        mensajeService.ShowMessage('SUCCESS_SAVE','Permisos de Rol');
+    }else{
+        mensajeService.ShowMessage('FAILED_SAVE','Permisos de Rol');
+    }
+
+});
+    };
+    
 }]);
