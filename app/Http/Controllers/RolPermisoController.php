@@ -17,7 +17,7 @@ class RolPermisoController extends Controller
 
 
                         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('rol_permiso')->delete()->where('rol_id','=',$rol_id);
+        DB::table('rol_permiso')->where('rol_id','=',$rol_id)->delete();
         
                 foreach ($permiso as $permiso_id){
                         DB::table('rol_permiso')->insert(
