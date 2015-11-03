@@ -2,33 +2,31 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-
 	use Illuminate\Routing\Controller;
 	use Response;
 	use Carbon\Carbon;
-	use DB;
-    use Auth;
-=======
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
 use Auth;
->>>>>>> fd57c0e6805cefe19dd359920a2bfaab1e04eb94
 
 class RolPermisoController extends Controller
 {
 	public function saveRolPermiso(Request $request){
-                        $rol_id = $request->input('rol_idRolPermiso');
-                        $permiso_id = $request->input('permiso_idRolPermiso');
+                        $rol_id = $request->input('rol_id');
+                        $permiso_id = $request->input('permiso_idR');
 	    	 	$date = Carbon::now();
 
 
                         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
+                foreach ($permiso as $permiso_id){
                         DB::table('rol_permiso')->insert(
-                                array('rol_id'=>$rol_id, 'permiso_id'=>$permiso_id, 'created_at'=>$date,'updated_at'=>$date)
+                                array('rol_id'=>$rol_id, 'permiso_id'=>$permiso, 'created_at'=>$date,'updated_at'=>$date)
                         );
+                        );
+                };
+                        
 
                         return Response::json(array('Success' => 'true'));
                 }
