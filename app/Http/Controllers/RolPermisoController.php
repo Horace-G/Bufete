@@ -5,10 +5,8 @@ use Illuminate\Http\Request;
 	use Illuminate\Routing\Controller;
 	use Response;
 	use Carbon\Carbon;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use DB;
-use Auth;
+	use DB;
+    use Auth;
 
 class RolPermisoController extends Controller
 {
