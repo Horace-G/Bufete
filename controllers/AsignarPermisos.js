@@ -2,6 +2,7 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
   var ctrl = this;
     $scope.allOptions = [];
     $scope.allPermisos= [];
+    $scope.allRol= [];
     $scope.selectedOption = {};
     ctrl.init = function(){
         var path = $location.path($location.path());
@@ -25,7 +26,20 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
         });
     };
     $scope.onChangeSelect = function(){
-        document.getElementById("1").checked = true;
+        
+        var path = $location.path($location.path());
+        var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allPermisoRol';
+        var request = {
+                method: 'POST',
+                url: baseUrl,
+                data: {idRol: $scope.selectedOption}
+        };
+        $http(request).then(function(response){
+            $scope.allRol = response.data;
+        });
+        for(int i=0;i<$scope.allRol.length;i++){
+        document.getElementById(allRol[0].id).checked = true;    
+        }
     };
     ctrl.init();
 }]);
