@@ -42,7 +42,7 @@
                                 return Response::json(array('Success' => 'false'));
                         }
                         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-                        DB::table('ciclo_vida')->where('id', $id)->update(
+                        DB::table('ciclo_vida')->where('id','=', $id)->update(
                                 array('nombre'=>$namePC, 'descripcion'=>$descPC, 'estado'=>$estadoPC,
                                                 'updated_at'=>$date,'user_updated'=>$userCreate)
                         );

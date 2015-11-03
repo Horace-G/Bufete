@@ -64,7 +64,7 @@ class LaboratorioController extends Controller
 
 
                 DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-                DB::table('laboratorio')->where('id', $id)->update(
+                DB::table('laboratorio')->where('id','=', $id)->update(
                 array('nombre'=>$nombre, 'direccion'=>$direccion, 'correo'=>$correo,'user_updated'=>$user_created,'estado'=>$estadoM,
 'updated_at'=>$date)
             );

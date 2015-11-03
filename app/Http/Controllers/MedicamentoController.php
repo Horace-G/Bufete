@@ -55,7 +55,7 @@ class MedicamentoController extends Controller
 
 
         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-        DB::table('medicamento')->where('id', $id)->update(
+        DB::table('medicamento')->where('id','=', $id)->update(
                 array('nombre'=>$nombreM, 'modalidadVentaId'=>$modalidadVentaM, 'formaFarmaceuticaId'=>$formaFarmaceuticaM, 'presentacionComercialId'=>$presentacionComercialM, 'viaAdministracionId'=>$viaAdministracionM, 'laboratorioId'=>$laboratorioM, 'representante'=>$representanteM, 'estado'=>$estadoM, 'user_updated'=>$user_created, 'updated_at'=>$date));
 
     }

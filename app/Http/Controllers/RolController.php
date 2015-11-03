@@ -44,7 +44,7 @@ class RolController extends Controller
 
 
                                                 DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-                        DB::table('rol')->where('id', $id)->update(
+                        DB::table('rol')->where('id','=', $id)->update(
                                 array('nombre'=>$nombreR, 'descripcion'=>$descR, 'estado'=>$estadoR,
                                                 'updated_at'=>$date)
                         );

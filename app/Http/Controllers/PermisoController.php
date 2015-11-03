@@ -51,7 +51,7 @@ class PermisoController extends Controller
 
                         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
-                        DB::table('permiso')->where('id', $id)->update(
+                        DB::table('permiso')->where('id','=', $id)->update(
                                 array('descripcion'=>$descripcionP, 'estado'=>$estadoP, 'user_updated'=>$userCreate, 'updated_at'=>$date)
                         );
 

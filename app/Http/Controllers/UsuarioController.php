@@ -54,7 +54,7 @@ class UsuarioController extends Controller
 
                         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
-                        DB::table('usuario')->where('id', $id)->update(
+                        DB::table('usuario')->where('id','=', $id)->update(
                                 array('username'=>$usernameU, 'password'=>$passwordU, 'nombre'=>$nombreU, 'estado'=>$estadoU, 'rol_id'=>$rol_idU,
                                                 'updated_at'=>$date)
                         );

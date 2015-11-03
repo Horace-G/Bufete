@@ -46,7 +46,7 @@
 
 
                         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
-                        DB::table('via_administracion')->where('id', $id)->update(
+                        DB::table('via_administracion')->where('id','=', $id)->update(
                                 array('nombre'=>$namePC, 'descripcion'=>$descPC, 'estado'=>$estadoPC,
                                                 'updated_at'=>$date,'user_updated'=>$userCreate)
                         );
