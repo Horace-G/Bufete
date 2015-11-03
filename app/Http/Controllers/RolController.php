@@ -37,7 +37,7 @@ class RolController extends Controller
                         $estadoR = $request->input('estadoRol');
                         $date = Carbon::now();
 
-                        $exists = DB::table('rol')->select('nombre')->where('nombre', $nombreR)->count();
+                        $exists = DB::table('rol')->select('nombre')->where('nombre', $nombreR)->whereNotIn('id', $id)->count();
                         if ($exists>0){
                                 return Response::json(array('Success' => 'false'));
                         }
@@ -51,6 +51,13 @@ class RolController extends Controller
 
                         return Response::json(array('Success' => 'true'));
 
+		}
+	
+		public function getPermisosRol(Request $request){
+			$id = $request->input('idRol');
+			$retVal = DB::table('permiso')->join('rol_permiso', 'permiso.id', '=', 'rol_permiso.permiso_id')->join('rol', 'rol.id', '=',
+				'rol_permiso.rol_id')->select('permiso.id')->where('rol.id', $id)->get();
+			return json_encode($retVal); 			
 		}
 
                 public function allRol(){

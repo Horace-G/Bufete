@@ -24,7 +24,8 @@ class AutenticacionController extends Controller
             return redirect()->intended('/');
         }else{
            Toast::warning('Usuario y/o password incorrectos', 'Usuario');
-        }
+	return redirect()->intended('/');        
+}
     }
     
     public function logout(){

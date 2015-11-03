@@ -38,7 +38,7 @@
                         $userCreate = Auth::user()->username;
                         $date = Carbon::now();
 
-                        $exists = DB::table('forma_farmaceutica')->select('nombre')->where('nombre', $namePC)->count();
+                        $exists = DB::table('forma_farmaceutica')->select('nombre')->where('nombre', $namePC)->whereNotIn('id', $id)->count();
                         if ($exists>0){
                                 return Response::json(array('Success' => 'false'));
                         }
