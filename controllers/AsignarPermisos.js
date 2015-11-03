@@ -30,7 +30,7 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
     ctrl.init();
     $scope.onChangeSelect = function(){
         var count2 = Object.keys($scope.allPermisos).length;
-        for(var i=0;i<count2;i++){
+        for(var i=1;i<=count2;i++){
                 
                 document.getElementById(i).checked = false;
                 
