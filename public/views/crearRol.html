@@ -67,16 +67,14 @@
                         <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
                   </select>
                   
-                 <table class="striped">
+                 <table class="striped"id="table">
                   <tr>
                       <th>Permiso</th><th>Acceso</th>
                   </tr>
                   <tr ng-repeat="item in allPermisos" value="{{item.id}}">
-                               <td >
-                                    {{item.descripcion}}
-                         <!-- After seven iterations a new `<tr>` should be aded -->
-                                </td>
+                               <td >{{item.descripcion}}</td>
                                 <td><input type="checkbox" class="filled-in" id="{{item.id}}" /><label for="{{item.id}}"></label></td>
+                      
                   </tr>
                    
                  </table> 

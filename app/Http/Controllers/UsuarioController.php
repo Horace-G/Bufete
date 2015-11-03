@@ -46,7 +46,7 @@ class UsuarioController extends Controller
                         $rol_idU = $request->input('rol_idUsuario');
                         $date = Carbon::now();
 
-                        $exists = DB::table('usuario')->select('nombre')->where('nombre', $usernameU)->count();
+                        $exists = DB::table('usuario')->select('nombre')->where('nombre', $usernameU)->whereNotIn('id', $id)->count();
                         if ($exists>0){
                                 return Response::json(array('Success' => 'false'));
                         }

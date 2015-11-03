@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ff058cabaf296c8d02e4559c8a9e1128",
-    "content-hash": "0351b9396ec27bb5ee968b7ab34b070a",
+    "hash": "4834a142bfc91ac34f27266b4caab8ae",
+    "content-hash": "539cf422927319a617ab7b5901aea1d7",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -216,6 +216,50 @@
                 "string"
             ],
             "time": "2014-12-20 21:24:13"
+        },
+        {
+            "name": "grimthorr/laravel-toast",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Grimthorr/laravel-toast.git",
+                "reference": "2c433a6ce6c978aa15820887b3769b36d4ff9e8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Grimthorr/laravel-toast/zipball/2c433a6ce6c978aa15820887b3769b36d4ff9e8d",
+                "reference": "2c433a6ce6c978aa15820887b3769b36d4ff9e8d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/config": "5.*",
+                "illuminate/database": "5.*",
+                "illuminate/support": "5.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Grimthorr\\LaravelToast\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Grimthorr",
+                    "email": "phil@hughesbox.co.uk",
+                    "homepage": "http://hughesbox.co.uk"
+                }
+            ],
+            "description": "Simple toast messages for Laravel 5.",
+            "homepage": "https://github.com/Grimthorr/laravel-toast",
+            "time": "2015-03-24 11:18:05"
         },
         {
             "name": "jakub-onderka/php-console-color",

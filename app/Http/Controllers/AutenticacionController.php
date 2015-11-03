@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Request;
 use Input;
 use Redirect;
+use Toast;
 
 class AutenticacionController extends Controller
 {
@@ -22,8 +23,9 @@ class AutenticacionController extends Controller
         if (Auth::attempt(['username' => $username, 'password' => $password,'estado'=>'1'],true)) {
             return redirect()->intended('/');
         }else{
-            return redirect()->intended('/login');
-        }
+           Toast::warning('Usuario y/o password incorrectos', 'Usuario');
+	return redirect()->intended('/');        
+}
     }
     
     public function logout(){
