@@ -58,7 +58,7 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
             SelectedPermisos.push(i);
             
         }
-        alert($scope.selectedOption);
+        
         var path = $location.path($location.path());
         
 		//Creating the baseUrl
