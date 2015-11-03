@@ -43,7 +43,7 @@ class PermisoController extends Controller
                         $userCreate = Auth::user()->username;
                         $date = Carbon::now();
 
-                        $exists = DB::table('permiso')->select('descripcion')->where('descripcion', $descripcionP)->count();
+                        $exists = DB::table('permiso')->select('descripcion')->where('descripcion', $descripcionP)->whereNotIn('id', $id)->count();
                         if ($exists>0){
                                 return Response::json(array('Success' => 'false'));
                         }
