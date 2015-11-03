@@ -24,11 +24,17 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
         $http(request).then(function(response){
             $scope.allPermisos = response.data;
             console.log($scope.allPermisos);
+            
         });
     };
     ctrl.init();
     $scope.onChangeSelect = function(){
-        
+        var count2 = Object.keys($scope.allPermisos).length;
+        for(var i=0;i<count2;i++){
+                
+                document.getElementById($scope.allRol[i].permiso_id).checked = false;
+                
+        }
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allRolPermiso';
         var request = {
