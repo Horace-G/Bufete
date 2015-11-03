@@ -58,6 +58,7 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
     };
     
     $scope.submit = function () {
+        alert($scope.selectedOption);
         var SelectedPermisos=[];
         var sizetable=$('#table tr').length-1;
         for(var i=1;i<=sizetable;i++){
