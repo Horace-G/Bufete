@@ -23,11 +23,10 @@ class RolPermisoController extends Controller
                         DB::table('rol_permiso')->insert(
                                 array('rol_id'=>$rol_id, 'permiso_id'=>$permiso, 'created_at'=>$date,'updated_at'=>$date)
                         );
-                        );
                 };
                         
 
-                        return Response::json(array('Success' => 'true'));
+        return Response::json(array('Success' => 'true'));
                 }
 
                 public function allRolPermiso(){
