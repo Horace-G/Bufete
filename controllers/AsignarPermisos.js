@@ -55,7 +55,7 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
         var SelectedPermisos=[];
         var sizetable=$('#table tr').length-1;
         for(var i=1;i<=sizetable;i++){
-            if(document.getElementById($scope.allRol[i].permiso_id).checked)
+            if(document.getElementById(i).checked)
             SelectedPermisos.push(i);
             
         }
