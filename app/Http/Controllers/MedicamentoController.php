@@ -48,7 +48,7 @@ class MedicamentoController extends Controller
         $estadoM = $request->input('estadoMedicamento');
         $date = Carbon::now();
 
-        $exists = DB::table('medicamento')->select('nombre')->where('nombre', $nombreM)->whereNotIn('id', $id)->count();
+        $exists = DB::table('medicamento')->select('nombre')->where('nombre', $nombreM)->whereNotIn('id', array($id))->count();
                         if ($exists>0){
                                 return Response::json(array('Success' => 'false'));
                         }

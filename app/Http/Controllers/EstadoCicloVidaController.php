@@ -37,7 +37,7 @@
                         $userCreate = Auth::user()->username;
                         $date = Carbon::now();
 
-                        $exists = DB::table('ciclo_vida')->select('nombre')->where('nombre', $namePC)->whereNotIn('id', $id)->count();
+                        $exists = DB::table('ciclo_vida')->select('nombre')->where('nombre', $namePC)->whereNotIn('id', array($id))->count();
                         if ($exists>0){
                                 return Response::json(array('Success' => 'false'));
                         }

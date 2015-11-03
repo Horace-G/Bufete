@@ -57,7 +57,7 @@ class LaboratorioController extends Controller
                 $estadoM = $request->input('estadoLaboratorio');
             $date = Carbon::now();
 
-                $exists = DB::table('laboratorio')->select('nombre')->where('nombre', $nombre)->whereNotIn('id', $id)->count();
+                $exists = DB::table('laboratorio')->select('nombre')->where('nombre', $nombre)->whereNotIn('id', array($id))->count();
                         if ($exists>0){
                                 return Response::json(array('Success' => 'false'));
                 }

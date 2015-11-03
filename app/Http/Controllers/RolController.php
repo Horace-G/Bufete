@@ -37,7 +37,7 @@ class RolController extends Controller
                         $estadoR = $request->input('estadoRol');
                         $date = Carbon::now();
 
-                        $exists = DB::table('rol')->select('nombre')->where('nombre', $nombreR)->whereNotIn('id', $id)->count();
+                        $exists = DB::table('rol')->select('nombre')->where('nombre', $nombreR)->whereNotIn('id', array($id))->count();
                         if ($exists>0){
                                 return Response::json(array('Success' => 'false'));
                         }
