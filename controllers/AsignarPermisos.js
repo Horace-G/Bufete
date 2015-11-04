@@ -58,7 +58,10 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
     };
     
     $scope.submit = function () {
-        console.log($scope.selectedOption);
+        if(!($scope.selectedOption.hasOwnProperty("id"))){
+            alert("true");
+            return;
+        }
         var SelectedPermisos=[];
         var sizetable=$('#table tr').length-1;
         for(var i=1;i<=sizetable;i++){
