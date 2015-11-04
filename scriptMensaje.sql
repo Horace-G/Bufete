@@ -5,7 +5,7 @@ INSERT INTO mensaje (nombre,descripcion, gravedad)
 VALUES ('LONG_128','- longitud excede lo permitido(128)',1);
 
 INSERT INTO mensaje (nombre,descripcion, gravedad) 
-VALUES ('INPUT_EMPTY','- no se permite vacio',1);
+VALUES ('INPUT_EMPTY','- campo es mandatorio',1);
 
 INSERT INTO mensaje (nombre,descripcion, gravedad) 
 VALUES ('DOBLE_KEY','- Ya existe un registro con este valor',1);
@@ -29,7 +29,10 @@ INSERT INTO mensaje (nombre,descripcion, gravedad)
 VALUES ('LONG_256','- longitud excede lo permitido(256)',1);
 
 INSERT INTO mensaje (nombre,descripcion, gravedad) 
-VALUES ('INVALID_EMAIL','- correo electronico ingresado incorrectamente',1);
+VALUES ('INVALID_EMAIL','- no coincide con el formato de correo',1);
+
+INSERT INTO mensaje (nombre,descripcion, gravedad) 
+VALUES ('ADD_NUM','- seleccione ingresar numero telefonico',1);
 
 INSERT INTO mensaje (nombre,descripcion, gravedad) 
 VALUES ('WUT','- WUT',4);

@@ -52,15 +52,14 @@
         <script src="./controllers/modificarCicloVida.js"></script>
         <script src="./controllers/modificarViaAdministracion.js"></script>
         <script src="./controllers/modificarFormaFarmaceutica.js"></script>
-        <script>
-        </script>
     </head>
     <body>
+        
 
         <header>
         </header>
 
-        <div class="container">
+        <div class="container" ng-controller="LOGIN">
 
             <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
                 <li class="center-align collection-header brown-text lighten-3">
@@ -100,6 +99,5 @@
             </ul>
 
         </div>
-
     </body>
 </html>
