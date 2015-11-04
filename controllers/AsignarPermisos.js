@@ -61,7 +61,7 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
         if($scope.selectedOption==parseInt($scope.selectedOption)){
             
         }else{
-            alert("true");
+            mensajeService.ShowMessage('NO_SELECTED','Rol');
             return;
         }
         var SelectedPermisos=[];
