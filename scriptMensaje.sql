@@ -34,5 +34,9 @@ VALUES ('INVALID_EMAIL','- no coincide con el formato de correo',1);
 INSERT INTO mensaje (nombre,descripcion, gravedad) 
 VALUES ('ADD_NUM','- seleccione ingresar numero telefonico',1);
 
+
+INSERT INTO mensaje (nombre,descripcion, gravedad) 
+VALUES ('NO_SELECTED','- no hay seleccionado',1);
+
 INSERT INTO mensaje (nombre,descripcion, gravedad) 
 VALUES ('WUT','- WUT',4);
