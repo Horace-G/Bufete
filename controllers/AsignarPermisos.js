@@ -58,7 +58,9 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
     };
     
     $scope.submit = function () {
-        if(!($scope.selectedOption.hasOwnProperty("id"))){
+        if($scope.selectedOption==parseInt($scope.selectedOption)){
+            
+        }else{
             alert("true");
             return;
         }
