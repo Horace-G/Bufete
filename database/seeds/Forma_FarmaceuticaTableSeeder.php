@@ -10,9 +10,8 @@ class Forma_FarmaceuticaTableSeeder extends Seeder {
         DB::table('forma_farmaceutica')->delete();
  
         $formas = array(
-            ['id' => 1, 'nombre' => 'Forma 1', 'descripcion' => 'forma 1', 'user_created' => 1, 'user_updated' => 1, 'estado'=> 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
-	    ['id' => 2, 'nombre' => 'Forma 2', 'descripcion' => 'forma 2', 'user_created' => 2, 'user_updated' => 2, 'estado'=> 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
-	    ['id' => 3, 'nombre' => 'Forma 3', 'descripcion' => 'forma 3', 'user_created' => 3, 'user_updated' => 3, 'estado'=> 1, 'created_at' => new DateTime, 'updated_at' => new DateTime]
+            ['id' => 1, 'nombre' => 'Comprimidos Recubiertos', 'descripcion' => 'Comprimidos Recubiertos', 'user_created' => 'Seeder', 'user_updated' => 'Seeder', 'estado'=> 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+	    ['id' => 2, 'nombre' => 'Jarabe', 'descripcion' => 'Jarabe', 'user_created' => 'Seeder', 'user_updated' => 'Seeder', 'estado'=> 1, 'created_at' => new DateTime, 'updated_at' => new DateTime]
         );
  
         // Uncomment the below to run the seeder
