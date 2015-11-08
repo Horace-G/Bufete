@@ -64,4 +64,21 @@ class MedicamentoController extends Controller
 	$retVal = DB::table('medicamento')->get();
         return Response::json($retVal);
     }
+    public function allMedicamentoMod(){
+        $retVal = DB::table('medicamento')->where('estado','=',1)->get();
+    }
+    
+    public function getMedicamento(Request $request){
+        //$id = request->input('idMedicamento');
+        $id = 1;
+        $medicamento = DB::table('medicamento')
+                            ->join('forma_farmaceutica','medicamento.formaFarmaceuticaId','=','forma_farmaceutica.id')
+                            ->join('modalidad_venta','medicamento.modalidadVentaId','=','modalidad_venta.id')
+                            ->join('presentacion_comercial','medicamento.presentacionComercialId','=','presentacion_comercial.id')
+                            ->join('via_administracion','medicamento.viaAdministracionId','=','via_administracion.id')
+                            ->join('laboratorio','medicamento.laboratorioId','=','laboratorio.id')
+                            ->select('medicamento.nombre','forma_farmaceutica.nombre','modalidad_venta.nombre','presentacion_comercial.nombre','via_administracion.nombre','laboratorio.nombre')
+                            ->where('medicamento.id','=',$id)->get();        
+    	return Response::json($medicamento);
+	}
 }
