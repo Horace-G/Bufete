@@ -1,0 +1,106 @@
+
+<script>
+     $(document).ready(function(){
+     $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+    });
+   
+    $('#logohome').removeClass('active');
+     $('#logohome').removeClass('z-depth-5');
+    $('#medicamentos').removeClass('active');
+    $('#medicamentos').removeClass('z-depth-5');
+    $('#reportes').addClass('active');
+    $('#reportes').addClass('z-depth-5');
+    $('#usuarios').removeClass('active');
+    $('#usuarios').removeClass('z-depth-5');
+    $('#logout').removeClass('active');
+       
+</script>
+
+<div class="row" id="div-usuarios">
+      <ul class="tabs" id="ul-usuarios">
+        <li class="tab col s3 active brown-text lighten-3" id="li-usuarios"><a href="#/verExpediente">Ver Expediente</a></li>
+        <li class="tab col s3 brown-text lighten-1" id="li-usuarios"><a href="#/buscarMedicamento">Buscar Medicamento</a></li>
+      </ul>
+    
+</div>
+
+ <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
+     <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Ver Expediente</h4><h6 class="flow-text brown-text lighten-3"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
+    <li collection-item id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">info_outline</i>Ver Expediente</div>
+      <div class="collapsible-body popup-element">
+      
+         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear una nueva presentación comercial</h3>
+          <div class="row padded">
+            <form class="col s12" ng-submit="submit()"ng-controller="presentacion_comercial">
+                
+              <div class="row">
+                 <div class="input-field col s9">
+                  <i class="material-icons prefix">dialpad</i>
+                  <input disabled id="codigoMedicamento" type="text" class="validate"ng-model="codigo">
+                  <label for="codigoMedicamento">Codigo del Medicamento</label>
+              </div>
+               <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input disabled id="nombreMedicamento" type="text" class="validate"ng-model="nombre">
+                  <label for="nombreMedicamento">Nombre del Medicamento</label>
+               </div>
+               
+             <select class="browser-default" id="listaFormaFarmaceutica" ng-model="selectedFormaFarmaceutica" ng-change='onChangeSelect()'>
+                <option ng-repeat="item in formasFarmaceuticas" value="{{item.id}}">{{item.nombre}}</option>
+            </select>
+            
+            <br>
+        
+             <select class="browser-default" id="listaModalidadVentas" ng-model="selectedModalidadVentas" ng-change='onChangeSelect()'>
+                <option ng-repeat="item in modalidadesVentas" value="{{item.id}}">{{item.nombre}}</option>
+             </select>
+             
+             <br>
+        
+             <select class="browser-default" id="listaPresentaciones" ng-model="selectedPresentacion" ng-change='onChangeSelect()'>
+                <option ng-repeat="item in presentaciones" value="{{item.id}}">{{item.nombre}}</option>
+             </select>
+    
+            <br>
+        
+             <select class="browser-default" id="listaViasAdministracion" ng-model="selectedViasAdministracion" ng-change='onChangeSelect()'>
+                <option ng-repeat="item in viasAdministracion" value="{{item.id}}">{{item.nombre}}</option>
+             </select>
+             
+             <br>
+             
+              <div class="input-field col s9">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input disabled id="nombreRepresentante" type="text" class="validate"ng-model="representante">
+                  <label for="nombreRepresentante">Nombre del Representante</label>
+              </div>
+               
+                <div class="input-field col s9">
+                  <i class="material-icons prefix">toc</i>
+                  <input disabled id="estadoMedicamento" type="text" class="validate"ng-model="estado">
+                  <label for="estadoMedicamento">Estado del Medicamento</label>
+               </div>
+                
+                <br><br><br>
+                
+                <div class="col s5 center-align">
+                       <button ng-click="modificar()" class="btn-large waves-effect waves-light yellow">Modificar</button>
+                </div>
+                  
+                <div class="col s5 center-align">
+                    <button ng-click="historico()" class="btn-large waves-effect waves-light green darken-1">Historico</button>
+                </div>
+                  
+               </div>
+          </form>
+              
+        </div>
+          
+      </div>
+    </li>
+    </li>
+    
+  </ul>
