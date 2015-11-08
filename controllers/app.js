@@ -32,6 +32,16 @@ myApp.config(function ($routeProvider) {
         controller: 'mainController'
     })
     
+     .when('/verExpediente', {
+        templateUrl: 'public/views/verExpediente.html',
+        controller: 'mainController'
+    })
+    
+     .when('/buscarMedicamento', {
+        templateUrl: 'public/views/buscarMedicamento.html',
+        controller: 'mainController'
+    })
+    
      .when('/reportes', {
         templateUrl: 'public/views/reportes.html',
         controller: 'secondController'
@@ -39,6 +49,11 @@ myApp.config(function ($routeProvider) {
     
     .when('/usuarios', {
         templateUrl: 'public/views/usuarios.html',
+        controller: 'secondController'
+    })
+    
+    .when('/reportes', {
+        templateUrl: 'public/views/reportes.html',
         controller: 'secondController'
     })
     
