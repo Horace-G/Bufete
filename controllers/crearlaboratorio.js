@@ -56,8 +56,9 @@ $scope.submitNumero = function () {
     //}else{
       //  toastr.error('ERROR!','WUT');     
     //}
+    $scope.telefono="";
   };
-
+    
 
   $('select').on('contentChanged', function() {
     // re-initialize (update)
@@ -67,7 +68,9 @@ $scope.submitNumero = function () {
 $scope.submitGuardar = function () {
     
     $scope.valid = 1;
-    
+    if($scope.telefono!=""){
+        mensajeService.("ADD_NUM","Telefono");
+    }
      if($scope.nombre.length==0){
          $("#nombreLaboratorio").css("color","red");
         mensajeService.ShowMessage('INPUT_EMPTY','Nombre Laboratorio');
