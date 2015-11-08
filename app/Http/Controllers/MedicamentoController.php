@@ -78,5 +78,6 @@ class MedicamentoController extends Controller
                             ->join('via_administracion','medicamento.viaAdministracionId','=','via_administracion.id')
                             ->join('laboratorio','medicamento.laboratorioId','=','laboratorio.id')
                             ->where('medicamento.id','=',$id)->get();        
-    }
+    	return Response::json($medicamento);
+	}
 }
