@@ -77,7 +77,7 @@ class MedicamentoController extends Controller
                             ->join('presentacion_comercial','medicamento.presentacionComercialId','=','presentacion_comercial.id')
                             ->join('via_administracion','medicamento.viaAdministracionId','=','via_administracion.id')
                             ->join('laboratorio','medicamento.laboratorioId','=','laboratorio.id')
-                            ->select('medicamento.nombre','forma_farmaceutica.nombre','modalidad_venta.nombre','presentacion_comercial.nombre','via_administracion.nombre','laboratorio.nombre')
+                            ->select('medicamento.nombre as MedicamentoNombre','forma_farmaceutica.nombre as FormaFarmaceuticaNombre','modalidad_venta.nombre as ModalidadNombre','presentacion_comercial.nombre as PresentacionComercialNombre','via_administracion.nombre as ViaAdminstracionNombre','laboratorio.nombre as LaboratorioNombre')
                             ->where('medicamento.id','=',$id)->get();        
     	return Response::json($medicamento);
 	}
