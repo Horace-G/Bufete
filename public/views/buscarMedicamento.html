@@ -1,0 +1,87 @@
+<script>
+     $(document).ready(function(){
+     $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+    });
+   
+    $('#logohome').removeClass('active');
+     $('#logohome').removeClass('z-depth-5');
+    $('#medicamentos').removeClass('active');
+    $('#medicamentos').removeClass('z-depth-5');
+    $('#reportes').addClass('active');
+    $('#reportes').addClass('z-depth-5');
+    $('#usuarios').removeClass('active');
+    $('#usuarios').removeClass('z-depth-5');
+    $('#logout').removeClass('active');
+       
+</script>
+
+<div class="row" id="div-usuarios">
+      <ul class="tabs" id="ul-usuarios">
+        <li class="tab col s3 active brown-text lighten-3" id="li-usuarios"><a href="#/verExpediente">Ver Expediente</a></li>
+        <li class="tab col s3 brown-text lighten-1" id="li-usuarios"><a href="#/buscarMedicamento">Buscar Medicamento</a></li>
+      </ul>
+    
+</div>
+
+<ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
+     <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Busqueda de Medicamento</h4><h6 class="flow-text brown-text lighten-3"></h6></li>
+    <li collection-item id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">search</i>Buscar Medicamento</div>
+      <div class="collapsible-body popup-element padded">
+      
+         <h3 class="center-align flow-text brown-text lighten-4">Ingrese el atributo por el que desea buscar y la palabra clave que este buscando</h3>
+          <div class="row padded">
+            <form class="col s12" ng-submit="submit()"ng-controller="buscar_medicamento">
+                
+               
+             <select class="browser-default" id="buscarPor" ng-model="buscarPor" ng-change='onChangeSelect()'>
+                <option ng-repeat="item in atributosBusqueda" value="{{item.id}}">{{item.nombre}}</option>
+            </select>
+            
+            <br>
+            
+            
+             <div class="row">
+              <div class="col s6">
+                  <div class="input-field col s9">
+                  <i class="material-icons prefix">label_outlinee</i>
+                  <input id="palabraClave" type="text" class="validate"ng-model="atributoClave">
+                  <label for="palabraClave">Palabra Clave</label>
+              </div>
+              </div>
+              <div class="col s6">
+                   <div class="col s5 center-align">
+                    <button ng-click="historico()" class="btn-large waves-effect waves-light green darken-1">Buscar</button>
+                </div>
+              </div>
+            </div>
+            
+             <table class="striped"id="table">
+                  <tr>
+                      <th>Codigo del Expediente</th><th>Nombre del Medicamento</th><th>Laboratorio</th><th>Estado</th>
+                  </tr>
+                  <tr ng-repeat="item in listaMedicamentos" value="{{item.id}}">
+                               <td >{{item.codigo}}</td>
+                               <td >{{item.nombre}}</td>
+                               <td >{{item.laboratorio}}</td>
+                               <td >{{item.estado}}</td>
+                  </tr>
+                   
+             </table> 
+        
+             <div class="col s5 center-align">
+                       <button ng-click="exportar()" class="btn-large waves-effect waves-light green darken-1">Exportar Busqueda</button>
+             </div>
+                  
+               </div>
+          </form>
+              
+        </div>
+          
+      </div>
+    </li>
+    </li>
+    
+  </ul>
