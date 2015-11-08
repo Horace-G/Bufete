@@ -70,7 +70,7 @@ class MedicamentoController extends Controller
     }
     
     public function getMedicamento(Request $request){
-        $id = request->input('idMedicamento');
+        $id = $request->input('idMedicamento');
         //$id = 1;
         $medicamento = DB::table('medicamento')
                             ->join('forma_farmaceutica','medicamento.formaFarmaceuticaId','=','forma_farmaceutica.id')
