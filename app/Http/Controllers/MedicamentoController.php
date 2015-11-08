@@ -79,5 +79,6 @@ class MedicamentoController extends Controller
                             ->join('laboratorio','medicamento.laboratorioId','=','laboratorio.id')
                             ->select('medicamento.nombre,forma_farmaceutica.nombre,modalidad_venta.nombre,presentacion_comercial.nombre,via_administracion.nombre,laboratorio.nombre')
                             ->where('medicamento.id','=',$id)->get();        
-    }
+    	return Response::json($medicamento);
+	}
 }
