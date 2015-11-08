@@ -77,6 +77,7 @@ class MedicamentoController extends Controller
                             ->join('presentacion_comercial','medicamento.presentacionComercialId','=','presentacion_comercial.id')
                             ->join('via_administracion','medicamento.viaAdministracionId','=','via_administracion.id')
                             ->join('laboratorio','medicamento.laboratorioId','=','laboratorio.id')
+                            ->select('medicamento.nombre,forma_farmaceutica.nombre,modalidad_venta.nombre,presentacion_comercial.nombre,via_administracion.nombre,laboratorio.nombre')
                             ->where('medicamento.id','=',$id)->get();        
     }
 }
