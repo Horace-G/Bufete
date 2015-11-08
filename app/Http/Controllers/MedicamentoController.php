@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller;
 use Response;
 use Carbon\Carbon;
 use DB;
+use Schema;
 
     use Auth;
 class MedicamentoController extends Controller
@@ -82,4 +83,9 @@ class MedicamentoController extends Controller
                             ->where('medicamento.id','=',$id)->get();        
     	return Response::json($medicamento);
 	}
+    
+    public function searchValues(){
+        $retVal = Schema::getColumnListing('medicamento');
+        return Response::json($retVal);
+    }
 }
