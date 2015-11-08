@@ -21,27 +21,26 @@ class HistorialCicloVidaController extends Controller
 
                                                 DB::statement('SET FOREIGN_KEY_CHECKS=0;');
                         DB::table('historial_ciclo_vida')->insert(
-                                array('id_medicamento'=>$idMedicamento, 'id_estado'=>$idEstado, 'estado'=>$estado,
-                                                'created_at'=>$date)
+                                array('medicamentoId'=>$idMedicamento, 'ciclo_vidaId'=>$idEstado, 'estado'=>$estado,
+                                                'fecha'=>$date)
                         );
 
                         return Response::json(array('Success' => 'true'));
                 }
 
-		public function getPermisosRol(Request $request){
-                        $id = $request->input('idRol');
-                        $retVal = DB::table('permiso')->join('rol_permiso', 'permiso.id', '=', 'rol_permiso.permiso_id')->join('rol', 'rol.id', '=',
-                                'rol_permiso.rol_id')->select('permiso.id')->where('rol.id', $id)->get();
+		public function getHistorial(Request $request){
+                        $id = $request->input('id_medicamentoHistorial');
+                        $retVal = DB::table('medicamento')->join('historial_ciclo_vida', 'historial_ciclo_vida.medicamentoId', '=', 'medicamento.id')->join('ciclo_vida', 'ciclo_vida.id', '=', 'historial_ciclo_vida.ciclo_vida.id')->select('ciclo_vida.nombre', 'historial_ciclo_vida.fecha')->where('medicamento.id', $id)->get();
                         return json_encode($retVal);
                 }
 
-                public function allRol(){
-                        $retVal = DB::table('rol')->where('estado','=',1)->get();
+                public function allHistorialCicloVida(){
+                        $retVal = DB::table('historial_ciclo_vida')->where('estado','=',1)->get();
                         return $retVal;
                 }
 
-                public function allRolMod(){
-                        $retVal = DB::table('rol')->get();
+                public function allHistorialCicloVidaMod(){
+                        $retVal = DB::table('historial_ciclo_vida')->get();
                         return $retVal;
                 }
 
