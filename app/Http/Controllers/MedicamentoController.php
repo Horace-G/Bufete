@@ -88,4 +88,6 @@ class MedicamentoController extends Controller
         $retVal = Schema::getColumnListing('medicamento');
         return Response::json($retVal);
     }
+    
+    
 }
