@@ -1,0 +1,98 @@
+<script>
+     $(document).ready(function(){
+     $('.collapsible').collapsible({
+            accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+        });
+    });
+   
+    $('#logohome').removeClass('active');
+     $('#logohome').removeClass('z-depth-5');
+    $('#medicamentos').removeClass('active');
+    $('#medicamentos').removeClass('z-depth-5');
+    $('#reportes').addClass('active');
+    $('#reportes').addClass('z-depth-5');
+    $('#usuarios').removeClass('active');
+    $('#usuarios').removeClass('z-depth-5');
+    $('#logout').removeClass('active');
+       
+</script>
+
+<div class="row" id="div-usuarios">
+      <ul class="tabs" id="ul-usuarios">
+        <li class="tab col s3 active brown-text lighten-3" id="li-usuarios"><a href="#/verExpediente">Ver Expediente</a></li>
+        <li class="tab col s3 brown-text lighten-1" id="li-usuarios"><a href="#/buscarMedicamento">Buscar Medicamento</a></li>
+        <li class="tab col s3 brown-text lighten-1" id="li-usuarios"><a href="#/historico">Historico</a></li>
+      </ul>
+    
+</div>
+
+<ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
+     <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Historial de Modificaciones</h4><h6 class="flow-text brown-text lighten-3">
+         Se visualizara el log de las modificaciones, y de quienes las realizaron.
+     </h6></li>
+    <li collection-item id="Config-li">
+      <div class="collapsible-header"><i class="material-icons">search</i>Ver Historico</div>
+      <div class="collapsible-body popup-element padded">
+      
+         <h3 class="center-align flow-text brown-text lighten-4">Se presenta el historial de estados por los que ha pasado el expediente actual</h3>
+          <div class="row padded">
+            <form class="col s12" ng-submit="submit()"ng-controller="buscar_medicamento">
+                
+             <div class="row">
+              <div class="col s12">
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">dialpad</i>
+                      <input disabled id="codigoExpediente" type="text" class="validate"ng-model="codigo">
+                      <label for="codigoExpediente">Codigo del Expediente</label>
+                 </div>
+               </div>
+               <div class="col s12">
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">perm_identity</i>
+                      <input disabled id="nombreExpediente" type="text" class="validate"ng-model="nombre">
+                      <label for="nombreExpediente">Nombre del Medicamento</label>
+                 </div>
+               </div>
+               <div class="col s12">
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">polymer</i>
+                      <input disabled id="laboratorioExpediente" type="text" class="validate"ng-model="laboratorio">
+                      <label for="laboratorioExpediente">Laboratorio</label>
+                 </div>
+               </div>
+               <div class="col s12">
+                  <div class="input-field col s12">
+                      <i class="material-icons prefix">done</i>
+                      <input disabled id="estadoActual" type="text" class="validate"ng-model="estado">
+                      <label for="estadoActual">Estado Actual</label>
+                 </div>
+               </div>
+               
+                <table class="striped"id="table">
+                  <tr>
+                      <th>Estado</th><th>Fecha</th><th>Usuario</th>
+                  </tr>
+                  <tr ng-repeat="item in listaEstados" value="{{item.id}}">
+                               <td >{{item.estado}}</td>
+                               <td >{{item.fecha}}</td>
+                               <td >{{item.usuario}}</td>
+                  </tr>
+                   
+             </table> 
+               
+            </div>
+        
+             <div class="col s5 center-align">
+                       <button ng-click="" class="btn-large waves-effect waves-light brown">Volver</button>
+             </div>
+                  
+               </div>
+          </form>
+              
+        </div>
+          
+      </div>
+    </li>
+    </li>
+    
+  </ul>

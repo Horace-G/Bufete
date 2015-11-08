@@ -42,6 +42,11 @@ myApp.config(function ($routeProvider) {
         controller: 'mainController'
     })
     
+    .when('/historico', {
+        templateUrl: 'public/views/historico.html',
+        controller: 'mainController'
+    })
+    
      .when('/reportes', {
         templateUrl: 'public/views/reportes.html',
         controller: 'secondController'
