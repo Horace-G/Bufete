@@ -145,9 +145,22 @@ Route::post('/updateRolPermiso','RolPermisoController@updateRolPermiso');
 
 Route::post('/allPermisoRol','RolPermisoController@allPermisoRol');
 
-Route::get('/getMedicamento','MedicamentoController@getMedicamento');
+Route::post('/getMedicamento','MedicamentoController@getMedicamento');
 
 Route::get('/allMedicamentoMod','MedicamentoController@allMedicamentoMod');
+
+Route::get('/allMedicamento','MedicamentoController@allMedicamento');
+
+Route::post('/saveHistorialCicloVida','HistorialCicloVidaController@saveHistorialCicloVida');
+
+Route::post('/getHistorial','HistorialCicloVidaController@getHistorial');
+
+Route::get('/allHistorialCicloVida','MedicamentoController@allHistorialCicloVida');
+
+Route::get('/allHistorialCicloVidaMod','MedicamentoController@allHistorialCicloVidaMod');
+
+
+
 
 /*
 Route::get('/auth/login', 'Auth\AuthController@getLogin');

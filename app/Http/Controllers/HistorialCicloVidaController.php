@@ -19,7 +19,7 @@ class HistorialCicloVidaController extends Controller
                         $date = Carbon::now();
 
 
-                                                DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+                        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
                         DB::table('historial_ciclo_vida')->insert(
                                 array('medicamentoId'=>$idMedicamento, 'ciclo_vidaId'=>$idEstado, 'estado'=>$estado,
                                                 'fecha'=>$date)
