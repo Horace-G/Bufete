@@ -145,6 +145,9 @@ Route::post('/updateRolPermiso','RolPermisoController@updateRolPermiso');
 
 Route::post('/allPermisoRol','RolPermisoController@allPermisoRol');
 
+Route::get('/getMedicamento','MedicamentoController@getMedicamento');
+
+Route::get('/allMedicamentoMod','MedicamentoController@allMedicamentoMod');
 
 /*
 Route::get('/auth/login', 'Auth\AuthController@getLogin');
