@@ -32,7 +32,7 @@
      </h6></li>
     <li collection-item id="Config-li">
       <div class="collapsible-header"><i class="material-icons">search</i>Ver Historico</div>
-      <div class="collapsible-body popup-element padded">
+      <div>
       
          <h3 class="center-align flow-text brown-text lighten-4">Se presenta el historial de estados por los que ha pasado el expediente actual</h3>
           <div class="row padded">
@@ -67,7 +67,7 @@
                       <label for="estadoActual">Estado Actual</label>
                  </div>
                </div>
-               
+                <div class="col s12">
                 <table class="striped"id="table">
                   <tr>
                       <th>Estado</th><th>Fecha</th><th>Usuario</th>
@@ -78,14 +78,14 @@
                                <td >{{item.usuario}}</td>
                   </tr>
                    
-             </table> 
-               
+                </table> 
+                 
             </div>
         
              <div class="col s5 center-align">
                        <button ng-click="" class="btn-large waves-effect waves-light brown">Volver</button>
              </div>
-                  
+                  </br>
                </div>
           </form>
               
