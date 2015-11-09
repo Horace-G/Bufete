@@ -99,7 +99,7 @@ class MedicamentoController extends Controller
         $palabraClave = $request->input('palabraClave');
         
         $retVal = DB::table('medicamento')->where($searchBy,'LIKE','%'.$palabraClave.'%')->get();
-        if ($retVal->$count){
+        if ($retVal->count()){
             return $this->dataMedicamento($retVal.id);
         }else{
             return $retVal;
