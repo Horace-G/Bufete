@@ -2,7 +2,7 @@ angular.module('myApp').controller('crearexpediente', ['$scope','$http','$locati
   var ctrl = this;
    
     ctrl.init = function(){
-        alert(sessionStorage.IdMedicamento);
+       
         alert("ggg");
     };
     ctrl.init();
