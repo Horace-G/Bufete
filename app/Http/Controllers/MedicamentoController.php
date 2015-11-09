@@ -89,5 +89,12 @@ class MedicamentoController extends Controller
         return Response::json($retVal);
     }
     
-    
+    public function getSearch(Request $request){
+        $searchBy = $request->input('searchBy');
+        $palabraClave = $request->input('palabraClave');
+        
+        $retVal = DB::table('medicamento')->where($searchBy,'LIKE','%'.$palabraClave.'%')->get();
+        
+        return Response::json($retVal);
+    }
 }
