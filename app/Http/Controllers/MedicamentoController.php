@@ -67,6 +67,7 @@ class MedicamentoController extends Controller
     }
     public function allMedicamento(){
         $retVal = DB::table('medicamento')->where('estado','=',1)->get();
+        
     }
     
     public function getMedicamento(Request $request){
