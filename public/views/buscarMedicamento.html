@@ -63,11 +63,11 @@
                   <tr>
                       <th>Codigo del Expediente</th><th>Nombre del Medicamento</th><th>Laboratorio</th><th>Estado</th>
                   </tr>
-                  <tr ng-repeat="item in listaMedicamentos" value="{{item.id}}"ng-click="search(item)">
-                               <td >{{item.codigo}}</td>
-                               <td >{{item.nombre}}</td>
-                               <td >{{item.laboratorio}}</td>
-                               <td >{{item.estado}}</td>
+                  <tr ng-repeat="item in listaMedicamentos" value="{{item.MedicamentoId}}"ng-click="search(item)">
+                               <td >{{item.MedicamentoId}}</td>
+                               <td >{{item.MedicamentoNombre}}</td>
+                               <td >{{item.LaboratorioNombre}}</td>
+                               <td >{{item.CicloVidaNombre}}</td>
                   </tr>
                    
              </table> 
