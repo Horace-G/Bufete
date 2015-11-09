@@ -66,7 +66,7 @@ class MedicamentoController extends Controller
         return Response::json($retVal);
     }
     public function allMedicamento(){
-        $retVal = DB::table('medicamento')->where('estado','=',1)->get();
+        $retVal = DB::table('medicamento')->get();
         
     }
     

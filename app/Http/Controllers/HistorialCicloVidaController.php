@@ -30,7 +30,9 @@ class HistorialCicloVidaController extends Controller
 
 		public function getHistorial(Request $request){
                         $id = $request->input('id_medicamentoHistorial');
-                        $retVal = DB::table('medicamento')->join('historial_ciclo_vida', 'historial_ciclo_vida.medicamentoId', '=', 'medicamento.id')->join('ciclo_vida', 'ciclo_vida.id', '=', 'historial_ciclo_vida.ciclo_vida.id')->select('ciclo_vida.nombre', 'historial_ciclo_vida.fecha')->where('medicamento.id', $id)->get();
+                        $retVal = DB::table('medicamento')->join('historial_ciclo_vida', 'historial_ciclo_vida.medicamentoId', '=', 'medicamento.id')->join('ciclo_vida', 'ciclo_vida.id', '=', 'historial_ciclo_vida.ciclo_vida.id')->select('ciclo_vida.nombre', 'historial_ciclo_vida.fecha')
+                            ->select('ciclo_vida.nombre as NombreCicloVida','historial_ciclo_vida.fecha as FechaCambio','medicamento.user_created as UsuarioCambio')
+                            ->where('medicamento.id', $id)->get();
                         return json_encode($retVal);
                 }
 
