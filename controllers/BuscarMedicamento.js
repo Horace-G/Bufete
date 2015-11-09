@@ -34,8 +34,17 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
     
     $scope.search = function(item){
         if(typeof(Storage) !== "undefined") {
+<<<<<<< HEAD
         sessionStorage.IdMedicamento=item.MedicamentoId;
         window.location=document.getElementById('ver').href;
+=======
+
+            sessionStorage.IdMedicamento=item.MedicamentoId;
+            //alert(item.MedicamentoId);
+            //$("a").attr("href", "#/verExpediente");
+            $location.path('#/verExpediente');
+            //window.location=document.getElementById('ver').href;
+>>>>>>> 60f18ccc8402f4599ee53624dce4f211fd67fc9e
         }else{
             
         }
