@@ -18,6 +18,7 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
     };
     ctrl.init();
     $scope.buscar= function(){
+        
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/getSearch';
         var request = {
@@ -29,6 +30,7 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
             $scope.listaMedicamentos=response.data;
             console.log(response.data);
         });
+        
         
     };
     
