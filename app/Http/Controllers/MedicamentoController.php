@@ -72,7 +72,7 @@ class MedicamentoController extends Controller
     public function getMedicamento(Request $request){
         $id = $request->input('idMedicamento');
         //$id = 1;
-        return $this->dataMedicamento($id);
+        return Response::json($this->dataMedicamento($id));
 	}
     
     public function dataMedicamento($id){
@@ -85,7 +85,7 @@ class MedicamentoController extends Controller
                             ->join('ciclo_vida','medicamento.estado','=','ciclo_vida.id')
                             ->select('medicamento.nombre as MedicamentoNombre','forma_farmaceutica.nombre as FormaFarmaceuticaNombre','modalidad_venta.nombre as ModalidadNombre','presentacion_comercial.nombre as PresentacionComercialNombre','via_administracion.nombre as ViaAdminstracionNombre','laboratorio.nombre as LaboratorioNombre','ciclo_vida.nombre as CicloVidaNombre','medicamento.user_created as MedicamentoUserCreated','medicamento.user_updated as MedicamentoUserUpdated','medicamento.created_at as MedicamentoCreated','medicamento.updated_at as MedicamentoUpdated')
                             ->where('medicamento.id','=',$id)->get();        
-    	return Response::json($medicamento);
+    	return $medicamento;
     }
 
     
@@ -100,7 +100,11 @@ class MedicamentoController extends Controller
         
         $retVal = DB::table('medicamento')->where($searchBy,'LIKE','%'.$palabraClave.'%')->get();
         if (count($retVal)){
-            return $this->dataMedicamento($retVal->id);
+            $returnJson = array();
+            foreach ($retVal as $item){
+                array_push($returnJson,$this->dataMedicamento($item->id));
+            }
+            return Response::json($returnJson);
         }else{
             return $retVal;
         }
