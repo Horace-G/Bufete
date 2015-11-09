@@ -72,6 +72,10 @@ class MedicamentoController extends Controller
     public function getMedicamento(Request $request){
         $id = $request->input('idMedicamento');
         //$id = 1;
+        return $this->dataMedicamento($id);
+	}
+    
+    public function dataMedicamento($id){
         $medicamento = DB::table('medicamento')
                             ->join('forma_farmaceutica','medicamento.formaFarmaceuticaId','=','forma_farmaceutica.id')
                             ->join('modalidad_venta','medicamento.modalidadVentaId','=','modalidad_venta.id')
@@ -79,10 +83,11 @@ class MedicamentoController extends Controller
                             ->join('via_administracion','medicamento.viaAdministracionId','=','via_administracion.id')
                             ->join('laboratorio','medicamento.laboratorioId','=','laboratorio.id')
                             ->join('ciclo_vida','medicamento.estado','=','ciclo_vida.id')
-                            ->select('medicamento.nombre as MedicamentoNombre','forma_farmaceutica.nombre as FormaFarmaceuticaNombre','modalidad_venta.nombre as ModalidadNombre','presentacion_comercial.nombre as PresentacionComercialNombre','via_administracion.nombre as ViaAdminstracionNombre','laboratorio.nombre as LaboratorioNombre','ciclo_vida.nombre as CicloVidaNombre')
+                            ->select('medicamento.nombre as MedicamentoNombre','forma_farmaceutica.nombre as FormaFarmaceuticaNombre','modalidad_venta.nombre as ModalidadNombre','presentacion_comercial.nombre as PresentacionComercialNombre','via_administracion.nombre as ViaAdminstracionNombre','laboratorio.nombre as LaboratorioNombre','ciclo_vida.nombre as CicloVidaNombre','medicamento.user_created as MedicamentoUserCreated','medicamento.user_updated as MedicamentoUserUpdated','medicamento.created_at as MedicamentoCreated','medicamento.updated_at as MedicamentoUpdated')
                             ->where('medicamento.id','=',$id)->get();        
     	return Response::json($medicamento);
-	}
+    }
+
     
     public function searchValues(){
         $retVal = Schema::getColumnListing('medicamento');
@@ -94,6 +99,11 @@ class MedicamentoController extends Controller
         $palabraClave = $request->input('palabraClave');
         
         $retVal = DB::table('medicamento')->where($searchBy,'LIKE','%'.$palabraClave.'%')->get();
+        if (count($retVal)){
+            return $this->dataMedicamento($retVal->id);
+        }else{
+            return $retVal;
+        }
         
         return Response::json($retVal);
     }

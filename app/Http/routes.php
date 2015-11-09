@@ -161,6 +161,8 @@ Route::get('/allHistorialCicloVidaMod','MedicamentoController@allHistorialCicloV
 
 Route::get('/searchValues','MedicamentoController@searchValues');
 
+Route::post('/getSearch','MedicamentoController@getSearch');
+
 
 
 
