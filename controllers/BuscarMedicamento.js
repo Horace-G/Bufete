@@ -36,13 +36,12 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
         if(typeof(Storage) !== "undefined") {
         sessionStorage.IdMedicamento=item.MedicamentoId;
         alert(item.MedicamentoId);
-<<<<<<< HEAD
+
         }else{
             
         }
-=======
-        $scope.MedicamentoNombre = item.MedicamentoNombre;
->>>>>>> a205267c55ee9feff1ffb657d34f691a24fb3561
+
+
     }
 
     
