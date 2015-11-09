@@ -107,7 +107,7 @@ class MedicamentoController extends Controller
                             ->join('laboratorio','medicamento.laboratorioId','=','laboratorio.id')
                             ->join('ciclo_vida','medicamento.estado','=','ciclo_vida.id')
                             ->select('medicamento.nombre as MedicamentoNombre','forma_farmaceutica.nombre as FormaFarmaceuticaNombre','modalidad_venta.nombre as ModalidadNombre','presentacion_comercial.nombre as PresentacionComercialNombre','via_administracion.nombre as ViaAdminstracionNombre','laboratorio.nombre as LaboratorioNombre','ciclo_vida.nombre as CicloVidaNombre','medicamento.user_created as MedicamentoUserCreated','medicamento.user_updated as MedicamentoUserUpdated','medicamento.created_at as MedicamentoCreated','medicamento.updated_at as MedicamentoUpdated')
-                            ->where('medicamento.'.$searchBy,'LIKE','%'.$palabraClave.'%')->get();        
+                            ->where('medicamento.'.$searchBy,'LIKE',"%$palabraClave%")->get();        
         
         return Response::json($medicamento);
     }
