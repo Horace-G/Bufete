@@ -2,7 +2,7 @@ angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location
   var ctrl = this;
     $scope.Medicamentos=[];
     ctrl.init = function(){
-       alert(sessionStorage.IdMedicamento);
+       
        var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/getMedicamento';
         var request = {
@@ -21,11 +21,16 @@ angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location
             $scope.codigo=Medicamentos[0].MedicamentoId;
             $scope.estado=Medicamentos[0].CicloVidaNombre;
             $scope.representante=Medicamentos[0].NombreRepresentante;
-            
+             if(typeof(Storage) !== "undefined") {
+                sessionStorage.IdMedicamento=$scope.codigo;
+                }else{   
+                }
         });
     };
     ctrl.init();
-    
+    $scope.historico = function(){
+      window.location=document.getElementById('historico').href;  
+    };
 
     
 }]);
