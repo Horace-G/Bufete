@@ -28,6 +28,7 @@ angular.module('myApp').controller('historia_ciclo', ['$scope','$http','$locatio
                 data: {id_medicamentoHistorial: sessionStorage.IdMedicamento}
         };
         $http(request).then(function(response){
+            alert("gg");
             $scope.listaEstados=response.data;
             console.log($scope.listaEstados);
             
