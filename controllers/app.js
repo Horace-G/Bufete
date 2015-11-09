@@ -34,7 +34,7 @@ myApp.config(function ($routeProvider) {
     
      .when('/verExpediente', {
         templateUrl: 'public/views/verExpediente.html',
-        controller: 'mainController'
+        controller: 'buscar_medicamento'
     })
     
      .when('/buscarMedicamento', {
