@@ -29,6 +29,7 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
             $scope.listaMedicamentos=response.data;
             console.log(response.data);
         });
+        
     };
     
     
