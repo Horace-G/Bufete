@@ -98,17 +98,16 @@ class MedicamentoController extends Controller
         $searchBy = $request->input('searchBy');
         $palabraClave = $request->input('palabraClave');
         
-        $retVal = DB::table('medicamento')->where($searchBy,'LIKE','%'.$palabraClave.'%')->get();
-        if (count($retVal)){
-            $returnJson = array();
-            foreach ($retVal as $item){
-                array_push($returnJson,$this->dataMedicamento($item.id));
-            }
-            return Response::json($returnJson);
-        }else{
-            return $retVal;
-        }
+         $medicamento = DB::table('medicamento')
+                            ->join('forma_farmaceutica','medicamento.formaFarmaceuticaId','=','forma_farmaceutica.id')
+                            ->join('modalidad_venta','medicamento.modalidadVentaId','=','modalidad_venta.id')
+                            ->join('presentacion_comercial','medicamento.presentacionComercialId','=','presentacion_comercial.id')
+                            ->join('via_administracion','medicamento.viaAdministracionId','=','via_administracion.id')
+                            ->join('laboratorio','medicamento.laboratorioId','=','laboratorio.id')
+                            ->join('ciclo_vida','medicamento.estado','=','ciclo_vida.id')
+                            ->select('medicamento.nombre as MedicamentoNombre','forma_farmaceutica.nombre as FormaFarmaceuticaNombre','modalidad_venta.nombre as ModalidadNombre','presentacion_comercial.nombre as PresentacionComercialNombre','via_administracion.nombre as ViaAdminstracionNombre','laboratorio.nombre as LaboratorioNombre','ciclo_vida.nombre as CicloVidaNombre','medicamento.user_created as MedicamentoUserCreated','medicamento.user_updated as MedicamentoUserUpdated','medicamento.created_at as MedicamentoCreated','medicamento.updated_at as MedicamentoUpdated')
+                            ->where('medicamento.'.$searchBy,'LIKE','%'.$id.'%')->get();        
         
-        return Response::json($retVal);
+        return Response::json($medicamento);
     }
 }
