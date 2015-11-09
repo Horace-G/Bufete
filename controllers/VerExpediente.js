@@ -1,6 +1,6 @@
 angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
   var ctrl = this;
-   
+    var Medicamentos=[];
     ctrl.init = function(){
        alert(sessionStorage.IdMedicamento);
        var path = $location.path($location.path());
@@ -11,7 +11,15 @@ angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location
                 data: {idMedicamento: sessionStorage.IdMedicamento}
         };
         $http(request).then(function(response){
-            console.log(response.data);
+            Medicamentos=response.data;
+            console.log(Medicamentos);
+            $scope.nombreFormaFarmaceutica=Medicamentos.FormaFarmaceuticaNombre;
+            $scope.nombreViaAdministracion=Medicamentos.ViaAdministracionNombre;
+            $scope.nombreModalidadVenta=Medicamentos.ModalidadNombre;
+            $scope.nombrePresentacionComercial=Medicamentos.PresentacionComercialNombre;
+            $scope.nombre=Medicamentos.MedicamentoNombre;
+            $scope.codigo=Medicamentos.MedicamentoId;
+            $scope.estado=Medicamentos.CicloVidaNombre;
         });
     };
     ctrl.init();
