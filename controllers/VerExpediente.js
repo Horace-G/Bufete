@@ -21,7 +21,7 @@ angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location
             $scope.codigo=Medicamentos[0].MedicamentoId;
             $scope.estado=Medicamentos[0].CicloVidaNombre;
             $scope.representante=Medicamentos[0].NombreRepresentante;
-            $("a").attr("href", "#/verExpediente")
+            
         });
     };
     ctrl.init();
