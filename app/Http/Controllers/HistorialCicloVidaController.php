@@ -34,7 +34,7 @@ class HistorialCicloVidaController extends Controller
                             ->join('medicamento','medicamento.id','=','historial_ciclo_vida.medicamentoId')
                             ->join('ciclo_vida', 'ciclo_vida.id', '=', 'historial_ciclo_vida.ciclo_vidaId')
                             ->select('ciclo_vida.nombre as NombreCicloVida','historial_ciclo_vida.fecha as FechaCambio','medicamento.user_created as UsuarioCambio')
-                            ->where('historial_ciclo_vida.id', $id)->get();
+                            ->where('medicamento.id', $id)->get();
                         return Response::json($retVal);
                 }
 
