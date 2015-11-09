@@ -1,6 +1,6 @@
 angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
   var ctrl = this;
-    
+    $scope.listaMedicamentos = [];
     $scope.atributosBusqueda = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
@@ -26,6 +26,7 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
                 data: {searchBy: $scope.atributoClave,palabraClave:$scope.selectedOption}
         };
         $http(request).then(function(response){
+            $scope.listaMedicamentos=response.data;
             console.log(response.data);
         });
     };
