@@ -23,7 +23,7 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
         var request = {
                 method: 'POST',
                 url: baseUrl,
-                data: {searchBy: $scope.atributoClave,palabraClave:$scope.selectedOption}
+                data: {searchBy: $scope.selectedOption,palabraClave:$scope.atributoClave}
         };
         $http(request).then(function(response){
             console.log(response.data);
