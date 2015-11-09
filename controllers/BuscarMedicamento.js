@@ -42,9 +42,14 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
             sessionStorage.IdMedicamento=item.MedicamentoId;
             //alert(item.MedicamentoId);
             //$("a").attr("href", "#/verExpediente");
+<<<<<<< HEAD
             $location.path('#/verExpediente');
             //window.location=document.getElementById('ver').href;
 
+=======
+            //$location.path('#/verExpediente');
+            window.location=document.getElementById('ver').href;
+>>>>>>> d3b133766ba82b6fc58a73c4c52db02ec269ca8c
         }else{
             
         }
