@@ -54,6 +54,7 @@
         <script src="./controllers/FormaFarmaceutica.js"></script>
         <script src="./controllers/AsignarPermisos.js"></script>
         <script src="./controllers/BuscarMedicamento.js"></script>
+        <script src="./controllers/VerExpediente.js"></script>
         <!---------------------------->
         <script src="./controllers/modificarPresentacionComercial.js"></script>
         <script src="./controllers/modificarModalidadVenta.js"></script>
