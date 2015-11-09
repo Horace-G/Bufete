@@ -30,8 +30,11 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
             console.log(response.data);
         });
     };
+    
+    
     $scope.search = function(item){
         alert(item.MedicamentoId);
+        $scope.MedicamentoNombre = item.MedicamentoNombre;
     }
 
     
