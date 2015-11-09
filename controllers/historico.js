@@ -35,7 +35,9 @@ angular.module('myApp').controller('historia_ciclo', ['$scope','$http','$locatio
         });
     };
     ctrl.init();
-    
+    $scope.volver = function(){
+          window.location=document.getElementById('ver').href;  
+    }
 
     
 }]);
