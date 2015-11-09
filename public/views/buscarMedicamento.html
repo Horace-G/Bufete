@@ -37,8 +37,8 @@
             <form class="col s12" ng-submit="submit()"ng-controller="buscar_medicamento">
                 
                
-             <select class="browser-default" id="buscarPor" ng-model="buscarPor" ng-change='onChangeSelect()'>
-                <option ng-repeat="item in atributosBusqueda" value="{{item.id}}">{{item.nombre}}</option>
+             <select class="browser-default" id="buscarPor" ng-model="selectedOption" ng-change='onChangeSelect()'>
+                <option ng-repeat="item in atributosBusqueda" value="{{item}}">{{item}}</option>
             </select>
             
             <br>
@@ -54,7 +54,7 @@
               </div>
               <div class="col s6">
                    <div class="col s5 center-align">
-                    <button ng-click="historico()" class="btn-large waves-effect waves-light green darken-1">Buscar</button>
+                    <button ng-click="buscar()" class="btn-large waves-effect waves-light green darken-1">Buscar</button>
                 </div>
               </div>
             </div>
