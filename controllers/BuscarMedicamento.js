@@ -31,7 +31,7 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
         });
     };
     $scope.search = function(item){
-        alert(item.name);
+        alert(item.MedicamentoId);
     }
 
     
