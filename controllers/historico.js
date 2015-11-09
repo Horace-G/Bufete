@@ -1,4 +1,4 @@
-angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
+angular.module('myApp').controller('historia_ciclo', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
   var ctrl = this;
     $scope.Medicamentos=[];
     ctrl.init = function(){
