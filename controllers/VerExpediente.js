@@ -13,7 +13,7 @@ angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location
         $http(request).then(function(response){
             Medicamentos=response.data;
             console.log(Medicamentos);
-            alert(Medicamentos.FormaFarmaceuticaNombre);
+            alert(Medicamentos[0].FormaFarmaceuticaNombre);
             $scope.nombreFormaFarmaceutica=Medicamentos.FormaFarmaceuticaNombre;
             $scope.nombreViaAdministracion=Medicamentos.ViaAdministracionNombre;
             $scope.nombreModalidadVenta=Medicamentos.ModalidadNombre;
