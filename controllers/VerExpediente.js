@@ -31,6 +31,9 @@ angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location
     $scope.historico = function(){
       window.location=document.getElementById('historico').href;  
     };
+    $scope.volver = function(){
+          window.location=document.getElementById('buscarMedicamento').href;  
+    }
 
     
 }]);
