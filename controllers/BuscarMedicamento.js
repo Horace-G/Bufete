@@ -35,7 +35,6 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
     $scope.search = function(item){
         if(typeof(Storage) !== "undefined") {
         sessionStorage.IdMedicamento=item.MedicamentoId;
-        alert(item.MedicamentoId);
         window.location=document.getElementById('ver').href;
         }else{
             
