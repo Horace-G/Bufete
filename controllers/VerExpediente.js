@@ -14,7 +14,7 @@ angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location
             Medicamentos=response.data;
             console.log(Medicamentos);
             $scope.nombreFormaFarmaceutica=Medicamentos[0].FormaFarmaceuticaNombre;
-            $scope.nombreViaAdministracion=Medicamentos[0].ViaAdministracionNombre;
+            $scope.nombreViaAdministracion=Medicamentos[0].ViaAdminstracionNombre;
             $scope.nombreModalidadVenta=Medicamentos[0].ModalidadNombre;
             $scope.nombrePresentacionComercial=Medicamentos[0].PresentacionComercialNombre;
             $scope.nombre=Medicamentos[0].MedicamentoNombre;
