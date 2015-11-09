@@ -102,7 +102,7 @@ class MedicamentoController extends Controller
         if (count($retVal)){
             $returnJson = array();
             foreach ($retVal as $item){
-                array_push($returnJson,$this->dataMedicamento($item->id));
+                array_push($returnJson,Response::json($this->dataMedicamento($item->id)));
             }
             return Response::json($returnJson);
         }else{
