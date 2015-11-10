@@ -46,7 +46,7 @@
                 </div>
                   <div class="input-field col s10">
                       <i class="material-icons prefix">dialpad</i>
-                      <input disabled id="codigoExpediente" type="text" class="validate"ng-model="codigo">
+                      <input disabled id="codigoExpediente" type="text" class="validate darkFont"ng-model="codigo">
                       
                  </div>
                </div>
@@ -57,7 +57,7 @@
                 </div>
                   <div class="input-field col s10">
                       <i class="material-icons prefix">perm_identity</i>
-                      <input disabled id="nombreExpediente" type="text" class="validate"ng-model="nombre">
+                      <input disabled id="nombreExpediente" type="text" class="validate darkFont"ng-model="nombre">
                       
                  </div>
                </div>
@@ -68,7 +68,7 @@
                 </div>
                   <div class="input-field col s10">
                       <i class="material-icons prefix">polymer</i>
-                      <input disabled id="laboratorioExpediente" type="text" class="validate"ng-model="laboratorio">
+                      <input disabled id="laboratorioExpediente" type="text" class="validate darkFont"ng-model="laboratorio">
                      
                  </div>
                </div>
@@ -79,7 +79,7 @@
                 </div>
                   <div class="input-field col s10">
                       <i class="material-icons prefix">done</i>
-                      <input disabled id="estadoActual" type="text" class="validate"ng-model="estado">
+                      <input disabled id="estadoActual" type="text" class="validate darkFont"ng-model="estado">
                       
                  </div>
                </div>
@@ -89,7 +89,7 @@
                       <th>Estado</th><th>Fecha</th><th>Usuario</th>
                   </tr>
                   <tr ng-repeat="item in listaEstados" value="{{item.NombreCicloVida}}">
-                               <td >{{item.NombreCicloVida}}</td>
+                               <td ><i class="large material-icons">search</i>{{item.NombreCicloVida}}</td>
                                <td >{{item.FechaCambio}}</td>
                                <td >{{item.UsuarioCambio}}</td>
                   </tr>
