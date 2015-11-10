@@ -99,6 +99,22 @@ class MedicamentoController extends Controller
         $searchBy = $request->input('searchBy');
         $palabraClave = $request->input('palabraClave');
         
+        if ($searchBy == 'formaFarmaceuticaId'){
+            $searchBy = 'forma_farmaceutica.nombre'
+        }else if ($searchBy == 'modalidadVentaId'){
+            $searchBy = 'modalidad_venta.nombre'
+        }else if ($searchBy == 'presentacionComercialId'){
+            $searchBy = 'presentacion_comercial.nombre'
+        }else if ($searchBy == 'viaAdministracionId'){
+            $searchBy = 'via_administracion.nombre'
+        }else if ($searchBy == 'laboratorioId'){
+            $searchBy = 'laboratorio.nombre'
+        }else if ($searchBy == 'estado'){
+            $searchBy = 'ciclo_vida.nombre'
+        }else{
+            $searchBy = 'medicamento.'.$searchBy;
+        }
+        
          $medicamento = DB::table('medicamento')
                             ->join('forma_farmaceutica','medicamento.formaFarmaceuticaId','=','forma_farmaceutica.id')
                             ->join('modalidad_venta','medicamento.modalidadVentaId','=','modalidad_venta.id')
@@ -107,7 +123,7 @@ class MedicamentoController extends Controller
                             ->join('laboratorio','medicamento.laboratorioId','=','laboratorio.id')
                             ->join('ciclo_vida','medicamento.estado','=','ciclo_vida.id')
                             ->select('medicamento.id as MedicamentoId','medicamento.nombre as MedicamentoNombre','forma_farmaceutica.nombre as FormaFarmaceuticaNombre','modalidad_venta.nombre as ModalidadNombre','presentacion_comercial.nombre as PresentacionComercialNombre','via_administracion.nombre as ViaAdminstracionNombre','laboratorio.nombre as LaboratorioNombre','ciclo_vida.nombre as CicloVidaNombre','medicamento.user_created as MedicamentoUserCreated','medicamento.user_updated as MedicamentoUserUpdated','medicamento.created_at as MedicamentoCreated','medicamento.updated_at as MedicamentoUpdated','medicamento.representante as NombreRepresentante')
-                            ->where('medicamento.'.$searchBy,'LIKE',"%$palabraClave%")->get();        
+                            ->where($searchBy,'LIKE',"%$palabraClave%")->get();        
         
         return Response::json($medicamento);
     }
