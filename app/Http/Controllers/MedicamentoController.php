@@ -100,17 +100,17 @@ class MedicamentoController extends Controller
         $palabraClave = $request->input('palabraClave');
         
         if ($searchBy == 'formaFarmaceuticaId'){
-            $searchBy = 'forma_farmaceutica.nombre'
+            $searchBy = 'forma_farmaceutica.nombre';
         }else if ($searchBy == 'modalidadVentaId'){
-            $searchBy = 'modalidad_venta.nombre'
+            $searchBy = 'modalidad_venta.nombre';
         }else if ($searchBy == 'presentacionComercialId'){
-            $searchBy = 'presentacion_comercial.nombre'
+            $searchBy = 'presentacion_comercial.nombre';
         }else if ($searchBy == 'viaAdministracionId'){
-            $searchBy = 'via_administracion.nombre'
+            $searchBy = 'via_administracion.nombre';
         }else if ($searchBy == 'laboratorioId'){
-            $searchBy = 'laboratorio.nombre'
+            $searchBy = 'laboratorio.nombre';
         }else if ($searchBy == 'estado'){
-            $searchBy = 'ciclo_vida.nombre'
+            $searchBy = 'ciclo_vida.nombre';
         }else{
             $searchBy = 'medicamento.'.$searchBy;
         }
