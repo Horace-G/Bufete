@@ -19,6 +19,10 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
     ctrl.init();
     $scope.buscar= function(){
         
+        if($scope.selectedOption==""||$scope.selectedOption==undefined){
+            $scope.selectedOption = "id";
+        }
+        
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/getSearch';
         var request = {
