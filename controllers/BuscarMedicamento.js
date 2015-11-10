@@ -3,6 +3,21 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
     $scope.listaMedicamentos = [];
     $scope.atributosBusqueda = [];
     $scope.selectedOption = "id";
+    $scope.TextSelect = {
+        'id':'ID Medicamento',
+        'nombre':'Nombre Medicamento',
+        'modalidadVentaId':'Nombre Modalidad Venta',
+        'formaFarmaceuticaId':'Nombre Forma Farmaceutica',
+        'presentacionComercialId':'Nombre Presentacion Comercial',
+        'viaAdministracionId': 'Nombre Via Administracion',
+        'laboratorioId':'Nombre Laboratorio',
+        'representante':'Representante',
+        'user_created':'Creado por:',
+        'user_updated':'Actualizado por:',
+        'estado':'Estado Ciclo Vida',
+        'created_at':'Fecha Creacion',
+        'updated_at':'Fecha Actualizacion'
+    };
     ctrl.init = function(){
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/searchValues';
