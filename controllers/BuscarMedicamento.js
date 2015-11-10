@@ -2,7 +2,7 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
   var ctrl = this;
     $scope.listaMedicamentos = [];
     $scope.atributosBusqueda = [];
-    $scope.selectedOption = {};
+    $scope.selectedOption = "id";
     ctrl.init = function(){
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/searchValues';
@@ -18,6 +18,8 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
     };
     ctrl.init();
     $scope.buscar= function(){
+        
+        console.log($scope.selectedOption);
         
         if($scope.selectedOption==""||$scope.selectedOption==undefined){
             $scope.selectedOption = "id";
