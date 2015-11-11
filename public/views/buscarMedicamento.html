@@ -61,13 +61,14 @@
             
              <table class="striped"id="table">
                   <tr>
-                      <th>Codigo del Expediente</th><th>Nombre del Medicamento</th><th>Laboratorio</th><th>Estado</th>
+                      <th>Codigo del Expediente</th><th>Nombre del Medicamento</th><th>Laboratorio</th><th>Estado</th><th>Expander</th>
                   </tr>
                   <tr ng-repeat="item in listaMedicamentos" value="{{item.MedicamentoId}}"ng-click="search(item)">
                                <td >{{item.MedicamentoId}}</td>
                                <td >{{item.MedicamentoNombre}}</td>
                                <td >{{item.LaboratorioNombre}}</td>
                                <td >{{item.CicloVidaNombre}}</td>
+                      <td><i class="large material-icons">toc</i></td>
                   </tr>
                    
              </table> 
