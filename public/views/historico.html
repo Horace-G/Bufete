@@ -86,12 +86,13 @@
                 <div class="col s12">
                 <table class="striped"id="table">
                   <tr>
-                      <th>Estado</th><th>Fecha</th><th>Usuario</th>
+                      <th>Estado</th><th>Fecha</th><th>Usuario</th><th>Expander</th>
                   </tr>
                   <tr ng-repeat="item in listaEstados" value="{{item.NombreCicloVida}}">
-                               <td ><i class="large material-icons">search</i>{{item.NombreCicloVida}}</td>
+                               <td >{{item.NombreCicloVida}}</td>
                                <td >{{item.FechaCambio}}</td>
                                <td >{{item.UsuarioCambio}}</td>
+                                <td><i class="large material-icons">toc</i></td>
                   </tr>
                    
                 </table> 
