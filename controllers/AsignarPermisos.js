@@ -32,7 +32,7 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
         var count2 = Object.keys($scope.allPermisos).length;
         for(var i=1;i<=count2;i++){
                 
-                document.getElementById($scope.allPermisos[i].id).checked = false;
+                document.getElementById($scope.allPermisos[i - 1].id).checked = false;
                 
         }
         var path = $location.path($location.path());
