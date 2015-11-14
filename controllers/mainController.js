@@ -5,6 +5,7 @@ angular.module('myApp').controller('mainController', ['$scope', '$log','$http','
     ctrl.init = function(){
         mensajeService.getMensaje();
         permisosUsuarioService.initPermisos();
+        $scope.Permisos = permisosUsuarioService.Permisos;
     };
     
     $scope.logout = function(){

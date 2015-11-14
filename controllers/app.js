@@ -11,7 +11,7 @@ myApp.config(function ($routeProvider) {
     
     .when('/medicamentos', {
         templateUrl: 'public/views/configuracion.html',
-        controller: 'secondController'
+        controller: 'mainController'
     })
     
      .when('/configuracion', {
@@ -49,27 +49,22 @@ myApp.config(function ($routeProvider) {
     
      .when('/reportes', {
         templateUrl: 'public/views/reportes.html',
-        controller: 'secondController'
+        controller: 'mainController'
     })
     
     .when('/usuarios', {
         templateUrl: 'public/views/usuarios.html',
-        controller: 'secondController'
-    })
-    
-    .when('/reportes', {
-        templateUrl: 'public/views/reportes.html',
-        controller: 'secondController'
+        controller: 'mainController'
     })
     
      .when('/modificarConfiguracion', {
         templateUrl: 'public/views/modificarConfiguracion.html',
-        controller: 'secondController'
+        controller: 'mainController'
     })
     
     .when('/second/:num', {
         templateUrl: 'public/views/second.html',
-        controller: 'secondController'
+        controller: 'mainController'
     })
     
 });
