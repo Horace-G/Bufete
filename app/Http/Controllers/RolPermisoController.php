@@ -54,10 +54,10 @@ class RolPermisoController extends Controller
         
         foreach ($allPermiso as $permiso){
             if ($permisoUsuario[$iteration]->IdPermiso == $permiso->id){
-                array_add($retVal,$permiso->nombre,true);
+                 $retVal = array_add($retVal,$permiso->nombre,true);
                 $iteration++;
             }else{
-                array_add($retVal,$permiso->nombre,false);
+                 $retVal = array_add($retVal,$permiso->nombre,false);
             }
         }
         return json_encode($retVal);
