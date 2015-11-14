@@ -67,9 +67,8 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
         var SelectedPermisos=[];
         var sizetable=$('#table tr').length-1;
         for(var i=1;i<=sizetable;i++){
-            if(document.getElementById(i).checked)
-            SelectedPermisos.push(i);
-            
+            if(document.getElementById($scope.allPermisos[i - 1].id).checked)
+                SelectedPermisos.push($scope.allPermisos[i - 1].id);  
         }
         
         var path = $location.path($location.path());
