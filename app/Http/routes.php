@@ -23,15 +23,11 @@ Route::get('/',['middleware' => 'auth',function () {
 }]);
 */
 
-Route::get('/Pito',function () {
-    return view('index');
-});
-
-
 Route::get('/',['middleware' => 'auth',function () {
     return view('index');
 }]);
 
+Route::get('/getUserPermisos',['middleware' => 'auth', 'RolPermisoController@getUserPermisos']);
 
 Route::get('/login',function(){
     return view('login');

@@ -29,7 +29,7 @@ class RolPermisoController extends Controller
         return Response::json(array('Success' => 'true'));
                 }
 
-                public function allRolPermiso(){
+     public function allRolPermiso(){
                         $retVal = DB::table('rol_permiso')->get();
                         return Response::json($retVal);
                 }
@@ -39,6 +39,15 @@ class RolPermisoController extends Controller
             $retVal = DB::table('rol_permiso')->where('rol_id','=',$rol_id)->get();
             return Response::json($retVal);
         }
+    
+    public function getUserPermisos(){
+        $permiso = DB::table('usuario')
+            ->join('rol', 'usuario.rol_id','=','rol.id')
+            ->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+            ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')
+            ->where('usuario.id', Auth::user()->id)->get();
+        return Response::json($permiso);
+    }
 
 
 }
