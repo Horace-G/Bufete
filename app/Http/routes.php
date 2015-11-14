@@ -27,7 +27,7 @@ Route::get('/',['middleware' => 'auth',function () {
     return view('index');
 }]);
 
-Route::get('/getUserPermisos',['middleware' => 'auth', 'RolPermisoController@getUserPermisos']);
+Route::get('/getUserPermisos',['middleware' => 'auth', 'uses' => 'RolPermisoController@getUserPermisos']);
 
 Route::get('/login',function(){
     return view('login');
