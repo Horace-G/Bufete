@@ -110,6 +110,20 @@ medicamentoService.$inject = [
     '$location'
 ];
 
+myApp.service('permisosUsuarioService',permisosUsuarioService);
+permisosUsuarioService.$inject = [
+    '$http',
+    '$location'
+]
+
+function permisosUsuarioService($http,$location){
+    var ctrl = this;
+    var Permisos = {};
+    ctrl.getPermisos = function(){
+        return Permisos;
+    }
+}
+
 function medicamentoService($http,$location) {
     var ctrl = this;
     

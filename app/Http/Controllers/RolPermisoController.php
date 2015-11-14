@@ -41,12 +41,23 @@ class RolPermisoController extends Controller
         }
     
     public function getUserPermisos(){
-        $permiso = DB::table('usuario')
+        $permisoUsuario = DB::table('usuario')
             ->join('rol', 'usuario.rol_id','=','rol.id')
             ->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
             ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')
             ->select('permiso.nombre as PermisoNombre','rol_permiso.permiso_id as IdPermiso')
             ->where('usuario.id', Auth::user()->id)->get();
+        $allPermiso = DB::table('permiso')-select('id','nombre')->get();
+        
+        $retVal = array();
+        
+        foreach ($allPermiso as $permiso){
+            if ($permisoUsuario->contains(function($item){ return $item->IdPermiso == $permiso->id })){
+                array_add($retVal,$permiso->nombre,true);
+            }else{
+                array_add($retVal,$permiso->nombre,false);
+            }
+        }
         return Response::json($permiso);
     }
 
