@@ -52,7 +52,7 @@ class RolPermisoController extends Controller
         $retVal = array();
         
         foreach ($allPermiso as $permiso){
-            if ($permisoUsuario->contains(function($item){ return $item->IdPermiso == $permiso->id })){
+            if ($permisoUsuario->contains(function($item){ return $item->IdPermiso == $permiso->id; })){
                 array_add($retVal,$permiso->nombre,true);
             }else{
                 array_add($retVal,$permiso->nombre,false);
