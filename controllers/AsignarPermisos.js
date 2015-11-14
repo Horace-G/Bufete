@@ -48,7 +48,7 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
             var count = Object.keys($scope.allRol).length;
             for(var i=0;i<count;i++){
                 if($scope.selectedOption==$scope.allRol[i].rol_id){
-                document.getElementById($scope.allRol[i].permiso_id).checked = true;
+                    document.getElementById(i+1).checked = true;
                 }
             }
             
