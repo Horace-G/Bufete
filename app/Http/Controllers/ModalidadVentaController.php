@@ -10,6 +10,16 @@
 	class ModalidadVentaController extends Controller {
 		
 		public function saveModalidadVenta(Request $request){
+			$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '5')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
+
 			$namePC = $request->input('nameModalidadVenta');
 			$descPC = $request->input('descriptionModalidadVenta');
 			$estadoPC = $request->input('estadoModalidadVenta');
@@ -31,6 +41,15 @@
 		}
 
 		public function updateModalidadVenta(Request $request){
+			$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '6')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
 			$id = $request->input('idModalidadVenta');
 			$namePC = $request->input('nameModalidadVenta');
                         $descPC = $request->input('descriptionModalidadVenta');

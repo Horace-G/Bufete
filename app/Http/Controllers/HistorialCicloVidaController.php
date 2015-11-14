@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Routing\Controller;
+use Illuminate\Routing\Controller as BaseController;
 use Response;
 use Carbon\Carbon;
 use DB;
@@ -13,6 +13,16 @@ use DB;
 class HistorialCicloVidaController extends Controller
 {
 		public function saveHistorialCicloVida(Request $request){
+			$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '14')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
+
                         $idMedicamento = $request->input('id_medicamentoHistorial');
                         $idEstado = $request->input('id_EstadoHistorial');
                         $estado = $request->input('estadoHistorial');

@@ -14,7 +14,17 @@ use Illuminate\Http\Request;
 class PermisoController extends Controller
 {
 	public function savePermiso(Request $request){
-                        $descripcionP = $request->input('descripcionPermiso');
+                        $permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '11')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
+
+			$descripcionP = $request->input('descripcionPermiso');
                         $estadoP = $request->input('estadoPermiso');
                         $userCreate = Auth::user()->username;
 	    	 	$date = Carbon::now();
@@ -36,6 +46,17 @@ class PermisoController extends Controller
                 }
 
 		public function updatePermiso(Request $request){
+
+			$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '12')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
+
 			$id = $request->input('idPermiso');
 
 			$descripcionP = $request->input('descripcionPermiso');

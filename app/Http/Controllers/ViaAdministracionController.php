@@ -10,6 +10,16 @@
 	class ViaAdministracionController extends Controller {
 		
 		public function saveViaAdministracion(Request $request){
+			$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '17')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
+
 			$namePC = $request->input('nameViaAdministracion');
 			$descPC = $request->input('descriptionViaAdministracion');
 			$estadoPC = $request->input('estadoViaAdministracion');
@@ -32,6 +42,15 @@
 		}
 
 		public function updateViaAdministracion(Request $request){
+			$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '18')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
 			$id = $request->input('idViaAdministracion');
 			$namePC = $request->input('nameViaAdministracion');
                         $descPC = $request->input('descriptionViaAdministracion');

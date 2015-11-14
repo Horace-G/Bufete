@@ -13,6 +13,16 @@ use Schema;
 class MedicamentoController extends Controller
 {
     public function saveMedicamento(Request $request){
+	$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+	->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '13')
+	->where('usuario.id', Auth::user()->id)->count();
+
+	if($permiso<1){
+		return Response::json(array('Success' => 'false'));
+		//return redirect()->intended('/');
+	}
+
+
 	$nombreM = $request->input('nombreMedicamento');
         $modalidadVentaM = $request->input('modalidadVentaMedicamento');
 	$formaFarmaceuticaM = $request->input('formaFarmaceuticaMedicamento');
@@ -37,6 +47,16 @@ class MedicamentoController extends Controller
     }
 
     public function updateMedicamento(Request $request){
+	$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '14')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
+
 	$id = $request->input('idMedicamento');
 	$nombreM = $request->input('nombreMedicamento');
         $modalidadVentaM = $request->input('modalidadVentaMedicamento');

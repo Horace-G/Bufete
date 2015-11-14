@@ -17,10 +17,21 @@ class CreateMedicamentoTable extends Migration
 
             $table->string('nombre', 64);
         $table->integer('modalidadVentaId')->unsigned();
+	$table->foreign('modalidadVentaId')->references('id')->on('modalidad_venta')->onDelete('cascade');
+
+
         $table->integer('formaFarmaceuticaId')->unsigned();
-            $table->integer('presentacionComercialId')->unsigned();
+	$table->foreign('formaFarmaceuticaId')->references('id')->on('forma_farmaceutica')->onDelete('cascade');
+
+        $table->integer('presentacionComercialId')->unsigned();
+	$table->foreign('presentacionComercialId')->references('id')->on('presentacion_comercial')->onDelete('cascade');
+
         $table->integer('viaAdministracionId')->unsigned();
+	$table->foreign('viaAdministracionId')->references('id')->on('via_administracion')->onDelete('cascade');
+
         $table->integer('laboratorioId')->unsigned();
+	$table->foreign('laboratorioId')->references('id')->on('laboratorio')->onDelete('cascade');
+
         $table->string('representante',64);
 	    $table->string('user_created',64);
 	    $table->string('user_updated',64);

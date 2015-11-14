@@ -13,6 +13,15 @@ use Log;
 class LaboratorioController extends Controller
 {
     public function saveLaboratorio(Request $request){
+		$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '9')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
 		$nombre = $request->input('nameLaboratorio');
 		$direccion = $request->input('descriptionLaboratorio');
 		$correo = $request->input('correoLaboratorio');
@@ -46,6 +55,15 @@ class LaboratorioController extends Controller
     }
 
 	public function updateLaboratorio(Request $request){
+		$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '10')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
 		$id = $request->input('idLaboratorio');
 		$nombre = $request->input('nameLaboratorio');
                 $direccion = $request->input('descriptionLaboratorio');

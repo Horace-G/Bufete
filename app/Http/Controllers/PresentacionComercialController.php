@@ -10,6 +10,16 @@
 	class PresentacionComercialController extends Controller {
 		
 		public function savePresentacionComercial(Request $request){
+			$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '15')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
+			
 			$namePC = $request->input('namePresentacionComercial');
 			$descPC = $request->input('descriptionPresentacionComercial');
 			$estadoPC = $request->input('estadoPresentacionComercial');
@@ -32,6 +42,15 @@
 		}
 		
 		public function updatePresentacionComercial(Request $request){
+			$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+        ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '16')
+        ->where('usuario.id', Auth::user()->id)->count();
+
+        if($permiso<1){
+                return Response::json(array('Success' => 'false'));
+                //return redirect()->route('/');
+        }
+
 			$id = $request->input('idPresentacionComercial');
 			$namePC = $request->input('namePresentacionComercial');
                         $descPC = $request->input('descriptionPresentacionComercial');
