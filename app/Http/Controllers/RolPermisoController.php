@@ -45,6 +45,7 @@ class RolPermisoController extends Controller
             ->join('rol', 'usuario.rol_id','=','rol.id')
             ->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
             ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')
+            ->select('permiso.nombre as PermisoNombre','rol_permiso.permiso_id as IdPermiso')
             ->where('usuario.id', Auth::user()->id)->get();
         return Response::json($permiso);
     }
