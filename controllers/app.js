@@ -118,7 +118,20 @@ permisosUsuarioService.$inject = [
 
 function permisosUsuarioService($http,$location){
     var ctrl = this;
-    var Permisos = {};
+    ctrl.Permisos = {};
+    ctrl.initPermisos = function(){
+        var path = $location.path($location.path());
+		var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/getUserPermisos';
+        var request = {
+			method: 'GET',
+			url: baseUrl
+        };
+        return $http(request).then(function(response){
+             ctrl.Permisos = response.data;
+            console.log(ctrl.Permisos);
+        });
+    }
+    
     ctrl.getPermisos = function(){
         return Permisos;
     }

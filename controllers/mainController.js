@@ -1,9 +1,10 @@
-angular.module('myApp').controller('mainController', ['$scope', '$log','$http','$location','mensajeService', function($scope, $log,$http,$location,mensajeService) {
+angular.module('myApp').controller('mainController', ['$scope', '$log','$http','$location','mensajeService','permisosUsuarioService', function($scope, $log,$http,$location,mensajeService,permisosUsuarioService) {
     $scope.name = 'Main';
     var ctrl = this;
     
     ctrl.init = function(){
         mensajeService.getMensaje();
+        permisosUsuarioService.initPermisos();
     };
     
     $scope.logout = function(){

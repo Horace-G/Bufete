@@ -1,4 +1,5 @@
-angular.module('myApp').controller('modalidad_venta', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
+angular.module('myApp').controller('modalidad_venta', ['$scope','$http','$location','mensajeService','permisosUsuarioService', function ($scope,$http,$location,mensajeService,permisosUsuarioService) {
+    $scope.PERMISO = permisosUsuarioService.Permisos['CREATE_MODALIDAD_VENTA'];
     $scope.nombre = '';
           $scope.descripcion='';
  $scope.symbols = new RegExp("[<>%\$!@#%^&*()_+]");
