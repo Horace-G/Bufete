@@ -32,7 +32,7 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
         var count2 = Object.keys($scope.allPermisos).length;
         for(var i=1;i<=count2;i++){
                 
-                document.getElementById(i).checked = false;
+                document.getElementById($scope.allPermisos[i].id).checked = false;
                 
         }
         var path = $location.path($location.path());
@@ -48,7 +48,7 @@ angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$locati
             var count = Object.keys($scope.allRol).length;
             for(var i=0;i<count;i++){
                 if($scope.selectedOption==$scope.allRol[i].rol_id){
-                    document.getElementById(i+1).checked = true;
+                document.getElementById($scope.allRol[i].permiso_id).checked = true;
                 }
             }
             
