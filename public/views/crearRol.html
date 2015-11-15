@@ -22,11 +22,15 @@
    
        
 </script>
-
+<style>
+    .nodisplay{
+        display:none;
+    }
+</style>
 <menu-usuarios></menu-usuarios>
 <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
      <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Crear Nuevo Rol</h4><h6 class="flow-text brown-text lighten-3"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
-    <li collection-item id="Config-li">
+    <li collection-item id="Config-li" ng-class ="{nodisplay: Permisos['CREATE_ROL'] == false}">
       <div class="collapsible-header"><i class="material-icons">info_outline</i>Crear Rol</div>
       <div class="collapsible-body popup-element padded">
       
@@ -54,7 +58,7 @@
         </div>
 </div>
 </li>
- <li id="Config-li">
+    <li id="Config-li" ng-class ="{nodisplay: Permisos['ASIGN_PERMISO'] == false}">
       <div class="collapsible-header"><i class="material-icons">vpn_key</i>Asignar Permisos</div>
       <div class="collapsible-body popup-element">
       
