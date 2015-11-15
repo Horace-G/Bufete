@@ -6,6 +6,7 @@ angular.module('myApp').controller('mainController', ['$scope', '$log','$http','
         mensajeService.getMensaje();
         permisosUsuarioService.initPermisos();
         $scope.Permisos = permisosUsuarioService.Permisos;
+        $(".nodisplay").remove();
     };
     
     $scope.logout = function(){

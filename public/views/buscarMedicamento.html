@@ -28,7 +28,7 @@
 
 <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
      <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Busqueda de Medicamento</h4><h6 class="flow-text brown-text lighten-3"></h6></li>
-    <li collection-item id="Config-li">
+    <li collection-item id="Config-li" ng-class ="{nodisplay: Permisos['SEARCH_MEDICAMENTO'] == false}">
       <div class="collapsible-header"><i class="material-icons">search</i>Buscar Medicamento</div>
       <div class="collapsible-body popup-element padded">
       
