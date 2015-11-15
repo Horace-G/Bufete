@@ -1,11 +1,12 @@
 {
   "private": true,
   "devDependencies": {
+    "grunt-bower-install": "^1.6.0",
     "gulp": "^3.8.8"
   },
   "dependencies": {
     "laravel-elixir": "^3.0.0",
     "bootstrap-sass": "^3.0.0",
-	"nesbot/carbon": "~1.14"
+    "nesbot/carbon": "~1.14"
   }
 }
