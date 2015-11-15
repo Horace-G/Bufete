@@ -23,6 +23,11 @@
    
        
 </script>
+<style>
+    .nodisplay{
+        display:none;
+    }
+</style>
 
 <medicamentos-menu></medicamentos-menu>
 
@@ -59,7 +64,7 @@
           
       </div>
     </li>
-    <li ng-if ="Permisos['CREATE_MODALIDAD_VENTA']" id="Config-li">
+    <li id="Config-li">
       <div class="collapsible-header"><i class="material-icons">input</i>Modalidad de Ventas</div>
       <div class="collapsible-body popup-element">
       
@@ -86,7 +91,7 @@
           
       </div>
     </li>
-    <li id="Config-li" ng-if ="Permisos['CREATE_CATEGORIA_MEDICAMENTO']">
+    <li id="Config-li" ng-class ="{nodisplay: Permisos['CREATE_CATEGORIA_MEDICAMENTO']}">
       <div class="collapsible-header"><i class="material-icons">invert_colors</i>Categorias de Medicamentos</div>
       <div class="collapsible-body popup-element">
       
@@ -114,7 +119,7 @@
       </div>
     </li>
     <li id="Config-li">
-      <div ng-if ="Permisos['CREATE_CICLO_VIDA']" class="collapsible-header"><i class="material-icons">labels</i>Estados de Ciclo de Vida</div>
+      <div class="collapsible-header"><i class="material-icons">labels</i>Estados de Ciclo de Vida</div>
       <div class="collapsible-body popup-element">
       
            <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo estado de ciclo de vida en el proceso de legalización</h3>
@@ -140,7 +145,7 @@
           
       </div>
     </li>
-     <li id="Config-li">
+    <li id="Config-li">
       <div class="collapsible-header"><i class="material-icons">polymer</i>Vía de Administración</div>
       <div class="collapsible-body popup-element">
       
@@ -169,7 +174,7 @@
           
       </div>
     </li>
-     <li id="Config-li">
+    <li id="Config-li">
       <div class="collapsible-header"><i class="material-icons">assessment</i>Forma Farmaceutica</div>
       <div class="collapsible-body popup-element">
       
@@ -198,7 +203,7 @@
           
       </div>
     </li>
-     <li id="Config-li">
+    <li id="Config-li">
       <div class="collapsible-header"><i class="material-icons">input</i>Laboratorio</div>
       <div class="collapsible-body popup-element padded">
       
