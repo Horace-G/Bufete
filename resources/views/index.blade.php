@@ -9,9 +9,9 @@
         <!--Materialize CSS via CDN --->
         
         
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        --><link href="./public/CSS/styles.css" rel="stylesheet">
+        <link href="./public/CSS/styles.css" rel="stylesheet">
         
         <link href="./public/CSS/toastr.css" rel="stylesheet">
         
@@ -33,7 +33,7 @@
         
         <script src="./public/JS/angular.min.js"></script> 
         <script src="./public/JS/angular-route.min.js"></script>
-        <!--<script src="./public/JS/materialize/js/materialize.min.js"></script>-->
+        <script src="./public/JS/materialize/js/materialize.min.js"></script>
         <script src="./public/JS/angular-route.min.js"></script>
         <script src="./controllers/app.js"></script>
         <script src="./controllers/mainController.js"></script>

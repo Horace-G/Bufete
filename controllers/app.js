@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp', ['ngRoute','ui.materialize']);
+var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(['$compileProvider', function ($compileProvider) {
     $compileProvider.debugInfoEnabled(false);
