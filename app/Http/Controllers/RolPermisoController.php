@@ -53,7 +53,7 @@ class RolPermisoController extends Controller
         $iteration = 0;
         
         foreach ($allPermiso as $permiso){
-            if (count($permisoUsuario) > $iteration || $permisoUsuario[$iteration]->IdPermiso == $permiso->id){
+            if (count($permisoUsuario) > $iteration && $permisoUsuario[$iteration]->IdPermiso == $permiso->id){
                  $retVal = array_add($retVal,$permiso->nombre,true);
                  $iteration++;
             }else{
