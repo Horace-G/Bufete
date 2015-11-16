@@ -51,8 +51,16 @@
                   <input disabled id="nombreMedicamento" type="text" class="validate darkFont" ng-model="nombre">
                   
                </div>
+                  <div class="input-field col s1">
+                    Estado Actual
+                </div>
+               <div class="input-field col s11">
+                  <i class="material-icons prefix">account_circle</i>
+                  <input disabled id="nombreMedicamento" type="text" class="validate darkFont" ng-model="estado">
+                  
+               </div>
                  <div class="input-field col s2">
-                    Ciclo de vida
+                    Nuevo Estado
                 </div>
                <div class="input-field col s10">
                   <select class="browser-default" id="listaCicloVida" ng-model="selectedOption">
@@ -61,7 +69,7 @@
                   
                </div>
                   <div class="col s6 center-align">
-                    <button ng-click="historico()" class="btn-large waves-effect waves-light green darken-1">Historico</button>
+                    <button ng-click="Modificar()" class="btn-large waves-effect waves-light green darken-1">Modificar</button>
                 </div>
                </div>
           </form>

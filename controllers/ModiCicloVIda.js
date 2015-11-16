@@ -5,7 +5,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
     $scope.allOptions = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
-        alert("gg");
+        
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allEstadoCicloVidaMod';
         var request = {
@@ -26,7 +26,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
             Medicamentos=response.data;
                     
             $scope.nombre=Medicamentos[0].MedicamentoNombre;
-            
+            $scope.estado=Medicamentos[0].CicloVidaNombre;
              if(typeof(Storage) !== "undefined") {
                 sessionStorage.IdMedicamento=$scope.codigo;
                 }else{   
@@ -34,4 +34,17 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
         });
     };
     ctrl.init();
+    $scope.Modificar = function(){
+        alert($scope.selectedOption);
+        var path = $location.path($location.path());
+        var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveHistorialCicloVida';
+        var request = {
+                method: 'POST',
+                url: baseUrl,
+                data: {idMedicamento: sessionStorage.IdMedicamento,idEstado: $scope.selectedOption}
+        };
+        $http(request).then(function(response){
+            
+        }
+    }
 }]);
