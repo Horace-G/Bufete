@@ -46,7 +46,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
     };
     ctrl.init();
     $scope.Modificar = function(){
-        
+        alert($scope.estadoviejo);
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveHistorialCicloVida';
         var request = {
