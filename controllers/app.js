@@ -50,6 +50,10 @@ myApp.config(function ($routeProvider) {
         templateUrl: 'public/views/historico.html',
         controller: 'mainController'
     })
+    .when('/ModificarExpedienteCiclo', {
+        templateUrl: 'public/views/ModificarExpedienteCiclo.html',
+        controller: 'mainController'
+    })
     
      .when('/reportes', {
         templateUrl: 'public/views/reportes.html',
