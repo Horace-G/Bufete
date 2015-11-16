@@ -23,15 +23,15 @@ class HistorialCicloVidaController extends Controller
         }
 
 
-                        $idMedicamento = $request->input('id_medicamentoHistorial');
-                        $idEstado = $request->input('id_EstadoHistorial');
-                        $estado = $request->input('estadoHistorial');
+                        $idMedicamento = $request->input('idMedicamento');
+                        $idEstado = $request->input('idEstado');
+                        //$estado = $request->input('estadoHistorial');
                         $date = Carbon::now();
 
 
                         DB::statement('SET FOREIGN_KEY_CHECKS=0;');
                         DB::table('historial_ciclo_vida')->insert(
-                                array('medicamentoId'=>$idMedicamento, 'ciclo_vidaId'=>$idEstado, 'estado'=>$estado,
+                                array('medicamentoId'=>$idMedicamento, 'ciclo_vidaId'=>$idEstado, 'estado'=>0,
                                                 'fecha'=>$date)
                         );
 

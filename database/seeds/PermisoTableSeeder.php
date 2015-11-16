@@ -35,7 +35,8 @@ class PermisoTableSeeder extends Seeder {
 	    
 		['id' => 17,'nombre'=>'CREATE_VIA_ADMINISTRACION', 'descripcion' => 'Crear Via Administracion', 'user_created' => 1, 'user_updated' => 1, 'estado'=> 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
 	    ['id' => 18,'nombre'=>'MOD_VIA_ADMINISTRACION', 'descripcion' => 'Modificar Via Administracion', 'user_created' => 1, 'user_updated' => 1, 'estado'=> 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
-        ['id' => 19,'nombre'=>'SEARCH_MEDICAMENTO', 'descripcion' => 'Busqueda Medicamento', 'user_created' => 1, 'user_updated' => 1, 'estado'=> 1, 'created_at' => new DateTime, 'updated_at' => new DateTime]
+        ['id' => 19,'nombre'=>'SEARCH_MEDICAMENTO', 'descripcion' => 'Busqueda Medicamento', 'user_created' => 1, 'user_updated' => 1, 'estado'=> 1, 'created_at' => new DateTime, 'updated_at' => new DateTime],
+            
 	    );
  
         // Uncomment the below to run the seeder
