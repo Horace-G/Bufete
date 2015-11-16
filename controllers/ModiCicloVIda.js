@@ -6,15 +6,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
     $scope.selectedOption = {};
     ctrl.init = function(){
         
-        var path = $location.path($location.path());
-        var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allEstadoCicloVidaMod';
-        var request = {
-                method: 'GET',
-                url: baseUrl
-        };
-        $http(request).then(function(response){
-            $scope.allOptions = response.data;
-        });
+       
     var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/getMedicamento';
         var request = {
@@ -31,6 +23,21 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
                 sessionStorage.IdMedicamento=$scope.codigo;
                 }else{   
                 }
+        });
+         var path = $location.path($location.path());
+        var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allEstadoCicloVidaMod';
+        var request = {
+                method: 'GET',
+                url: baseUrl
+        };
+        $http(request).then(function(response){
+            $scope.allOptions = response.data;
+            for(var i=0;i<$scope.allOptions.length;i++){
+                if($scope.allOptions[i]==$scope.estado){
+                    $scope.allOptions.splice(i,1);
+                }
+            }
+            
         });
     };
     ctrl.init();
