@@ -4,6 +4,8 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
     var ctrl = this;
     $scope.allOptions = [];
     $scope.selectedOption = {};
+    $scope.id;
+    $scope.estadoviejo;
     ctrl.init = function(){
         
        
@@ -16,9 +18,10 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
         };
         $http(request).then(function(response){
             Medicamentos=response.data;
-                    
+            $scope.id=Medicamentos[0].MedicamentoId;        
             $scope.nombre=Medicamentos[0].MedicamentoNombre;
             $scope.estado=Medicamentos[0].CicloVidaNombre;
+            $scope.estadoviejo=Medicamentos[0].CicloVidaId;
              if(typeof(Storage) !== "undefined") {
                 sessionStorage.IdMedicamento=$scope.codigo;
                 }else{   
@@ -33,7 +36,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
         $http(request).then(function(response){
             $scope.allOptions = response.data;
             for(var i=0;i<$scope.allOptions.length;i++){
-                alert($scope.allOptions[i].nombre);
+                
                 if($scope.allOptions[i].nombre==$scope.estado){
                     $scope.allOptions.splice(i,1);
                 }
@@ -43,13 +46,13 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
     };
     ctrl.init();
     $scope.Modificar = function(){
-        alert($scope.selectedOption);
+        
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveHistorialCicloVida';
         var request = {
                 method: 'POST',
                 url: baseUrl,
-                data: {idMedicamento: sessionStorage.IdMedicamento,idEstado: $scope.selectedOption}
+                data: {idMedicamento: $scope.id,idEstado: $scope.selectedOption,idEstadoViejo:$scope.estadoviejo}
         };
         $http(request).then(function(response){
             
