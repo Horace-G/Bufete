@@ -34,6 +34,8 @@ angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location
     $scope.volver = function(){
           window.location=document.getElementById('buscarMedicamento').href;  
     }
-
+    $scope.modificarCiclo = function(){
+          window.location=document.getElementById('ModificarExpedienteCiclo').href;  
+    }
     
 }]);
