@@ -33,7 +33,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
         $http(request).then(function(response){
             $scope.allOptions = response.data;
             for(var i=0;i<$scope.allOptions.length;i++){
-                alert($scope.allOptions[i].nombre);
+                
                 if($scope.allOptions[i].nombre==$scope.estado){
                     $scope.allOptions.splice(i,1);
                 }
@@ -43,7 +43,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
     };
     ctrl.init();
     $scope.Modificar = function(){
-        alert($scope.selectedOption);
+        
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveHistorialCicloVida';
         var request = {
