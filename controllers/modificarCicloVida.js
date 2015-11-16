@@ -14,6 +14,7 @@ angular.module('myApp').controller('modificar_ciclo_vida', ['$scope','$http','$l
         $http(request).then(function(response){
             $scope.allOptions = response.data;
         });
+        
     };
     
     $scope.onChangeSelect = function(){

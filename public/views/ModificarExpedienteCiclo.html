@@ -40,7 +40,7 @@
       
          <h3 class="center-align flow-text brown-text lighten-4">{{MedicamentoNombre}}</h3>
           <div class="row padded">
-            <form class="col s12" ng-submit="submit()" ng-controller="VerExpediente">
+            <form class="col s12" ng-submit="submit()" ng-controller="ModificarExpedienteCiclo">
                 
               <div class="row">
                  <div class="input-field col s1">
@@ -51,7 +51,15 @@
                   <input disabled id="nombreMedicamento" type="text" class="validate darkFont" ng-model="nombre">
                   
                </div>
-                    
+                 <div class="input-field col s2">
+                    Ciclo de vida
+                </div>
+               <div class="input-field col s10">
+                  <select class="browser-default" id="listaCicloVida" ng-model="selectedOption">
+                        <option ng-repeat="item in allOptions" value="{{item.id}}">{{item.nombre}}</option>
+                  </select>
+                  
+               </div>
                </div>
           </form>
               
