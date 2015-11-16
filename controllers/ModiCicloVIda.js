@@ -5,6 +5,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
     $scope.allOptions = [];
     $scope.selectedOption = {};
     ctrl.init = function(){
+        alert("gg");
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/allEstadoCicloVidaMod';
         var request = {
