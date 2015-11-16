@@ -59,7 +59,7 @@
         <script src="./controllers/modificarCicloVida.js"></script>
         <script src="./controllers/modificarViaAdministracion.js"></script>
         <script src="./controllers/modificarFormaFarmaceutica.js"></script>
-        <script src="./controllers/ModificarExpedienteCiclo.js"></script>
+        <script src="./controllers/ModiCicloVIda.js"></script>
         
         
     </head>
