@@ -45,6 +45,6 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
         };
         $http(request).then(function(response){
             
-        }
+        });
     }
 }]);
