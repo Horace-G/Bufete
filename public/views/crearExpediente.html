@@ -23,12 +23,16 @@
    
        
 </script>
-
+<style>
+    .nodisplay{
+        display:none;
+    }
+</style>
 <medicamentos-menu></medicamentos-menu>
 
 <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
      <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Crear Nuevo Expediente Medico</h4><h6 class="flow-text brown-text lighten-3"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
-    <li collection-item id="Config-li">
+    <li collection-item id="Config-li" ng-class ="{nodisplay: Permisos['CREATE_MEDICAMENTO'] == false}">
       <div class="collapsible-header"><i class="material-icons">info_outline</i>Crear Expediente</div>
       <div class="collapsible-body popup-element padded">
       
