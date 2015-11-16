@@ -33,4 +33,5 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
                 }
         });
     };
+    ctrl.init();
 }]);
