@@ -50,6 +50,10 @@ angular.module('myApp').controller('buscar_medicamento', ['$scope','$http','$loc
         $http(request).then(function(response){
             $scope.listaMedicamentos=response.data;
             console.log(response.data);
+            if(response.data.length==0){
+                        mensajeService.ShowMessage('NO_SEARCH','Busqueda');
+
+            }
         });
         
         

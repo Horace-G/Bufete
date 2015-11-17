@@ -46,7 +46,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
     };
     ctrl.init();
     $scope.Modificar = function(){
-        alert($scope.estadoviejo);
+        
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveHistorialCicloVida';
         var request = {
@@ -55,7 +55,12 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
                 data: {idMedicamento: $scope.id,idEstado: $scope.selectedOption,idEstadoViejo:$scope.estadoviejo}
         };
         $http(request).then(function(response){
-            
+            if(response.data.Success=="true"){
+                        mensajeService.ShowMessage('UPDATE_ESTADO','Medicamento');
+
+            }else{
+                        mensajeService.ShowMessage('WUT!','Error Grave Apague la Compu');
+            }
         });
     }
 }]);
