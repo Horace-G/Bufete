@@ -22,6 +22,8 @@ class MensajeTableSeeder extends Seeder {
             ['nombre'=>'INVALID_EMAIL','descripcion'=>'- no coincide con el formato de Email','gravedad'=>1],
             ['nombre'=>'ADD_NUM','descripcion'=>'- seleccione ingresar numero telefonico','gravedad'=>1],
             ['nombre'=>'NO_SELECTED','descripcion'=>'- no hay seleccionado','gravedad'=>1],
+            ['nombre'=>'UPDATE_ESTADO','descripcion'=>'- estado actualizado correctamente','gravedad'=>0],
+            ['nombre'=>'NO_SEARCH','descripcion'=>'- No se encontraron datos','gravedad'=>1],
             ['nombre'=>'WUT','descripcion'=>'- WUT WUT','gravedad'=>3]
             );
  
