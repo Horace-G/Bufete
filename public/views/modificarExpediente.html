@@ -1,4 +1,3 @@
-
 <script>
      $(document).ready(function(){
      $('.collapsible').collapsible({
@@ -39,69 +38,78 @@
 </div>
 
 <ul class="collapsible popout collection with-header" data-collapsible="accordion" id="Config">
-     <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Crear Nuevo Expediente Medico</h4><h6 class="flow-text brown-text lighten-3"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
+     <li class="center-align collection-header brown-text lighten-3"><h4 class="flow-text header">Modificar Expediente Medico</h4><h6 class="flow-text brown-text lighten-3"> Ingrese los campos necesarios para crear el nuevo valor</h6></li>
     <li collection-item id="Config-li" ng-class ="{nodisplay: Permisos['CREATE_MEDICAMENTO'] == false}">
-      <div class="collapsible-header"><i class="material-icons">info_outline</i>Crear Expediente</div>
+      <div class="collapsible-header"><i class="material-icons">info_outline</i>Modificar Expediente</div>
       <div class="collapsible-body popup-element padded">
       
-         <h3 class="center-align flow-text brown-text lighten-4">Ingrese los atributos necesarios para crear un nuevo expediente al sistema</h3>
+         <h3 class="center-align flow-text brown-text lighten-4">Seleccione el expediente que desea modificar y luego seleccione los campos a los que desee actualizar</h3>
           <div class="row">
-            <form class="col s12" ng-submit="submit()"ng-controller="crearexpediente">
+            <form class="col s12" ng-submit="submit()"ng-controller="modificarExpediente">
                  <div class="row">
                      <div class="input-field col s6">
-                          <input id="nombreProducto" type="text" class="validate" ng-model="nombre">
-                          <label for="nombreRepresentante">Nombre del Producto<span id="asterisco"> *</span></label>
                     </div>
-                    <div class="input-field col s6" style="overflow:auto">
+                       <div class="input-field col s6" style="overflow:auto">
                         
                         
-                        <select id="modalidadVenta">
-                            <option>Modalidad Venta</option>
+                        <select id="nombreModProducto">
+                            <option>Medicamento que se va modificar</option>
                         </select>
                         
                         
                         
-                        <label>Modalidad de Venta<span id="asterisco"> *</span></label>
+                        <label>Medicamento que se va a modificar<span id="asterisco"> *</span></label>
+                    </div>
+                    <div class="input-field col s6" style="overflow:auto">
+                        
+                        
+                        <select id="modalidadModVenta">
+                            <option>Nueva Modalidad Venta</option>
+                        </select>
+                        
+                        
+                        
+                        <label>Nueva Modalidad de Venta<span id="asterisco"> *</span></label>
                     </div>
                     <div class="input-field col s6" style="overflow:auto">
                         <!--ng-model="selectedTestAccount" ng-options="item.Id as item.Name for item in testAccounts"-->
                         
                         
-                        <select id="presentacionComercial">
-                            <option>Presentacion Comercial</option>
+                        <select id="presentacionModComercial">
+                            <option>Nueva Presentacion Comercial</option>
                         </select>
                         
                         
-                        <label>Presentacion Comercial<span id="asterisco"> *</span></label>
+                        <label>Nueva Presentacion Comercial<span id="asterisco"> *</span></label>
                     </div>
                     <div class="input-field col s6" style="overflow:auto">
                         
-                        <select    id="formaFarmaceutica">
-                            <option>forma farmaceutica</option>
+                        <select    id="formaModFarmaceutica">
+                            <option>Nueva forma farmaceutica</option>
                         </select>
                         
-                         <label>Forma Farmaceutica<span id="asterisco"> *</span></label>
+                         <label>Nueva Forma Farmaceutica<span id="asterisco"> *</span></label>
                     </div>
                      <div class="input-field col s6" style="overflow:auto">
                         
                          
-                         <select    id="viaAdministracion">
-                            <option>Via Administracion</option>
+                         <select    id="viaModAdministracion">
+                            <option>Nueva Via Administracion</option>
                         </select>
                          
                          
-                         <label>Via de administracion<span id="asterisco"> *</span></label>
+                         <label>Nueva Via de Administracion<span id="asterisco"> *</span></label>
                     </div>
                     
                      <div class="input-field col s6" style="overflow:auto">
                         
                          
-                         <select    id="laboratorioFabricante">
-                            <option>Laboratorio Fabricante</option>
+                         <select    id="laboratorioModFabricante">
+                            <option>Nuevo Laboratorio Fabricante</option>
                         </select>
                          
                          
-                         <label>Laboratorio Fabricante<span id="asterisco"> *</span></label>
+                         <label>Nuevo Laboratorio Fabricante<span id="asterisco"> *</span></label>
                     </div>
                      <div class="input-field col s6">
                           <input id="nombreRepresentante" type="text" class="validate" ng-model="responsable">
@@ -110,7 +118,7 @@
                   </div>
                   <br><br>
                 <div class="col s9 right-align">
-                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">+</button>
+                  <button ng-submit="submit()" class="btn-floating btn-large waves-effect waves-light brown lighten-1">Modificar</button>
                   </div>
             </form>
               

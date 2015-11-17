@@ -36,6 +36,11 @@ myApp.config(function ($routeProvider) {
         controller: 'mainController'
     })
     
+     .when('/modificarExpediente', {
+        templateUrl: 'public/views/modificarExpediente.html',
+        controller: 'mainController'
+    })
+    
      .when('/verExpediente', {
         templateUrl: 'public/views/verExpediente.html',
         controller: 'buscar_medicamento'
