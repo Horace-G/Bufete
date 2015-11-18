@@ -1,4 +1,4 @@
-angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
+angular.module('myApp').controller('AsignarPermisos', ['$scope','$http','$location','mensajeService','$route', function ($scope,$http,$location,mensajeService,$route) {
   var ctrl = this;
     
     $scope.allOptions = [];
@@ -86,6 +86,7 @@ $http(request).then(function(response){
     if(response.data.Success=="true"){
 		console.log(response.data.success);
         mensajeService.ShowMessage('SUCCESS_SAVE','Permisos de Rol');
+        $route.reload();
     }else{
         mensajeService.ShowMessage('FAILED_SAVE','Permisos de Rol');
     }

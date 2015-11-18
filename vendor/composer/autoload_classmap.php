@@ -493,6 +493,7 @@ return array(
     'PHP_Token_YIELD' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PHP_Token_YIELD_FROM' => $vendorDir . '/phpunit/php-token-stream/src/Token.php',
     'PermisoTableSeeder' => $baseDir . '/database/seeds/PermisoTableSeeder.php',
+    'PermisoUsuarioSeeder' => $baseDir . '/database/seeds/PermisoUsuarioSeeder.php',
     'Presentacion_ComercialTableSeeder' => $baseDir . '/database/seeds/Presentacion_ComercialTableSeeder.php',
     'RolTableSeeder' => $baseDir . '/database/seeds/RolTableSeeder.php',
     'SebastianBergmann\\Comparator\\ArrayComparator' => $vendorDir . '/sebastian/comparator/src/ArrayComparator.php',
