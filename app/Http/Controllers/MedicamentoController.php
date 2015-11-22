@@ -38,8 +38,13 @@ class MedicamentoController extends Controller
                         if ($exists>0){
                                 return Response::json(array('Success' => 'false'));
                         }
-    Mail::send('email',array('labName'=>'TEST','medName'=>$nombreM),function($message){
-        $message->to('nivx14@gmail.com','TEST')->subject('Medicamento Ingresado - Bufete Galdamez');
+        
+    $laboratorioInfo = DB::table('laboratorio')->select('nombre','correo')-where('id','=',$laboratorioM);
+        if ($laboratorioInfo->count() == 0){
+            return Response::json(array('Success' => 'false'));
+        }
+    Mail::send('email',array('labName'=>$laboratorioInfo->nombre,'medName'=>$nombreM),function($message){
+        $message->to($laboratorioInfo->correo,$laboratorioInfo->nombre)->subject('Medicamento Ingresado - Bufete Galdamez');
     });
 	
 	DB::statement('SET FOREIGN_KEY_CHECKS=0;');
