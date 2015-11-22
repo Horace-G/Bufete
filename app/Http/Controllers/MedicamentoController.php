@@ -44,7 +44,7 @@ class MedicamentoController extends Controller
             return Response::json(array('Success' => 'false'));
         }
 $laboratorioInfo = $laboratorioInfo->get();    
-Mail::send('email',array('labName'=>$laboratorioInfo[0]->nombre,'medName'=>$nombreM),function($message) use($laboratorioInfo){
+Mail::send('email',array('labName'=>$laboratorioInfo[0]->nombre,'medName'=>$nombreM,'representanteName'=>$representanteM),function($message) use($laboratorioInfo){
         $message->to($laboratorioInfo[0]->correo,$laboratorioInfo[0]->nombre)->subject('Medicamento Ingresado - Bufete Galdamez');
     });
 	

@@ -26,6 +26,8 @@ class HistorialCicloVidaController extends Controller
                         $idMedicamento = $request->input('idMedicamento');
                         $idEstado = $request->input('idEstado');
                         $idEstadoViejo = $request->input('idEstadoViejo');
+                        $nombreEstado = $request->input('nombreEstado');
+                        $nombreEstadoViejo = $request->input('nombreEstadoViejo');
                         //$estado = $request->input('estadoHistorial');
                         $date = Carbon::now();
 
@@ -35,6 +37,18 @@ class HistorialCicloVidaController extends Controller
                                 array('medicamentoId'=>$idMedicamento, 'ciclo_vidaId'=>$idEstadoViejo, 'estado'=>0,
                                                 'fecha'=>$date)
                         );
+            
+            $medicamento = DB::table('medicamento')->select('nombre','laboratorioId')-where('id','=',$idMedicamento)->get();
+            
+            
+    $laboratorioInfo = DB::table('laboratorio')->select('nombre','correo')->where('id','=',$medicamento[0]->laboratorioId);
+        if ($laboratorioInfo->count() == 0){
+            return Response::json(array('Success' => 'false'));
+        }
+$laboratorioInfo = $laboratorioInfo->get();    
+Mail::send('estadoEmail',array('labName'=>$laboratorioInfo[0]->nombre,'medName'=>$medicamento[0]->nombre,'oldEstado'=>$nombreEstadoViejo,'newEstado'=>$nombreEstado),function($message) use($laboratorioInfo){
+        $message->to($laboratorioInfo[0]->correo,$laboratorioInfo[0]->nombre)->subject('Estado de vida medicamento modificado - Bufete Galdamez');
+    });
             
                         DB::table('medicamento')->where('id','=',$idMedicamento)->update(array('estado' => $idEstado));
 

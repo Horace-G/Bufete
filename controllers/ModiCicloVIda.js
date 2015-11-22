@@ -20,7 +20,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
             Medicamentos=response.data;
             $scope.id=Medicamentos[0].MedicamentoId;        
             $scope.nombre=Medicamentos[0].MedicamentoNombre;
-            $scope.estado=Medicamentos[0].CicloVidaNombre;
+            $scope.viejoEstadoNombre=Medicamentos[0].CicloVidaNombre;
             $scope.estadoviejo=Medicamentos[0].CicloVidaId;
              if(typeof(Storage) !== "undefined") {
                 sessionStorage.IdMedicamento=$scope.codigo;
@@ -37,7 +37,7 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
             $scope.allOptions = response.data;
             for(var i=0;i<$scope.allOptions.length;i++){
                 
-                if($scope.allOptions[i].nombre==$scope.estado){
+                if($scope.allOptions[i].nombre==$scope.viejoEstadoNombre){
                     $scope.allOptions.splice(i,1);
                 }
             }
@@ -52,7 +52,12 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
         var request = {
                 method: 'POST',
                 url: baseUrl,
-                data: {idMedicamento: $scope.id,idEstado: $scope.selectedOption,idEstadoViejo:$scope.estadoviejo}
+                data: {idMedicamento: $scope.id,
+                       idEstado: $scope.selectedOption,
+                       idEstadoViejo:$scope.estadoviejo,
+                        nombreEstado:$scope.allOptions[$scope.selectedOption].nombre,
+                       nombreEstadoViejo:$scope.viejoEstadoNombre
+                      }
         };
         $http(request).then(function(response){
             if(response.data.Success=="true"){
