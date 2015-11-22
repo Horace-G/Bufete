@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Response;
@@ -38,7 +39,7 @@ class HistorialCicloVidaController extends Controller
                                                 'fecha'=>$date)
                         );
             
-            $medicamento = DB::table('medicamento')->select('nombre','laboratorioId')-where('id','=',$idMedicamento)->get();
+            $medicamento = DB::table('medicamento')->select('nombre','laboratorioId')->where('id','=',$idMedicamento)->get();
             
             
     $laboratorioInfo = DB::table('laboratorio')->select('nombre','correo')->where('id','=',$medicamento[0]->laboratorioId);
