@@ -27,7 +27,9 @@ class HistorialCicloVidaController extends Controller
                         $idMedicamento = $request->input('idMedicamento');
                         $idEstado = $request->input('idEstado');
                         $idEstadoViejo = $request->input('idEstadoViejo');
-                        $nombreEstado = $request->input('nombreEstado');
+                        
+                        $nombreEstado = DB::table('ciclo_vida')->select('nombre')->where('id','=',$idEstado)->get()[0]->nombre
+                        
                         $nombreEstadoViejo = $request->input('nombreEstadoViejo');
                         //$estado = $request->input('estadoHistorial');
                         $date = Carbon::now();

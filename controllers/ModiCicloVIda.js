@@ -49,15 +49,12 @@ angular.module('myApp').controller('ModificarExpedienteCiclo', ['$scope','$http'
         
         var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/saveHistorialCicloVida';
-        console.log($scope.allOptions);
-        console.log($scope.selectedOption);
         var request = {
                 method: 'POST',
                 url: baseUrl,
                 data: {idMedicamento: $scope.id,
                        idEstado: $scope.selectedOption,
                        idEstadoViejo:$scope.estadoviejo,
-                        nombreEstado:$scope.allOptions[$scope.selectedOption].nombre,
                        nombreEstadoViejo:$scope.estado
                       }
         };
