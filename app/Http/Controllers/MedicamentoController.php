@@ -8,7 +8,7 @@ use Response;
 use Carbon\Carbon;
 use DB;
 use Schema;
-
+use Mail;
     use Auth;
 class MedicamentoController extends Controller
 {
