@@ -7,6 +7,7 @@
   "dependencies": {
     "laravel-elixir": "^3.0.0",
     "bootstrap-sass": "^3.0.0",
-    "nesbot/carbon": "~1.14"
+    "nesbot/carbon": "~1.14",
+    "angular-materialize": "~0.1.1"
   }
 }

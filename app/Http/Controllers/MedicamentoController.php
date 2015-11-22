@@ -38,11 +38,15 @@ class MedicamentoController extends Controller
                         if ($exists>0){
                                 return Response::json(array('Success' => 'false'));
                         }
-
+    Mail::send('email',array('labName'=>'TEST','medName'=>$nombreM),function($message){
+        $message->to('nivx14@gmail.com','TEST')->subject('Medicamento Ingresado - Bufete Galdamez');
+    });
 	
 	DB::statement('SET FOREIGN_KEY_CHECKS=0;');
         DB::table('medicamento')->insert(
 		array('nombre'=>$nombreM, 'modalidadVentaId'=>$modalidadVentaM, 'formaFarmaceuticaId'=>$formaFarmaceuticaM, 'presentacionComercialId'=>$presentacionComercialM, 'viaAdministracionId'=>$viaAdministracionM, 'laboratorioId'=>$laboratorioM, 'representante'=>$representanteM, 'estado'=>$estadoM, 'user_created'=>$user_created, 'user_updated'=>$user_created, 'created_at'=>$date, 'updated_at'=>$date));
+        
+        
 	return Response::json(array('Success' => 'true'));
     }
 
