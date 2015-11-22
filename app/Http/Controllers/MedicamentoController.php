@@ -39,12 +39,13 @@ class MedicamentoController extends Controller
                                 return Response::json(array('Success' => 'false'));
                         }
         
-    $laboratorioInfo = DB::table('laboratorio')->select('nombre','correo')-where('id','=',$laboratorioM);
+    $laboratorioInfo = DB::table('laboratorio')->select('nombre','correo')->where('id','=',$laboratorioM);
         if ($laboratorioInfo->count() == 0){
             return Response::json(array('Success' => 'false'));
         }
-    Mail::send('email',array('labName'=>$laboratorioInfo->nombre,'medName'=>$nombreM),function($message){
-        $message->to($laboratorioInfo->correo,$laboratorioInfo->nombre)->subject('Medicamento Ingresado - Bufete Galdamez');
+$laboratorioInfo = $laboratorioInfo->get();    
+Mail::send('email',array('labName'=>$laboratorioInfo[0]->nombre,'medName'=>$nombreM),function($message) use($laboratorioInfo){
+        $message->to($laboratorioInfo[0]->correo,$laboratorioInfo[0]->nombre)->subject('Medicamento Ingresado - Bufete Galdamez');
     });
 	
 	DB::statement('SET FOREIGN_KEY_CHECKS=0;');
