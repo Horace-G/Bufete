@@ -23,7 +23,9 @@ class AutenticacionController extends Controller
         if (Auth::attempt(['username' => $username, 'password' => $password,'estado'=>'1'],true)) {
             return redirect()->intended('/');
         }else{
-           Toast::warning('Usuario y/o password incorrectos', 'Usuario');
+            echo "<script type='text/javascript'>";
+            echo "toastr.warning('Invalid Username or Password','Login Error')";
+            echo "</script>";
 	       return redirect()->intended('/');        
 }
     }
