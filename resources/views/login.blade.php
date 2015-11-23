@@ -81,7 +81,7 @@
                     <form class="col s12" method="POST" action="/Bufete/authenticate">
 			{!! csrf_field() !!}
                         <div class="row">
-                        <div class="input-field col s9">
+                        <div class="input-field col s9">{message}
                             <i class="material-icons prefix">account_circle</i>
                             <input id="usuarioLogin" name="username" type="text" class="validate">
                             <label for="usuarioLogin">Usuario<span id="asterisco"> *</span></label>
