@@ -191,7 +191,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
     var id_laboratorio = 0;
     $scope.symbolsExp = new RegExp("[<>%\$!@#%^&*()_+]");
     
-    if($scope.nombre.length == 0){
+    if($scope.nombreExpediente.length == 0){
          mensajeService.ShowMessage('INPUT_EMPTY','Nombre');
         $scope.valid = 0;
         ngDialog.open({ template: 'templateId' });
@@ -207,12 +207,12 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
         $scope.valid = 0;
     }
     
-    if($scope.nombre.length>64){
+    if($scope.nombreExpediente.length>64){
          mensajeService.ShowMessage('LONG_64','Nombre');
         $scope.valid = 0;
     }
     
-    if($scope.symbolsExp.test($scope.nombre)){
+    if($scope.symbolsExp.test($scope.nombreExpediente)){
         mensajeService.ShowMessage('INVALID_CHAR','Nombre');
         $scope.valid = 0;
     }
