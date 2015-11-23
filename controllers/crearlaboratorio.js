@@ -1,6 +1,6 @@
 angular.module('myApp').controller('crear_laboratorio', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
 
-
+$scope.telefono='';
 $scope.nombre = '';
 $scope.descripcion = '';
 $scope.correo = '';
@@ -68,7 +68,10 @@ $scope.submitNumero = function () {
 $scope.submitGuardar = function () {
     
     $scope.valid = 1;
-    
+    if($scope.telefono.length==0){
+        mensajeService.ShowMessage('ADD_NUM','Telefono');
+        $scope.valid=0;
+    }
      if($scope.nombre.length==0){
          $("#nombreLaboratorio").css("color","red");
         mensajeService.ShowMessage('INPUT_EMPTY','Nombre Laboratorio');
