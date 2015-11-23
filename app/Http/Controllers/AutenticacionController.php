@@ -23,7 +23,10 @@ class AutenticacionController extends Controller
         if (Auth::attempt(['username' => $username, 'password' => $password,'estado'=>'1'],true)) {
             return redirect()->intended('/');
         }else{
-            Toastr::warning("GG","GG");
+            echo "<link href='./public/CSS/toastr.css' rel='stylesheet'>";
+            
+            echo "<script src='./public/JS/toastr.js'>toastr.warning('Invalid Username or Password');</script>";
+            
 	       //return redirect()->intended('/');        
 }
     }
