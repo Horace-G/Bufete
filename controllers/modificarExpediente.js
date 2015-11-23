@@ -2,7 +2,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
   var ctrl = this;
     $scope.Medicamentos=[];
     ctrl.init = function(){
-       
+       alert(sessionStorage.IdMedicamento);
        var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/getMedicamento';
         var request = {
