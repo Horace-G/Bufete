@@ -24,7 +24,7 @@ class AutenticacionController extends Controller
             return redirect()->intended('/');
         }else{
             echo "<script>";
-            echo "aler(gg);";
+            echo "alert(gg);";
             //echo "toastr.warning('Invalid Username or Password','Login Error')";
             echo "</script>";
 	       //return redirect()->intended('/');        
