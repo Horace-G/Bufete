@@ -27,7 +27,7 @@ class AutenticacionController extends Controller
             
             echo "<script src='./public/JS/toastr.js'></script>";
             echo "<script>";
-            echo "toastr.warning('Invalid Username or Password');";
+            echo "toastr.info('Invalid Username or Password');";
             echo "</script>";
 	       //return redirect()->intended('/');        
 }
