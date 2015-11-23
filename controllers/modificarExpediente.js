@@ -228,7 +228,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
         //
          var count = Object.keys(modalidadventa).length;
          for(var i=0;i<count;i++){
-            if($('#modalidadVenta').find(":selected").text()==modalidadventa[i].nombre){
+            if($('#modalidadModVenta').find(":selected").text()==modalidadventa[i].nombre){
                 id_modalidadventa=modalidadventa[i].id;
                 
                 break;
@@ -236,7 +236,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
         }
         var count = Object.keys(presentacioncomercial).length;
          for(var i=0;i<count;i++){
-            if($('#presentacionComercial').find(":selected").text()==presentacioncomercial[i].nombre){
+            if($('#presentacionModComercial').find(":selected").text()==presentacioncomercial[i].nombre){
                 id_presentacioncomercial=presentacioncomercial[i].id;
                 
                 break;
@@ -244,7 +244,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
         }
          var count = Object.keys(formafarmaceutica).length;
          for(var i=0;i<count;i++){
-            if($('#formaFarmaceutica').find(":selected").text()==formafarmaceutica[i].nombre){
+            if($('#formaModFarmaceutica').find(":selected").text()==formafarmaceutica[i].nombre){
                 id_formafarmaceutica=formafarmaceutica[i].id;
                 
                 break;
@@ -252,7 +252,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
         }
         var count = Object.keys(viaadministracion).length;
          for(var i=0;i<count;i++){
-            if($('#viaAdministracion').find(":selected").text()==viaadministracion[i].nombre){
+            if($('#viaModAdministracion').find(":selected").text()==viaadministracion[i].nombre){
                 id_viaadministracion=viaadministracion[i].id;
                 
                 break;
@@ -260,7 +260,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
         }
          var count = Object.keys(laboratoriofabricante).length;
          for(var i=0;i<count;i++){
-            if($('#laboratorioFabricante').find(":selected").text()==laboratoriofabricante[i].nombre){
+            if($('#laboratorioModFabricante').find(":selected").text()==laboratoriofabricante[i].nombre){
                 id_laboratorio=laboratoriofabricante[i].id;
                 
                 break;
@@ -273,7 +273,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {nombreMedicamento: $scope.nombre,modalidadVentaMedicamento: id_modalidadventa, formaFarmaceuticaMedicamento: id_formafarmaceutica, viaAdministracionMedicamento: id_viaadministracion, presentacionComercialMedicamento: id_presentacioncomercial,laboratorioMedicamento: id_laboratorio, responsableMedicamento: $scope.responsable, userMedicamento: '1234', estadoMedicamento: '1'}
+			data: {nombreMedicamento: $scope.nombreExpediente,modalidadVentaMedicamento: id_modalidadventa, formaFarmaceuticaMedicamento: id_formafarmaceutica, viaAdministracionMedicamento: id_viaadministracion, presentacionComercialMedicamento: id_presentacioncomercial,laboratorioMedicamento: id_laboratorio, responsableMedicamento: $scope.responsable, userMedicamento: '1234', estadoMedicamento: '1'}
 	};
     
 	$http(request).then(function(response){
