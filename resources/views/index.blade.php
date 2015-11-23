@@ -60,7 +60,7 @@
         <script src="./controllers/modificarViaAdministracion.js"></script>
         <script src="./controllers/modificarFormaFarmaceutica.js"></script>
         <script src="./controllers/ModiCicloVIda.js"></script>
-        
+        <script src="./controllers/modificarExpediente.js"></script>
         
     </head>
     <body>
