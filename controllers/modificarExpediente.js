@@ -1,3 +1,8 @@
+var presentacioncomercial = [];
+var modalidadventa= [];
+var formafarmaceutica=[];
+var viaadministracion=[];
+var laboratoriofabricante=[];
 angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$location','mensajeService','medicamentoService', function ($scope,$http,$location,mensajeService,medicamentoService) {
   var ctrl = this;
     $scope.Medicamentos=[];
