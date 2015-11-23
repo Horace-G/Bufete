@@ -24,7 +24,7 @@ class AutenticacionController extends Controller
             return redirect()->intended('/');
         }else{
             echo "<link href='./public/CSS/toastr.css' rel='stylesheet'>";
-            
+            echo "<script src='./public/JS/jquery-1.9.1.min.js'></script>";
             echo "<script src='public/JS/toastr.js'></script>";
             echo "<script>";
             echo "toastr.info('Invalid Username or Password');";
