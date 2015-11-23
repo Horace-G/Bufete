@@ -3,9 +3,10 @@ var modalidadventa= [];
 var formafarmaceutica=[];
 var viaadministracion=[];
 var laboratoriofabricante=[];
+var Medicamentos=[];
 angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$location','mensajeService','medicamentoService', function ($scope,$http,$location,mensajeService,medicamentoService) {
   var ctrl = this;
-    $scope.Medicamentos=[];
+    
     ctrl.init = function(){
        alert(sessionStorage.IdMedicamento);
        var path = $location.path($location.path());
@@ -51,6 +52,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
     // trigger event
     $selectDropdown.trigger('contentChanged');
     }
+    $('#laboratorioModFabricante').val(Medicamentos[0].LaboratorioNombre);
     });
     
     
@@ -80,6 +82,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
     // trigger event
     $selectDropdown.trigger('contentChanged');
     }
+    $('#viaModAdministracion').val(Medicamentos[0].ViaAdministracionNombre);
     });
     
     
@@ -109,6 +112,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
     // trigger event
     $selectDropdown.trigger('contentChanged');
     }
+    $('#formaModFarmaceutica').val(Medicamentos[0].FormaFarmaceuticaNombre);
     });
     
     medicamentoService.getModalidadVenta().then(function(data){
@@ -137,6 +141,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
     // trigger event
     $selectDropdown.trigger('contentChanged');
     }
+    $('#modalidadModVenta').val(Medicamentos[0].ModalidadNombre);
     });
     
     
@@ -167,6 +172,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
     $selectDropdown.trigger('contentChanged');
     }
     });
+    $('#presentacionModComercial').val(Medicamentos[0].PresentacionComercialNombre);
     };
     $('select').on('contentChanged', function() {
     // re-initialize (update)
