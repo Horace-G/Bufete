@@ -37,5 +37,8 @@ angular.module('myApp').controller('VerExpediente', ['$scope','$http','$location
     $scope.modificarCiclo = function(){
           window.location=document.getElementById('ModificarExpedienteCiclo').href;  
     }
+    $scope.modificar = function(){
+        window.location=document.getElementById('ModificarExpediente').href;
+    }
     
 }]);
