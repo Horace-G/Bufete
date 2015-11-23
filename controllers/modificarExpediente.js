@@ -14,7 +14,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
             Medicamentos=response.data;
             console.log(Medicamentos);
             $scope.nombreExpediente=Medicamentos[0].MedicamentoNombre;
-            $scope.representante=Medicamentos[0].NombreRepresentante;
+            $scope.responsable=Medicamentos[0].NombreRepresentante;
              if(typeof(Storage) !== "undefined") {
                 sessionStorage.IdMedicamento=$scope.codigo;
                 }else{   
