@@ -1,4 +1,4 @@
-angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$location','mensajeService', function ($scope,$http,$location,mensajeService) {
+angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$location','mensajeService','medicamentoService', function ($scope,$http,$location,mensajeService,medicamentoService) {
   var ctrl = this;
     $scope.Medicamentos=[];
     ctrl.init = function(){
