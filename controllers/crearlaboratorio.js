@@ -68,7 +68,7 @@ $scope.submitNumero = function () {
 $scope.submitGuardar = function () {
     
     $scope.valid = 1;
-    if($scope.telefono.length==0){
+    if($scope.telefono.length>0){
         mensajeService.ShowMessage('ADD_NUM','Telefono');
         $scope.valid=0;
     }
