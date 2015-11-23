@@ -4,11 +4,12 @@ var formafarmaceutica=[];
 var viaadministracion=[];
 var laboratoriofabricante=[];
 var Medicamentos=[];
+var id;
 angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$location','mensajeService','medicamentoService', function ($scope,$http,$location,mensajeService,medicamentoService) {
   var ctrl = this;
     
     ctrl.init = function(){
-       alert(sessionStorage.IdMedicamento);
+       id=sessionStorage.IdMedicamento;
        var path = $location.path($location.path());
         var baseUrl = path.$$protocol + "://" + path.$$host + ":" + path.$$port + '/Bufete/index.php/getMedicamento';
         var request = {
@@ -273,7 +274,7 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
 	var request = {
 			method: 'POST',
 			url: baseUrl,
-			data: {nombreMedicamento: $scope.nombreExpediente,modalidadVentaMedicamento: id_modalidadventa, formaFarmaceuticaMedicamento: id_formafarmaceutica, viaAdministracionMedicamento: id_viaadministracion, presentacionComercialMedicamento: id_presentacioncomercial,laboratorioMedicamento: id_laboratorio, responsableMedicamento: $scope.responsable, userMedicamento: '1234', estadoMedicamento: '1'}
+			data: {idMedicamento: id,nombreMedicamento: $scope.nombreExpediente,modalidadVentaMedicamento: id_modalidadventa, formaFarmaceuticaMedicamento: id_formafarmaceutica, viaAdministracionMedicamento: id_viaadministracion, presentacionComercialMedicamento: id_presentacioncomercial,laboratorioMedicamento: id_laboratorio, responsableMedicamento: $scope.responsable, userMedicamento: '1234', estadoMedicamento: '1'}
 	};
     
 	$http(request).then(function(response){
