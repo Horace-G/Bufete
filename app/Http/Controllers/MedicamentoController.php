@@ -57,7 +57,7 @@ Mail::send('email',array('labName'=>$laboratorioInfo[0]->nombre,'medName'=>$nomb
     }
 
     public function updateMedicamento(Request $request){
-	$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
+	/*$permiso = DB::table('usuario')->join('rol', 'usuario.rol_id','=','rol.id')->join('rol_permiso', 'rol_permiso.rol_id', '=', 'rol.id')
         ->join('permiso', 'rol_permiso.permiso_id', '=', 'permiso.id')->select('permiso.id')->where('permiso.id', '14')
         ->where('usuario.id', Auth::user()->id)->count();
 
@@ -65,7 +65,7 @@ Mail::send('email',array('labName'=>$laboratorioInfo[0]->nombre,'medName'=>$nomb
                 return Response::json(array('Success' => 'false'));
                 //return redirect()->route('/');
         }
-
+*/
 
 	$id = $request->input('idMedicamento');
 	$nombreM = $request->input('nombreMedicamento');
