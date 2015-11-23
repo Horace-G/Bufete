@@ -168,6 +168,10 @@ angular.module('myApp').controller('modificarExpediente', ['$scope','$http','$lo
     }
     });
     };
+    $('select').on('contentChanged', function() {
+    // re-initialize (update)
+    $(this).material_select();
+    });
     ctrl.init();
     
     
