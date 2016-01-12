@@ -23,10 +23,9 @@ Route::get('/',['middleware' => 'auth',function () {
 }]);
 */
 
-Route::get('/',function () {
-   
+Route::get('/',['middleware' => 'auth',function () {
     return view('index');
-});
+}]);
 
 Route::get('/loginFORCE',function(){
     if (Auth::attempt(['username' => 'admin', 'password' => 'admin1234','estado'=>'1'],true)) {
