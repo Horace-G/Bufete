@@ -80,6 +80,11 @@ myApp.config(function ($routeProvider) {
         controller: 'mainController'
     })
     
+    .when('/logohome', {
+        templateUrl: 'public/views/about.html',
+        controller: 'mainController'
+    })
+    
 });
 
 myApp.directive('buffetNav', [function() {

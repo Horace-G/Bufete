@@ -110,3 +110,30 @@ tr {
 .darkFont{
     color:"teal darken-3";
 }
+
+.bufetHeader{
+    text-align: center;
+    font-size:40px;
+}
+
+#bufet{
+    left: 0;
+    position: absolute;
+    text-align: center;
+    top: 260px;
+    width: 100%;
+    color: #E6E6E6;
+    font-size: 65px;
+}
+
+.image{
+    position:relative;
+}
+
+.centerHeader{
+    text-align:center;
+}
+
+.backg{
+    background-image: url("../IMG/background3.jpg");
+}

